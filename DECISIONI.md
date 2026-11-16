@@ -17,3 +17,7 @@ Una riga per decisione, la più recente in fondo. Chi cambia una decisione aggiu
 | 2026-11-16 | Esercizi mostrati con illustrazioni proprie, niente video di terzi | Diritti e uniformità | Presa, produzione da definire |
 | 2026-11-16 | Revisione professionale di schede e regole sul dolore | Responsabilità e credibilità | Aperta |
 | 2026-11-16 | Proposta dettagliata React/Vite e confronto con Expo in `docs/00-architettura.md`; strumenti iniziali e responsabilità separati per tappa | Validare prima il prodotto web e mantenere il motore indipendente | Proposta, scelta finale da confermare |
+| 2026-11-16 | Confermati React e Vite, TypeScript rigoroso, PWA, Vitest, ESLint e un solo progetto npm; adottata la proposta del compito 0.1, escluso Expo | Approvazione esplicita dell'utente; sostituisce lo stato da confermare delle proposte precedenti | Presa |
+| 2026-11-16 | Ogni partecipante alla prova installa l'app sulla schermata Home; account e sincronizzazione devono essere pronti prima della prova | Validare il percorso d'uso previsto, inclusa la conservazione dei dati tra dispositivi | Presa |
+| 2026-11-16 | I timer a conto alla rovescia si calcolano dall'orario di fine persistito, non contando i secondi trascorsi | Correttezza dopo sospensione, chiusura e riapertura dell'app | Presa |
+| 2026-11-16 | Il compito 2.1 si chiude solo dopo prove su un iPhone e un Android reali, con app installata sulla Home | Verificare salvataggio e riavvio senza rete sui dispositivi effettivi | Presa |

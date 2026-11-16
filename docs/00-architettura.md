@@ -1,9 +1,18 @@
 # Proposta di architettura — compito 0.1
 
-Data: 2026-11-16. Stato: proposta pronta per la scelta finale.
-Il piano di analisi è approvato; la scelta delle tecnologie resta da confermare.
+Data: 2026-11-16. Stato: approvata dall’utente. Compito 0.1 completato.
+Scelta: React e Vite; Expo escluso per questa versione.
 
-## Raccomandazione
+## Vincoli approvati
+
+- Ogni partecipante alla prova installa l'app sulla schermata Home. Account e
+  sincronizzazione devono essere pronti e verificati prima della prova.
+- I timer a conto alla rovescia persistono l'orario di fine e calcolano il tempo
+  residuo dalla differenza con l'orario corrente, senza contare i secondi.
+- Il compito 2.1 si chiude solo con prove positive su un iPhone e un Android reali,
+  con installazione sulla Home, salvataggio senza rete e riavvio dell'app.
+
+## Scelta approvata
 
 TypeScript rigoroso, React e Vite per una web app installabile (PWA).
 Vitest per i test, TypeScript per il controllo dei tipi, ESLint per il lint.
@@ -140,5 +149,5 @@ nessuno di questi controlli è dichiarato eseguito o superato.
 
 1. Confrontare le due opzioni con l'obiettivo di validare prima la versione web.
 2. Verificare che cartelle e confini rendano indipendente il motore di allenamento.
-3. Confermare React/Vite oppure scegliere Expo; poi registrare la decisione
-   e completare il punto 0.1 prima di passare al progetto eseguibile del punto 0.2.
+3. Consultare la scelta approvata in `DECISIONI.md` e i vincoli di completamento
+   aggiornati nel piano di lavoro.

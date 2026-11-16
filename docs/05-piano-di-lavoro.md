@@ -8,8 +8,8 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
-| 0.1 | Proporre le tecnologie e la struttura delle cartelle, con le alternative | D | Roberto ha approvato e la scelta è in `DECISIONI.md` | in corso |
-| 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | da fare |
+| 0.1 | Proporre le tecnologie e la struttura delle cartelle, con le alternative | D | Roberto ha approvato e la scelta è in `DECISIONI.md` | fatto |
+| 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | in corso |
 | 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | da fare |
 
 ## Tappa 1: il motore, senza interfaccia
@@ -28,10 +28,10 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
-| 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | Una serie registrata in modalità aereo è ancora lì dopo il riavvio | da fare |
+| 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | da fare |
 | 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | da fare |
 | 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | da fare |
-| 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Provato chiudendo e riaprendo l'app | da fare |
+| 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | da fare |
 | 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | da fare |
 | 2.6 | Controllo del dolore con legenda, e fastidio durante la serie | N | Le regole della tappa 1 reagiscono ai valori inseriti | da fare |
 
@@ -63,6 +63,8 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 
 ## Prova con le persone
 
+Prerequisiti obbligatori: ogni partecipante installa l’app sulla schermata Home; account e sincronizzazione della tappa 4 sono pronti e verificati prima della prova. Il compito 2.1 richiede esiti positivi su un iPhone e un Android reali; emulatori e prove desktop non lo chiudono.
+
 Qui lo sviluppo si ferma. 10-20 persone usano la versione web per 4-6 settimane. Si guarda quanti completano la prima seduta, quanti si allenano ancora dopo 4 settimane e quanti pagherebbero.
 
 ## Dopo la prova, solo con esito positivo
@@ -76,6 +78,6 @@ Qui lo sviluppo si ferma. 10-20 persone usano la versione web per 4-6 settimane.
 
 ## Avanzamento del compito 0.1
 
-2026-11-16: piano di analisi approvato. Proposta e confronto disponibili in
-`docs/00-architettura.md`; resta la conferma della scelta tecnologica.
-Il compito 0.2 non è iniziato.
+2026-11-16: proposta approvata e registrata in `DECISIONI.md`, insieme ai tre
+vincoli su installazione/account/sincronizzazione, timer e dispositivi reali.
+Compito 0.1 chiuso; compito 0.2 in corso.
