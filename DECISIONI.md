@@ -27,3 +27,4 @@ Una riga per decisione, la più recente in fondo. Chi cambia una decisione aggiu
 | 2026-11-16 | Priorità di prodotto: evidenze scientifiche applicabili a obiettivo e profilo, poi personalizzazione e sostituzioni con grafici corretti | Richiesta esplicita dell'utente | Presa |
 | 2026-11-16 | R0/R1/R2 prima del motore; i test del prototipo documentano il comportamento storico, non la validità scientifica | Evitare di generalizzare un programma personale; nessuna soglia numerica cambiata ora | Presa |
 | 2026-11-16 | Riepilogo breve in CONTEXTO.md e modello esatto consigliato a fine risposta | Continuità tra agenti con lettura minima, richiesta dell'utente | Presa |
+| 2026-11-16 | Estendere R1 oltre forza/ipertrofia e usarla per costruire le schede base | Richiesta esplicita dell'utente; studiare obiettivi e capacità pertinenti | Presa; fonti originali ancora da verificare |

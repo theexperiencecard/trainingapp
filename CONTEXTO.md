@@ -5,6 +5,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata
 - Prima qualità scientifica per obiettivo/profilo; poi personalizzazione e sostituzioni.
+- Ricerca estesa oltre forza/ipertrofia: generale, aerobico, mobilità, equilibrio e resistenza.
 - Forza e ipertrofia richiedono scelte motivate. Valutare disponibilità 2–7 giorni,
   esperienza, capacità, recupero e vincoli; perimetro del lancio ancora da decidere.
 - Il questionario è un punto di partenza da tarare; nessuna promessa «90% perfetto».
@@ -22,12 +23,14 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
 ## Prossimo incarico: R1 — GPT-6 Astra
-- Leggi `docs/08-revisione-scientifica.md`: Q1–Q9, metodo, registro E01–E10 e accesso alle fonti.
+- R1 in corso: leggi 08 (metodo), 10 (Q10–Q15 e audit catalogo), 11 (famiglie proposte).
 - Valuta pubblicazioni originali e applicabilità; separa evidenze, consenso e scelte pratiche.
 - PubMed, Europe PMC e WHO hanno risposto 403. Domini aggiunti alla bozza ambiente;
   salvataggio confermato, applicazione runtime NON verificata. Ritenta dopo aggiornamento.
-- Nessuna fonte originale recuperata in R0; non inventare citazioni o dosi.
-- Poi R2: specifica/revisione professionale/approvazione, prima del motore. R3: ricerca utenti parallela.
+- Nuovi tentativi in R1 ancora 403; nessuna pubblicazione originale letta. Non inventare dosi.
+- Audit: 48 voci incluse 7 check e 2 cardio specifiche; un solo modello, 23 test storici.
+- Cinque famiglie e moduli proposti in 11; nessuna scheda completa o prescrizione validata.
+- Poi R2: specifica delle schede/revisione/approvazione, prima del motore. R3: ricerca utenti parallela.
 - Per sostituzioni e metriche leggi `docs/09-personalizzazione-e-metriche.md` (proposte R2).
 
 ## Vincoli da conservare

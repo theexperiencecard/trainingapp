@@ -13,6 +13,11 @@ Il perimetro 2–4 giorni sotto è la bozza precedente, non la copertura finale 
 «90% perfetto» è un'ambizione da tradurre in criteri, non una garanzia di risultato.
 Le dosi e il ciclo del prototipo attendono revisione; fonti e requisiti nei documenti 08 e 09.
 
+L'utente richiede copertura anche oltre forza/ipertrofia: salute generale, ripresa,
+capacità aerobica, mobilità, equilibrio e altri bisogni pertinenti. La ricerca
+estesa è nel documento 10; famiglie e moduli del documento 11 sono proposte R2.
+La presenza di un obiettivo tra le proposte non significa che sia già supportato.
+
 ## 1. Per chi
 
 Principianti e persone che si allenano in palestra 2-4 volte a settimana, non soddisfatte dell'app fornita dalla palestra o di altre app.

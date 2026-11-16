@@ -1,7 +1,7 @@
 # Revisione scientifica: protocollo e audit iniziale (R0)
 
 Data: 2026-11-16. R0 completato: audit documentale e protocollo.
-R1 da svolgere: verifica indipendente delle pubblicazioni. Nessuna nuova dose,
+R1 in corso: audit esteso, verifica indipendente delle pubblicazioni bloccata. Nessuna nuova dose,
 soglia sul dolore o regola di progressione è approvata da questo documento.
 
 ## Obiettivo e significato di science based
@@ -29,6 +29,10 @@ Va tradotta in criteri osservabili prima della prova, senza inventare percentual
 | Q7 | Quali segnali richiedono sospensione o valutazione professionale? | Percorsi revisionati da professionisti; limiti delle scale autoriferite |
 | Q8 | Quando due esercizi sono sostituibili rispetto a un obiettivo? | Criteri e limiti; differenza tra allenare un muscolo e migliorare una specifica alzata |
 | Q9 | Quali metriche descrivono progresso e dose senza confronti ingannevoli? | Definizioni, unità, validità e incertezza di tonnellaggio e massimale stimato |
+
+La richiesta successiva estende il perimetro a salute generale, aerobico, mobilità,
+equilibrio, resistenza muscolare e altri obiettivi: Q10–Q15 sono nel documento 10.
+Le famiglie proposte, ancora prive di prescrizioni validate, sono nel documento 11.
 
 ## Metodo riproducibile
 

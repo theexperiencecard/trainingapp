@@ -21,7 +21,7 @@ con sostituzioni e grafici corretti. Nessuna regola numerica è cambiata da ques
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
 | R0 | Audit dei materiali, protocollo scientifico e requisiti di personalizzazione | D | Lacune, domande, criteri delle fonti e casi di accettazione documentati | fatto |
-| R1 | Verifica delle fonti e matrice delle evidenze per Q1–Q9 | D | Fonti identificate e valutate, popolazioni e limiti espliciti, lacune residue dichiarate | da fare |
+| R1 | Verifica delle fonti e matrice delle evidenze per Q1–Q15, anche oltre forza/ipertrofia | D | Fonti identificate e valutate, popolazioni e limiti espliciti, lacune residue dichiarate | in corso |
 | R2 | Specifica di programmi, questionario, sostituzioni e metriche | D | Regole tracciabili, profili supportati definiti, revisione professionale pertinente e approvazione prima del codice | da fare |
 | R3 | Ricerca utenti e mercato iniziale | N | Interviste e alternative documentate, pubblico/problema e criteri della prova proposti | da fare |
 
@@ -136,3 +136,18 @@ manuale. Procedura in `docs/06-controlli-automatici.md`.
 La verifica visiva del punto 0.2 è rinviata su indicazione dell'utente; non
 blocca questi controlli, ma resta distinta dai test automatici già superati.
 Prossimi compiti e ricerca consigliata: `docs/07-prossimi-passi-e-ricerca.md`.
+
+## Avanzamento R1: copertura per le schede base
+
+2026-11-16: estesi gli obiettivi e auditato il catalogo (48 voci, 7 check,
+2 cardio specifiche, un modello personale, 23 test storici). Risultati nel
+[documento 10](10-obiettivi-e-copertura.md); cinque famiglie e moduli proposti
+nel [documento 11](11-famiglie-schede-base.md). Non sono schede prescritte o validate.
+
+Accesso a fonti originali ancora bloccato: rete corrente senza i domini aggiuntivi,
+nuovi tentativi a PubMed/Europe PMC/WHO tutti 403. Bozza di configurazione già salvata;
+serve applicarla oppure ricevere testi originali. Nessuna nuova fonte letta.
+Il lavoro bibliografico e R2 restano aperti; non implementare dosi inventate.
+
+Verifica della sessione: `npm run check` superato (3 test, tipi, lint) e
+`npm run build` superato, entrambi uscita 0. Validano solo la base software.
