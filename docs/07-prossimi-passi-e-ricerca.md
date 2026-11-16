@@ -3,6 +3,12 @@
 Indicazioni operative del 2026-11-16. Le proposte di ricerca qui sotto sono
 ipotesi da verificare, non risultati di un'indagine di mercato già svolta.
 
+## Aggiornamento di priorità
+
+La revisione R0/R1/R2 nel piano corrente precede il motore; R3 continua in parallelo.
+La sequenza tecnica sotto descrive le tappe successive alla revisione, non il prossimo incarico.
+Il prossimo incarico è R1 con GPT-6 Astra; stato sintetico in `CONTEXTO.md`.
+
 ## Sviluppo
 
 1. **0.3:** controlli automatici, prova negativa e prima esecuzione su GitHub.

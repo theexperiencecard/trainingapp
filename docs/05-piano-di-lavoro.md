@@ -1,6 +1,7 @@
 # Piano di lavoro
 
-Un compito alla volta, nell'ordine. Ogni compito sta in una sessione di lavoro breve. Stato: `da fare`, `in corso`, `fatto`.
+Un compito alla volta. Nuovo ordine approvato: R0 → R1 → R2 prima del motore;
+R3 (ricerca utenti) può procedere in parallelo. Il punto 0.3 resta indipendente. Ogni compito sta in una sessione di lavoro breve. Stato: `da fare`, `in corso`, `fatto`.
 
 Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 
@@ -12,14 +13,31 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 | 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | fatto |
 | 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | in corso |
 
+## Revisione prima del motore
+
+Priorità dell'utente: qualità scientifica per obiettivo/profilo, poi personalizzazione
+con sostituzioni e grafici corretti. Nessuna regola numerica è cambiata da questa revisione.
+
+| N. | Compito | Tipo | Fatto quando | Stato |
+| --- | --- | --- | --- | --- |
+| R0 | Audit dei materiali, protocollo scientifico e requisiti di personalizzazione | D | Lacune, domande, criteri delle fonti e casi di accettazione documentati | fatto |
+| R1 | Verifica delle fonti e matrice delle evidenze per Q1–Q9 | D | Fonti identificate e valutate, popolazioni e limiti espliciti, lacune residue dichiarate | da fare |
+| R2 | Specifica di programmi, questionario, sostituzioni e metriche | D | Regole tracciabili, profili supportati definiti, revisione professionale pertinente e approvazione prima del codice | da fare |
+| R3 | Ricerca utenti e mercato iniziale | N | Interviste e alternative documentate, pubblico/problema e criteri della prova proposti | da fare |
+
+R1: accesso a PubMed, Europe PMC e WHO bloccato (403); domini richiesti nella
+bozza dell'ambiente, applicazione da verificare. Vedi `docs/08-revisione-scientifica.md`.
+R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
+I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
+
 ## Tappa 1: il motore, senza interfaccia
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
 | 1.1 | Tipi di dati per esercizi, scale, modelli, sedute e serie, e caricamento dei file di `data/` con convalida | N | I file si caricano e un file sbagliato dà un errore chiaro | da fare |
-| 1.2 | Ciclo di 5 settimane e numero di serie | N | Casi "scarico" superati | da fare |
-| 1.3 | Regole sul dolore | D | Casi `painRule` superati | da fare |
-| 1.4 | Consiglio sul peso | D | Casi `kgAdvice` superati, stesso risultato in kg | da fare |
+| 1.2 | Ciclo e numero di serie secondo la specifica approvata in R2 | N | Casi approvati superati; differenze dal ciclo storico di 5 settimane motivate | da fare |
+| 1.3 | Regole sul dolore | D | Casi approvati sul dolore superati; tracciabilità rispetto a `painRule` storico | da fare |
+| 1.4 | Consiglio sul peso | D | Casi approvati sui carichi superati; differenze da `kgAdvice` storico motivate | da fare |
 | 1.5 | Ripetizioni proposte e salita di livello | N | Casi `defVal` e `readyUp` superati | da fare |
 | 1.6 | Serie di avvicinamento e riposi, compreso il riposo reale nei superset | N | Test scritti dalle regole | da fare |
 | 1.7 | Settimana di rientro dopo una pausa | D | Regola approvata da Roberto e test scritti | da fare |
@@ -34,6 +52,7 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 | 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | da fare |
 | 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | da fare |
 | 2.6 | Controllo del dolore con legenda, e fastidio durante la serie | N | Le regole della tappa 1 reagiscono ai valori inseriti | da fare |
+| 2.7 | Sostituzione manuale oggi o nelle sedute future, con anteprima e annullamento | D | Alternative e limiti approvati in R2; serie svolte conservate e casi di sostituzione superati | da fare |
 
 ## Tappa 3: questionario e modelli
 
@@ -60,12 +79,13 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 | 5.2 | Livelli e punti neutri | N | Nessun titolo a tema | da fare |
 | 5.3 | Tutti i testi in italiano, tedesco e inglese | M | Nessun testo nel codice, nessuna parola tagliata in tedesco | da fare |
 | 5.4 | Controllo di accessibilità | N | Contrasto e aree toccabili rispettati, tema chiaro e scuro | da fare |
+| 5.5 | Grafici per esercizio/variante e riepiloghi con metriche definite | N | Cambi esercizio visibili, unità coerenti, nessun falso record o trasferimento di carico | da fare |
 
 ## Prova con le persone
 
 Prerequisiti obbligatori: ogni partecipante installa l’app sulla schermata Home; account e sincronizzazione della tappa 4 sono pronti e verificati prima della prova. Il compito 2.1 richiede esiti positivi su un iPhone e un Android reali; emulatori e prove desktop non lo chiudono.
 
-Qui lo sviluppo si ferma. 10-20 persone usano la versione web per 4-6 settimane. Si guarda quanti completano la prima seduta, quanti si allenano ancora dopo 4 settimane e quanti pagherebbero.
+Qui lo sviluppo si ferma. 10-20 persone usano la versione web per 4-6 settimane. Prima di iniziare si definiscono criteri di qualità, successo e arresto; nessuna promessa di «90% perfetto». Si guarda quanti completano la prima seduta, quanti si allenano ancora dopo 4 settimane e quanti pagherebbero.
 
 ## Dopo la prova, solo con esito positivo
 

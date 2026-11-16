@@ -1,5 +1,8 @@
 # Training app
 
+Per riprendere il lavoro con una nuova IA: leggere [CONTEXTO.md](CONTEXTO.md) e
+[AGENTS.md](AGENTS.md), poi solo i documenti indicati per il prossimo compito.
+
 Base React/Vite del compito 0.2. TypeScript rigoroso, Vitest ed ESLint.
 La schermata iniziale usa testi separati in italiano, tedesco e inglese;
 l'avvio è in italiano. Il nome del prodotto resta da scegliere.

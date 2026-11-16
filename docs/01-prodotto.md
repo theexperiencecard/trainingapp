@@ -2,6 +2,17 @@
 
 Stato: bozza del 16 novembre 2026. La ricerca di mercato (vedi `brief-ricerca.md`) può cambiare pubblico, nome, prezzi e questionario. Tutto ciò che è segnato come **bozza** va costruito in modo che si possa cambiare senza toccare il codice.
 
+## Priorità aggiornate (2026-11-16)
+
+1. Qualità scientifica verificabile, con programmi distinti per obiettivi e profili.
+2. Personalizzazione, sostituzione degli esercizi e lettura corretta dei progressi.
+
+La ricerca deve valutare disponibilità da 2 a 7 giorni, esperienza, capacità,
+attività, recupero e vincoli: i profili supportati al lancio saranno decisi in R2.
+Il perimetro 2–4 giorni sotto è la bozza precedente, non la copertura finale approvata.
+«90% perfetto» è un'ambizione da tradurre in criteri, non una garanzia di risultato.
+Le dosi e il ciclo del prototipo attendono revisione; fonti e requisiti nei documenti 08 e 09.
+
 ## 1. Per chi
 
 Principianti e persone che si allenano in palestra 2-4 volte a settimana, non soddisfatte dell'app fornita dalla palestra o di altre app.
@@ -21,7 +32,9 @@ Serve a una prova con 10-20 persone per 4-6 settimane. Deve contenere solo quest
 | Consiglio sul peso | Secondo `02-regole-allenamento.md` |
 | Ripetizioni in serbo | Chieste dopo ogni serie di forza, con un tocco |
 | Controllo del dolore | Prima della seduta e durante le serie, con le regole di `02-regole-allenamento.md` |
-| Cicli e scarico | 4 settimane di carico e 1 di scarico |
+| Cicli e scarico | Da approvare in R2; 4 settimane + 1 è la configurazione storica |
+| Sostituzioni | Cambio manuale oggi o nel programma, conseguenze esplicite, annullamento e storico conservato |
+| Metriche | Grafici per esercizio/variante; tonnellaggio con unità e limiti espliciti |
 | Storico | Tutte le settimane, serie per serie, con note |
 | Progressi | Livelli e punti neutri, vedi sezione 5 |
 | Tre lingue | Italiano, tedesco, inglese |
