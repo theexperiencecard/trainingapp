@@ -37,3 +37,7 @@ I vincoli approvati e lo stato di ogni compito sono nel
 [piano di lavoro](docs/05-piano-di-lavoro.md).
 Il compito 2.1 richiede prove su un iPhone e un Android reali; la prova con le
 persone richiede installazione sulla Home, account e sincronizzazione pronti.
+
+Il workflow dei controlli automatici e la procedura per verificarlo sono in
+[Controlli automatici](docs/06-controlli-automatici.md). Le indicazioni su modelli,
+prossime tappe e ricerca sono in [Prossimi passi](docs/07-prossimi-passi-e-ricerca.md).

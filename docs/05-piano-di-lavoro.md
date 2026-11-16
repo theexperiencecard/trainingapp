@@ -10,7 +10,7 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 | --- | --- | --- | --- | --- |
 | 0.1 | Proporre le tecnologie e la struttura delle cartelle, con le alternative | D | Roberto ha approvato e la scelta è in `DECISIONI.md` | fatto |
 | 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | fatto |
-| 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | da fare |
+| 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | in corso |
 
 ## Tappa 1: il motore, senza interfaccia
 
@@ -95,5 +95,24 @@ ESLint, traduzioni iniziali e un solo progetto npm con lockfile.
 
 Prova manuale: seguire i tre passi in `README.md`. I test sono eseguiti in Node;
 le richieste HTTP non sostituiscono una prova nel browser o su telefoni reali.
-Il compito 0.3 resta da fare. Home/PWA, salvataggio offline, timer, account e
+Il compito 0.3 è in corso, con esito descritto sotto. Home/PWA, salvataggio offline, timer, account e
 sincronizzazione restano nelle rispettive tappe; il compito 2.1 resta aperto.
+
+## Avanzamento del compito 0.3
+
+2026-11-16: workflow GitHub Actions preparato per push, pull request e avvio
+manuale. Procedura in `docs/06-controlli-automatici.md`.
+
+- YAML analizzato; eventi e sequenza installazione/check/build verificati.
+- Prova negativa locale: aspettativa di rendering volutamente sbagliata in un
+  file temporaneo; 3 casi falliti come previsto, uscita 1, build non eseguita.
+  File temporaneo rimosso e test originali conservati.
+- Ripristinata la base: `npm ci --no-fund`, `npm run check` (3 test, tipi e lint)
+  e `npm run build` superati, uscita 0.
+- Esecuzione su GitHub non effettuata: i commit sono locali; `main` remoto
+  è ancora al commit iniziale `cfa5d05`. Il punto resta in corso fino alla prova
+  remota verde/rossa/verde. Nessun invio o modifica alle impostazioni GitHub eseguiti.
+
+La verifica visiva del punto 0.2 è rinviata su indicazione dell'utente; non
+blocca questi controlli, ma resta distinta dai test automatici già superati.
+Prossimi compiti e ricerca consigliata: `docs/07-prossimi-passi-e-ricerca.md`.
