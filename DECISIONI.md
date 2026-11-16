@@ -28,3 +28,4 @@ Una riga per decisione, la più recente in fondo. Chi cambia una decisione aggiu
 | 2026-11-16 | R0/R1/R2 prima del motore; i test del prototipo documentano il comportamento storico, non la validità scientifica | Evitare di generalizzare un programma personale; nessuna soglia numerica cambiata ora | Presa |
 | 2026-11-16 | Riepilogo breve in CONTEXTO.md e modello esatto consigliato a fine risposta | Continuità tra agenti con lettura minima, richiesta dell'utente | Presa |
 | 2026-11-16 | Estendere R1 oltre forza/ipertrofia e usarla per costruire le schede base | Richiesta esplicita dell'utente; studiare obiettivi e capacità pertinenti | Presa; fonti originali ancora da verificare |
+| 2026-11-16 | Primo lotto R1: evidenze separate da proposte di scheda; testi valutati distinti da soli abstract nei registri | Accesso bibliografico ora funzionante e necessità di evitare dosi non giustificate | Ricerca parziale; prescrizioni da revisionare |

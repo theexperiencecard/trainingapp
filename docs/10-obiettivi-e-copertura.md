@@ -1,6 +1,6 @@
 # R1 — obiettivi estesi e copertura del catalogo
 
-2026-11-16. Analisi documentale completata; ricerca bibliografica ancora bloccata.
+2026-11-16. Analisi documentale iniziale; per la successiva ricerca accessibile vedere il documento 12.
 Le priorità di lancio sotto sono proposte di prodotto, non risultati di mercato.
 Le associazioni obiettivo/componenti sono ipotesi da verificare prima di prescrivere.
 
@@ -79,7 +79,7 @@ SHA-256 di `data/esercizi.json`:
 I nomi qui riportati identificano contenuti del catalogo; non ne certificano
 l'appropriatezza per un principiante o un determinato profilo.
 
-## Accesso e stato delle evidenze
+## Accesso e stato delle evidenze prima della pubblicazione ambiente
 
 Ritentate il 2026-11-16: ricerca Europe PMC su resistance training/hypertrophy,
 ricerca PubMed su exercise/systematic review e pagina WHO sull'attività fisica.

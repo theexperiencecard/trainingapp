@@ -22,16 +22,17 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo incarico: R1 — GPT-6 Astra
-- R1 in corso: leggi 08 (metodo), 10 (Q10–Q15 e audit catalogo), 11 (famiglie proposte).
-- Valuta pubblicazioni originali e applicabilità; separa evidenze, consenso e scelte pratiche.
-- Ultima verifica 2026-11-16: PubMed/Europe PMC/WHO ancora 403; nessuna fonte originale letta.
-- Diagnosi confermata: bozza revisione 3 contiene i tre domini; runtime corrente ha allowed_hosts vuoto.
-- Serve salvare/applicare la bozza e pubblicare l’ambiente; ritentare dopo aggiornamento effettivo.
-- Audit: 48 voci incluse 7 check e 2 cardio specifiche; un solo modello, 23 test storici.
-- Cinque famiglie e moduli proposti in 11; nessuna scheda completa o prescrizione validata.
+## Prossimo incarico: completare R1 — GPT-6 Astra
+- Nuovo ambiente pubblicato dall'utente; PubMed ed Europe PMC ora HTTP 200.
+- WHO diretto 403, ma articolo delle linee guida recuperato tramite Europe PMC: nessun blocco generale.
+- Leggi `docs/12-evidenze-primo-lotto.md`: 11 fonti, 7 testi con sezioni valutate e 4 solo abstract.
+- Registri compatti in `docs/ricerca/`: query, DOI/PMID, stato, URL e hash XML. Riusa prima di cercare.
+- `docs/13-dalle-evidenze-alle-schede.md`: conseguenze per F01–F05; nessuna scheda prescritta.
+- Restano: testi completi S05/S09/S10/S11, aggiornamenti, finanziamenti, screening/dolore,
+  progressione e dosi operative, sostituzioni/metriche, aderenza e resistenza locale.
+- Il lotto è una ricerca mirata, non revisione sistematica esaustiva; R1 non è chiuso.
 - Poi R2: specifica delle schede/revisione/approvazione, prima del motore. R3: ricerca utenti parallela.
-- Per sostituzioni e metriche leggi `docs/09-personalizzazione-e-metriche.md` (proposte R2).
+- Per metodo/catalogo/famiglie vedi 08/10/11; per sostituzioni e grafici vedi 09.
 
 ## Vincoli da conservare
 - Prima della prova: installazione sulla Home per ogni partecipante; account e sync pronti.
@@ -48,5 +49,5 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Pacchetto originale: allegato `pacchetto-codex.zip`, non versionato; contiene riferimenti personali.
   Audit autosufficiente in 08. Cataloghi, prototipo e specifiche storiche non sono ancora nel checkout.
   Prima di importarli, controllare e rimuovere dati personali; se l'allegato manca, richiederlo.
-- Ambiente: istruzioni install/start già salvate in bozza; pubblicazione non verificata.
+- Ambiente pubblicato dall’utente; nuovo runtime verificato. Nessuna ripubblicazione dell’agente.
 - Controlla sempre `git status` e `git log`: nessuna esecuzione o pubblicazione è implicita nei documenti.

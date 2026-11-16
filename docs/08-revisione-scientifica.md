@@ -1,7 +1,7 @@
 # Revisione scientifica: protocollo e audit iniziale (R0)
 
 Data: 2026-11-16. R0 completato: audit documentale e protocollo.
-R1 in corso: audit esteso, verifica indipendente delle pubblicazioni bloccata. Nessuna nuova dose,
+R1 in corso: primo lotto di pubblicazioni valutato nel documento 12; accesso ripristinato. Nessuna nuova dose,
 soglia sul dolore o regola di progressione è approvata da questo documento.
 
 ## Obiettivo e significato di science based
@@ -97,7 +97,7 @@ disponibile non ne giustifica ancora l'uso generale. I test estratti dal prototi
 sono test di regressione, non prove scientifiche. Eventuali cambiamenti richiedono
 decisione versionata, motivazione e aggiornamento coerente dei test.
 
-## Accesso alle fonti: esito reale
+## Accesso alle fonti: esito storico di R0 (prima della pubblicazione ambiente)
 
 Il 2026-11-16 tre richieste HTTPS a PubMed, Europe PMC e WHO hanno restituito
 `Tunnel connection failed: 403 Forbidden`. Nessun abstract o testo originale
@@ -121,3 +121,8 @@ R1 resta aperto. Non citare questo protocollo come revisione scientifica conclus
   non le affermazioni scientifiche; nessun nuovo test clinico è stato eseguito.
 - Revisione manuale: (1) leggere Q1–Q9; (2) controllare lacune E01–E10;
   (3) confrontare i casi di personalizzazione nel documento 09 con le priorità.
+
+Aggiornamento successivo: nel nuovo ambiente PubMed ed Europe PMC rispondono 200.
+Il sito WHO diretto resta 403; la pubblicazione delle linee guida è stata letta
+tramite Europe PMC. Non occorre riapplicare la precedente bozza di rete.
+Fonti e limiti del primo lotto sono nel documento 12; R1 resta in corso.

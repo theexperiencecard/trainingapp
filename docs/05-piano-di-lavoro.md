@@ -25,8 +25,9 @@ con sostituzioni e grafici corretti. Nessuna regola numerica è cambiata da ques
 | R2 | Specifica di programmi, questionario, sostituzioni e metriche | D | Regole tracciabili, profili supportati definiti, revisione professionale pertinente e approvazione prima del codice | da fare |
 | R3 | Ricerca utenti e mercato iniziale | N | Interviste e alternative documentate, pubblico/problema e criteri della prova proposti | da fare |
 
-R1: accesso a PubMed, Europe PMC e WHO bloccato (403); domini richiesti nella
-bozza dell'ambiente, applicazione da verificare. Vedi `docs/08-revisione-scientifica.md`.
+R1: PubMed ed Europe PMC ora accessibili nel nuovo ambiente. Primo lotto di
+11 fonti nel documento 12; 7 testi con sezioni valutate e 4 solo abstract.
+R1 resta aperto per le lacune elencate; metodo nel documento 08.
 R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
 I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
 
@@ -151,3 +152,18 @@ Il lavoro bibliografico e R2 restano aperti; non implementare dosi inventate.
 
 Verifica della sessione: `npm run check` superato (3 test, tipi, lint) e
 `npm run build` superato, entrambi uscita 0. Validano solo la base software.
+
+## R1: primo lotto dopo la pubblicazione dell'ambiente
+
+2026-11-16: PubMed/Europe PMC accessibili; WHO diretto 403, linee guida lette
+tramite pubblicazione scientifica. Sette testi integrali recuperati e sezioni
+pertinenti valutate; quattro fonti limitate all'abstract. Esiti in `docs/12-evidenze-primo-lotto.md`,
+conseguenze per le schede in `docs/13-dalle-evidenze-alle-schede.md` e registri in `docs/ricerca/`.
+Ricerca mirata, non screening esaustivo. Dosi finali, sicurezza e schede complete
+non approvate; lacune R1 dichiarate nel documento 12. Nessuna regola del motore modificata.
+Revisione manuale: verificare stato delle fonti, confrontare le conseguenze per
+le famiglie e controllare le lacune prima di approvare prescrizioni.
+
+Controlli della sessione: registro di 11 fonti con identificativi univoci e 7 hash
+XML verificato; `npm run check` (3 test, tipi, lint) e `npm run build` superati,
+uscita 0. I controlli software non validano clinicamente le prescrizioni.
