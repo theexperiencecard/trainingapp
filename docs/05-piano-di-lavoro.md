@@ -9,7 +9,7 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
 | 0.1 | Proporre le tecnologie e la struttura delle cartelle, con le alternative | D | Roberto ha approvato e la scelta è in `DECISIONI.md` | fatto |
-| 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | in corso |
+| 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | fatto |
 | 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | da fare |
 
 ## Tappa 1: il motore, senza interfaccia
@@ -80,4 +80,20 @@ Qui lo sviluppo si ferma. 10-20 persone usano la versione web per 4-6 settimane.
 
 2026-11-16: proposta approvata e registrata in `DECISIONI.md`, insieme ai tre
 vincoli su installazione/account/sincronizzazione, timer e dispositivi reali.
-Compito 0.1 chiuso; compito 0.2 in corso.
+Compito 0.1 chiuso; compito 0.2 completato, come descritto sotto.
+
+## Esito del compito 0.2
+
+2026-11-16: creato il progetto React/Vite con TypeScript rigoroso, Vitest,
+ESLint, traduzioni iniziali e un solo progetto npm con lockfile.
+
+- `npm ci --no-fund`: riuscito; dipendenze reinstallate dal lockfile.
+- `npm run check`: codice di uscita 0; 3 test di rendering React superati,
+  controllo dei tipi superato, lint superato senza avvisi.
+- `npm run build`: codice di uscita 0; build Vite generata in `dist/`.
+- Avvio e preview: HTTP 200 per HTML, moduli di sviluppo e asset compilati.
+
+Prova manuale: seguire i tre passi in `README.md`. I test sono eseguiti in Node;
+le richieste HTTP non sostituiscono una prova nel browser o su telefoni reali.
+Il compito 0.3 resta da fare. Home/PWA, salvataggio offline, timer, account e
+sincronizzazione restano nelle rispettive tappe; il compito 2.1 resta aperto.

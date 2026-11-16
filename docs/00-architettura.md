@@ -69,8 +69,8 @@ trainingapp/
 
 Le cartelle sono una destinazione prevista, non moduli da creare tutti subito.
 I test unitari possono stare accanto al modulo come `nome.test.ts`.
-Il pacchetto allegato resta la fonte dei materiali: questo compito importa
-solo piano e registro delle decisioni, oltre alla presente proposta.
+Il pacchetto allegato resta la fonte dei materiali. Sono presenti istruzioni
+di lavoro, prodotto, piano, registro delle decisioni e questa architettura.
 Il prototipo e i dati vanno controllati prima dell'importazione: il README del
 pacchetto segnala contenuti personali, che non devono diventare dati di esempio.
 
@@ -107,22 +107,18 @@ abilitare Supabase Realtime. Hosting europeo e requisiti di privacy andranno
 verificati prima di configurare il servizio. Il coach arriverà dopo la validazione
 e chiamerà il modello dal server, come previsto dai documenti di prodotto.
 
-## Strumenti e prossimo compito
+## Strumenti del compito 0.2
 
-Il compito 0.2 introdurrà React, React DOM, TypeScript, Vite con il plugin React,
-Vitest, ESLint e i pacchetti di tipi e lint necessari alla configurazione scelta.
-Le versioni stabili compatibili saranno verificate al momento dell'installazione
-e registrate nel lockfile; Node verrà fissato a una versione LTS compatibile.
-Nell'ambiente attuale sono disponibili Node 24.22.1 e npm 11.9.0.
-Questo inventario non equivale a una prova di compatibilità del futuro progetto.
-
-Comandi previsti per il compito 0.2, ancora da implementare:
+Il compito 0.2 è completato. Le versioni installate e i comandi verificati
+sono documentati in `README.md` e nel piano di lavoro. Node 24.22.1 è fissato
+in `.nvmrc`; le dipendenze sono fissate in `package.json` e `package-lock.json`.
+TypeScript 6.0.3 rispetta l'intervallo supportato dagli strumenti di lint.
 
 - `npm ci`: installazione ripetibile dal lockfile.
 - `npm run dev`: avvio dello sviluppo.
-- `npm run check`: test senza modalità interattiva, tipi e lint, con errore
-  se uno dei controlli fallisce; deve eseguire almeno un test significativo.
-- `npm run build`: verifica della compilazione per la distribuzione.
+- `npm run check`: test non interattivi, tipi e lint; si ferma al primo errore
+  e fallisce anche se non trova test.
+- `npm run build`: controllo dei tipi e compilazione per la distribuzione.
 
 La configurazione iniziale deve poter essere verificata senza account esterni.
 I casi di allenamento del pacchetto entreranno nei test prima delle rispettive
@@ -142,8 +138,9 @@ riferimenti a versioni stabili già selezionate.
 - [Supabase: regole di accesso per riga](https://github.com/supabase/supabase/blob/master/apps/docs/content/guides/database/postgres/row-level-security.mdx)
 - [Vitest: guida iniziale](https://github.com/vitest-dev/vitest/blob/main/docs/guide/index.md)
 
-In questa fase non esistono codice applicativo o comandi di test, tipi e lint:
-nessuno di questi controlli è dichiarato eseguito o superato.
+Il compito 0.2 ha aggiunto la base eseguibile: 3 test di rendering, tipi, lint
+e build superati. La verifica della proposta architetturale non certifica
+le funzioni offline o la sincronizzazione, ancora da implementare.
 
 ## Revisione manuale in tre passi
 
