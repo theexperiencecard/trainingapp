@@ -25,6 +25,11 @@ Leggi il punto corrente del piano e le decisioni pertinenti prima di modificarli
 I file del pacchetto non ancora importati possono mancare: non inventarne il contenuto.
 Mantieni `CONTEXTO.md` entro circa 60 righe, sostituendo lo stato superato invece di
 accumulare resoconti. Non leggere interi archivi, lockfile o log senza necessità.
+Per efficienza: riusa documenti e risultati già validi; cerca prima metadati e abstract,
+poi valuta i testi selezionati in dettaglio. Estrai solo le sezioni pertinenti, includendo
+metodi, limiti e risultati contrari; conserva query, link e sintesi per evitare riletture.
+Non ripetere richieste bloccate senza un cambiamento di stato; esaurita la diagnosi,
+comunica il prerequisito concreto. L'efficienza non riduce la qualità della verifica.
 
 ## 3. Priorità, in quest'ordine
 
