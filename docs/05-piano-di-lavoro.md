@@ -167,3 +167,12 @@ le famiglie e controllare le lacune prima di approvare prescrizioni.
 Controlli della sessione: registro di 11 fonti con identificativi univoci e 7 hash
 XML verificato; `npm run check` (3 test, tipi, lint) e `npm run build` superati,
 uscita 0. I controlli software non validano clinicamente le prescrizioni.
+
+## Condivisione del lavoro
+
+2026-11-16: utente autorizza commit e push dell'intero lavoro del progetto su
+`theexperiencecard/trainingapp`, ramo `main`, per collaborazione con un'altra IA.
+Il riferimento per la ripresa è `CONTEXTO.md`; i resoconti precedenti sui commit
+solo locali descrivono lo stato storico. L'esito del push va verificato confrontando
+HEAD locale e `refs/heads/main` remoto. Il punto 0.3 richiede ancora verifica delle
+esecuzioni GitHub; l'invio del workflow non certifica che i job siano passati.

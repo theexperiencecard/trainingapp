@@ -18,7 +18,8 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Node 24.22.1 (`.nvmrc`), npm 11; `npm ci`, `npm run check`, `npm run build`.
 - Baseline: 3 test di rendering in Node. Nessun motore, offline, account o timer implementato.
 - 0.3: workflow scritto e prova negativa locale riuscita; esecuzione GitHub ancora da fare.
-- Commit finora locali: ultimo controllo remoto mostrava solo README iniziale (`cfa5d05`).
+- Repository condiviso: github.com/theexperiencecard/trainingapp, ramo `main`.
+- Push autorizzato dall’utente; per riprendere verificare HEAD remoto e stato locale.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 

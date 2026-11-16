@@ -1,5 +1,7 @@
 # Training app
 
+Repository di riferimento: https://github.com/theexperiencecard/trainingapp, ramo `main`.
+
 Per riprendere il lavoro con una nuova IA: leggere [CONTEXTO.md](CONTEXTO.md) e
 [AGENTS.md](AGENTS.md), poi solo i documenti indicati per il prossimo compito.
 
