@@ -81,6 +81,10 @@ Nomi a novembre 2026, da verificare perché cambiano spesso: più capace GPT-6 A
 
 1. **Un compito alla volta,** preso da `docs/05-piano-di-lavoro.md`. Niente funzioni non richieste.
 2. **Prima un piano breve:** file che toccherai, come lo proverai. Per i compiti delicati aspetta l'approvazione del piano.
+   Dentro un piano già autorizzato prosegui per blocchi interni senza chiedere nuovi
+   «via»: l'utente preferisce revisionare una consegna compiuta. Commit e riepilogo
+   sono punti di ripresa, non richieste di approvazione. L'assenza di subagenti non
+   è un impedimento; resta necessario rispettare i limiti della sezione 4.
 3. **Modifiche piccole.** Se servono più di 300 righe nuove, dividi il compito.
 4. **Test prima del codice** per la logica di allenamento. Conserva i casi storici come regressioni; una modifica scientifica approvata richiede nuovi casi e motivazione delle attese cambiate.
 5. **Esegui davvero** test, controllo dei tipi e lint prima di dire che hai finito. Riporta i comandi e l'esito. Se non hai potuto eseguire qualcosa, dillo.

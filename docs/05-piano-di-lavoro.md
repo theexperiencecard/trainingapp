@@ -31,6 +31,8 @@ Aggiornamento 2026-11-17 nel documento 15: rapporto esterno revisionato, 14 font
 totali (8 testi con sezioni valutate, 5 abstract, 1 soli metadati).
 Seguito nello stesso giorno: addendum integrato nei documenti 16/17; 27 articoli
 (11 testi con sezioni valutate, 15 abstract, 1 metadati) e 2 documenti CSEP letti.
+Blocco successivo Q7/Q6/Q8: dossier 18/19 pronti per revisione; 5 documenti
+istituzionali valutati complessivamente. Prossimo: proposta perimetro/lacune R1.
 R1 resta aperto per le lacune elencate; metodo nel documento 08.
 R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
 I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
@@ -217,3 +219,17 @@ dello studio RIR; mantenuti distinti risultati discordanti sulle fratture.
 Prossimo punto: Q7 screening/dolore, poi Q6/Q8. R1 resta in corso; nessuna nuova
 prescrizione approvata. Per efficienza verifiche documentali, senza ripetere suite
 applicativa invariata: nessun codice, dipendenza o configurazione modificati.
+
+## R1: dossier pronti per la revisione delle scelte
+
+2026-11-17: completato il blocco documentale Q7 (18) e preparato Q6/Q8 (19).
+Riutilizzate le evidenze; aggiunte tre pagine istituzionali NICE/NHS con versioni,
+limiti e hash. Percorsi, precedenze e casi candidati distinti da regole approvate.
+Q7 non è validato clinicamente; nessun contatto esterno o servizio attivato.
+Il prossimo blocco presenta perimetro F01–F05 e lacune da risolvere/accettare/rinviare,
+per una decisione complessiva prima di R2. R1 resta in corso.
+Modalità: blocchi interni con commit/push e contesto aggiornato, revisione utente
+su consegne compiute; nessuna attesa di «via» per passi già autorizzati.
+Verifiche documentali superate: `git diff --check`, link, 3 hash HTML, registro
+istituzionale, ID di proposte/casi e CONTEXTO entro 60 righe. Suite applicativa
+non rieseguita: nessun codice/configurazione modificato; i casi sono ancora proposte.

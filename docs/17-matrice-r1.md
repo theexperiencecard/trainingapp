@@ -26,6 +26,10 @@ Schede di lettura nei documenti 12/15/16; stati nei registri di `ricerca/`.
 
 ## Ordine proposto per completare R1
 
+Dossier documentali Q7 e Q6/Q8 preparati nei documenti [18](18-screening-dolore-revisione.md)
+e [19](19-progressione-sostituzioni-revisione.md). Non costituiscono approvazione clinica
+o normativa: il prossimo risultato è la proposta complessiva di perimetro/lacune.
+
 1. **Q7:** chiudere il dossier documentale per screening/dolore e preparare quesiti
    precisi per un professionista. Nessuna singola scala può sostituire il percorso.
 2. **Q6/Q8:** distinguere risultati della letteratura da scelte pratiche; elencare
