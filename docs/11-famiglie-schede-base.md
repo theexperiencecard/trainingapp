@@ -4,6 +4,8 @@
 questo documento è pronta per essere prescritta: mancano verifica delle fonti,
 dosaggio, selezione completa degli esercizi e revisione professionale pertinente.
 Non è stato creato o modificato uno schema dati dell'app.
+Seguito: proposta complessiva aggiornata nel [documento 20](20-perimetro-famiglie-e-passaggio-r2.md).
+Le indicazioni di ricerca non ancora svolta qui sotto descrivono lo stato iniziale.
 
 ## Struttura della libreria
 

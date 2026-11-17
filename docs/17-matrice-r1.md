@@ -29,6 +29,8 @@ Schede di lettura nei documenti 12/15/16; stati nei registri di `ricerca/`.
 Dossier documentali Q7 e Q6/Q8 preparati nei documenti [18](18-screening-dolore-revisione.md)
 e [19](19-progressione-sostituzioni-revisione.md). Non costituiscono approvazione clinica
 o normativa: il prossimo risultato è la proposta complessiva di perimetro/lacune.
+Proposta ora consegnata nel [documento 20](20-perimetro-famiglie-e-passaggio-r2.md),
+con decisione sul perimetro ancora da confermare.
 
 1. **Q7:** chiudere il dossier documentale per screening/dolore e preparare quesiti
    precisi per un professionista. Nessuna singola scala può sostituire il percorso.

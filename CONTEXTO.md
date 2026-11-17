@@ -23,17 +23,17 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo incarico: perimetro e chiusura motivata R1 — Codex con GPT-6 Astra
+## Prossimo: decisione sul perimetro, poi R2 — Codex con GPT-6 Astra
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
-- Addendum integrato: leggi `docs/16-audit-addendum-r1.md` e `docs/17-matrice-r1.md`.
+- Leggi prima `docs/20-perimetro-famiglie-e-passaggio-r2.md`: proposta completa pronta per il fondatore.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 27 articoli (11 testi/sezioni, 15 abstract, 1 metadati) + 5 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
 - `docs/13-dalle-evidenze-alle-schede.md`: conseguenze per F01–F05; nessuna scheda prescritta.
 - Q1–Q15 rimappate alle definizioni ufficiali 08/10; l'addendum esterno aveva associazioni ipotetiche.
 - Q6/Q8: dossier 19 con precedenze, sostituzioni e casi candidati; nessun algoritmo approvato.
-- Prossimo: proposta unica F01–F05/perimetro e lacune da risolvere, accettare o rinviare; riusa 17/18/19.
-- Il lotto è una ricerca mirata, non revisione sistematica esaustiva; R1 non è chiuso.
+- Proposta: F01–F05 per adulti autonomi; nessuna esclusione automatica per età/BMI; specialistici rinviati.
+- Attesa conferma perimetro/L01–L10: poi chiudere R1 documentale e redigere R2, senza approvare dosi/code.
 - Poi R2: specifica delle schede/revisione/approvazione, prima del motore. R3: ricerca utenti parallela.
 - Per metodo/catalogo/famiglie vedi 08/10/11; per sostituzioni e grafici vedi 09.
 

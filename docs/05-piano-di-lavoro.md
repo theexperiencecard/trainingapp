@@ -33,7 +33,8 @@ Seguito nello stesso giorno: addendum integrato nei documenti 16/17; 27 articoli
 (11 testi con sezioni valutate, 15 abstract, 1 metadati) e 2 documenti CSEP letti.
 Blocco successivo Q7/Q6/Q8: dossier 18/19 pronti per revisione; 5 documenti
 istituzionali valutati complessivamente. Prossimo: proposta perimetro/lacune R1.
-R1 resta aperto per le lacune elencate; metodo nel documento 08.
+Proposta complessiva ora pronta nel documento 20: R1 attende la decisione sul
+perimetro e sul trattamento delle lacune; metodo nel documento 08.
 R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
 I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
 
@@ -233,3 +234,14 @@ su consegne compiute; nessuna attesa di «via» per passi già autorizzati.
 Verifiche documentali superate: `git diff --check`, link, 3 hash HTML, registro
 istituzionale, ID di proposte/casi e CONTEXTO entro 60 righe. Suite applicativa
 non rieseguita: nessun codice/configurazione modificato; i casi sono ancora proposte.
+
+## R1: consegna complessiva pronta per la decisione
+
+2026-11-17: documento 20 con pubblico iniziale proposto, tutte le famiglie F01–F05,
+moduli inclusi/rinviati, lacune L01–L10 e contenuto atteso delle specifiche R2.
+Richiesta una sola decisione di prodotto sul pacchetto; nessuna nuova ricerca o
+prescrizione. R1 resta in corso fino alla conferma; R2 non è ancora approvata.
+La conferma del perimetro consentirà di chiudere il dossier R1 e redigere R2,
+ma non approverà dosi, percorsi clinici, schema dati o lancio.
+Controlli documentali superati: diff, link/fonti, copertura F01–F05/L01–L10,
+stati coerenti e CONTEXTO entro 60 righe. Suite applicativa invariata non ripetuta.
