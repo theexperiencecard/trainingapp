@@ -8,7 +8,7 @@ Stato: bozza del 16 novembre 2026. La ricerca di mercato (vedi `brief-ricerca.md
 2. Personalizzazione, sostituzione degli esercizi e lettura corretta dei progressi.
 
 La ricerca deve valutare disponibilità da 2 a 7 giorni, esperienza, capacità,
-attività, recupero e vincoli: i profili supportati al lancio saranno decisi in R2.
+attività, recupero e vincoli: perimetro confermato nel documento 20, dettagli operativi in R2.
 Il perimetro 2–4 giorni sotto è la bozza precedente, non la copertura finale approvata.
 «90% perfetto» è un'ambizione da tradurre in criteri, non una garanzia di risultato.
 Le dosi e il ciclo del prototipo attendono revisione; fonti e requisiti nei documenti 08 e 09.
@@ -20,7 +20,11 @@ La presenza di un obiettivo tra le proposte non significa che sia già supportat
 
 ## 1. Per chi
 
-Principianti e persone che si allenano in palestra 2-4 volte a settimana, non soddisfatte dell'app fornita dalla palestra o di altre app.
+Adulti autonomi, principianti, persone che riprendono e praticanti ricreativi;
+casa/palestra nei limiti del catalogo revisionato. Cinque famiglie F01–F05 e finestre
+disponibili da 2 a 7 giorni, senza assegnare automaticamente altrettante sedute.
+Nessuna esclusione automatica per età adulta o BMI; percorsi specialistici rinviati
+come nel documento 20. Non è ancora una promessa di copertura implementata.
 
 ## 2. Cosa promette
 
@@ -102,7 +106,7 @@ Cosa il prototipo fa bene e va mantenuto: valori precompilati, un tocco per regi
 ## 7. Decisioni ancora aperte
 
 - Nome e marchio. "Quota" è provvisorio e va sostituito: non usarlo nei testi per l'utente.
-- Pubblico di lancio più ristretto, oppure no.
+- Copertura effettiva di esercizi, attrezzatura e paesi entro il perimetro confermato.
 - Prezzi e piani.
 - Come mostrare gli esercizi: illustrazioni animate prodotte in casa. Fino ad allora testo e passi scritti.
 - Chi rivede schede e regole sul dolore dal punto di vista professionale.

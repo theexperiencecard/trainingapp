@@ -1,7 +1,8 @@
-# Proposta complessiva: perimetro F01–F05 e passaggio da R1 a R2
+# Perimetro F01–F05 e passaggio da R1 a R2
 
-2026-11-17. Consegna pronta per la decisione di prodotto. **Proposta da confermare**:
-non approva prescrizioni, schema, servizi, pubblicazione o sperimentazione clinica.
+2026-11-17. **Perimetro e passaggio a R2 confermati** dal successivo «Comunque continua»
+dell'utente, interpretazione comunicata prima di procedere. La conferma non approva
+prescrizioni, schema, servizi, pubblicazione o sperimentazione clinica.
 Riusa [matrice 17](17-matrice-r1.md), [dossier Q7](18-screening-dolore-revisione.md)
 e [dossier Q6/Q8](19-progressione-sostituzioni-revisione.md). Nessuna nuova ricerca.
 
@@ -69,8 +70,8 @@ dimensioni di adattamento. È una sequenza proposta, non una rinuncia a quegli o
 
 ## Lacune: trattamenti diversi, tutti espliciti
 
-«Accettabile come limite» qui è una raccomandazione da confermare, non accettazione
-già ottenuta. Nessuna lacuna clinica è risolta dal semplice cambio di etichetta.
+Il trattamento L01–L10 è confermato come piano di lavoro; le azioni da completare
+restano vincoli. Nessuna lacuna clinica è risolta dal semplice cambio di etichetta.
 
 | ID | Lacuna | Trattamento proposto e condizione di avanzamento |
 | --- | --- | --- |
@@ -114,17 +115,16 @@ Gli esiti devono poter essere spiegati senza diagnosticare o usare il BMI come c
 | Fonti identificate e valutate con limiti di accesso | 27 articoli, 5 documenti istituzionali, registri/query/hash e schede 12/15/16/18 | Dossier mirato pronto; non revisione sistematica esaustiva |
 | Popolazioni, risultati e limiti espliciti | Matrice Q1–Q15 e dossier 18/19; distinzione fra studi supervisionati e uso autonomo | Pronto come base per specifiche, non validazione dell'app |
 | Lacune residue dichiarate | L01–L10, dipendenze e momenti in cui risolverle | Pronto; trattamenti proposti da confermare |
-| Decisione complessiva sul perimetro | Cinque famiglie, adulti autonomi, moduli e percorsi rinviati descritti sopra | In attesa del fondatore: scelta di prodotto, non dettaglio tecnico |
+| Decisione complessiva sul perimetro | Cinque famiglie, adulti autonomi, moduli e percorsi rinviati descritti sopra | Confermata; R1 documentale chiusa, R2 avviata |
 
-**Raccomandazione:** approvare questo perimetro di lavoro e la distinzione L01–L10,
-chiudere R1 come dossier di ricerca mirata e avviare la redazione R2. Non equivale
+**Decisione assunta:** confermati il perimetro di lavoro e la distinzione L01–L10,
+chiusa R1 come dossier di ricerca mirata e avviata la redazione R2. Non equivale
 ad approvare i numeri, il percorso clinico, lo schema o il lancio. Se il perimetro
 cambia, riaprire soltanto le domande scientifiche pertinenti, non rifare tutto.
 
-La conferma è richiesta perché il pubblico di lancio è una scelta ancora aperta
-nel [documento prodotto](01-prodotto.md), sezione 7, e questa proposta rinvia alcuni
-percorsi rispetto all'ambizione generale. Non è una richiesta di «via» per routine.
-R1 rimane `in corso` fino alla decisione; le altre attività non dipendenti restano possibili.
+La conferma ha risolto la scelta del pubblico iniziale nel [documento prodotto](01-prodotto.md).
+R1 è `fatto` come dossier mirato, non validazione clinica o ricerca esaustiva.
+Le lacune operative proseguono in R2: prime bozze nei documenti 21/22.
 
 ## Verifica della consegna
 

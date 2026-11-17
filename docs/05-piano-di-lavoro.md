@@ -21,8 +21,8 @@ con sostituzioni e grafici corretti. Nessuna regola numerica è cambiata da ques
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
 | R0 | Audit dei materiali, protocollo scientifico e requisiti di personalizzazione | D | Lacune, domande, criteri delle fonti e casi di accettazione documentati | fatto |
-| R1 | Verifica delle fonti e matrice delle evidenze per Q1–Q15, anche oltre forza/ipertrofia | D | Fonti identificate e valutate, popolazioni e limiti espliciti, lacune residue dichiarate | in corso |
-| R2 | Specifica di programmi, questionario, sostituzioni e metriche | D | Regole tracciabili, profili supportati definiti, revisione professionale pertinente e approvazione prima del codice | da fare |
+| R1 | Verifica delle fonti e matrice delle evidenze per Q1–Q15, anche oltre forza/ipertrofia | D | Fonti identificate e valutate, popolazioni e limiti espliciti, lacune residue dichiarate | fatto |
+| R2 | Specifica di programmi, questionario, sostituzioni e metriche | D | Regole tracciabili, profili supportati definiti, revisione professionale pertinente e approvazione prima del codice | in corso |
 | R3 | Ricerca utenti e mercato iniziale | N | Interviste e alternative documentate, pubblico/problema e criteri della prova proposti | da fare |
 
 R1: PubMed ed Europe PMC ora accessibili nel nuovo ambiente. Primo lotto di
@@ -33,8 +33,8 @@ Seguito nello stesso giorno: addendum integrato nei documenti 16/17; 27 articoli
 (11 testi con sezioni valutate, 15 abstract, 1 metadati) e 2 documenti CSEP letti.
 Blocco successivo Q7/Q6/Q8: dossier 18/19 pronti per revisione; 5 documenti
 istituzionali valutati complessivamente. Prossimo: proposta perimetro/lacune R1.
-Proposta complessiva ora pronta nel documento 20: R1 attende la decisione sul
-perimetro e sul trattamento delle lacune; metodo nel documento 08.
+Perimetro/trattamento lacune del documento 20 confermati dal successivo «continua»:
+R1 chiusa come dossier mirato; R2 avviata nei documenti 21/22. Nessuna dose approvata.
 R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
 I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
 
@@ -245,3 +245,18 @@ La conferma del perimetro consentirà di chiudere il dossier R1 e redigere R2,
 ma non approverà dosi, percorsi clinici, schema dati o lancio.
 Controlli documentali superati: diff, link/fonti, copertura F01–F05/L01–L10,
 stati coerenti e CONTEXTO entro 60 righe. Suite applicativa invariata non ripetuta.
+
+## R2: prima bozza concreta
+
+2026-11-17: il «Comunque continua» dopo la proposta conferma il perimetro e il
+passaggio a R2; interpretazione esplicitata all'utente. R1 documentale chiusa,
+lacune L01–L10 conservate. Documenti 21/22: dosi candidate F01–F05, base a due
+esposizioni muscolari, questionario, precedenze di progressione e 13 casi candidati.
+Mancano soprattutto catalogo/varianti, frequenze superiori, dose aerobica iniziale,
+taratura e regole di incremento/rientro/scarico. R2 non chiusa; nessun motore scritto.
+Percorso restante: completare/revisionare R2 → motore con test → app/offline/account/sync
+→ prove reali e pilot 4–6 settimane. Non è una previsione di data di consegna.
+Verifiche superate: diff, link/fonti, identificativi univoci (5 dosi, 9 domande,
+7 regole, 13 casi), aritmetica durata, stati R1/R2 e CONTEXTO entro 60 righe.
+`npm run check`/`build` non rieseguiti: sola documentazione. I casi non sono ancora
+test eseguibili e i controlli non validano le prescrizioni.

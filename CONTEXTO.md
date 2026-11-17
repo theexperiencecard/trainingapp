@@ -7,7 +7,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Prima qualità scientifica per obiettivo/profilo; poi personalizzazione e sostituzioni.
 - Ricerca estesa oltre forza/ipertrofia: generale, aerobico, mobilità, equilibrio e resistenza.
 - Forza e ipertrofia richiedono scelte motivate. Valutare disponibilità 2–7 giorni,
-  esperienza, capacità, recupero e vincoli; perimetro del lancio ancora da decidere.
+  esperienza, capacità, recupero e vincoli; perimetro del documento 20 confermato.
 - Il questionario è un punto di partenza da tarare; nessuna promessa «90% perfetto».
 - Sostituzione manuale nella prima versione; preservare storico e serie svolte.
 - Grafici per esercizio/variante; nessuna equivalenza automatica tra kg di attrezzi diversi.
@@ -23,18 +23,19 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo: decisione sul perimetro, poi R2 — Codex con GPT-6 Astra
+## Prossimo: completare specifiche R2 — Codex con GPT-6 Astra
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
-- Leggi prima `docs/20-perimetro-famiglie-e-passaggio-r2.md`: proposta completa pronta per il fondatore.
+- R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
+- Leggi prima `docs/21-schede-candidate-r2.md` e `docs/22-questionario-progressione-casi-r2.md`.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 27 articoli (11 testi/sezioni, 15 abstract, 1 metadati) + 5 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
-- `docs/13-dalle-evidenze-alle-schede.md`: conseguenze per F01–F05; nessuna scheda prescritta.
+- Bozza R2 0.1: dosi candidate, base a due esposizioni muscolari e 13 casi; nessun numero approvato.
 - Q1–Q15 rimappate alle definizioni ufficiali 08/10; l'addendum esterno aveva associazioni ipotetiche.
 - Q6/Q8: dossier 19 con precedenze, sostituzioni e casi candidati; nessun algoritmo approvato.
-- Proposta: F01–F05 per adulti autonomi; nessuna esclusione automatica per età/BMI; specialistici rinviati.
-- Attesa conferma perimetro/L01–L10: poi chiudere R1 documentale e redigere R2, senza approvare dosi/code.
-- Poi R2: specifica delle schede/revisione/approvazione, prima del motore. R3: ricerca utenti parallela.
+- Perimetro F01–F05 adulti autonomi e gestione L01–L10 confermati; specialismi rinviati, non età/BMI.
+- Completare catalogo, varianti frequenza/tempo, aerobico iniziale, taratura/incrementi/rientro/scarico.
+- Poi revisione/approvazione R2 prima del motore; R3 ricerca utenti può procedere in parallelo.
 - Per metodo/catalogo/famiglie vedi 08/10/11; per sostituzioni e grafici vedi 09.
 
 ## Vincoli da conservare

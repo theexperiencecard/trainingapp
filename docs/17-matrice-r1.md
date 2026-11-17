@@ -1,5 +1,7 @@
 # R1 — matrice consolidata Q1–Q15
 
+Seguito: perimetro 20 confermato, R1 documentale chiusa; lacune operative proseguono in R2 (21/22).
+
 2026-11-17. Riprende gli ID ufficiali dai documenti [08](08-revisione-scientifica.md)
 e [10](10-obiettivi-e-copertura.md); sostituisce le associazioni ipotetiche dell'addendum.
 Evidenze verificate = lettura dichiarata nel registro, anche solo abstract, non
