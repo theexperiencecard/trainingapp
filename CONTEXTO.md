@@ -1,4 +1,4 @@
-# Ripresa rapida — aggiornato 2026-11-16
+# Ripresa rapida — aggiornato 2026-11-17
 
 Leggi questo file e AGENTS.md, poi soltanto i documenti del compito corrente.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
@@ -23,9 +23,10 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo incarico: completare R1 — GPT-6 Astra
-- Nuovo ambiente pubblicato dall'utente; PubMed ed Europe PMC ora HTTP 200.
-- WHO diretto 403, ma articolo delle linee guida recuperato tramite Europe PMC: nessun blocco generale.
+## Prossimo incarico: integrare ricerca esterna R1 — GPT-6 Astra
+- L’utente preferisce ricerca esterna per efficienza: prompt autonomo nel documento 14.
+- Attendere il rapporto esterno, verificarne fonti/regole e integrare R1; nessuna approvazione implicita.
+- Ultima verifica rete: PubMed/Europe PMC 200; WHO diretto 403, linee guida recuperate via Europe PMC.
 - Leggi `docs/12-evidenze-primo-lotto.md`: 11 fonti, 7 testi con sezioni valutate e 4 solo abstract.
 - Registri compatti in `docs/ricerca/`: query, DOI/PMID, stato, URL e hash XML. Riusa prima di cercare.
 - `docs/13-dalle-evidenze-alle-schede.md`: conseguenze per F01–F05; nessuna scheda prescritta.

@@ -176,3 +176,12 @@ Il riferimento per la ripresa è `CONTEXTO.md`; i resoconti precedenti sui commi
 solo locali descrivono lo stato storico. L'esito del push va verificato confrontando
 HEAD locale e `refs/heads/main` remoto. Il punto 0.3 richiede ancora verifica delle
 esecuzioni GitHub; l'invio del workflow non certifica che i job siano passati.
+
+## R1: ricerca esterna assistita
+
+2026-11-17: su richiesta dell'utente preparato `docs/14-prompt-ricerca-esterna.md`,
+autonomo e mirato alle lacune, con 11 fonti iniziali e stato di lettura esplicito.
+Il rapporto sarà fornito dall'utente: verificare riferimenti, applicabilità e
+proposte prima di integrarli. R1 resta in corso; nessuna nuova fonte letta oggi.
+Verifica documentale: DOI confrontati con il registro e riepilogo entro 60 righe.
+Suite applicativa non rieseguita: nessun codice, configurazione o dipendenza modificati.
