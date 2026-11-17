@@ -23,20 +23,20 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo: completare specifiche R2 — Codex con GPT-6 Astra
+## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Leggi prima `docs/21-schede-candidate-r2.md` e `docs/22-questionario-progressione-casi-r2.md`.
+- Leggi 21/22 e `docs/23-catalogo-calendari-r2.md`: identità esercizi e calendari candidati 2/3/4 sedute.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 27 articoli (11 testi/sezioni, 15 abstract, 1 metadati) + 5 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
-- Bozza R2 0.1: dosi candidate, base a due esposizioni muscolari e 13 casi; nessun numero approvato.
+- Bozze R2: dosi/questionario e casi candidati; nessun numero approvato o motore implementato.
 - Q1–Q15 rimappate alle definizioni ufficiali 08/10; l'addendum esterno aveva associazioni ipotetiche.
 - Q6/Q8: dossier 19 con precedenze, sostituzioni e casi candidati; nessun algoritmo approvato.
 - Perimetro F01–F05 adulti autonomi e gestione L01–L10 confermati; specialismi rinviati, non età/BMI.
-- Completare catalogo, varianti frequenza/tempo, aerobico iniziale, taratura/incrementi/rientro/scarico.
+- Completare revisione esercizi/istruzioni, aerobico iniziale, taratura/incrementi/rientro/scarico.
 - Poi revisione/approvazione R2 prima del motore; R3 ricerca utenti può procedere in parallelo.
-- Per metodo/catalogo/famiglie vedi 08/10/11; per sostituzioni e grafici vedi 09.
+- Modelli/consumo: 24; preferire risultato verificato per quota usata, senza inventare limiti account.
 
 ## Vincoli da conservare
 - Prima della prova: installazione sulla Home per ogni partecipante; account e sync pronti.

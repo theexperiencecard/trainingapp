@@ -4,6 +4,8 @@
 la proposta; R1 chiusa come dossier mirato. **Dosi e regole sotto non approvate**:
 sono materiale da revisionare, non allenamenti da eseguire o implementare ora.
 Nessuna modifica al prototipo, al catalogo o allo schema dati.
+Seguito nel documento 23: audit delle identità e redistribuzioni candidate su 2/3/4
+sedute, senza aumento automatico delle serie; varianti ancora da approvare.
 
 Legenda: **E** = risultato/principio delle fonti già valutate; **P** = scelta pratica
 proposta, da valutare professionalmente e approvare. Una P non acquisisce certezza

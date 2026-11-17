@@ -72,3 +72,5 @@ e varianti per tempo/frequenza, procedura iniziale aerobica e taratura, parametr
 di incremento/rientro/scarico. Verificare solo le fonti necessarie alla singola scelta;
 non ripetere la ricerca generale. Poi revisione professionale pertinente e approvazione
 di regole e casi prima di implementare il motore. Nessun contatto professionale avviato.
+Seguito: mappa documentale e calendari candidati preparati nel documento 23;
+non sostituiscono revisione delle istruzioni, taratura, dosi aerobiche e approvazione.

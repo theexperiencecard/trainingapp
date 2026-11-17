@@ -75,7 +75,11 @@ Altrimenti continua autonomamente nel compito autorizzato, senza chiedere un nuo
 Non inventare consumi, crediti residui o risparmi percentuali: se non misurabili,
 fornisci soltanto una valutazione qualitativa breve. Evita analisi di costo ripetitive.
 
-Nomi a novembre 2026, da verificare perché cambiano spesso: più capace GPT-6 Astra, normale GPT-6.1 Sol, economico GPT-6 Luna.
+Raccomandazioni verificate il 2026-11-17: GPT-6.2 Astra per lavoro impegnativo,
+GPT-6.2 Sol per implementazione ordinaria; «6.2» da solo non identifica il modello.
+Confrontare costo totale fino al risultato corretto, non solo messaggi o prezzo
+per token. Non assumere meno iterazioni senza osservazioni; non dedurre quota inclusa
+dalle tariffe a crediti. Dettagli/fonti nel documento 24; nessun cambio automatico.
 
 ## 6. Come lavorare
 

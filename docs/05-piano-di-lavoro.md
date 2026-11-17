@@ -260,3 +260,17 @@ Verifiche superate: diff, link/fonti, identificativi univoci (5 dosi, 9 domande,
 7 regole, 13 casi), aritmetica durata, stati R1/R2 e CONTEXTO entro 60 righe.
 `npm run check`/`build` non rieseguiti: sola documentazione. I casi non sono ancora
 test eseguibili e i controlli non validano le prescrizioni.
+
+## R2: identità degli esercizi e distribuzione settimanale
+
+2026-11-17: documento 23 con audit mirato del catalogo originale, stesso hash del
+documento 10. Individuate voci specialistiche/ambigue/composite da distinguere;
+nessun dato personale o catalogo applicativo importato. Tre calendari candidati
+redistribuiscono lo stesso esempio di 20 serie su 2/3/4 sedute; non sono dosi approvate.
+R2 resta in corso: revisione esercizi/istruzioni, aerobico iniziale, taratura e
+parametri di incremento/rientro/scarico ancora da completare.
+Documento 24: confronto modelli/quote con fonti ufficiali consultate, distinguendo
+GPT-6.2 Astra da Sol e tariffe a crediti da utilizzo incluso nell'abbonamento.
+Controlli documentali superati: diff, hash catalogo, ID esistenti, totali per slot
+nei tre calendari, 7 casi univoci, rapporti tariffari, link e CONTEXTO entro 60 righe.
+Nessun codice/configurazione applicativa cambiati; `npm run check`/`build` non ripetuti.
