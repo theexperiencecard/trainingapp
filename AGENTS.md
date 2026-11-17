@@ -67,6 +67,14 @@ Prima di iniziare un compito, classificalo e scrivilo nella prima riga della ris
 
 Alla fine di ogni risposta di lavoro indica sempre il modello esatto consigliato per il prossimo compito, prima del successivo «via». Non cambiarlo automaticamente.
 
+Per ogni compito indica brevemente se conviene restare in Codex o usare un altro
+modello/strumento, considerando qualità, accesso alle fonti e costo del passaggio
+di contesto. Se consigli lavoro esterno, prepara un prompt autonomo e mirato con
+output atteso, fonti già disponibili e lacune, oppure riusa quello esistente.
+Altrimenti continua autonomamente nel compito autorizzato, senza chiedere un nuovo via.
+Non inventare consumi, crediti residui o risparmi percentuali: se non misurabili,
+fornisci soltanto una valutazione qualitativa breve. Evita analisi di costo ripetitive.
+
 Nomi a novembre 2026, da verificare perché cambiano spesso: più capace GPT-6 Astra, normale GPT-6.1 Sol, economico GPT-6 Luna.
 
 ## 6. Come lavorare
@@ -77,6 +85,10 @@ Nomi a novembre 2026, da verificare perché cambiano spesso: più capace GPT-6 A
 4. **Test prima del codice** per la logica di allenamento. Conserva i casi storici come regressioni; una modifica scientifica approvata richiede nuovi casi e motivazione delle attese cambiate.
 5. **Esegui davvero** test, controllo dei tipi e lint prima di dire che hai finito. Riporta i comandi e l'esito. Se non hai potuto eseguire qualcosa, dillo.
 6. **Commit piccoli** con un messaggio chiaro. Niente push forzati. Mai segreti o dati personali nel repository.
+   Commit e push autorizzati a fine blocco coerente, con contesto aggiornato, per
+   permettere il passaggio a un'altra IA. Prima controlla modifiche locali e remoto;
+   dopo verifica l'esito. Non serve un commit per ogni messaggio o lettura.
+   Segnala subito se il lavoro resta soltanto locale; nessun deploy implicito.
 7. **A fine compito scrivi:** cosa è cambiato, come provarlo a mano in 3 passi, cosa resta aperto. Aggiorna il riepilogo compatto `CONTEXTO.md`, lo stato in `docs/05-piano-di-lavoro.md` e, se hai preso una decisione, aggiungila a `DECISIONI.md`.
 
 Se non sai una cosa, non inventarla: cerca nei file del progetto, poi nella documentazione ufficiale, poi chiedi.

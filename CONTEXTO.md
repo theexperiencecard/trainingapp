@@ -43,6 +43,9 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Regole numeriche del prototipo non modificate. Cambi futuri: fonti, approvazione e test aggiornati.
 - Nessuna nuova libreria, migrazione, account, segreto, pagamento o deploy implicito.
 - Fine di ogni risposta: modello esatto per il prossimo compito; nessun cambio automatico.
+- Ogni compito: breve consiglio Codex/altro strumento; se esterno, prompt mirato pronto.
+- Prosegui autonomamente se restare qui conviene; non inventare consumi o crediti residui.
+- Commit e push a fine blocco coerente, con questo contesto aggiornato e remoto verificato.
 
 ## Dove approfondire
 - `docs/05-piano-di-lavoro.md`: stato e criteri; `DECISIONI.md`: storia delle scelte (righe recenti prevalgono).

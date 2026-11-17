@@ -172,6 +172,11 @@ uscita 0. I controlli software non validano clinicamente le prescrizioni.
 
 ## Condivisione del lavoro
 
+Preferenza confermata il 2026-11-17: per ogni compito raccomandazione breve su
+Codex/altro modello o strumento; prompt mirato se conviene spostare il lavoro,
+altrimenti prosecuzione autonoma. Commit e push a fine blocco coerente con
+contesto aggiornato. Nessuna nuova attività R1 eseguita nell'aggiornare queste istruzioni.
+
 2026-11-16: utente autorizza commit e push dell'intero lavoro del progetto su
 `theexperiencecard/trainingapp`, ramo `main`, per collaborazione con un'altra IA.
 Il riferimento per la ripresa è `CONTEXTO.md`; i resoconti precedenti sui commit
