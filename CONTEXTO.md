@@ -23,15 +23,15 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo incarico: completare lacune mirate R1 — GPT-6 Astra
+## Prossimo incarico: dossier Q7, poi Q6/Q8 — Codex con GPT-6 Astra
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
-- Leggi prima `docs/15-revisione-rapporto-esterno.md`: verifica, correzioni e richiesta integrativa breve.
+- Addendum integrato: leggi `docs/16-audit-addendum-r1.md` e `docs/17-matrice-r1.md`.
 - Ultima verifica rete: PubMed/Europe PMC 200; WHO diretto 403, linee guida recuperate via Europe PMC.
-- Registro: 14 fonti, 8 testi con sezioni valutate, 5 solo abstract, 1 soli metadati.
+- Registro: 27 articoli (11 testi con sezioni valutate, 15 abstract, 1 metadati) + 2 documenti CSEP letti.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
 - `docs/13-dalle-evidenze-alle-schede.md`: conseguenze per F01–F05; nessuna scheda prescritta.
-- Priorità: citazioni mancanti screening/dolore e dosi, poi progressione/sostituzioni;
-  testi S05/S09/S10/S11/S13/S14 e lacune nel documento 15. Riusa registri e letture 12/15.
+- Q1–Q15 rimappate alle definizioni ufficiali 08/10; l'addendum esterno aveva associazioni ipotetiche.
+- Priorità Q7 screening/dolore, poi Q6 progressione/Q8 sostituzioni; lacune e ordine nel documento 17.
 - Il lotto è una ricerca mirata, non revisione sistematica esaustiva; R1 non è chiuso.
 - Poi R2: specifica delle schede/revisione/approvazione, prima del motore. R3: ricerca utenti parallela.
 - Per metodo/catalogo/famiglie vedi 08/10/11; per sostituzioni e grafici vedi 09.

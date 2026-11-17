@@ -29,6 +29,8 @@ R1: PubMed ed Europe PMC ora accessibili nel nuovo ambiente. Primo lotto di
 11 fonti nel documento 12; 7 testi con sezioni valutate e 4 solo abstract.
 Aggiornamento 2026-11-17 nel documento 15: rapporto esterno revisionato, 14 fonti
 totali (8 testi con sezioni valutate, 5 abstract, 1 soli metadati).
+Seguito nello stesso giorno: addendum integrato nei documenti 16/17; 27 articoli
+(11 testi con sezioni valutate, 15 abstract, 1 metadati) e 2 documenti CSEP letti.
 R1 resta aperto per le lacune elencate; metodo nel documento 08.
 R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
 I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
@@ -204,3 +206,14 @@ Prossimo passo: riferimenti mancanti e matrice Q1–Q15, prima delle specifiche 
 R1 resta in corso. Nessuna dose, schema o nuova funzione approvata.
 Verifica: registri/hash/link locali e CONTEXTO entro 60 righe superati;
 `npm run check` (3 test, tipi, lint) e `npm run build` superati, uscita 0.
+
+## R1: addendum e matrice consolidata
+
+2026-11-17: verificati 13 nuovi riferimenti per PMID, approfondite sezioni di tre
+testi e letti questionario/documento di riferimento CSEP. Audit nel documento 16;
+matrice Q1–Q15 nel 17 con definizioni originali, proposte e lacune separate.
+Corretti autore Nuzzo, interpretazione dell'effetto sui recuperi e applicabilità
+dello studio RIR; mantenuti distinti risultati discordanti sulle fratture.
+Prossimo punto: Q7 screening/dolore, poi Q6/Q8. R1 resta in corso; nessuna nuova
+prescrizione approvata. Per efficienza verifiche documentali, senza ripetere suite
+applicativa invariata: nessun codice, dipendenza o configurazione modificati.

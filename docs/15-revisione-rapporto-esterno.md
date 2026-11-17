@@ -1,6 +1,8 @@
 # R1 — revisione del rapporto esterno del 17 novembre 2026
 
 Stato: integrazione documentale parziale; R1 aperto, nessuna prescrizione approvata.
+Seguito: addendum ricevuto e verificato nel documento 16; matrice consolidata nel 17.
+La richiesta integrativa qui sotto è storica: non ripeterla integralmente.
 Provenienza e originale in [ricerca/rapporto-esterno-2026-11-17.md](ricerca/rapporto-esterno-2026-11-17.md).
 Revisore: agente Codex; nessuna revisione professionale clinica eseguita.
 
