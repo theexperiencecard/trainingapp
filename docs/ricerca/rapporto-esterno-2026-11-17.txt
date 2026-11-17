@@ -1,0 +1,261 @@
+
+Base scientifica per un motore deterministico di prescrizione e adattamento dell’allenamento
+Metodo, perimetro e verifica delle fonti
+La ricerca è aggiornata al 17 novembre 2026. Ho effettuato ricerca web reale consultando fonti primarie o istituzionali indicizzate tramite PubMed/PMC, pagine degli editori, Cochrane, WHO, ACSM, CSEP e Crossref/Crossmark; ho inoltre cercato revisioni e studi successivi al materiale di partenza fino al 2026. Non ho avuto accesso diretto con credenziali a Embase, Scopus o SPORTDiscus e quindi questa non è una revisione sistematica riproducibile in senso PRISMA; è una revisione mirata, gerarchica e orientata alle decisioni di prodotto. Le ricerche principali hanno combinato termini quali resistance training dose response volume frequency hypertrophy strength, repetitions in reserve accuracy, autoregulation resistance training, concurrent aerobic strength training, older adults falls balance resistance training, preparticipation screening, aerobic exercise dose response, body composition overweight obesity, 1RM prediction, stretching flexibility dose e i DOI/PMID indicati nel brief. 
+
+Ho privilegiato, nell'ordine, linee guida/position stand professionali, Cochrane e umbrella review, revisioni sistematiche/meta-analisi, quindi RCT e studi metodologici quando servivano a risolvere problemi implementativi. Per le conclusioni applicative uso quattro livelli: E1 = forte/convergente, sufficiente per una regola di default; E2 = moderato, utile per una regola con intervallo e adattamento; E3 = limitato/eterogeneo, da usare solo come euristica prudenziale; P = scelta progettuale non dimostrata sperimentalmente e da etichettare come tale. La nuova Position Stand ACSM 2026, che sintetizza 137 revisioni sistematiche e oltre 30.000 partecipanti, è oggi la fonte di sintesi più importante per la prescrizione del resistance training negli adulti sani; aggiorna formalmente il position stand ACSM del 2009. 
+
+La verifica dei riferimenti iniziali conferma i metadati essenziali. Bull et al. è stato pubblicato online e su fascicolo nel 2020, PMID 33239350; Currier et al. è del 2023, PMID 37414459; Schumann et al. è stato pubblicato online il 10 novembre 2021 ma appartiene al fascicolo 2022, PMID 34757594; Afonso et al. è del 2021, PMID 33917036. Pelland et al. è un caso in cui va distinta chiaramente la data: version of record 4 dicembre 2025, fascicolo febbraio 2026, PMID 41343037. Murphy & Koehler è stato pubblicato online nell'ottobre 2021 e in fascicolo nel gennaio 2022, PMID 34623696. 
+
+Le ricerche Crossmark e sulle pagine degli editori non hanno fatto emergere, per i lavori decisivi del punto di partenza, una ritrattazione che ne invalidi l'uso; ciò non equivale a una garanzia assoluta di assenza di ogni erratum minore. Per Schumann è disponibile la voce Crossmark del DOI; per Robinson è disponibile Crossmark della versione finale. La novità sostanziale rispetto al lavoro preliminare non è una correzione formale dei vecchi lavori, ma soprattutto l'arrivo di ACSM 2026, Pelland 2026, una umbrella review 2026 sull'allenamento concorrente e una revisione 2025/2026 sull'accuratezza delle RIR. 
+
+Stato di lettura delle fonti del brief
+Fonte	Verifica bibliografica	Stato di lettura in questa ricerca
+Bull et al., WHO 2020, DOI 10.1136/bjsports-2020-102955	BJSM 54(24):1451–1462; PMID 33239350	testo integrale HTML/PMC e documento WHO consultati. 
+Currier et al. 2023, DOI 10.1136/bjsports-2023-106807	BJSM 57(18):1211–1220; PMID 37414459	testo integrale consultato. 
+Schumann et al. 2022, DOI 10.1007/s40279-021-01587-7	Sports Med 52:601–612; PMID 34757594	testo integrale PMC disponibile, metadati e risultati verificati. 
+Afonso et al. 2021, DOI 10.3390/healthcare9040427	Healthcare 9:427; PMID 33917036	testo integrale consultato. 
+Jayedi et al. 2024, DOI 10.1001/jamanetworkopen.2024.52185	JAMA Netw Open 7:e2452185	testo integrale consultato. 
+Lopez et al. 2022, DOI 10.1111/obr.13428	Obes Rev 23:e13428; PMID 35191588	testo integrale consultato. 
+Coleman et al. 2024, DOI 10.7717/peerj.16777	PeerJ 12:e16777; PMID 38274324	testo integrale consultato. 
+Sherrington et al. 2019, DOI 10.1002/14651858.CD012424.pub2	Cochrane 2019(1), PMID 30703272	pagina Cochrane con risultati e sezioni estese/full review web, non soltanto abstract. 
+Robinson et al. 2024, DOI 10.1007/s40279-024-02069-2	Sports Med 54:2209–2231; PMID 38970765	abstract/version of record + testo integrale del preprint d'autore; va ricordato che l'analisi usa RIR stimate dalle descrizioni degli studi. 
+Pelland et al., DOI 10.1007/s40279-025-02344-w	online 4 dicembre 2025; Sports Med 56:481–505, 2026; PMID 41343037	testo web Springer della versione finale consultato. 
+Murphy & Koehler, DOI 10.1111/sms.14075	online 2021; Scand J Med Sci Sports 32:125–137, 2022; PMID 34623696	testo integrale Wiley open access consultato. 
+
+Prescrizione per obiettivo e livello
+La prima conclusione importante per il prodotto è che non esiste una combinazione unica di serie, ripetizioni, frequenza e RIR necessaria per ottenere adattamenti. Quasi tutte le prescrizioni di resistance training considerate da Currier miglioravano forza e ipertrofia rispetto al non allenamento; la nuova sintesi ACSM conferma che relativamente poche variabili modificano in modo consistente gli adattamenti. Per la forza, carichi elevati, ROM completo, 2–3 serie, almeno due esposizioni settimanali e collocazione dell'esercizio prioritario all'inizio della seduta sono supportati meglio; per l'ipertrofia conta soprattutto il volume, mentre un'ampia gamma di carichi può funzionare. 
+
+Per questo motivo l'app non dovrebbe trasformare risultati di meta-regressioni in soglie rigide. Il lavoro Pelland 2026 trova relazioni dose-risposta separabili per volume e frequenza, con rendimenti decrescenti e una relazione diversa tra ipertrofia e forza; non identifica un punto universale oltre il quale ogni serie sia inutile. Anche la soglia ACSM di ≥10 serie/settimana per massimizzare mediamente l'ipertrofia va intesa come zona associata a maggiori risultati in letteratura, non come minimo biologico né come target iniziale obbligatorio. 
+
+Matrice consigliata per il motore
+Famiglia	Profilo di lancio	Dose iniziale ragionevole	Progressione	Evidenza
+F01 iniziare/riprendere	sedentario, principiante o ritorno dopo pausa	2 sedute full-body/settimana; 1–2 serie/esercizio nelle prime sedute; prevalenza 6–15 rip.; sforzo volutamente submassimale	prima aumentare tolleranza, regolarità e qualità; poi serie/carico	Il beneficio del “partire basso e progredire gradualmente” è E1 da WHO; il limite iniziale di 1–2 serie è una scelta P prudenziale, non un minimo sperimentale. 
+F02 forma generale	adulto sano, obiettivo salute/fitness	2–3 RT/settimana + attività aerobica distribuita; 2–3 serie per i pattern principali quando tollerate	aumentare una sola dimensione rilevante alla volta	E1 per RT ≥2/settimana e target PA WHO; E2 per dettagli del mix. 
+F03 forza	almeno familiarizzato con gli esercizi	esercizi prioritari 3–8 rip. circa; esposizione regolare a carichi relativamente alti; 2–3 serie di lavoro come base	carico/reps in base a prestazione; frequenza ≥2 per gli alzate/pattern prioritari se recuperabile	ACSM identifica ≥80% 1RM come favorevole alla forza; non implica che ogni serie debba superare 80%. 
+F04 ipertrofia	allenato abbastanza da eseguire serie vicine al limite in sicurezza	iniziare sotto il volume massimo tollerabile; tipicamente distribuzione su ≥2 esposizioni/muscolo quando il volume cresce; carichi vari	aumentare serie solo se prestazione/recupero lo consentono	Volumi maggiori aumentano mediamente l'ipertrofia; ≥10 serie/settimana emerge nella sintesi ACSM come zona favorevole, ma con rendimenti decrescenti. 
+F05 aerobico + supporto muscolare	salute/fitness/cardiorespiratorio	2 RT + 2–4 attività aerobiche, dimensionate sul tempo disponibile	prima durata/frequenza, poi eventualmente intensità	E1 per combinare modalità; l'allenamento concorrente non compromette in modo importante forza/ipertrofia nella maggior parte dei ricreativi. 
+
+Le ripetizioni non devono essere trattate come una traduzione esatta di %1RM. Una meta-regressione su 7.289 individui mostra una dispersione individuale rilevante del numero massimo di ripetizioni eseguibili a una data percentuale e differenze tra esercizi, in particolare bench press e leg press. Di conseguenza 8 rip = 80% 1RM non deve comparire nel motore come identità matematica. 
+
+Per l'ipertrofia, Robinson 2024 suggerisce una relazione più favorevole quanto più le serie si avvicinano al cedimento, mentre per la forza la relazione con le RIR era trascurabile; ma le RIR dei protocolli erano spesso stimate retrospettivamente dalle descrizioni degli studi, quindi la precisione della curva non giustifica target quali “esattamente 2 RIR”. 
+ Una regola di prodotto più difendibile è: principianti prevalentemente circa 3–4 RIR percepite nelle prime esposizioni; dopo familiarizzazione, la maggioranza delle serie produttive circa 1–3 RIR, lasciando il cedimento come opzione occasionale per esercizi appropriati e utenti competenti. I valori specifici sono una scelta prudenziale P, mentre il principio “non serve il cedimento sistematico” è sostenuto dalla nuova ACSM, che non trova vantaggio consistente del momentary failure sugli outcome. 
+
+L'accuratezza della scala RIR non è costante. La revisione più recente trova stime più accurate quando il soggetto è vicino al cedimento, con carichi più alti e un numero inferiore di ripetizioni; l'errore aumenta con serie molto lunghe e carichi bassi. Un nuovo studio 2026 mostra inoltre che la stima può migliorare con alcune sedute di pratica, anche in adulti anziani, indicando che l'app deve trattare RIR come un'abilità calibrabile, non come un sensore perfetto fin dal primo giorno. 
+
+I recuperi tra serie non richiedono il vecchio dogma “30–90 s per ipertrofia”. Una meta-analisi 2024 suggerisce un piccolo vantaggio medio rispetto a pause ≤60 s, probabilmente perché pause troppo corte riducono il lavoro realizzabile, e non trova evidenza chiara di ulteriori vantaggi ipertrofici oltre circa 90 s. Per l'app è quindi ragionevole usare 2–3 min per esercizi multiarticolari impegnativi o orientati alla forza, 1–2 min per accessori, allungando la pausa se il target di ripetizioni non è mantenibile; questi intervalli sono traduzione pratica E2/P, non cut-off biologici. 
+
+L'ordine degli esercizi dovrebbe seguire la priorità dell'obiettivo: gli esercizi eseguiti prima tendono a guadagnare più forza, mentre per l'ipertrofia l'effetto dell'ordine è molto meno chiaro. Quindi F03 mette l'alzata/abilità prioritaria per prima; F04 può ordinare soprattutto per sicurezza, preferenza e gestione della fatica. 
+
+Per l'aerobico, WHO raccomanda agli adulti 150–300 minuti/settimana di attività moderata oppure 75–150 minuti vigorosa, o combinazioni equivalenti, insieme a lavoro di forza; per chi è inattivo, il beneficio inizia sotto tali target e la progressione graduale è esplicitamente raccomandata. Negli anziani si aggiunge attività multicomponente con enfasi su equilibrio e forza funzionale. 
+ L'app non dovrebbe quindi mostrare “150 minuti” come soglia binaria di successo/fallimento.
+
+Per comunicare l'intensità cardio senza laboratorio, RPE e talk test sono più robusti di una formula unica di frequenza cardiaca massima. Il consenso ACSM/ESSA più recente colloca l'intensità moderata intorno a RPE CR10 4–5 / Borg 12–14 e ritiene il talk test utilizzabile con cautela per mantenere l'intensità sotto il dominio elevato. 
+ Per il lancio, F05 può quindi usare descrizioni semplici: facile = conversazione comoda, moderato = parlare in frasi ma con respiro evidente, intenso = parlare diventa difficile; la mappatura testuale precisa è una scelta UX, non un test fisiologico.
+
+L'allenamento combinato non richiede di separare sempre cardio e forza. La meta-analisi Schumann non trovava compromissioni sostanziali di forza massima e ipertrofia, mentre la potenza/esplosività appariva più sensibile quando modalità diverse venivano svolte nella stessa seduta. L'umbrella review 2026 su 17 meta-analisi e 1.492 partecipanti trova, nel complesso, risultati simili per forza, potenza e ipertrofia tra concurrent training e sola RT e un chiaro vantaggio aerobico del concurrent training; i dati negli atleti di alto livello restano più scarsi. 
+ Per l'MVP, quindi, non serve un complesso algoritmo di “interference”; basta evitare che sedute cardio molto dure e lavoro pesante sullo stesso distretto si accumulino automaticamente senza considerare recupero e priorità.
+
+La potenza va separata concettualmente dalla forza massima. La sintesi ACSM 2026 trova migliori adattamenti di potenza con carichi moderati, circa 30–70% 1RM, volume basso-moderato e intento concentrico rapido; ciò non equivale a prescrivere esercizi olimpici a principianti o anziani senza supervisione. 
+ Per questo la “potenza” non dovrebbe essere un obiettivo autonomo di lancio per la popolazione generale: può essere in seguito un modulo supervisionato, mentre negli anziani l'MVP può usare movimenti funzionali eseguiti con intento di alzarsi/spingere rapidamente ma controllo tecnico, dopo adeguata familiarizzazione.
+
+Per la mobilità, il motore non deve sommare automaticamente un “programma stretching” completo al resistance training. Afonso 2021 trovava che il resistance training attraverso ROM adeguati migliorava il ROM in misura simile allo stretching in studi eterogenei; una meta-analisi più recente di 189 studi conferma che lo stretching statico migliora la flessibilità e non ha trovato ulteriori benefici medi oltre circa 4 minuti per sessione o 10 minuti/settimana per una data applicazione aggregata. 
+ Un modulo breve e mirato è quindi più giustificabile di 20–30 minuti di stretching obbligatorio per tutti.
+
+La resistenza muscolare locale merita supporto, ma la metrica è delicata: un test con carico assoluto fisso misura qualcosa di diverso da un test ripetuto a una percentuale aggiornata della forza massima. La letteratura recente insiste proprio su questa distinzione, quindi l'app deve salvare tipo_test = absolute_load oppure relative_load e non sovrapporre le due curve. 
+
+Motore deterministico di adattamento
+La struttura consigliata non è “programma di cinque settimane”, ma un controllore a stati che adatta una prescrizione entro limiti espliciti. Non c'è evidenza che un deload fisso ogni quattro settimane sia ottimale. Nell'RCT Coleman, una settimana intera senza RT a metà di nove settimane non migliorò ipertrofia, potenza o resistenza locale e produsse guadagni di forza inferiori rispetto al training continuo; lo studio è piccolo e non dimostra che ogni forma di deload attivo sia inutile, ma confuta l'idea che lo stop settimanale prestabilito sia necessario. 
+
+Il motore può operare così, con le parti non direttamente testate marcate come progettuali:
+
+Calibrazione iniziale, non test massimale obbligatorio. Scegliere un carico che consenta il range prescritto con tecnica accettabile e margine evidente; registrare reps, carico e RIR/RPE. Dopo 2–4 esposizioni, creare un intervallo individuale “carico efficace”. Il numero 2–4 è P, motivato dal fatto che l'accuratezza RIR migliora con pratica e che il rapporto reps–%1RM ha grande variabilità individuale. 
+
+Double progression con vincoli. Se tutte le serie raggiungono il limite alto del range con RIR dentro o sopra il target e nessun segnale di recupero problematico, incrementare il carico al passo minimo disponibile nella seduta successiva. Se il target non viene raggiunto ma la prestazione è stabile, mantenere. Se la prestazione peggiora ripetutamente o l'RPE sale a parità di carico, ridurre volume o carico. Questa è una regola P, ma è coerente con il principio di progressive overload e con l'assenza di evidenza che una sofisticata periodizzazione sia necessaria per la maggioranza degli adulti. 
+
+Non aumentare contemporaneamente tutto. Priorità suggerita: reps → piccolo incremento di carico → eventualmente volume; per ipertrofia, aggiungere una serie solo dopo stabilità di recupero e prestazione. Pelland mostra rendimenti decrescenti del volume, quindi “più volume” non deve essere l'azione predefinita a ogni plateau. 
+
+Stallo definito come trend, non singola seduta. Un solo allenamento peggiore non attiva modifiche strutturali. Una scelta robusta è richiedere almeno due o tre esposizioni comparabili con regressione di performance e/o eccessivo sforzo prima di intervenire; il numero è P, perché non esiste una soglia sperimentalmente universale.
+
+Scarico reattivo. Invece di settimana 5 = deload, attivare una riduzione temporanea del carico di lavoro se più segnali convergono: calo persistente della performance, aumento dell'RPE/RIR inferiore al previsto, difficoltà a completare sedute, recupero percepito scarso, o richiesta esplicita dell'utente. L'entità della riduzione deve essere conservativa e reversibile; i coefficienti esatti sono P. Coleman giustifica l'abbandono del deload fisso, non una formula unica per quello reattivo. 
+
+Assenze. Non “recuperare” sedute perse comprimendole. Dopo pochi giorni, continuare normalmente; dopo pause più lunghe, riprendere con volume e/o carico ridotti e ritarare rapidamente in base alla prestazione. Le percentuali e i giorni specifici sono P, perché la letteratura non supporta breakpoint universali. L'app dovrebbe usare la lunghezza dell'assenza insieme a precedente esperienza, tipo di esercizio e risposta alla prima seduta di ritorno.
+
+L'autoregolazione basata su RPE/RIR o velocità può produrre risultati almeno comparabili alla prescrizione percentuale e in alcune analisi vantaggi per la forza, ma le prove riguardano soprattutto soggetti allenati e protocolli strutturati. Una meta-analisi precedente non trovava differenze significative complessive tra carico autoregolato e percentuale fissa per 1RM; una network meta-analysis 2025 favorisce APRE/RPE/VBT, ma il corpus non rende necessario un sistema VBT per un'app consumer. 
+
+Perciò l'MVP dovrebbe usare prestazione + RIR/RPE + aderenza, non il solo RIR. Per ogni esercizio, una semplice regola deterministica può essere:
+
+if reps_target_reached && RIR >= lower_target && no_warning → progress
+
+if reps_below_target && RIR≈target → maintain
+
+if reps_below_target && RIR<target → reduce load
+
+if repeated_performance_drop || recovery_flag → reduce volume and reassess
+
+if exercise_changed → recalibrate load; never transfer e1RM record
+
+I limiti numerici di lower_target, il passo di carico e il numero di sedute per il trend vanno configurati per famiglia e attrezzatura e sono scelte progettuali, non risultati di un singolo trial.
+
+L'e1RM può essere usato come trend interno, non come verità clinica né come confronto tra esercizi. Le relazioni load–velocity hanno validità media moderata ma errori rilevanti; le equazioni reps-to-failure dipendono dall'esercizio e funzionano meglio in intervalli di ripetizioni relativamente bassi. La cross-validazione 2025 suggerisce equazioni specifiche per bench press e leg extension usando 4–10 reps a cedimento, ma ciò non giustifica forzare tutti gli utenti a test fino al cedimento. 
+
+Screening, dolore, anziani e persone con sovrappeso
+Il questionario iniziale dovrebbe separare idoneità generale al percorso dell'app, capacità attuale e preferenze/logistica. Non deve convertire una risposta clinica in una diagnosi. Il modello ACSM di screening pre-partecipazione si basa soprattutto su attività abituale, presenza di malattia cardiovascolare/metabolica/renale nota, segni o sintomi suggestivi e intensità prevista; il passaggio dalle vecchie checklist di fattori di rischio a questo modello è stato esplicitamente concepito per evitare referral medici inutili che diventano barriere all'attività. 
+
+Il CSEP Get Active Questionnaire è coerente con questa impostazione: mira a “screen-in” la maggioranza delle persone e a indirizzare a un professionista nei casi appropriati, e specifica che lo screening è solo una parte della valutazione. Le sue aree comprendono diagnosi cardiovascolari/ictus, pressione elevata nota, vertigini con attività, dispnea a riposo, sincope, dolore/gonfiore che limita l'attività, istruzioni mediche a evitare/modificare l'attività e altre condizioni che possono influire sulla capacità di esercizio. 
+
+Per l'app, il questionario minimo dovrebbe pertanto chiedere: esperienza recente con esercizio; frequenza attuale; eventuale diagnosi o restrizione posta da un professionista; sintomi cardiovascolari rilevanti; dolore o gonfiore che limita l'attività; cadute recenti o problemi evidenti di equilibrio negli anziani; attività sportive aggiuntive; giorni e minuti disponibili; attrezzatura; esercizi già conosciuti; preferenze/avversioni; obiettivo primario. Non serve chiedere sesso per decidere serie o RIR né BMI per decidere “quanto forte può allenarsi” una persona: la relazione reps–%1RM mostra poca moderazione da sesso, età o training status rispetto alla grande variabilità individuale, mentre il BMI non separa massa grassa e massa magra. 
+
+Un ramo del motore dovrebbe produrre tre esiti, non “sicuro/non sicuro”:
+
+percorso standard, con progressione graduale;
+percorso conservativo / suggerimento di valutazione professionale, quando una condizione o limitazione può richiedere modifiche;
+stop dell'allenamento proposto e indicazione a valutazione sanitaria urgente, quando emergono sintomi potenzialmente seri.
+Tra i sintomi cardiovascolari che ACSM considera rilevanti nello screening figurano dolore/discomfort toracico o equivalenti, dispnea insolita, vertigini/sincope, palpitazioni marcate e sintomi da possibile claudicatio. 
+ L'app non deve dire “hai una patologia cardiaca”; deve dire che il sintomo non è appropriato da gestire con un algoritmo di allenamento.
+
+Per il dolore muscoloscheletrico, non esiste una scala numerica capace da sola di distinguere esercizio sicuro da patologia seria. Le linee guida muscoloscheletriche convergono sulla necessità di cercare segni compatibili con patologia seria, rivalutare progressione dei sintomi e non affidarsi a imaging o singoli “red flag” isolati come test diagnostici. La letteratura recente sottolinea anche che la definizione stessa di red flag non è completamente standardizzata. 
+ Di conseguenza un “dolore ≤3/10 = verde” sarebbe scientificamente indifendibile come garanzia di sicurezza. L'intensità del dolore può essere una variabile di feedback, ma la decisione deve considerare nuovo trauma, gonfiore importante, perdita di funzione, sintomi neurologici, sintomi sistemici, andamento in rapido peggioramento e limitazione delle attività quotidiane; se presenti, l'app deve interrompere il normale algoritmo e consigliare valutazione.
+
+Negli anziani autonomi, l'età cronologica non deve trasformarsi automaticamente in un programma “facile”. Il resistance training migliora forza e funzione anche negli anziani; una network meta-analysis di 151 RCT conferma benefici e mostra che il volume ottimale dipende dall'outcome, mentre la Position Stand ACSM include forza, equilibrio e funzione tra gli outcome migliorati dal RT. 
+ Il questionario dovrebbe invece misurare capacità: alzarsi da una sedia, camminare, salire scale, equilibrio, storia di cadute, esperienza con carichi, supporti e condizioni cliniche note.
+
+Per la prevenzione delle cadute, il solo resistance training non è equivalente all'allenamento di equilibrio. La Cochrane 2019 mostrava una riduzione del tasso di cadute di circa il 23% e del rischio di avere almeno una caduta di circa il 15% con esercizio; i programmi più efficaci comprendevano soprattutto balance e functional exercise, o programmi multicomponente che includevano questi elementi. Una nuova meta-analisi 2026 conferma una riduzione delle cadute con interventi multicomponente, pur con eterogeneità sostanziale. 
+ Quindi il modulo equilibrio va attivato per bisogno, non aggiunto a tutti.
+
+Nelle persone con sovrappeso o obesità, la prescrizione deve dipendere da capacità, sintomi e preferenze, non dal BMI. L'esercizio aerobico supervisionato produce riduzioni dose-dipendenti di peso, circonferenza vita e adiposità fino ai volumi studiati, ma gli effetti medi sul peso per unità di esercizio sono modesti e non autorizzano a predire dimagrimento individuale. 
+ Il resistance training da solo può ridurre modestamente la massa grassa e aumentare la massa magra; nei trial, interventi combinati con restrizione energetica mostravano maggiori perdite di grasso, ma quell'effetto è dell'intervento combinato, non del solo esercizio. 
+
+Sul deficit energetico, Murphy & Koehler trovano che una disponibilità energetica ridotta compromette mediamente i guadagni di massa magra più della forza; la loro meta-regressione suggeriva che deficit intorno a 500 kcal/die potessero impedire guadagni di massa magra, ma questa non deve diventare una soglia calorica prescritta dall'app, perché deriva da una meta-regressione di studi eterogenei e non costituisce un target nutrizionale individuale. 
+ Il motore può chiedere solo informazioni funzionali come “stai seguendo volontariamente una fase di perdita di peso?”, “hai cambiato molto l'alimentazione?”, “energia/recupero sono peggiorati?”, senza calcolare calorie raccomandate.
+
+Sostituzioni, metriche e grafici validi
+Una sostituzione di esercizio non dovrebbe essere una semplice lookup stesso muscolo → equivalente. La specificità dell'allenamento rende particolarmente importante il gesto quando l'obiettivo è forza: la meta-analisi sull'ordine e la nuova sintesi ACSM mostrano che il modo in cui l'esercizio è eseguito e prioritizzato influenza soprattutto la forza; inoltre, la generalizzazione dei guadagni di forza tra compiti diversi è incompleta. 
+
+Il motore di sostituzione dovrebbe quindi indicizzare ogni esercizio almeno per: pattern, articolazioni principali, muscoli target, ROM, attrezzatura, stabilità richiesta, abilità tecnica, caricabilità, profilo di fatica, tollerabilità, vincoli clinici dichiarati, specificità rispetto a un test/alzata. Questa tassonomia è una scelta progettuale P, ma la distinzione tra equivalenza muscolare e specificità della forza è sperimentalmente giustificata.
+
+Una sostituzione può avere tre classi:
+
+A — equivalente funzionale per l'obiettivo corrente: per esempio chest press macchina ↔ dumbbell press per un principiante con obiettivo generale. Si conserva la categoria di movimento e il volume muscolare, ma si ricalibra il carico.
+
+B — sostituzione parziale: per esempio leg press ↔ squat quando l'obiettivo è ipertrofia generale degli arti inferiori. Può conservare una parte del target muscolare, ma non il record o la skill specifica.
+
+C — non equivalente per un obiettivo specifico: se l'utente ha come obiettivo aumentare il back squat, hack squat e leg press possono essere accessori utili ma non sostituti equivalenti del gesto.
+
+Dopo ogni cambio di esercizio il motore deve azzerare le aspettative di carico specifico e fare ricalibrazione locale. Non deve applicare la percentuale del vecchio e1RM al nuovo esercizio, perché persino le equazioni di 1RM variano tra movimenti e il rapporto reps–%1RM differisce significativamente fra esercizi. 
+
+Per le metriche, il principio chiave è distinguere ciò che è matematicamente definito da ciò che è fisiologicamente comparabile.
+
+Metrica	Uso corretto	Uso da evitare
+external load × reps / tonnellaggio	andamento dello stesso esercizio, stessa macchina/configurazione e ROM simile	confrontare leg press con squat, macchina A con macchina B, cavi con manubri
+serie per muscolo	descrivere esposizione settimanale con regole trasparenti di conteggio	presentare mezze serie/serie indirette come misura fisiologica precisa
+e1RM	trend dello stesso esercizio e protocollo	record assoluto tra esercizi o dopo cambio macchina
+reps a carico fisso	resistenza locale assoluta	confrontarla con reps a % e1RM aggiornata
+reps a carico relativo	resistenza locale relativa alla forza corrente	chiamarla miglioramento di endurance pura se è cambiata anche la forza
+tempo in tenuta	confronti nello stesso esercizio, angolo e carico	unificare plank, wall sit e isometrie caricate in una sola classifica
+cardio	durata + modalità + intensità relativa; eventualmente distanza/ritmo sullo stesso mezzo	confrontare “calorie” tra dispositivi come workload universale
+
+Il “volume load” è particolarmente inadatto come punteggio universale di ipertrofia. Pelland distingue set diretti e indiretti proprio perché il semplice tonnellaggio non rappresenta bene la dose muscolare, e le differenze biomeccaniche fra esercizi rendono non equivalenti chilogrammi spostati su movimenti diversi. 
+
+Per il conteggio delle serie per muscolo, conviene quindi mostrare una metrica interpretabile ma esplicitamente convenzionale: serie dirette e, opzionalmente, serie contributive, senza trasformare coefficienti come 0,5 in “biologia esatta”. Il modello diretto/indiretto di Pelland è utile concettualmente ma non dimostra che esista un coefficiente universale per ogni esercizio. 
+
+I record personali devono essere exercise-instance specific. Un record è valido solo se coincidono almeno esercizio canonico, attrezzatura/configurazione, tipo di carico e metrica. Manubri richiedono di salvare chiaramente peso per manubrio e, per eventuale volume esterno, il numero di implementi. Pull-up/dip richiedono campi separati per massa corporea e zavorra/assistenza: non si deve chiamare “record di +20 kg” equivalente a “100 kg di carico totale”. Le macchine devono avere un machine_id o almeno produttore/modello/configurazione, perché il numero sul pacco pesi non è un'unità biomeccanica trasferibile fra macchine.
+
+Per il cardio, calorie del dispositivo non dovrebbero essere la metrica primaria di progressione. La prescrizione più robusta per il consumer è minuti × dominio di intensità, con ritmo, distanza, watt o frequenza cardiaca come metriche specifiche del mezzo quando affidabili. WHO formula infatti le raccomandazioni in minuti e intensità, non in calorie. 
+
+Nei grafici, la regola dovrebbe essere: continuità storica senza falsa equivalenza. Quando un esercizio viene sostituito, il grafico del programma può mostrare entrambi gli esercizi nella stessa timeline, ma le linee di performance restano separate; una linea aggregata di “forza arti inferiori” richiederebbe un indice composito validato, che al momento non c'è. L'app può invece mostrare “aderenza”, “serie completate”, “minuti aerobici”, “frequenza sedute” e “trend di performance per esercizio”.
+
+Aderenza, casi limite e roadmap MVP
+La disponibilità di sette giorni non deve diventare sette allenamenti intensi. WHO considera l'attività distribuita nella settimana e non prescrive sette sedute impegnative; l'allenamento concorrente può essere combinato senza dover massimizzare entrambe le componenti in ogni giorno. 
+ Il motore dovrebbe interpretare giorni disponibili come finestre, non come quota da riempire.
+
+L'aderenza è un outcome da ottimizzare, non solo un errore dell'utente. Le revisioni recenti sugli interventi digitali mostrano effetti piccoli-moderati sull'attività fisica e sostengono l'utilità di feedback e self-monitoring, ma la certezza non è elevata e non identifica una singola meccanica vincente. 
+ Per l'MVP sono quindi più difendibili funzioni semplici: obiettivi realizzabili, feedback sulla continuità, opzione “seduta breve”, sostituzione facile, ripresa senza penalità dopo assenze e cronologia leggibile.
+
+Cosa supportare al lancio
+Supporto forte: F01 iniziare/riprendere, F02 forma generale, F03 forza generale, F04 ipertrofia generale, F05 aerobico + supporto muscolare; salute generale, continuità, forza, ipertrofia, capacità aerobica e mobilità generale sono abbastanza ben supportati da linee guida e meta-analisi. 
+
+Supporto modulare: equilibrio/autonomia negli anziani autonomi, resistenza muscolare locale e composizione corporea. Per l'equilibrio esistono prove forti di beneficio ma il bisogno va identificato; per la resistenza locale la misura dipende dal protocollo; per la composizione corporea l'app può sostenere l'esercizio ma non promettere un esito ponderale né sostituire l'intervento nutrizionale. 
+
+Da rinviare o mantenere fuori scope: riabilitazione di patologie/infortuni, gravidanza/postpartum come prescrizione specifica, minori, preparazione agonistica, powerlifting/weightlifting competitivo, gestione nutrizionale prescrittiva, sarcopenia o fragilità clinicamente diagnosticate senza supervisione. WHO copre alcune di queste popolazioni a livello di attività fisica, ma ciò non rende automaticamente valida una app consumer non clinica per la loro prescrizione individuale. 
+
+Questionario MVP
+Un questionario breve può essere composto da circa 10–14 campi, non necessariamente tutti mostrati contemporaneamente:
+
+età e stato di autonomia funzionale;
+attività strutturata negli ultimi 3 mesi;
+esperienza con RT;
+obiettivo primario e secondario;
+giorni e minuti realistici;
+attrezzatura;
+altri sport/attività settimanali;
+condizioni mediche note o limitazioni prescritte;
+sintomi cardiovascolari rilevanti;
+dolore/gonfiore che limita il movimento;
+cadute/equilibrio per persone anziane;
+esercizi conosciuti e tollerati;
+preferenze/avversioni;
+opzionale: fase volontaria di perdita di peso, senza calorie.
+Il numero di campi è P; le categorie cliniche derivano da ACSM/CSEP. 
+
+Regole di assegnazione iniziale
+novice || return_after_long_break → F01
+
+general_health && no dominant performance goal → F02
+
+strength_priority && training_familiarity → F03
+
+hypertrophy_priority && training_familiarity → F04
+
+cardio_priority → F05
+
+older + balance/fall concern → base family + balance module
+
+mobility limitation without red flags → base family + mobility module
+
+medical/symptom flag → restrict pathway / professional review logic
+
+Questa logica è P, ma costruita sopra evidenze che supportano i componenti senza sommare programmi indipendenti.
+
+Backlog di ricerca prioritario
+Il primo tema da validare internamente è l'algoritmo di progressione: non esiste in letteratura una formula consumer già validata che combini reps, RIR, dolore, aderenza e assenze. Servono test prospettici A/B o meglio studi pragmatici su diverse regole di incremento.
+
+Secondo, va studiata la precisione della tassonomia di sostituzione: il corpus scientifico chiarisce la specificità ma non fornisce una matrice universale esercizio A = 0,82 × esercizio B. È un problema di knowledge engineering che richiede revisione esperta e validazione con dati reali.
+
+Terzo, va validata la metrica di volume muscolare. Pelland migliora il semplice conteggio distinguendo set diretti/indiretti, ma non risolve il contributo quantitativo di ogni esercizio e ROM. 
+
+Quarto, serve una calibrazione consumer delle RIR nei veri principianti. Le evidenze recenti mostrano che la precisione dipende da carico, numero di reps e pratica; il motore dovrebbe probabilmente attenuare il peso assegnato alle RIR nelle prime sedute. 
+
+Quinto, sono ancora debolmente determinati i trigger ottimali di deload, ritorno dopo assenza e riduzione della fatica. L'evidenza disponibile è sufficiente per scartare il dogma “4+1 per tutti”, ma non per sostituirlo con una formula universale. 
+
+Sesto, il modulo per anziani autonomi dovrebbe essere validato separatamente su outcome funzionali semplici, come chair stand, TUG o cammino, perché un miglioramento nell'e1RM non equivale automaticamente a maggiore autonomia. La letteratura sugli anziani identifica questi test come utili per performance funzionale e conferma benefici del resistance training, ma non stabilisce un singolo test consumer obbligatorio. 
+
+Fonti decisive e conclusione progettuale
+Le fonti che cambiano maggiormente il progetto rispetto a una scheda fitness tradizionale sono le seguenti:
+
+Currier BS et al. American College of Sports Medicine Position Stand. Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews. 2026, Med Sci Sports Exerc 58(4):851–872. DOI 10.1249/MSS.0000000000003897, PMID 41843416. Testo integrale consultato. È la base principale per forza, ipertrofia, power e funzione. 
+
+Bull FC et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. 2020, Br J Sports Med 54:1451–1462. DOI 10.1136/bjsports-2020-102955, PMID 33239350. Testo integrale consultato. Fondamento per salute, aerobico, progressione graduale e anziani. 
+
+Currier BS et al. Resistance training prescription for muscle strength and hypertrophy in healthy adults: a systematic review and Bayesian network meta-analysis. 2023, Br J Sports Med 57:1211–1220. DOI 10.1136/bjsports-2023-106807, PMID 37414459. Testo integrale consultato. Conferma ampia efficacia di diverse prescrizioni e ruolo dei carichi alti per la forza. 
+
+Pelland JC et al. The Resistance Training Dose Response: Meta-Regressions Exploring the Effects of Weekly Volume and Frequency on Muscle Hypertrophy and Strength Gains. Version of record 2025, fascicolo 2026, Sports Med 56:481–505. DOI 10.1007/s40279-025-02344-w, PMID 41343037. Testo integrale web consultato. È la migliore fonte recente per evitare soglie arbitrarie di volume/frequenza e per riconoscere rendimenti decrescenti. 
+
+Robinson ZP et al. Exploring the Dose-Response Relationship Between Estimated Resistance Training Proximity to Failure, Strength Gain, and Muscle Hypertrophy. 2024, Sports Med 54:2209–2231. DOI 10.1007/s40279-024-02069-2, PMID 38970765. Abstract/version of record + preprint integrale consultati. Utile per RIR e proximity-to-failure, ma con la limitazione cruciale che molte RIR erano ricostruite dalle descrizioni dei protocolli. 
+
+Russo F et al. Factors influencing the accuracy of the repetition in reserve scale in resistance training: a systematic review. pubblicato online 2025, volume 31 nel 2026. DOI 10.1080/10833196.2025.2564026. Testo web integrale consultato. Mostra che la precisione RIR dipende da proximity-to-failure, carico e numero di ripetizioni. 
+
+Schumann M et al. Compatibility of Concurrent Aerobic and Strength Training for Skeletal Muscle Size and Function. online 2021, fascicolo 2022, Sports Med 52:601–612. DOI 10.1007/s40279-021-01587-7, PMID 34757594. Testo integrale disponibile/consultato. 
+ La successiva umbrella review 2026 di Held et al. rafforza la conclusione che, nei soggetti ricreativi, il concurrent training consente di sviluppare simultaneamente capacità aerobica e forza senza un grande “interference effect” medio. 
+
+Sherrington C et al. Exercise for preventing falls in older people living in the community. 2019, Cochrane Database Syst Rev. DOI 10.1002/14651858.CD012424.pub2, PMID 30703272. Pagina Cochrane con risultati e sezioni estese consultata. Fondamentale per separare “forza” da “prevenzione cadute”. 
+
+Jayedi A et al. Aerobic Exercise and Weight Loss in Adults: A Systematic Review and Dose-Response Meta-Analysis. 2024, JAMA Netw Open 7:e2452185. DOI 10.1001/jamanetworkopen.2024.52185. Testo integrale consultato. Dimostra una relazione dose-risposta con adiposità nei soggetti con sovrappeso/obesità, senza giustificare promesse individuali di perdita di peso. 
+
+Lopez P et al. Resistance training effectiveness on body composition and body weight outcomes in individuals with overweight and obesity across the lifespan. 2022, Obes Rev 23:e13428. DOI 10.1111/obr.13428, PMID 35191588. Testo integrale consultato. Distingue chiaramente RT, esercizio combinato e interventi con restrizione energetica. 
+
+Murphy C, Koehler K. Energy deficiency impairs resistance training gains in lean mass but not strength. online 2021, fascicolo 2022, Scand J Med Sci Sports 32:125–137. DOI 10.1111/sms.14075, PMID 34623696. Testo integrale consultato. Utile per limitare inferenze nutrizionali, non per creare una prescrizione calorica automatica. 
+
+Coleman M et al. Gaining more from doing less? The effects of a one-week deload period during supervised resistance training on muscular adaptations. 2024, PeerJ 12:e16777. DOI 10.7717/peerj.16777, PMID 38274324. Testo integrale consultato. Non supporta il deload fisso “una settimana senza RT” come default. 
+
+Il prodotto più difendibile scientificamente non è quindi un generatore di “schede ottimali”, ma un sistema a intervalli: assegna una dose iniziale conservativa, osserva prestazione e tolleranza, aumenta gradualmente, mantiene separate le metriche che non sono confrontabili e richiama supervisione quando il problema esce dal dominio del fitness. La qualità del motore dipende meno dall'inseguire un numero perfetto di serie o RIR e più dal non fare tre errori: trasformare medie di gruppo in soglie individuali, confondere esercizi diversi nei grafici e usare screening o dolore come diagnosi. Questa impostazione è la più coerente con WHO, ACSM 2026 e con le revisioni recenti sulla dose-risposta, sulla RIR, sul concurrent training e sulla popolazione anziana. 
