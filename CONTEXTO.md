@@ -23,15 +23,15 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
-## Prossimo incarico: integrare ricerca esterna R1 — GPT-6 Astra
-- L’utente preferisce ricerca esterna per efficienza: prompt autonomo nel documento 14.
-- Attendere il rapporto esterno, verificarne fonti/regole e integrare R1; nessuna approvazione implicita.
+## Prossimo incarico: completare lacune mirate R1 — GPT-6 Astra
+- Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
+- Leggi prima `docs/15-revisione-rapporto-esterno.md`: verifica, correzioni e richiesta integrativa breve.
 - Ultima verifica rete: PubMed/Europe PMC 200; WHO diretto 403, linee guida recuperate via Europe PMC.
-- Leggi `docs/12-evidenze-primo-lotto.md`: 11 fonti, 7 testi con sezioni valutate e 4 solo abstract.
-- Registri compatti in `docs/ricerca/`: query, DOI/PMID, stato, URL e hash XML. Riusa prima di cercare.
+- Registro: 14 fonti, 8 testi con sezioni valutate, 5 solo abstract, 1 soli metadati.
+- S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
 - `docs/13-dalle-evidenze-alle-schede.md`: conseguenze per F01–F05; nessuna scheda prescritta.
-- Restano: testi completi S05/S09/S10/S11, aggiornamenti, finanziamenti, screening/dolore,
-  progressione e dosi operative, sostituzioni/metriche, aderenza e resistenza locale.
+- Priorità: citazioni mancanti screening/dolore e dosi, poi progressione/sostituzioni;
+  testi S05/S09/S10/S11/S13/S14 e lacune nel documento 15. Riusa registri e letture 12/15.
 - Il lotto è una ricerca mirata, non revisione sistematica esaustiva; R1 non è chiuso.
 - Poi R2: specifica delle schede/revisione/approvazione, prima del motore. R3: ricerca utenti parallela.
 - Per metodo/catalogo/famiglie vedi 08/10/11; per sostituzioni e grafici vedi 09.

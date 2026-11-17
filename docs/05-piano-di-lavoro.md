@@ -27,6 +27,8 @@ con sostituzioni e grafici corretti. Nessuna regola numerica è cambiata da ques
 
 R1: PubMed ed Europe PMC ora accessibili nel nuovo ambiente. Primo lotto di
 11 fonti nel documento 12; 7 testi con sezioni valutate e 4 solo abstract.
+Aggiornamento 2026-11-17 nel documento 15: rapporto esterno revisionato, 14 fonti
+totali (8 testi con sezioni valutate, 5 abstract, 1 soli metadati).
 R1 resta aperto per le lacune elencate; metodo nel documento 08.
 R0 definisce un protocollo, non certifica scientificamente le regole del prototipo.
 I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finalizzare in R2.
@@ -185,3 +187,15 @@ Il rapporto sarà fornito dall'utente: verificare riferimenti, applicabilità e
 proposte prima di integrarli. R1 resta in corso; nessuna nuova fonte letta oggi.
 Verifica documentale: DOI confrontati con il registro e riepilogo entro 60 righe.
 Suite applicativa non rieseguita: nessun codice, configurazione o dipendenza modificati.
+
+## R1: rapporto esterno ricevuto e revisionato
+
+2026-11-17: originale archiviato con provenienza e hash; revisione nel documento 15.
+ACSM 2026 verificata su testo integrale pertinente; Held 2026 su abstract;
+Russo identificato tramite Crossref, testo editore 403. Registri estesi senza
+promuovere a verificate le letture dichiarate dall'altra IA. Evidenze, proposte
+e lacune separate; corretta l'inferenza eccessiva sullo scarico da Coleman.
+Prossimo passo: riferimenti mancanti e matrice Q1–Q15, prima delle specifiche R2.
+R1 resta in corso. Nessuna dose, schema o nuova funzione approvata.
+Verifica: registri/hash/link locali e CONTEXTO entro 60 righe superati;
+`npm run check` (3 test, tipi, lint) e `npm run build` superati, uscita 0.
