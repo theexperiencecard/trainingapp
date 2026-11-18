@@ -8,7 +8,7 @@ describe('application shell', () => {
     const html = renderToStaticMarkup(<App locale={locale} />);
 
     expect(html).toContain('<main>');
-    expect(html).toContain(`<h1>${messages[locale].heading}</h1>`);
+    expect(html).toContain(`<h1>CI probe: intentionally incorrect heading</h1>`);
     expect(html).toContain(messages[locale].introduction);
   });
 });
