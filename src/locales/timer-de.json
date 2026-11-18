@@ -1,0 +1,17 @@
+{
+  "heading": "Trainingstimer",
+  "local": "Der aktive Timer bleibt beim Schließen der Seite auf diesem Gerät gespeichert.",
+  "duration": "Pausendauer in Sekunden",
+  "startCountdown": "Pausentimer starten",
+  "startStopwatch": "Stoppuhr für die Haltezeit starten",
+  "remaining": "Verbleibende Zeit",
+  "elapsed": "Verstrichene Zeit",
+  "stop": "Stoppen",
+  "dismiss": "Timer schließen",
+  "finished": "Die Pause ist beendet.",
+  "lastHold": "Letzte Haltezeit",
+  "durationError": "Gib eine gültige positive Anzahl ganzer Sekunden ein.",
+  "readError": "Der gespeicherte Timer kann nicht gelesen werden. Prüfe die Speichereinstellungen oder setze den Timer zurück.",
+  "writeError": "Die Änderung konnte nicht gespeichert werden. Prüfe Speicherplatz und Browserberechtigungen und versuche es erneut.",
+  "reset": "Gespeicherten Timer zurücksetzen"
+}

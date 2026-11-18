@@ -1,0 +1,17 @@
+{
+  "heading": "Workout timer",
+  "local": "The active timer stays on this device when you close the page.",
+  "duration": "Rest duration in seconds",
+  "startCountdown": "Start rest timer",
+  "startStopwatch": "Start hold stopwatch",
+  "remaining": "Time remaining",
+  "elapsed": "Elapsed time",
+  "stop": "Stop",
+  "dismiss": "Dismiss timer",
+  "finished": "Rest time is over.",
+  "lastHold": "Last hold",
+  "durationError": "Enter a valid duration in whole seconds greater than zero.",
+  "readError": "The saved timer could not be read. Check your browser storage settings or reset the timer.",
+  "writeError": "Could not save the change. Check browser permissions and available space, then try again.",
+  "reset": "Reset saved timer"
+}

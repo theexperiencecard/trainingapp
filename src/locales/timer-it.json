@@ -1,0 +1,17 @@
+{
+  "heading": "Timer di allenamento",
+  "local": "Il timer attivo si conserva su questo dispositivo anche chiudendo la pagina.",
+  "duration": "Durata del recupero in secondi",
+  "startCountdown": "Avvia il recupero",
+  "startStopwatch": "Avvia il cronometro per la tenuta",
+  "remaining": "Tempo rimanente",
+  "elapsed": "Tempo trascorso",
+  "stop": "Ferma",
+  "dismiss": "Chiudi il timer",
+  "finished": "Recupero terminato.",
+  "lastHold": "Ultima tenuta",
+  "durationError": "Inserisci una durata valida in secondi interi, maggiore di zero.",
+  "readError": "Impossibile leggere il timer salvato. Verifica che il browser consenta il salvataggio oppure azzera il timer.",
+  "writeError": "Impossibile salvare la modifica. Verifica lo spazio e i permessi del browser, poi riprova.",
+  "reset": "Azzera il timer salvato"
+}
