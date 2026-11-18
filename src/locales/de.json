@@ -1,5 +1,8 @@
 {
   "title": "Training",
-  "heading": "Dein Training, Schritt für Schritt.",
-  "introduction": "Hier entsteht dein persönlicher Trainingsplan."
+  "heading": "Trainingstagebuch",
+  "language": "Sprache",
+  "languageName": "Deutsch",
+  "offlineReady": "Diese Vorschau lässt sich auf diesem Gerät auch offline wieder öffnen.",
+  "offlineUnavailable": "Einrichten der Offline-Nutzung fehlgeschlagen. Öffne die Seite mit Internetverbindung erneut."
 }
