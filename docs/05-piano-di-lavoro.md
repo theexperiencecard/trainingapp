@@ -54,10 +54,10 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
-| 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | da fare |
+| 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | in corso |
 | 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | da fare |
 | 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | da fare |
-| 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | da fare |
+| 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | in corso |
 | 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | da fare |
 | 2.6 | Controllo del dolore con legenda, e fastidio durante la serie | N | Le regole della tappa 1 reagiscono ai valori inseriti | da fare |
 | 2.7 | Sostituzione manuale oggi o nelle sedute future, con anteprima e annullamento | D | Alternative e limiti approvati in R2; serie svolte conservate e casi di sostituzione superati | da fare |
@@ -292,3 +292,11 @@ aerobico iniziale, precedenze di progressione, durata e continuità dei grafici.
 | Risultati della prova con 10–20 persone | Ulteriori 4–6 settimane di utilizzo dopo l'avvio del pilot | Partecipanti con app sulla Home, account attivi e criteri del pilot definiti. Reclutamento e disponibilità dei telefoni incidono sulla data di avvio. |
 
 Per la finestra di 12–20 settimane il preventivo indicativo è 2–4 per specifiche, revisione e catalogo minimo, 4–6 per motore, questionario, seduta e grafici, 4–6 per persistenza, installazione, account e sincronizzazione, 2–4 per integrazione e prove sui dispositivi. Sono stime di lavoro da ricalibrare alla prima seduta percorribile e al riscontro del revisore. Una revisione tardiva o perdita di dati nei test offline può spostare il calendario.
+
+## Consegna integrata del 18 novembre
+
+I [casi F01/F02/F05](28-confronto-ingresso-generale-aerobico.md) completano gli esempi per le cinque famiglie. La [scheda per la revisione](29-consegna-revisione-r2.md) collega ogni decisione a un caso e a un esito da registrare. Nessuna prescrizione è stata approvata.
+
+La prima dimostrazione interna prevista nella stima è disponibile in questa build. Copre due serie di esempio, cambio solo oggi o anche giovedì, ripristino del piano e volumi separati. Il riavvio azzera il diario sintetico. 2.4 offre già recupero a scadenza persistita e cronometro di tenuta con ripristino. Resta da integrarli nella seduta definitiva. Per 2.1 la cache di produzione consente la riapertura offline dopo la prima visita. Il [primo diario persistente](30-proposta-diario-locale.md) è in attesa della decisione sullo schema.
+
+Verificati in Chromium la registrazione delle due serie sui tre rami, i volumi 480/250 o 960 kg, la riapertura della build offline, il ripristino del timer e il cronometro, la lingua e la larghezza di 360 px. Verificati anche manifest, rifiuto di asset con hash errato, esclusione degli endpoint API e cambio di versione dopo la chiusura della scheda. Questi riscontri anticipano la demo iniziale. La stima del pilot dipende ancora da revisione, account, sync e dispositivi reali.

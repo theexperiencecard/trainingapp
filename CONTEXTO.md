@@ -16,17 +16,17 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Stato verificato
 - 0.1/0.2 completati: React/Vite, TypeScript rigoroso, Vitest, ESLint, un progetto npm.
 - Node 24.22.1 (`.nvmrc`), npm 11; `npm ci`, `npm run check`, `npm run build`.
-- Baseline: 3 test di rendering in Node. Nessun motore, offline, account o timer implementato.
+- Anteprima F04 interattiva IT/DE/EN, shell PWA e timer persistente. 17 test locali; percorsi desktop verificati. Diario demo temporaneo.
 - 0.3: workflow scritto e prova negativa locale riuscita; esecuzione GitHub ancora da fare.
 - Repository condiviso: github.com/theexperiencecard/trainingapp, ramo `main`.
 - Push autorizzato dall’utente; per riprendere verificare HEAD remoto e stato locale.
-- Verifica visiva rinviata dall'utente; prove su telefoni non eseguite.
+- Prova in Chromium a larghezza mobile eseguita; prove Home su iPhone e Android reali ancora aperte.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Casi settimanali F03/F04 nei documenti 26/27, compresi sostituzione, durata e grafici. Prossimo blocco unico F01/F02/F05 con ingresso e componente aerobica, poi consolidare R2 per il revisore. Stima per la prova nel 05.
+- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Diario IndexedDB proposto nel 30, richiesta autorizzazione inviata. Stima pilot nel 05.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
@@ -46,7 +46,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Nessuna nuova libreria, migrazione, account, segreto, pagamento o deploy implicito.
 - Fine di ogni risposta: modello esatto per il prossimo compito; nessun cambio automatico.
 - Ogni compito: breve consiglio Codex/altro strumento; se esterno, prompt mirato pronto.
-- Prosegui per blocchi interni autorizzati; revisione a consegna compiuta, niente nuovi «via» per routine.
+- Prosegui fino ai vincoli reali del piano. Autorizzati subagenti sullo stesso modello per attività indipendenti; integra e verifica prima della consegna.
 - Commit e push a fine blocco coerente, con questo contesto aggiornato e remoto verificato.
 
 ## Dove approfondire

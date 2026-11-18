@@ -5,19 +5,15 @@ Repository di riferimento: https://github.com/theexperiencecard/trainingapp, ram
 Per riprendere il lavoro con una nuova IA: leggere [CONTEXTO.md](CONTEXTO.md) e
 [AGENTS.md](AGENTS.md), poi solo i documenti indicati per il prossimo compito.
 
-Base React/Vite del compito 0.2. TypeScript rigoroso, Vitest ed ESLint.
-La schermata iniziale usa testi separati in italiano, tedesco e inglese;
-l'avvio è in italiano. Il nome del prodotto resta da scegliere.
+Anteprima interna React/Vite in italiano, tedesco e inglese. Permette di registrare due serie sintetiche, verificare gli effetti di una sostituzione e utilizzare timer di recupero e cronometro.
 
-## Avvio in tre passi
+## Provarla in tre passi
 
-1. Nella cartella del progetto attiva Node 24.22.1 (`nvm use`, se usi nvm),
-   con npm 11; esegui `npm ci`.
-2. Esegui `npm run dev` e apri nel browser l'indirizzo stampato da Vite.
-3. Verifica la schermata iniziale in italiano e restringi la finestra:
-   il testo deve restare leggibile. Il tema segue quello del dispositivo.
+1. Con Node 24.22.1 e npm 11 esegui `npm ci`, poi `npm run build` e `npm run preview`. Apri l'indirizzo locale mostrato da Vite.
+2. Registra la prima serie di panca, scegli la chest press M1 per oggi e giovedì, poi registra la seconda. Il diario mostra 480 kg per la panca e 250 kg per la macchina. Ripristina la panca per giovedì e ricontrolla il diario.
+3. Inserisci una durata nel timer e avvialo. Quando compare la conferma che la pagina è pronta offline, disattiva la rete, chiudi e riapri lo stesso indirizzo. Il recupero riparte dalla scadenza salvata. La simulazione delle serie ricomincia da zero.
 
-Non servono account, chiavi o variabili d'ambiente per questo progetto iniziale.
+La cache di produzione si prepara dopo la prima apertura online, su HTTPS o localhost. Per lavorare sul codice usa `npm run dev`. Il diario persistente e la prova su iPhone e Android sono descritti nel piano.
 
 ## Controlli
 
@@ -26,9 +22,7 @@ Non servono account, chiavi o variabili d'ambiente per questo progetto iniziale.
 - `npm run preview`: serve localmente la build già generata, per verificarla.
 - `npm test`, `npm run typecheck`, `npm run lint`: controlli singoli.
 
-I tre test iniziali verificano il rendering React nelle tre lingue, in ambiente
-Node. Non sono prove su browser o dispositivi reali. Nessun test di allenamento
-è ancora implementato. `npm run check` fallisce anche se non trova test.
+Vitest copre l'interfaccia nelle tre lingue e il calcolo e ripristino dei timer. Le prove interattive della versione compilata sono registrate nel piano.
 
 Le versioni sono fissate in `package.json` e `package-lock.json`. TypeScript
 6.0.3 è la versione stabile compatibile con l'intervallo dichiarato dal lint
@@ -36,8 +30,7 @@ Le versioni sono fissate in `package.json` e `package-lock.json`. TypeScript
 
 ## Prossime tappe
 
-Questo è il progetto vuoto: installazione sulla Home, funzionamento senza rete,
-salvataggio, timer, account e sincronizzazione sono ancora da implementare.
+La shell offline e il timer sono provabili. Restano aperti diario persistente, motore, account, sincronizzazione e collaudo sui dispositivi.
 I vincoli approvati e lo stato di ogni compito sono nel
 [piano di lavoro](docs/05-piano-di-lavoro.md).
 Il compito 2.1 richiede prove su un iPhone e un Android reali; la prova con le
