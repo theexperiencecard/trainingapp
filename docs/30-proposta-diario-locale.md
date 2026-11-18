@@ -1,10 +1,10 @@
 # Decisione proposta per il primo diario persistente
 
-18 novembre 2026. Proposta per i compiti 1.1 e 2.1, in attesa dell'approvazione sullo schema. Consultato il solo documento `pacchetto-codex/docs/03-dati-e-privacy.md` nell'allegato. SHA-256 del documento originale: `98394cde62e91ec72e1bae6e3412f482617f652773f5ca1d6cb97496ec7d79a9`. Descrive salvataggio locale immediato, proprietario per riga, versioni del catalogo, unione per riga/campo, cancellazioni logiche ed errori visibili. [Architettura](00-architettura.md) · [Convenzioni di misura](09-personalizzazione-e-metriche.md)
+18 novembre 2026. Schema del primo diario sintetico approvato dal fondatore con «Approvo il diario locale». Ambito dei compiti 1.1 e 2.1. Consultato il solo documento `pacchetto-codex/docs/03-dati-e-privacy.md` nell'allegato. SHA-256 del documento originale: `98394cde62e91ec72e1bae6e3412f482617f652773f5ca1d6cb97496ec7d79a9`. Descrive salvataggio locale immediato, proprietario per riga, versioni del catalogo, unione per riga/campo, cancellazioni logiche ed errori visibili. [Architettura](00-architettura.md) · [Convenzioni di misura](09-personalizzazione-e-metriche.md)
 
-## Decisione da prendere adesso
+## Ambito approvato
 
-Si propone di autorizzare un primo diario IndexedDB provato con dati sintetici, con sedute, serie e modifiche locali salvate in transazione. Il suo scopo è provare «registro una serie, chiudo, riapro senza rete e ritrovo gli stessi dati». Account, invio al server e migrazione di dati di persone richiederanno una decisione successiva. L'anteprima temporanea mantiene un comando di riavvio separato dal diario persistente.
+Il primo incremento usa IndexedDB e dati sintetici, con sedute, serie e modifiche locali salvate in transazione. Il suo scopo è provare «registro una serie, chiudo, riapro senza rete e ritrovo gli stessi dati». Account, invio al server e migrazione di dati di persone richiederanno una decisione successiva. L'anteprima temporanea mantiene un comando di riavvio separato dal diario persistente.
 
 | Oggetto | Identità e contenuto minimo proposto |
 | --- | --- |

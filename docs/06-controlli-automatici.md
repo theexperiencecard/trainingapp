@@ -35,6 +35,4 @@ Gli esiti della sessione sono nel piano di lavoro.
 3. Correggere l'aspettativa sul ramo di prova, inviare la correzione e verificare
    che il workflow torni verde. Non unire il test rotto nel ramo principale.
 
-Una verifica locale non dimostra che GitHub Actions sia abilitato o che la
-politica del repository permetta le azioni. La prima esecuzione remota resta
-necessaria per chiudere il compito 0.3.
+Il 18 novembre 2026 il workflow è risultato verde su main, rosso sul test volutamente errato del ramo isolato `audit/ci-03-20261118`, poi verde dopo il ripristino. Nella prova negativa la build è stata saltata. Compito 0.3 completato. [Baseline](https://github.com/theexperiencecard/trainingapp/actions/runs/44246050568) · [Test negativo](https://github.com/theexperiencecard/trainingapp/actions/runs/44247397511) · [Ripristino](https://github.com/theexperiencecard/trainingapp/actions/runs/44247556339)
