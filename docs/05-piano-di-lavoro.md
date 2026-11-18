@@ -278,3 +278,17 @@ Nessun codice/configurazione applicativa cambiati; `npm run check`/`build` non r
 R2 in corso. Il riesame nel documento 25 corregge fonte sull'intensità, percorso
 aerobico iniziale, precedenze di progressione, durata e continuità dei grafici.
 18 novembre 2026. Il documento 26 segue due sedute F03 su carta con taratura, alternativa, passi reali e rientro. Lo stesso gesto/configurazione riapre il grafico. Prossimo caso completo F04 con sostituzione, conteggio del lavoro diretto/indiretto e limiti di comparabilità. I criteri di incremento e rientro di F03 attendono revisione.
+
+## Dal caso F04 alla prova su telefono
+
+18 novembre 2026. Il [caso F04](27-settimana-ipertrofia-r2.md) copre due sedute, cambio «solo oggi» o futuro, annullamento, serie saltata per tempo, lavoro diretto/indiretto e grafici per macchina. Rimane una simulazione. Prossimo blocco R2 proposto: riusare un profilo per confrontare ingresso F01, forma generale F02 e aerobico F05. Riunire poi i casi e le scelte aperte per la revisione professionale.
+
+**Stima di calendario dal 18 novembre.** Assunte circa cinque ore settimanali complessive del team con assistenza Codex, continuità del lavoro, revisore disponibile durante R2 e accesso ai due telefoni. Intervalli orientativi, ancora senza una velocità di implementazione misurata.
+
+| Traguardo | Finestra cumulativa ipotizzata | Come si riconosce |
+| --- | --- | --- |
+| Prima seduta dimostrativa interna | 2–4 settimane | Con dati sintetici si percorrono avvio, registrazione di una serie, sostituzione e lettura dello storico. Può usare una scheda di esempio mentre le prescrizioni attendono revisione. È un'anteprima separata dalla prova del prodotto. |
+| Prova personale della prima versione completa | 12–20 settimane | Questionario e regole revisionati, seduta, timer persistente, sostituzione e grafici. Account e sincronizzazione verificati. Su iPhone e Android reali la serie offline sopravvive al riavvio dell'app installata sulla Home e alla successiva sincronizzazione. |
+| Risultati della prova con 10–20 persone | Ulteriori 4–6 settimane di utilizzo dopo l'avvio del pilot | Partecipanti con app sulla Home, account attivi e criteri del pilot definiti. Reclutamento e disponibilità dei telefoni incidono sulla data di avvio. |
+
+Per la finestra di 12–20 settimane il preventivo indicativo è 2–4 per specifiche, revisione e catalogo minimo, 4–6 per motore, questionario, seduta e grafici, 4–6 per persistenza, installazione, account e sincronizzazione, 2–4 per integrazione e prove sui dispositivi. Sono stime di lavoro da ricalibrare alla prima seduta percorribile e al riscontro del revisore. Una revisione tardiva o perdita di dati nei test offline può spostare il calendario.

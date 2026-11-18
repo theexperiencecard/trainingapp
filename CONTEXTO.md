@@ -26,7 +26,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Riparti dalla settimana F03 in `docs/26-seduta-forza-r2.md`. A/B e criteri di incremento/rientro pronti per revisione. Prossimo caso completo F04 con sostituzione. Fonti nel 25, dosi/regole in 21/22, calendari nel 23.
+- Casi settimanali F03/F04 nei documenti 26/27, compresi sostituzione, durata e grafici. Prossimo blocco unico F01/F02/F05 con ingresso e componente aerobica, poi consolidare R2 per il revisore. Stima per la prova nel 05.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
