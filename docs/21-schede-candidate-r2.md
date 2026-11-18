@@ -69,14 +69,22 @@ nel materiale storico. Nessuna scheda è completa se manca uno slot necessario.
 riferimenti per adulti; attività sotto questi livelli può essere utile. Non sono
 la dose della prima settimana. **P:** F02/F05 scelgono modalità praticabile e usano
 il livello recente realmente svolto come riferimento, senza aumento automatico.
-Per chi non ha un riferimento affidabile occorre una procedura di familiarizzazione
-revisionata: non inventare minuti, velocità o frequenze cardiache dal questionario.
+Per un adulto inattivo nel percorso generale, candidato da revisionare per F01/F02/F05:
+scegliere una modalità praticabile, proporre una breve familiarizzazione a intensità
+leggera e lasciarla accorciare o interrompere. I06 (pp. 62–63, 90) presenta il cammino
+di 5–15 minuti per 2–3 volte a settimana come esempio. P: offrire la variante di
+5 minuti in due finestre come **esempio modificabile** se compatibile con capacità,
+tempo e preferenze. Se anche questa proposta risulta inadatta, rivalutare la copertura.
+Registrare durata effettiva, modalità e sforzo. A chi ha un riferimento recente e
+ben tollerato proporre di ripeterlo. Dopo il riscontro, mantenere oppure concordare
+più minuti a pari intensità prima di aumentare il ritmo. Segnali Q7 hanno precedenza.
 
-Restano da finalizzare prima dell'implementazione: durata iniziale, descrittore
-operativo d'intensità, incremento e rivalutazione. Il consenso ACSM/ESSA citato dal
-rapporto esterno non è stato identificato: niente regola RPE derivata da quel claim.
-Non inserire HIIT o attività vigorosa automaticamente per riempire poco tempo.
-Le schede F02/F05 restano quindi **incomplete nella dose aerobica**, esplicitamente.
+I07 descrive l’intensità moderata con una prova pratica: si riesce a parlare, cantare
+diventa difficile. Usarla come indizio facoltativo quando il parlato è utilizzabile.
+S28 propone «somewhat hard» per lo sforzo moderato. L'abstract lascia aperta la
+conversione numerica nelle scale RPE. Frequenza, incremento individuale e formulazioni
+nelle tre lingue richiedono revisione. Contare separatamente minuti leggeri e moderati.
+Per l'ingresso muscolare F01, I06 p. 63 contempla anche un solo giorno iniziale.
 
 ## Calendario: disponibilità diversa dalla dose
 
@@ -96,7 +104,10 @@ Evitare sedute perse recuperate comprimendole; non aggiungere nuovi giorni e ser
 Calcolare tempo di esecuzione, recuperi, avvicinamento, preparazione e cambi attrezzo.
 Esempio puramente aritmetico, non prescrizione: 5 esercizi × 2 serie × 45 secondi
 di esecuzione = 7,5 min; 5 pause interne da 2 min = 10 min; preparazione stimata
-8 min e cambi stimati 5 min portano a **30,5 min**, senza aerobico. Tempi reali variabili.
+8 min e quattro cambi da 1,25 min portano a **30,5 min** soltanto se ciascun cambio
+copre l'intero intervallo richiesto tra esercizi. Se occorrono 2 min anche in ciascuno
+di quei quattro intervalli, con cambio e recupero sovrapponibili il totale è
+7,5 + 10 + 8 + 4 × max(1,25, 2) = **33,5 min**. Per compiti sequenziali sommare i tempi.
 Un budget di 20 min non può ricevere questa configurazione dichiarata «20 minuti».
 L'app dovrà proporre una variante più breve approvata o rendere esplicito il conflitto.
 

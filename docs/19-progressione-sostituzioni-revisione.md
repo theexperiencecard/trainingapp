@@ -44,7 +44,7 @@ rivalutazione. Nessun valore predefinito nuovo è autorizzato da questo dossier.
 ## Q8: sostituzione come scelta rispetto a un obiettivo
 
 Il documento [09](09-personalizzazione-e-metriche.md) resta il riferimento per
-«solo oggi/futuro», annullamento e storico. Il supporto scientifico di S02/S12/S15
+«solo oggi/futuro», annullamento e storico. Il controllo successivo S29 (documento 25) confronta direttamente macchine e pesi liberi. Il supporto scientifico di S02/S12/S15
 è indiretto: non esiste nel corpus una matrice universale di equivalenza tra esercizi.
 Le classi proposte A/B/C del rapporto esterno sono etichette editoriali, non punteggi validati.
 

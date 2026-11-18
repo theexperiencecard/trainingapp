@@ -274,3 +274,7 @@ GPT-6.2 Astra da Sol e tariffe a crediti da utilizzo incluso nell'abbonamento.
 Controlli documentali superati: diff, hash catalogo, ID esistenti, totali per slot
 nei tre calendari, 7 casi univoci, rapporti tariffari, link e CONTEXTO entro 60 righe.
 Nessun codice/configurazione applicativa cambiati; `npm run check`/`build` non ripetuti.
+
+R2 in corso. Il riesame nel documento 25 corregge fonte sull'intensità, percorso
+aerobico iniziale, precedenze di progressione, durata e continuità dei grafici.
+18 novembre 2026. Il documento 26 segue due sedute F03 su carta con taratura, alternativa, passi reali e rientro. Lo stesso gesto/configurazione riapre il grafico. Prossimo caso completo F04 con sostituzione, conteggio del lavoro diretto/indiretto e limiti di comparabilità. I criteri di incremento e rientro di F03 attendono revisione.

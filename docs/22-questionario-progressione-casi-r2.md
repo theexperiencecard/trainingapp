@@ -15,7 +15,7 @@
 | R2-Q06 | Altri sport/attività e lavoro già svolto | Totale settimanale e distribuzione | Non contare due volte la stessa attività |
 | R2-Q07 | Preferenze e movimenti non desiderati | Alternative compatibili, con spiegazione del compromesso | Se nessun candidato, dichiarare la mancata copertura |
 | R2-Q08 | Informazioni richieste dal percorso Q7 revisionato | Ramo appropriato e rispetto delle indicazioni professionali | Nessun default «nessun problema»; testo e dati sanitari non ancora implementabili |
-| R2-Q09 | Modalità e durata aerobica recenti, se pertinenti | Riferimento per F02/F05 | Familiarizzazione da completare; niente conversione automatica da peso/età |
+| R2-Q09 | Modalità e durata aerobica recenti, se pertinenti | Riferimento per F02/F05 | Familiarizzazione candidata nel documento 21, con riscontro su tempo e sforzo |
 
 Composizione corporea è una preferenza opzionale: niente calorie prescritte o raccolta
 di misure senza funzione. Il questionario non calcola la sicurezza da sesso/BMI.
@@ -30,12 +30,14 @@ sufficientemente documentato. La RIR è autoriferita: non certifica qualità tec
 | ID / ordine | Condizione proposta | Azione candidata |
 | --- | --- | --- |
 | R2-P01 / 1 | Segnale Q7, restrizione o richiesta di fermarsi | Prevale il percorso revisionato; non aumentare o aggirare con sostituzione |
-| R2-P02 / 2 | Dati essenziali assenti/incoerenti o serie interrotte | Non dedurre successo, cedimento o stallo; chiedere il dato necessario |
-| R2-P03 / 3 | Nuovo esercizio/configurazione o riferimento non attuale dopo pausa | Taratura locale; mantenere storico separato, nessuna conversione automatica |
+| R2-P02 / 2 | Dati necessari alla decisione assenti/incoerenti o serie interrotte. Saltare i confronti storici per un primo utilizzo identificato | Salvare le serie svolte anche con RIR sconosciuta. Chiedere solo dati pertinenti alla decisione attuale. La prima taratura può precedere la prima stima RIR |
+| R2-P03 / 3 | Nuovo esercizio/configurazione o riferimento non attuale dopo pausa | Taratura locale. Nuova variante o macchina effettivamente diversa apre uno storico distinto. Al rientro sullo stesso gesto e configurazione si riapre lo storico esistente |
 | R2-P04 / 4 | Recupero da riesaminare o ripetuto peggioramento comparabile | Nessun aumento automatico; valutazione motivata. Trigger/dose di riduzione ancora da revisionare |
-| R2-P05 / 5 | Tutte le serie richieste raggiungono il limite alto del range, RIR non sotto il margine previsto e contesto coerente | Proporre per la prossima esposizione il minimo incremento disponibile solo se compatibile con la regola approvata |
-| R2-P06 / 6 | Ripetizioni nel range, senza condizioni precedenti | Stesso carico; lavorare nel range con lo sforzo previsto, senza imporre il massimo |
-| R2-P07 / 7 | Reps sotto il range senza chiara causa | Chiarire recupero/carico/dati; niente doppia azione contraddittoria di aumento e riduzione |
+| R2-P05 / 5 | Almeno una serie assegnata, tutte completate al limite alto, RIR dichiarata entro il range candidato per ciascuna, carico e convenzione confrontabili | Proporre per la prossima esposizione il minimo incremento disponibile solo se compatibile con la regola approvata |
+| R2-P06 / 6 | Tutte le ripetizioni e le RIR nei rispettivi range, senza condizioni precedenti | Stesso carico; lavorare nel range con lo sforzo previsto, senza imporre il massimo |
+| R2-P07 / 7 | Ogni altro esito completo, incluse RIR fuori range, ripetizioni sopra/sotto target o serie discordanti | Riesaminare recupero, carico e dati. Sospendere la proposta di aumento |
+
+Se un cambio a metà esercizio interrompe il blocco originario, le serie del sostituto restano nel suo diario. Il cambio non riduce retroattivamente il numero di serie richieste per qualificare il blocco originario a P05.
 
 P05 è una **scelta pratica**, non algoritmo dimostrato da S12/S24. Un salto minimo
 disponibile può comunque essere troppo grande: mancando un criterio revisionato di
@@ -60,17 +62,11 @@ Dati inventati, non prescrizioni personali. Attese proposte prima dei test esegu
 | R2-T07 | Stesso caso ma una serie a 12 | P06, non soddisfa «tutte al limite alto» |
 | R2-T08 | Limite alto raggiunto ma RIR sotto il margine o segnale Q7 | Nessun aumento automatico; Q7 prevale se presente |
 | R2-T09 | RIR necessaria mancante o peso con unità ambigua | P02; nessuna stima inventata per ottenere una decisione |
-| R2-T10 | Passaggio rematore/macchina diversa o cambio per manubrio/totale | P03, storico/record separati e convenzione esplicita |
+| R2-T10 | Cambio macchina oppure sola variazione della convenzione per manubrio/totale | Macchina diversa: P03. Stesso gesto e unità convertibili con certezza: storico continuo, carico normalizzato come nel 09. Convenzione ignota: P02 |
 | R2-T11 | Aerobico già praticato e selezione F05 | Attività contata una volta; nessun raddoppio automatico |
-| R2-T12 | Nessun riferimento aerobico, profilo inattivo | Non prescrivere automaticamente 150 min; segnalare la procedura iniziale ancora da finalizzare |
+| R2-T12 | Nessun riferimento aerobico, profilo inattivo | Applicare la familiarizzazione candidata del 21 dopo Q7, registrare solo i minuti svolti e la loro intensità |
 | R2-T13 | Sostituzione e annullamento dopo aver salvato nuove serie | Tutte le serie restano attribuite all'esercizio svolto; cambia solo il piano pertinente |
 
-## Stato di R2 e prossima consegna
+## Stato di R2
 
-Prima bozza concreta completata, **R2 in corso**. Prossimo blocco: mappa del catalogo
-e varianti per tempo/frequenza, procedura iniziale aerobica e taratura, parametri
-di incremento/rientro/scarico. Verificare solo le fonti necessarie alla singola scelta;
-non ripetere la ricerca generale. Poi revisione professionale pertinente e approvazione
-di regole e casi prima di implementare il motore. Nessun contatto professionale avviato.
-Seguito: mappa documentale e calendari candidati preparati nel documento 23;
-non sostituiscono revisione delle istruzioni, taratura, dosi aerobiche e approvazione.
+Calendari e identità nel documento 23. Il documento 21 propone una familiarizzazione aerobica iniziale. Il [caso F03](26-seduta-forza-r2.md) verifica su carta una seduta, la sostituzione a metà e il rientro sullo stesso gesto. Restano da revisionare varianti, incrementi, rientro e scarico prima dell’approvazione e dei test del motore.

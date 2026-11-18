@@ -9,7 +9,7 @@ Stato: bozza del 16 novembre 2026. La ricerca di mercato (vedi `brief-ricerca.md
 
 La ricerca deve valutare disponibilità da 2 a 7 giorni, esperienza, capacità,
 attività, recupero e vincoli: perimetro confermato nel documento 20, dettagli operativi in R2.
-Il perimetro 2–4 giorni sotto è la bozza precedente, non la copertura finale approvata.
+Il questionario considera le finestre disponibili e le confronta con le varianti coperte.
 «90% perfetto» è un'ambizione da tradurre in criteri, non una garanzia di risultato.
 Le dosi e il ciclo del prototipo attendono revisione; fonti e requisiti nei documenti 08 e 09.
 
@@ -28,7 +28,7 @@ come nel documento 20. Non è ancora una promessa di copertura implementata.
 
 ## 2. Cosa promette
 
-Una scheda adatta a te in 3 minuti, una guida serie per serie in palestra, e carichi che si adattano a come è andata l'ultima volta e a come stai oggi.
+Obiettivo da verificare nella prova: una proposta iniziale in 3 minuti, una guida serie per serie in palestra, e carichi che si adattano a come è andata l'ultima volta e a come stai oggi.
 
 ## 3. La prima versione: web, per la validazione
 
@@ -38,9 +38,9 @@ Serve a una prova con 10-20 persone per 4-6 settimane. Deve contenere solo quest
 | --- | --- |
 | Questionario | Al massimo 20 domande, meno di 3 minuti, poi assegna un modello di scheda |
 | Seduta guidata | Una serie alla volta, valori precompilati dall'ultima volta, timer di riposo, serie di avvicinamento |
-| Consiglio sul peso | Secondo `02-regole-allenamento.md` |
-| Ripetizioni in serbo | Chieste dopo ogni serie di forza, con un tocco |
-| Controllo del dolore | Prima della seduta e durante le serie, con le regole di `02-regole-allenamento.md` |
+| Consiglio sul peso | Taratura e progressione secondo la futura versione approvata delle regole R2 (21/22) |
+| Ripetizioni in serbo | Stima dopo la serie di forza, con opzione «non so». La serie si salva anche senza stima |
+| Controllo del dolore | Prima e durante la seduta, secondo i percorsi del dossier 18 dopo revisione professionale |
 | Cicli e scarico | Da approvare in R2; 4 settimane + 1 è la configurazione storica |
 | Sostituzioni | Cambio manuale oggi o nel programma, conseguenze esplicite, annullamento e storico conservato |
 | Metriche | Grafici per esercizio/variante; tonnellaggio con unità e limiti espliciti |
@@ -56,31 +56,9 @@ Fuori dalla prima versione: store, pagamenti, coach in chat completo, orologi e 
 
 Le domande e i modelli stanno in file di dati, non nel codice.
 
-Domande di partenza:
+Per la prova usare le domande candidate R2-Q01–Q09 del [documento 22](22-questionario-progressione-casi-r2.md). Registrare le finestre disponibili da due a sette, la priorità dichiarata e i movimenti familiari. Il dossier Q7 distingue una restrizione già discussa, un problema attuale e un possibile bisogno urgente. Una risposta positiva apre il ramo pertinente. I testi di screening richiedono revisione professionale prima dell’uso.
 
-1. Obiettivo: forza, massa muscolare, forma generale, perdere peso.
-2. Esperienza: mai allenato, meno di 1 anno, 1-3 anni, più di 3 anni.
-3. Giorni a settimana: 2, 3, 4.
-4. Minuti per seduta: 30, 45, 60, 75.
-5. Dove ti alleni: palestra completa, palestra piccola, casa con manubri, casa a corpo libero.
-6. Dolori o limitazioni attuali, per zona.
-7. Età e sesso.
-8. Altri sport e quante volte a settimana.
-9. Esercizi che non vuoi o non puoi fare.
-10. Domande di sicurezza: dolore al petto sotto sforzo, svenimenti, problemi di cuore, gravidanza, interventi recenti. Con una risposta positiva l'app invita a parlare con il medico prima di iniziare e non assegna la scheda finché l'utente non conferma di averlo fatto.
-
-Modelli di partenza per la validazione, da portare a 30-40 dopo la ricerca:
-
-| Modello | Giorni | Luogo |
-| --- | --- | --- |
-| Tutto il corpo, principiante | 2 | palestra |
-| Tutto il corpo, principiante | 3 | palestra |
-| Parte alta e parte bassa | 4 | palestra |
-| Tutto il corpo con manubri | 3 | casa |
-| Corpo libero | 3 | casa |
-| Calisthenics e forza (quello del prototipo, in `data/sedute-esempio.json`) | 3 | palestra |
-
-Ogni modello è un elenco di sedute fatte di blocchi, nello stesso formato di `data/sedute-esempio.json`. Gli esercizi vengono da una libreria unica, `data/esercizi.json`, da ampliare.
+Le famiglie e i limiti effettivi del catalogo sono nei documenti 20–23. Il tempo di tre minuti è un obiettivo di usabilità da misurare nel pilot.
 
 ## 5. Livelli e parte a gioco
 

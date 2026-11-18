@@ -1,4 +1,4 @@
-# Ripresa rapida — aggiornato 2026-11-17
+# Ripresa rapida — aggiornato 2026-11-18
 
 Leggi questo file e AGENTS.md, poi soltanto i documenti del compito corrente.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
@@ -26,15 +26,15 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Leggi 21/22 e `docs/23-catalogo-calendari-r2.md`: identità esercizi e calendari candidati 2/3/4 sedute.
+- Riparti dalla settimana F03 in `docs/26-seduta-forza-r2.md`. A/B e criteri di incremento/rientro pronti per revisione. Prossimo caso completo F04 con sostituzione. Fonti nel 25, dosi/regole in 21/22, calendari nel 23.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
-- Registro: 27 articoli (11 testi/sezioni, 15 abstract, 1 metadati) + 5 documenti istituzionali valutati.
+- Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
 - Bozze R2: dosi/questionario e casi candidati; nessun numero approvato o motore implementato.
 - Q1–Q15 rimappate alle definizioni ufficiali 08/10; l'addendum esterno aveva associazioni ipotetiche.
 - Q6/Q8: dossier 19 con precedenze, sostituzioni e casi candidati; nessun algoritmo approvato.
 - Perimetro F01–F05 adulti autonomi e gestione L01–L10 confermati; specialismi rinviati, non età/BMI.
-- Completare revisione esercizi/istruzioni, aerobico iniziale, taratura/incrementi/rientro/scarico.
+- Completare revisione esercizi/istruzioni, revisione familiarizzazione aerobica proposta nel 21, taratura/incrementi/rientro/scarico.
 - Poi revisione/approvazione R2 prima del motore; R3 ricerca utenti può procedere in parallelo.
 - Modelli/consumo: 24; preferire risultato verificato per quota usata, senza inventare limiti account.
 

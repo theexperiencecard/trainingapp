@@ -79,7 +79,7 @@ dall'abbonamento. Nessun prezzo, API o fornitore aggiuntivo è scelto qui.
 | Stesso profilo, obiettivo forza oppure ipertrofia | Scelte motivate da regole specifiche, non solo un'etichetta diversa |
 | Attrezzatura assente o nessuna alternativa compatibile | Messaggio chiaro e percorso valido; nessun esercizio inventato |
 | Cambio esercizio durante la seduta | Serie precedenti e storico conservati; nuove serie attribuite all'esercizio svolto |
-| Cambio bilanciere/macchina o convenzione dei manubri | Nessun confronto o record automaticamente equivalente |
+| Cambio macchina o convenzione dei manubri | Macchina diversa apre un grafico distinto. Sulla stessa variante una conversione per mano/totale documentata conserva il grafico |
 | Ripristino di un esercizio precedente | Storico precedente recuperato, nessun trasferimento arbitrario di kg |
 | Annullamento dopo una serie sul nuovo esercizio | Serie realmente svolta conservata; ripristino del programma esplicito |
 | Dolore o profilo non supportato | Percorso revisionato, non sostituzione presentata come garanzia di sicurezza |
@@ -87,3 +87,10 @@ dall'abbonamento. Nessun prezzo, API o fornitore aggiuntivo è scelto qui.
 
 Validazione: revisione scientifica/professionale per le prescrizioni, test software
 per i vincoli, prove d'uso per comprensione e facilità. Sono evidenze diverse.
+
+Precisazione R2 per le unità. Se la stessa serie con due manubri identici è indicata
+come 10 kg per mano o 20 kg esterni totali, si possono normalizzare le due annotazioni
+quando numero di attrezzi, gesto simultaneo e convenzione sono espliciti. Conservare
+il dato inserito e la sua unità. Otto ripetizioni simultanee danno 160 kg di volume
+esterno in entrambi i casi. Con esecuzione alternata occorre sapere se le ripetizioni
+sono per lato o totali. Una convenzione sconosciuta lascia il confronto in sospeso.

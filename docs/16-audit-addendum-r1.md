@@ -35,7 +35,7 @@ e, separatamente, 2 documenti istituzionali. Non sono 29 prove indipendenti.
   non automaticamente a diagnosi, divieto o emergenza. Il modulo copre anche minori:
   ciò non amplia il perimetro dell'app. Non copiare soglie o testi come regole approvate.
 - Il consenso ESSA S27 riguarda pressione durante esercizio in un percorso professionale.
-  Non è il presunto consenso congiunto ACSM/ESSA su talk test/RPE, né una fonte sul dolore.
+  Aggiornamento successivo: S28 identifica il consenso congiunto (documento 25). S27 non è il consenso ACSM/ESSA su talk test/RPE, né una fonte sul dolore.
   Registrato come riferimento controllato **non pertinente a quel claim**.
 - Russo S14: l'addendum nomina il repository Évora ma non fornisce un URL recuperabile.
   In questa sessione nessun PDF Russo letto: resta `metadata_only`. Held S13 resta
