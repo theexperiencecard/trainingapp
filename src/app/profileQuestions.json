@@ -1,0 +1,7 @@
+[
+  {"id":"goal","kind":"choice","options":["general","strength","muscle","aerobic","undecided"]},
+  {"id":"familiar","kind":"multiple","options":["squat","press","row","walk","noneFamiliar"],"exclusive":"noneFamiliar"},
+  {"id":"days","kind":"integer","min":1,"max":7},
+  {"id":"minutes","kind":"integer","min":1,"max":1440},
+  {"id":"equipment","kind":"multiple","options":["dumbbells","barbell","machine","bands","bodyweight"],"exclusive":"bodyweight"}
+]
