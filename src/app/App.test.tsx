@@ -16,6 +16,7 @@ describe('application shell', () => {
     expect(html).toContain(`<h1>${messages[locale].heading}</h1>`);
     expect(html).toContain(messages[locale].language);
     expect(html).toContain(catalogs[`../locales/timer-${locale}.json`]!.heading);
+    expect(html).toContain(catalogs[`../locales/journal-${locale}.json`]!.heading);
   });
 });
 

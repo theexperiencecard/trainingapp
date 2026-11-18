@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { messages, type Locale } from '../locales/messages';
 import type { OfflineStatus } from '../registerOffline';
+import { LocalJournal } from './LocalJournal';
 import { SessionDemo } from './SessionDemo';
 import { WorkoutTimer } from './WorkoutTimer';
 
@@ -31,6 +32,7 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
+      <LocalJournal locale={language} />
       <SessionDemo locale={language} />
       <WorkoutTimer locale={language} />
       {offlineStatus && (

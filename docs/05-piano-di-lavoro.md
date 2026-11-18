@@ -54,7 +54,7 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
-| 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | in corso |
+| 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | in corso: diario IndexedDB provato in Chromium, mancano i telefoni |
 | 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | da fare |
 | 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | da fare |
 | 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | in corso |
@@ -297,6 +297,19 @@ Per la finestra di 12–20 settimane il preventivo indicativo è 2–4 per speci
 
 I [casi F01/F02/F05](28-confronto-ingresso-generale-aerobico.md) completano gli esempi per le cinque famiglie. La [scheda per la revisione](29-consegna-revisione-r2.md) collega ogni decisione a un caso e a un esito da registrare. Nessuna prescrizione è stata approvata.
 
-La prima dimostrazione interna prevista nella stima è disponibile in questa build. Copre due serie di esempio, cambio solo oggi o anche giovedì, ripristino del piano e volumi separati. Il riavvio azzera il diario sintetico. 2.4 offre già recupero a scadenza persistita e cronometro di tenuta con ripristino. Resta da integrarli nella seduta definitiva. Per 2.1 la cache di produzione consente la riapertura offline dopo la prima visita. Il [primo diario persistente](30-proposta-diario-locale.md) è in attesa della decisione sullo schema.
+La prima dimostrazione interna prevista nella stima è disponibile in questa build. Copre due serie di esempio, cambio solo oggi o anche giovedì, ripristino del piano e volumi separati. Il riavvio azzera il diario sintetico. 2.4 offre già recupero a scadenza persistita e cronometro di tenuta con ripristino. Resta da integrarli nella seduta definitiva. Per 2.1 la cache di produzione consente la riapertura offline dopo la prima visita. Il [primo diario persistente](30-proposta-diario-locale.md) è stato poi approvato e realizzato (sezione seguente).
 
 Verificati in Chromium la registrazione delle due serie sui tre rami, i volumi 480/250 o 960 kg, la riapertura della build offline, il ripristino del timer e il cronometro, la lingua e la larghezza di 360 px. Verificati anche manifest, rifiuto di asset con hash errato, esclusione degli endpoint API e cambio di versione dopo la chiusura della scheda. Questi riscontri anticipano la demo iniziale. La stima del pilot dipende ancora da revisione, account, sync e dispositivi reali.
+
+## Primo diario persistente realizzato
+
+18 novembre 2026. L'utente ha approvato la proposta del [documento 30](30-proposta-diario-locale.md). Il primo tentativo è rimasto nell'ambiente di Codex e non è mai arrivato su GitHub: il diario è stato quindi ricostruito da capo con Claude Code sul ramo `claude/app-development-continuation-dkrl22`.
+
+- `src/core/journal.ts`: tipi di seduta, serie e modifica; giorno locale; lettura dei decimali con virgola; unione per campo con revisione di partenza; volume per identità di esercizio. 10 test in `journal.test.ts`.
+- `src/app/journalStore.ts`: IndexedDB senza librerie aggiuntive. Serie e operazione nella stessa transazione `strict`; conferma solo a transazione completata; retry con lo stesso ID senza doppioni; versione del formato controllata all'apertura; avviso alle altre schede con BroadcastChannel.
+- `src/app/LocalJournal.tsx`: registrazione, correzione, eliminazione logica e ripristino, conflitto visibile con scelta esplicita, volumi separati. Testi in `journal-it/de/en.json`.
+- Limiti tecnici di immissione (carico 0–1000 kg, ripetizioni intere da 1, RIR intera 0–10 o vuota): controlli di plausibilità, non regole di allenamento.
+
+**Verifiche eseguite.** `npm run check` (28 test, tipi, lint) e `npm run build` riusciti con Node 24.22.1. `scripts/journal-e2e.cjs` sulla build di produzione in Chromium, 18 controlli riusciti: serie con RIR vuota registrata senza rete, pagina chiusa e riaperta offline con stessi ID, giorno, valore e unità; scrittura fallita senza conferma né serie parziale, retry con una sola serie; panca e chest press con volumi separati (905 kg totali, 250 kg indicati); due schede che correggono campi diversi si uniscono senza conflitto; stessa misura divergente mostra entrambi i valori e conserva quello salvato fino alla scelta; correzione su una serie eliminata altrove segnala l'eliminazione; nessuno scorrimento orizzontale a 360 px in tedesco. La prova ha trovato e fatto correggere un errore: la correzione inviava anche campi non toccati se un'altra scheda li aveva cambiati.
+
+**Resta aperto per 2.1.** Prove su iPhone e Android reali con app sulla Home (registrare dispositivi, versioni ed esiti). Valutare `navigator.storage.persist()` contro la cancellazione automatica dei dati, soprattutto su Safari. Il criterio 2 su una nuova revisione del catalogo è coperto dal salvataggio di versione e convenzione per serie, ma senza un secondo catalogo da provare. Il criterio 4 attende gli account.
