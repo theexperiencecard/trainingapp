@@ -5,6 +5,7 @@ import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
 import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
 import { profileDirection } from './profileDirection';
+import { pressComparison } from './pressComparison';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
@@ -13,6 +14,7 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [reviewing, setReviewing] = useState(false);
   const direction = reviewing ? profileDirection(answers) : null;
+  const comparison = reviewing ? pressComparison(answers) : null;
   const questions = visibleProfileQuestions(answers);
   const fieldPrefix = useId();
   const form = useRef<HTMLFormElement>(null);
@@ -62,6 +64,22 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
               </div>
             ))}
           </dl>
+          {comparison && (
+            <details>
+              <summary>{text.comparePress}</summary>
+              <dl>
+                <dt>{text.avoidBench}</dt>
+                <dd>{text[comparison.bench]}</dd>
+                <dt>{text.avoidMachinePress}</dt>
+                <dd>{text[comparison.machine]}</dd>
+              </dl>
+              {comparison.bench === 'checkEquipment' || comparison.machine === 'checkEquipment' ? (
+                <p>{comparison.goal === 'strength' ? text.compareStrength : text.compareMuscle}</p>
+              ) : (
+                <p>{text.noPressMatch}</p>
+              )}
+            </details>
+          )}
           <button type="button" onClick={() => setReviewing(false)}>{text.edit}</button>
         </>
       ) : (

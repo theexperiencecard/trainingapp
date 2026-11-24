@@ -9,7 +9,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Forza e ipertrofia richiedono scelte motivate. Valutare disponibilità 2–7 giorni,
   esperienza, capacità, recupero e vincoli; perimetro del documento 20 confermato.
 - Target Pareto di circa 80% dei casi ordinari, da misurare nel pilot.
-- Sostituzione manuale motivata. La demo spiega panca/chest press, con storico per attrezzo.
+- Sostituzione manuale motivata. Il riepilogo confronta panca/chest press per forza e ipertrofia, con limiti di attrezzi e preferenze.
 - Grafici per esercizio/variante; nessuna equivalenza automatica tra kg di attrezzi diversi.
 - Sicurezza e integrità dei dati sono requisiti trasversali. Coach a pagamento dopo validazione.
 
@@ -47,7 +47,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Fine di ogni risposta: modello esatto per il prossimo compito; nessun cambio automatico.
 - Ogni compito: breve consiglio Codex/altro strumento; se esterno, prompt mirato pronto.
 - Prosegui fino ai vincoli reali del piano. Autorizzati subagenti sullo stesso modello per attività indipendenti; integra e verifica prima della consegna.
-- Commit e push a fine blocco coerente, con questo contesto aggiornato e remoto verificato.
+- Punto di ripresa appena un blocco è verificato: aggiorna questo file, fai commit e push su main e confronta gli SHA.
 
 ## Dove approfondire
 - `docs/05-piano-di-lavoro.md`: stato e criteri; `DECISIONI.md`: storia delle scelte (righe recenti prevalgono).

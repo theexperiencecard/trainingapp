@@ -53,5 +53,12 @@
   "avoidBench": "Barbell bench press",
   "avoidSquat": "Dumbbell goblet squat",
   "avoidMachinePress": "Chest press",
-  "noAvoidPreference": "No preference for these exercises"
+  "noAvoidPreference": "No preference for these exercises",
+  "comparePress": "Example substitution between bench press and chest press",
+  "checkEquipment": "Equipment category selected. Check the specific setup before choosing.",
+  "equipmentMissing": "Your answers do not list the equipment this exercise needs.",
+  "excludedByPreference": "You indicated that you prefer to avoid this movement.",
+  "compareStrength": "Practising the barbell bench press matters if you want to improve that specific lift. The chest press follows a guided path. Loads and logs are tracked separately.",
+  "compareMuscle": "Both options can train the chest. The chest press guides the path. With a barbell, you control the path and stabilise the load. Loads and logs are tracked separately.",
+  "noPressMatch": "Your answers rule out both options. A plan would need other suitable variants."
 }

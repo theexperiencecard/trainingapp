@@ -53,5 +53,12 @@
   "avoidBench": "Panca piana con bilanciere",
   "avoidSquat": "Squat con un manubrio al petto",
   "avoidMachinePress": "Chest press",
-  "noAvoidPreference": "Nessuna preferenza tra questi"
+  "noAvoidPreference": "Nessuna preferenza tra questi",
+  "comparePress": "Esempio di sostituzione tra panca e chest press",
+  "checkEquipment": "Attrezzatura indicata. Per la scelta serve verificare la postazione precisa.",
+  "equipmentMissing": "L’attrezzatura necessaria non risulta tra le tue risposte.",
+  "excludedByPreference": "Hai indicato che preferisci evitare questo movimento.",
+  "compareStrength": "Per migliorare proprio nella panca con bilanciere, la pratica di quel gesto conta. La chest press usa una traiettoria guidata. I carichi e lo storico restano separati.",
+  "compareMuscle": "Entrambe possono allenare il petto. La chest press guida la traiettoria. Il bilanciere richiede di controllare la traiettoria e stabilizzare il carico. I carichi e lo storico restano separati.",
+  "noPressMatch": "Con le tue risposte nessuna delle due è una candidata. Per una proposta servono altre varianti compatibili."
 }

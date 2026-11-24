@@ -53,5 +53,12 @@
   "avoidBench": "Bankdrücken mit der Langhantel",
   "avoidSquat": "Kniebeuge mit Kurzhantel vor der Brust",
   "avoidMachinePress": "Brustpresse",
-  "noAvoidPreference": "Keine Präferenz bei diesen Übungen"
+  "noAvoidPreference": "Keine Präferenz bei diesen Übungen",
+  "comparePress": "Beispiel für den Wechsel zwischen Bankdrücken und Brustpresse",
+  "checkEquipment": "Gerätekategorie ausgewählt. Prüfe vor der Auswahl die konkrete Ausstattung.",
+  "equipmentMissing": "Die benötigte Ausstattung ist in deinen Antworten nicht angegeben.",
+  "excludedByPreference": "Du hast angegeben, dass du diese Übung lieber vermeiden möchtest.",
+  "compareStrength": "Wenn du speziell beim Bankdrücken stärker werden willst, zählt die Übung mit der Langhantel. Die Brustpresse führt die Bewegung. Gewichte und Trainingsverlauf werden getrennt erfasst.",
+  "compareMuscle": "Beide Übungen können die Brust trainieren. Die Brustpresse führt die Bewegung. Mit der Langhantel führst und stabilisierst du das Gewicht selbst. Gewichte und Trainingsverlauf werden getrennt erfasst.",
+  "noPressMatch": "Deine Antworten schließen beide Möglichkeiten aus. Ein Trainingsplan braucht andere passende Varianten."
 }
