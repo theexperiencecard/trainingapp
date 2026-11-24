@@ -1,0 +1,14 @@
+{
+  "heading": "Tagebuch der vorherigen Vorschau",
+  "intro": "Auf diesem Gerät liegt ein Archiv aus einer früheren Vorschau. Du kannst den Verlauf im Lesemodus öffnen.",
+  "show": "Früheren Verlauf öffnen",
+  "refresh": "Früheren Verlauf aktualisieren",
+  "loading": "Verlauf wird geladen…",
+  "error": "Verlauf konnte nicht gelesen werden. Prüfe Browserberechtigungen und Tagebuchversion.",
+  "empty": "Keine Beispielsätze erfasst.",
+  "bench": "Bankdrücken · Gesamtgewicht",
+  "machine": "Brustpresse M1 · angezeigtes Gewicht",
+  "missing": "Ohne Angabe",
+  "rir": "RIR",
+  "voided": "Eintrag annulliert"
+}

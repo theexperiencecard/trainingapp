@@ -4,5 +4,6 @@
   "language": "Language",
   "languageName": "English",
   "offlineReady": "This preview can reopen offline on this device.",
-  "offlineUnavailable": "Offline setup failed. Reopen the page while connected to try again."
+  "offlineUnavailable": "Offline setup failed. Reopen the page while connected to try again.",
+  "example": "Simulate an exercise change"
 }

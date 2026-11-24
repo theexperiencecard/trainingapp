@@ -1,0 +1,11 @@
+{
+  "title": "Volumen je Trainingstag",
+  "exercise": "Gerät im Diagramm",
+  "bench": "Bankdrücken · Gesamtgewicht",
+  "machine": "Brustpresse M1 · angezeigtes Gewicht",
+  "description": "Die letzten sieben erfassten Tage für dieses Gerät. Das Volumen ergibt sich aus Gewicht × Wiederholungen aller absolvierten Sätze.",
+  "unit": "kg",
+  "single": "Satz",
+  "plural": "Sätze",
+  "unknown": "Volumen nicht verfügbar"
+}

@@ -11,7 +11,7 @@ Tipo: D = delicato, N = normale, M = meccanico (vedi `AGENTS.md`, sezione 5).
 | --- | --- | --- | --- | --- |
 | 0.1 | Proporre le tecnologie e la struttura delle cartelle, con le alternative | D | Roberto ha approvato e la scelta è in `DECISIONI.md` | fatto |
 | 0.2 | Creare il progetto vuoto con test, controllo dei tipi e lint | N | Un comando esegue tutto e passa | fatto |
-| 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | in corso |
+| 0.3 | Controlli automatici a ogni modifica inviata al repository | N | Una modifica con un test rotto viene segnalata | fatto |
 
 ## Revisione prima del motore
 
@@ -58,7 +58,7 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 | 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | da fare |
 | 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | da fare |
 | 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | in corso |
-| 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | da fare |
+| 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | in corso |
 | 2.6 | Controllo del dolore con legenda, e fastidio durante la serie | N | Le regole della tappa 1 reagiscono ai valori inseriti | da fare |
 | 2.7 | Sostituzione manuale oggi o nelle sedute future, con anteprima e annullamento | D | Alternative e limiti approvati in R2; serie svolte conservate e casi di sostituzione superati | da fare |
 
@@ -66,7 +66,7 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
-| 3.1 | Questionario letto da un file di dati, con le domande di sicurezza | N | Cambiare una domanda non richiede codice | da fare |
+| 3.1 | Questionario letto da un file di dati, con le domande di sicurezza | N | Cambiare una domanda non richiede codice | in corso |
 | 3.2 | Regole che assegnano un modello | D | Ogni combinazione di risposte porta a un modello o a un messaggio chiaro | da fare |
 | 3.3 | I modelli di partenza come file di dati | N | Roberto li ha riletti | da fare |
 
@@ -83,11 +83,11 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
-| 5.1 | Storico per settimane, serie per serie | N | Si arriva a ogni seduta passata | da fare |
+| 5.1 | Storico per settimane, serie per serie | N | Si arriva a ogni seduta passata | in corso |
 | 5.2 | Livelli e punti neutri | N | Nessun titolo a tema | da fare |
 | 5.3 | Tutti i testi in italiano, tedesco e inglese | M | Nessun testo nel codice, nessuna parola tagliata in tedesco | da fare |
 | 5.4 | Controllo di accessibilità | N | Contrasto e aree toccabili rispettati, tema chiaro e scuro | da fare |
-| 5.5 | Grafici per esercizio/variante e riepiloghi con metriche definite | N | Cambi esercizio visibili, unità coerenti, nessun falso record o trasferimento di carico | da fare |
+| 5.5 | Grafici per esercizio/variante e riepiloghi con metriche definite | N | Cambi esercizio visibili, unità coerenti, nessun falso record o trasferimento di carico | in corso |
 
 ## Prova con le persone
 
@@ -300,3 +300,19 @@ I [casi F01/F02/F05](28-confronto-ingresso-generale-aerobico.md) completano gli 
 La prima dimostrazione interna prevista nella stima è disponibile in questa build. Copre due serie di esempio, cambio solo oggi o anche giovedì, ripristino del piano e volumi separati. Il riavvio azzera il diario sintetico. 2.4 offre già recupero a scadenza persistita e cronometro di tenuta con ripristino. Resta da integrarli nella seduta definitiva. Per 2.1 la cache di produzione consente la riapertura offline dopo la prima visita. Il [primo diario persistente](30-proposta-diario-locale.md) è in attesa della decisione sullo schema.
 
 Verificati in Chromium la registrazione delle due serie sui tre rami, i volumi 480/250 o 960 kg, la riapertura della build offline, il ripristino del timer e il cronometro, la lingua e la larghezza di 360 px. Verificati anche manifest, rifiuto di asset con hash errato, esclusione degli endpoint API e cambio di versione dopo la chiusura della scheda. Questi riscontri anticipano la demo iniziale. La stima del pilot dipende ancora da revisione, account, sync e dispositivi reali.
+
+## Diario integrato e distanza dal pilot · 23 novembre 2026
+
+La PR #1 di Claude partiva dal 7dc3172 e aggiungeva un secondo diario IndexedDB. Dalla PR provengono l'inserimento dei valori al momento della registrazione, la virgola decimale, la distinzione tra carico mancante e zero e i casi di prova in Chromium. L'integrazione mantiene gli stati svolta/saltata/annullata, le revisioni per campo e lo storico giornaliero per configurazione. Un ID di operazione ripetuto con contenuto differente è respinto. Un giorno con carichi incompleti mostra il conteggio delle serie e segnala che il volume è sconosciuto. [PR originale](https://github.com/theexperiencecard/trainingapp/pull/1)
+
+Per stimare il progresso, il traguardo è il pilot della prima versione installata sulla Home, con questionario, scheda adatta all'obiettivo, seduta completa, account e sincronizzazione. La seguente ripartizione è un giudizio di pianificazione, da rifare al primo flusso completo. La somma attuale è circa un terzo.
+
+| Ambito | Peso indicativo | Punti maturati | Riscontro |
+| --- | ---: | ---: | --- |
+| Scienza, catalogo e motore | 30 | 9 | Fonti e casi per cinque famiglie pronti. Mancano parere professionale, catalogo approvato e motore. |
+| Dal questionario alla seduta conclusa | 25 | 7 | Preferenze, simulazione di sostituzione e timer provabili. Manca il collegamento a una scheda e a tutti i passaggi di una seduta. |
+| Diario, offline e progressi | 20 | 15 | Serie e correzioni locali, conflitti, ripristino e grafici per attrezzo. Copertura sintetica ancora limitata. |
+| Account, privacy e sincronizzazione | 15 | 0 | Specifiche disponibili. Accesso, isolamento degli utenti, esportazione e sync da realizzare. |
+| Collaudo mobile e preparazione pilot | 10 | 1 | Verifiche automatiche e browser desktop disponibili. Servono i due telefoni reali e prova d'uso. |
+
+Prossimo incremento verificabile: percorrere dall'inizio alla fine una scheda di esempio, dal riepilogo iniziale alla registrazione dell'ultima serie e allo storico. La prescrizione automatica dipende dalla revisione R2. Per la prova sul campo restano i prerequisiti dei telefoni reali, degli account e della sincronizzazione.

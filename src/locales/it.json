@@ -4,5 +4,6 @@
   "language": "Lingua",
   "languageName": "Italiano",
   "offlineReady": "Questa anteprima si riapre anche senza rete su questo dispositivo.",
-  "offlineUnavailable": "Preparazione offline non riuscita. Riapri la pagina con la rete attiva per riprovare."
+  "offlineUnavailable": "Preparazione offline non riuscita. Riapri la pagina con la rete attiva per riprovare.",
+  "example": "Simula un cambio di esercizio"
 }

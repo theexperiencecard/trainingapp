@@ -1,0 +1,14 @@
+{
+  "heading": "Previous preview journal",
+  "intro": "This device contains an archive from an earlier preview. You can view its history in read-only mode.",
+  "show": "Open previous history",
+  "refresh": "Refresh previous history",
+  "loading": "Reading history…",
+  "error": "History could not be read. Check browser permissions and the journal version.",
+  "empty": "No sample sets recorded.",
+  "bench": "Bench press · total weight",
+  "machine": "Chest press M1 · indicated load",
+  "missing": "Unspecified",
+  "rir": "RIR",
+  "voided": "Voided entry"
+}

@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { messages, type Locale } from '../locales/messages';
 import type { OfflineStatus } from '../registerOffline';
+import { LegacyJournal } from './LegacyJournal';
+import { LocalJournal } from './LocalJournal';
+import { ProfileQuestionnaire } from './ProfileQuestionnaire';
 import { SessionDemo } from './SessionDemo';
 import { WorkoutTimer } from './WorkoutTimer';
 
@@ -31,8 +34,14 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
-      <SessionDemo locale={language} />
+      <LocalJournal locale={language} />
+      <LegacyJournal locale={language} />
+      <ProfileQuestionnaire locale={language} />
       <WorkoutTimer locale={language} />
+      <details className="example-panel">
+        <summary>{text.example}</summary>
+        <SessionDemo locale={language} />
+      </details>
       {offlineStatus && (
         <p role="status">{offlineStatus === 'ready' ? text.offlineReady : text.offlineUnavailable}</p>
       )}

@@ -1,0 +1,14 @@
+{
+  "heading": "Diario della precedente anteprima",
+  "intro": "Su questo dispositivo è presente un archivio della precedente anteprima. Puoi consultarlo in sola lettura.",
+  "show": "Apri lo storico precedente",
+  "refresh": "Aggiorna lo storico precedente",
+  "loading": "Lettura dello storico…",
+  "error": "Lettura non riuscita. Verifica i permessi del browser e la versione del diario.",
+  "empty": "Nessuna serie di esempio registrata.",
+  "bench": "Panca piana · carico totale",
+  "machine": "Chest press M1 · carico indicato",
+  "missing": "Non indicato",
+  "rir": "RIR",
+  "voided": "Registrazione annullata"
+}

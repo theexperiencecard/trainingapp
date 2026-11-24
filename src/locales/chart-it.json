@@ -1,0 +1,11 @@
+{
+  "title": "Volume per giorno",
+  "exercise": "Attrezzo del grafico",
+  "bench": "Panca piana · carico totale",
+  "machine": "Chest press M1 · carico indicato",
+  "description": "Ultimi sette giorni registrati per questo attrezzo. Il volume somma carico × ripetizioni delle serie svolte.",
+  "unit": "kg",
+  "single": "serie",
+  "plural": "serie",
+  "unknown": "Volume non disponibile"
+}

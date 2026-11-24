@@ -53,3 +53,16 @@ button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); o
 input[type="number"] { font: inherit; display: block; width: 100%; min-height: 2.875rem; padding: 0.6rem; margin-block-start: 0.4rem; border: 1px solid var(--muted); background: var(--panel); color: inherit; border-radius: 0.5rem; }
 input:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 [role="timer"] { display: block; font-size: 2.5rem; font-variant-numeric: tabular-nums; }
+
+details summary { cursor: pointer; min-block-size: 2.875rem; align-content: center; font-weight: 650; }
+details summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.example-panel { margin-block: 1rem; padding-inline: 1rem; border-inline-start: 0.25rem solid var(--line); }
+button:disabled { opacity: 0.65; cursor: wait; }
+.profile-option { min-block-size: 2.875rem; display: flex; align-items: center; gap: 0.5rem; }
+.profile-field, fieldset { display: block; margin-block: 0 1rem; }
+fieldset { border: 1px solid var(--line); border-radius: 0.5rem; }
+.journal-chart { margin-block: 1.5rem; }
+.journal-chart ul { list-style: none; padding: 0; }
+.journal-chart li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem; margin-block: 0.75rem; }
+.chart-track { inline-size: 100%; background: var(--line); border-radius: 0.4rem; overflow: hidden; }
+.chart-track i { display: block; block-size: 0.4rem; background: var(--accent); }
