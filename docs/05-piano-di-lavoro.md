@@ -56,7 +56,7 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 | --- | --- | --- | --- | --- |
 | 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | in corso |
 | 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | da fare |
-| 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | da fare |
+| 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | in corso |
 | 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | in corso |
 | 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | in corso |
 | 2.6 | Controllo del dolore con legenda, e fastidio durante la serie | N | Le regole della tappa 1 reagiscono ai valori inseriti | da fare |
@@ -316,3 +316,7 @@ Per stimare il progresso, il traguardo è il pilot della prima versione installa
 | Collaudo mobile e preparazione pilot | 10 | 1 | Verifiche automatiche e browser desktop disponibili. Servono i due telefoni reali e prova d'uso. |
 
 Prossimo incremento verificabile: percorrere dall'inizio alla fine una scheda di esempio, dal riepilogo iniziale alla registrazione dell'ultima serie e allo storico. La prescrizione automatica dipende dalla revisione R2. Per la prova sul campo restano i prerequisiti dei telefoni reali, degli account e della sincronizzazione.
+
+## Seduta guidata di esempio · 24 novembre 2026
+
+Il percorso di due serie parte da un riepilogo. Dopo la prima serie l'utente può aprire il timer e scegliere la chest press per la seconda. Ogni conferma scrive nel diario locale, usando lo stesso ID di operazione se deve riprovare. Il riepilogo finale porta allo storico. Alla riapertura le serie e il timer restano disponibili. Il passo corrente e le scelte della simulazione si ricostruiscono dal riepilogo iniziale. Il percorso riguarda la scheda di esempio. L'assegnazione dal questionario e il catalogo della prima prova reale dipendono ancora dalla revisione R2.

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import { localDate, newOperationId, parseDecimal, validMeasurement } from '../core/journalInput';
+import { journalChannel, notifyJournal } from './journalUpdates';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
 import de from '../locales/journal-de.json';
@@ -77,9 +78,10 @@ export function LocalJournal({ locale }: { locale: Locale }) {
     const reload = () => { if (active) void refresh(); };
     queueMicrotask(reload);
     window.addEventListener('focus', reload);
+    window.addEventListener(journalChannel, reload);
     window.addEventListener('pageshow', reload);
     try {
-      const connection = new BroadcastChannel('trainingapp.local-sample-log');
+      const connection = new BroadcastChannel(journalChannel);
       connection.onmessage = reload;
       channel.current = connection;
     } catch {
@@ -88,6 +90,7 @@ export function LocalJournal({ locale }: { locale: Locale }) {
     return () => {
       active = false;
       window.removeEventListener('focus', reload);
+      window.removeEventListener(journalChannel, reload);
       window.removeEventListener('pageshow', reload);
       channel.current?.close();
       channel.current = null;
@@ -118,11 +121,7 @@ export function LocalJournal({ locale }: { locale: Locale }) {
     pendingAdd.current = null;
     if (!keepEditor) setEditor(null);
     setMessage('saved');
-    try {
-      channel.current?.postMessage('refresh');
-    } catch {
-      // Focus and pageshow also refresh tabs when the channel is unavailable.
-    }
+    notifyJournal(channel.current);
     await refresh();
     writing.current = false;
     setBusy(false);
@@ -192,7 +191,7 @@ export function LocalJournal({ locale }: { locale: Locale }) {
 
   return (
     <section className="session-demo local-journal" aria-labelledby="local-journal-heading">
-      <h2 id="local-journal-heading">{text.heading}</h2>
+      <h2 id="local-journal-heading" tabIndex={-1}>{text.heading}</h2>
       <p>{text.intro}</p>
       {!editor && <form className="journal-entry" aria-label={text.newSet} onSubmit={event => {
         event.preventDefault();

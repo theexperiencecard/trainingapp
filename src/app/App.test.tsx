@@ -28,8 +28,8 @@ describe('session preview', () => {
     const html = renderToStaticMarkup(<App locale={locale} />);
     const text = demo(locale);
     expect(html).toContain(text.heading);
-    expect(html).toContain(text.first);
-    expect(html).toContain(text.recordFirst);
+    expect(html).toContain(text.plan);
+    expect(html).toContain(text.start);
   });
 
   it.each(Object.keys(catalogs).filter((path) => path.endsWith('-it.json')))(

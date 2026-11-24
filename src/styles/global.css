@@ -66,3 +66,5 @@ fieldset { border: 1px solid var(--line); border-radius: 0.5rem; }
 .journal-chart li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem; margin-block: 0.75rem; }
 .chart-track { inline-size: 100%; background: var(--line); border-radius: 0.4rem; overflow: hidden; }
 .chart-track i { display: block; block-size: 0.4rem; background: var(--accent); }
+a { color: var(--accent); }
+.demo-actions a { display: inline-flex; align-items: center; min-block-size: 2.875rem; }

@@ -5,13 +5,13 @@ Repository di riferimento: https://github.com/theexperiencecard/trainingapp, ram
 Per riprendere il lavoro con una nuova IA: leggere [CONTEXTO.md](CONTEXTO.md) e
 [AGENTS.md](AGENTS.md), poi solo i documenti indicati per il prossimo compito.
 
-Anteprima interna in italiano, tedesco e inglese. Contiene un diario persistente di prova, grafici del volume per attrezzo, un questionario di preferenze con riepilogo, timer e una simulazione separata per i cambi d'esercizio.
+Anteprima interna in italiano, tedesco e inglese. Contiene un diario persistente di prova, grafici del volume per attrezzo, un questionario di preferenze con riepilogo, timer e una seduta guidata di esempio con sostituzione.
 
 ## Provarla in tre passi
 
 1. Con Node 24.22.1 e npm 11 esegui `npm ci`, `npm run build` e `npm run preview`. Apri l'indirizzo locale mostrato da Vite e attendi la conferma di disponibilità offline.
-2. Nel diario salva una serie di panca da 42,5 kg × 10, poi una alla chest press M1 da 25 kg × 10. Seleziona i due attrezzi nel grafico. Per il giorno locale della prova i rispettivi volumi sono 425 e 250 kg se questi sono i primi inserimenti.
-3. Disattiva la rete e riapri lo stesso indirizzo nello stesso browser. Correggi, segna come saltata o ripristina una serie e ricontrolla il grafico. Le preferenze appena compilate e la simulazione dimostrativa si azzerano alla ricarica. Il diario locale e il timer attivo si conservano.
+2. Apri «Prova una seduta guidata», avvia la prova e registra la prima serie. Usa il timer se vuoi, scegli la chest press M1 per la seconda serie, registrala e apri il diario dal riepilogo. Alla prima prova i due attrezzi mostrano rispettivamente 480 e 250 kg.
+3. Disattiva la rete e riapri lo stesso indirizzo nello stesso browser. Correggi, segna come saltata o ripristina una serie e ricontrolla il grafico. Le preferenze e il passo corrente della seduta di esempio ripartono da zero. Le serie confermate e il timer attivo si conservano.
 
 La shell offline di produzione richiede una prima apertura online su HTTPS o localhost. Per lo sviluppo usa `npm run dev`. Gli eventuali dati della prima anteprima della PR #1 sono consultabili nello stesso browser e sulla stessa origine, in uno storico separato in sola lettura.
 

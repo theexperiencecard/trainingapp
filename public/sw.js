@@ -32,7 +32,8 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET' || request.headers.has('authorization')) return;
 
   const url = request.url;
-  const isStart = request.mode === 'navigate' && url === self.registration.scope;
+  // In-page links still refer to the cached start document when reloaded.
+  const isStart = request.mode === 'navigate' && url.split('#', 1)[0] === self.registration.scope;
   if (!isStart && !urls.has(url)) return;
 
   event.respondWith((async () => {

@@ -93,7 +93,7 @@ export function WorkoutTimer({ locale }: { locale: Locale }) {
 
   return (
     <section className="session-demo" aria-labelledby="workout-timer-heading">
-      <h2 id="workout-timer-heading">{text.heading}</h2>
+      <h2 id="workout-timer-heading" tabIndex={-1}>{text.heading}</h2>
       <p>{text.local}</p>
       {readFailed && (
         <>

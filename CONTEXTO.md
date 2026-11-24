@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il prossimo risultato è una seduta sintetica completa, dal riepilogo allo storico.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. La seduta sintetica guidata è disponibile. Il prossimo risultato dipende dalla revisione delle prime schede reali.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata
@@ -16,7 +16,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Stato verificato
 - 0.1/0.2 completati: React/Vite, TypeScript rigoroso, Vitest, ESLint, un progetto npm.
 - Node 24.22.1 (`.nvmrc`), npm 11; `npm ci`, `npm run check`, `npm run build`.
-- Diario IndexedDB integrato con PR #1 Claude, volumi per giorno/attrezzo, preferenze temporanee, simulazione F04, timer e PWA IT/DE/EN. Avvio in README.
+- Diario IndexedDB integrato con PR #1 Claude, volumi per giorno/attrezzo, preferenze temporanee, seduta sintetica con sostituzione, timer e PWA IT/DE/EN. Avvio in README.
 - 0.3 chiuso: GitHub Actions verificato verde/rosso/verde su ramo isolato; riferimenti nel 06.
 - Repository condiviso: github.com/theexperiencecard/trainingapp, ramo `main`.
 - Push autorizzato dall’utente; per riprendere verificare HEAD remoto e stato locale.
@@ -26,7 +26,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato e implementato per esempi. Account, database remoto e sync richiedono decisioni distinte. Priorità: prima seduta sintetica completa. Stima pilot e pesi nel 05.
+- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato e implementato per esempi. Account, database remoto e sync richiedono decisioni distinte. Priorità: revisione delle proposte e collegamento del questionario al motore quando approvato. Stima pilot e pesi nel 05.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).

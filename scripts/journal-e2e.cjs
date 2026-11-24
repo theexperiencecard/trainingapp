@@ -7,6 +7,8 @@ const { chromium, expect } = require('playwright/test');
 const it = require('../src/locales/journal-it.json');
 const chart = require('../src/locales/chart-it.json');
 const shell = require('../src/locales/it.json');
+const demo = require('../src/locales/demo-it.json');
+const timer = require('../src/locales/timer-it.json');
 
 const journal = page => page.getByRole('region', { name: it.heading, exact: true });
 const button = (scope, text) => scope.getByRole('button', { name: text, exact: true });
@@ -158,6 +160,42 @@ async function verify() {
     const missingLoad = (await snapshot(page)).sets.find(set => set.kg === null);
     assert.equal(missingLoad.reps, 1);
     console.log('OK missing load preserves the set and does not appear as zero volume');
+
+    const guided = page.getByRole('region', { name: demo.heading, exact: true });
+    await page.getByText(shell.example, { exact: true }).click();
+    await button(guided, demo.start).click();
+    await button(guided, demo.recordFirst).click();
+    await expect(history(second)).toHaveCount(4);
+    await guided.getByRole('link', { name: demo.openTimer }).click();
+    await expect(page.locator('#workout-timer-heading')).toBeFocused();
+    await field(page, timer.duration).fill('30');
+    await button(page, timer.startCountdown).click();
+    await expect(page.getByRole('timer')).toBeVisible();
+
+    await choice(guided, demo.choice).selectOption('today');
+    const beforeRetry = await snapshot(page);
+    await page.evaluate(() => {
+      const original = IDBObjectStore.prototype.add;
+      IDBObjectStore.prototype.add = function (...args) {
+        if (this.name !== 'operations') return original.apply(this, args);
+        IDBObjectStore.prototype.add = original;
+        throw new DOMException('Test write failure', 'QuotaExceededError');
+      };
+    });
+    await button(guided, demo.recordSecond).click();
+    await expect(guided.getByRole('alert')).toHaveText(demo.saveError);
+    assert.deepEqual(await snapshot(page), beforeRetry);
+    await button(guided, demo.retry).click();
+    await expect(guided.getByRole('heading', { name: demo.complete })).toBeVisible();
+    await guided.getByRole('link', { name: demo.openJournal }).click();
+    await expect(page.locator('#local-journal-heading')).toBeFocused();
+    await expect(history(page)).toHaveCount(5);
+    await page.reload();
+    await expect(history(page)).toHaveCount(5);
+    const afterWorkout = await snapshot(page);
+    assert.equal(afterWorkout.operationCount, beforeRetry.operationCount + 1);
+    assert.ok(afterWorkout.sets.some(set => set.exercise === 'machine' && set.kg === 25 && set.reps === 10));
+    console.log('OK guided workout, timer, equipment change, write retry and persisted history');
 
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');
