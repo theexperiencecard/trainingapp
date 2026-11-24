@@ -6,8 +6,6 @@
   "complete": "Both sets logged",
   "bench": "Bench press",
   "machine": "Chest press M1",
-  "benchSet": "40 kg total × 12",
-  "machineSet": "25 kg on the stack × 10",
   "choice": "Exercise for the second set",
   "keepBench": "Bench press",
   "today": "Chest press M1 today only",
@@ -29,5 +27,7 @@
   "retry": "Retry saving",
   "saveError": "The save could not be confirmed. Retry to continue.",
   "machineMovement": "The chest press keeps a pushing exercise for the chest. The machine guides the path. With a barbell, you control the path and stabilise the load yourself.",
-  "machineTradeoff": "If your goal is to get stronger at the bench press itself, this set practises a different movement. The machine load and set go in the chest press history."
+  "machineTradeoff": "If your goal is to get stronger at the bench press itself, this set practises a different movement. The machine load and set go in the chest press history.",
+  "benchLoad": "kg total",
+  "machineLoad": "kg indicated"
 }

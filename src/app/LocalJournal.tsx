@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import { localDate, newOperationId, parseDecimal, validMeasurement } from '../core/journalInput';
 import { journalChannel, notifyJournal } from './journalUpdates';
+import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
 import de from '../locales/journal-de.json';
@@ -12,7 +13,6 @@ import {
 } from '../storage/localJournal';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
-const exercises: readonly Exercise[] = ['bench', 'machine'];
 const statuses: readonly SetStatus[] = ['completed', 'skipped', 'voided'];
 const fields = ['reps', 'kg', 'rir', 'status'] as const;
 type Field = typeof fields[number];
@@ -21,10 +21,12 @@ type Editor = { base: JournalSet; field: Field; value: string; conflict?: Journa
 type Measurement = Exclude<Field, 'status'>;
 type Draft = Record<Measurement, string>;
 const measures: readonly Measurement[] = ['kg', 'reps', 'rir'];
-const initialDrafts: Record<Exercise, Draft> = {
-  bench: { kg: '40', reps: '12', rir: '' },
-  machine: { kg: '25', reps: '10', rir: '' },
-};
+function initialDraft(exercise: Exercise): Draft {
+  const { kg, reps } = sampleExercises[exercise].set;
+  return { kg: String(kg), reps: String(reps), rir: '' };
+}
+
+const initialDrafts = { bench: initialDraft('bench'), machine: initialDraft('machine') };
 
 function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
   const value = base[field];
@@ -205,7 +207,7 @@ export function LocalJournal({ locale }: { locale: Locale }) {
               setMessage(null);
             }
           }}>
-            {exercises.map(item => <option key={item} value={item}>{text[item]}</option>)}
+            {sampleExerciseIds.map(item => <option key={item} value={item}>{text[item]}</option>)}
           </select>
         </label>
         <div className="journal-inputs">

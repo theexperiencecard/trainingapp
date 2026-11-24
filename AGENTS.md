@@ -95,7 +95,7 @@ dalle tariffe a crediti. Dettagli/fonti nel documento 24; nessun cambio automati
 6. **Commit piccoli** con un messaggio chiaro. Niente push forzati. Mai segreti o dati personali nel repository.
    Commit e push autorizzati a fine blocco coerente, con contesto aggiornato, per
    permettere il passaggio a un'altra IA. Prima controlla modifiche locali e remoto;
-   dopo verifica l'esito. Pubblica il punto di ripresa appena un blocco è coerente e verificato, prima di aprire il successivo.
+   dopo verifica l'esito. Nei lavori più ampi, pubblica ogni punto intermedio coerente e provato. Prosegui nello stesso turno dal punto appena salvato, rileggendo solo il necessario.
    Segnala subito se il lavoro resta soltanto locale; nessun deploy implicito.
 7. **A fine compito scrivi:** cosa è cambiato, come provarlo a mano in 3 passi, cosa resta aperto. Aggiorna il riepilogo compatto `CONTEXTO.md`, lo stato in `docs/05-piano-di-lavoro.md` e, se hai preso una decisione, aggiungila a `DECISIONI.md`.
 

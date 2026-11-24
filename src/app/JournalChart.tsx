@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { sampleExerciseIds } from '../core/sampleExercises';
 import { dailyVolumes } from '../core/journalVolume';
 import type { JournalSet, Exercise } from '../storage/localJournal';
 import type { Locale } from '../locales/messages';
@@ -7,11 +8,10 @@ import de from '../locales/chart-de.json';
 import en from '../locales/chart-en.json';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
-const exercises: Exercise[] = ['bench', 'machine'];
 
 export function JournalChart({ rows, locale }: { rows: JournalSet[]; locale: Locale }) {
   const [selected, select] = useState<Exercise | null>(null);
-  const available = exercises.filter((exercise) => rows.some((row) => row.exercise === exercise && row.status === 'completed'));
+  const available = sampleExerciseIds.filter((exercise) => rows.some((row) => row.exercise === exercise && row.status === 'completed'));
   const exercise = selected && available.includes(selected) ? selected : available[0];
   if (!exercise) return null;
 

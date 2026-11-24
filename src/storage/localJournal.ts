@@ -1,6 +1,7 @@
 import { validMeasurement } from '../core/journalInput';
+import { sampleExercises, type Exercise } from '../core/sampleExercises';
 
-export type Exercise = 'bench' | 'machine';
+export type { Exercise } from '../core/sampleExercises';
 export type SetStatus = 'completed' | 'skipped' | 'voided';
 
 export type JournalSet = {
@@ -21,10 +22,6 @@ type Field = keyof Patch;
 const fields: Field[] = ['kg', 'reps', 'rir'];
 const owner = 'synthetic';
 const databaseName = 'trainingapp-synthetic-journal';
-const fixtures = {
-  bench: { configuration: 'flat-bench-barbell', convention: 'total-including-bar', kg: 40, reps: 12 },
-  machine: { configuration: 'chest-press-M1', convention: 'machine-indicated', kg: 25, reps: 10 },
-} as const;
 
 type SavedSet = JournalSet & {
   owner: string;
@@ -122,8 +119,8 @@ function validateField(field: Field, value: number | null | undefined) {
 }
 
 function checkSet(row: SavedSet): SavedSet {
-  const expected = fixtures[row.exercise];
-  if (row.owner !== owner || row.catalogVersion !== 1 || !Object.hasOwn(fixtures, row.exercise) ||
+  const expected = sampleExercises[row.exercise]?.set;
+  if (row.owner !== owner || row.catalogVersion !== 1 || !expected ||
       row.configuration !== expected.configuration || row.convention !== expected.convention ||
       row.unit !== 'kg' || !['completed', 'skipped', 'voided'].includes(row.status) || !validDay(row.day) ||
       row.sessionId !== owner + ':' + row.day || !Number.isSafeInteger(row.position) || row.position < 1) {
@@ -173,8 +170,8 @@ async function applyOnce(
 export async function addSet(
   opId: string, day: string, exercise: Exercise, input?: Measurements,
 ): Promise<void> {
-  if (!validDay(day) || !Object.hasOwn(fixtures, exercise)) throw new Error('Invalid sample set.');
-  const fixture = fixtures[exercise];
+  if (!validDay(day) || !Object.hasOwn(sampleExercises, exercise)) throw new Error('Invalid sample set.');
+  const fixture = sampleExercises[exercise].set;
   const measurement = input ? { ...input } : { kg: fixture.kg, reps: fixture.reps, rir: null };
   for (const field of fields) validateField(field, measurement[field]);
   const sessionId = owner + ':' + day;

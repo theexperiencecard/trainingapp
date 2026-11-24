@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { localDate, newOperationId } from '../core/journalInput';
+import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
 import { addSet, type Exercise } from '../storage/localJournal';
 import { notifyJournal } from './journalUpdates';
 import type { Locale } from '../locales/messages';
@@ -10,9 +11,7 @@ import en from '../locales/demo-en.json';
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 type Choice = 'keepBench' | 'today' | 'alsoThursday';
 
-const setVolume = { bench: 40 * 12, machine: 25 * 10 };
 const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
-const exercises: readonly Exercise[] = ['bench', 'machine'];
 
 export function SessionDemo({ locale }: { locale: Locale }) {
   const text = translations[locale];
@@ -27,7 +26,11 @@ export function SessionDemo({ locale }: { locale: Locale }) {
   const thursday: Exercise = choice === 'alsoThursday' ? 'machine' : 'bench';
   const complete = logged.length === 2;
   const currentTitle = [text.first, text.second, text.complete][logged.length];
-  const setLabel = { bench: text.benchSet, machine: text.machineSet };
+  function setLabel(exercise: Exercise) {
+    const { kg, reps } = sampleExercises[exercise].set;
+    const load = exercise === 'bench' ? text.benchLoad : text.machineLoad;
+    return `${kg.toLocaleString(locale)} ${load} × ${reps.toLocaleString(locale)}`;
+  }
 
   const step = day ? logged.length : -1;
   const currentHeading = useRef<HTMLHeadingElement>(null);
@@ -101,7 +104,7 @@ export function SessionDemo({ locale }: { locale: Locale }) {
             )}
             {!complete && (
               <>
-                <p>{text[current]} · {setLabel[current]}</p>
+                <p>{text[current]} · {setLabel(current)}</p>
                 <button type="button" disabled={saving} onClick={() => void record()}>
                   {failed ? text.retry : logged.length === 0 ? text.recordFirst : text.recordSecond}
                 </button>
@@ -115,15 +118,15 @@ export function SessionDemo({ locale }: { locale: Locale }) {
               <h3>{text.history}</h3>
               <ol>
                 {logged.map((exercise, index) => (
-                  <li key={index}>{text[exercise]} · {setLabel[exercise]}</li>
+                  <li key={index}>{text[exercise]} · {setLabel(exercise)}</li>
                 ))}
               </ol>
               <h3>{text.volume}</h3>
               <dl>
-                {exercises.filter((exercise) => logged.includes(exercise)).map((exercise) => (
+                {sampleExerciseIds.filter((exercise) => logged.includes(exercise)).map((exercise) => (
                   <div key={exercise}>
                     <dt>{exercise === 'bench' ? text.benchVolume : text.machineVolume}</dt>
-                    <dd>{setVolume[exercise] * logged.filter((item) => item === exercise).length} {text.unit}</dd>
+                    <dd>{sampleExercises[exercise].set.kg * sampleExercises[exercise].set.reps * logged.filter((item) => item === exercise).length} {text.unit}</dd>
                   </div>
                 ))}
               </dl>

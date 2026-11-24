@@ -1,3 +1,5 @@
+import { sampleExercises, type Exercise } from '../core/sampleExercises';
+
 type CandidateStatus = 'checkEquipment' | 'equipmentMissing' | 'excludedByPreference';
 
 export function pressComparison(answers: Readonly<Record<string, readonly string[]>>) {
@@ -7,10 +9,11 @@ export function pressComparison(answers: Readonly<Record<string, readonly string
   const { equipment = [], avoid = [] } = answers;
   if (!equipment.length || !avoid.length) return null;
 
-  function status(equipmentId: string, avoidId: string): CandidateStatus {
-    if (avoid.includes(avoidId)) return 'excludedByPreference';
-    return equipment.includes(equipmentId) ? 'checkEquipment' : 'equipmentMissing';
+  function status(exercise: Exercise): CandidateStatus {
+    const candidate = sampleExercises[exercise];
+    if (avoid.includes(candidate.avoid)) return 'excludedByPreference';
+    return equipment.includes(candidate.equipment) ? 'checkEquipment' : 'equipmentMissing';
   }
 
-  return { goal, bench: status('barbell', 'avoidBench'), machine: status('machine', 'avoidMachinePress') };
+  return { goal, bench: status('bench'), machine: status('machine') };
 }

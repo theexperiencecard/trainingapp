@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. Le schede reali dipendono dalla revisione R2.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. Catalogo sintetico condiviso in src/core/sampleExercises.ts. Proseguire con la demo vincolata dal profilo confermato. Le schede reali dipendono dalla revisione R2.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata
@@ -47,7 +47,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Fine di ogni risposta: modello esatto per il prossimo compito; nessun cambio automatico.
 - Ogni compito: breve consiglio Codex/altro strumento; se esterno, prompt mirato pronto.
 - Prosegui fino ai vincoli reali del piano. Autorizzati subagenti sullo stesso modello per attività indipendenti; integra e verifica prima della consegna.
-- Punto di ripresa appena un blocco è verificato: aggiorna questo file, fai commit e push su main e confronta gli SHA.
+- Nei blocchi ampi salva ogni punto intermedio verificato e prosegui nello stesso turno: aggiorna questo file, fai commit e push su main e confronta gli SHA.
 
 ## Dove approfondire
 - `docs/05-piano-di-lavoro.md`: stato e criteri; `DECISIONI.md`: storia delle scelte (righe recenti prevalgono).
