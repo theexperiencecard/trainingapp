@@ -14,6 +14,8 @@ export function sampleDuration(canSwitch: boolean): number {
 const samplePlans = (['strength', 'muscle'] as const).flatMap(goal =>
   sampleExerciseIds.map((id): PlanCandidate => ({
     id, kind: 'example', goal, startingPoints: ['learn', 'resume', 'known', 'clarify'],
+    supportedFocuses: goal === 'muscle' ? ['noSpecificFocus', 'chestFocus']
+      : id === 'bench' ? ['noSpecificFocus', 'benchFocus'] : ['noSpecificFocus'],
     sessionSeconds: [sampleDuration(false)],
     equipment: [sampleExercises[id].equipment],
     preferenceKeys: [sampleExercises[id].avoid],

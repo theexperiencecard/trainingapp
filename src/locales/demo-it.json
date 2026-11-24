@@ -34,7 +34,7 @@
   "machinePlan": "Due serie di chest press M1 con dati di esempio. Puoi usare il timer tra le serie.",
   "verifySetup": "Verifica di avere la postazione indicata prima di avviare la prova. Le risposte modificate si applicano alla prova successiva.",
   "otherGoal": "Per l’obiettivo che hai indicato serve un esempio diverso. Le risposte restano disponibili nel riepilogo.",
-  "noCompatibleExercise": "Per gli attrezzi e le preferenze che hai indicato serve un altro esercizio. Puoi rivedere le risposte nel questionario.",
+  "noCompatibleExercise": "Per la priorità, gli attrezzi e le preferenze che hai indicato manca un esercizio di esempio compatibile.",
   "duration": "La prova dura circa {minutes} minuti, tra preparazione, serie e recupero.",
   "durationWithChange": "La prova dura fino a circa {minutes} minuti, contando anche un cambio di postazione.",
   "timeConflict": "Hai indicato {available} minuti. Questa prova richiede più tempo. Puoi rivedere i minuti disponibili nel questionario."

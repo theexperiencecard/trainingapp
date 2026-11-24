@@ -4,6 +4,7 @@ export type SessionSpacing = 'canSpace' | 'consecutiveOnly' | 'spacingUnknown';
 
 export type PlanProfile = {
   goal: PlanGoal | null;
+  focus?: string | undefined;
   startingPoint: StartingPoint | null;
   availableDays: number;
   maxSessionSeconds: number;
@@ -16,6 +17,7 @@ export type PlanCandidate = {
   id: string;
   kind: 'example' | 'reviewed';
   goal: PlanGoal;
+  supportedFocuses?: readonly string[];
   startingPoints: readonly StartingPoint[];
   sessionSeconds: readonly number[];
   equipment: readonly string[];
@@ -23,7 +25,7 @@ export type PlanCandidate = {
   requiresSpacedDays: boolean;
 };
 
-type RejectionReason = 'startingPoint' | 'days' | 'duration' | 'equipment' | 'preference' | 'spacing' | 'invalidTiming';
+type RejectionReason = 'focus' | 'startingPoint' | 'days' | 'duration' | 'equipment' | 'preference' | 'spacing' | 'invalidTiming';
 type Selection = {
   status: 'selected' | 'noCompatiblePlan' | 'catalogUnavailable' | 'profileIncomplete';
   selected: PlanCandidate | null;
@@ -66,6 +68,7 @@ export function selectPlan(
 
 function checkFit(profile: PlanProfile, startingPoint: StartingPoint, candidate: PlanCandidate): RejectionReason[] {
   const reasons: RejectionReason[] = [];
+  if (profile.focus && !candidate.supportedFocuses?.includes(profile.focus)) reasons.push('focus');
   if (!candidate.startingPoints.includes(startingPoint)) reasons.push('startingPoint');
   if (candidate.sessionSeconds.length > profile.availableDays) reasons.push('days');
   if (!candidate.sessionSeconds.length || !candidate.sessionSeconds.every(isPositiveInteger)) reasons.push('invalidTiming');

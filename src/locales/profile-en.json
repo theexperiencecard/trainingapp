@@ -60,5 +60,15 @@
   "excludedByPreference": "You indicated that you prefer to avoid this movement.",
   "compareStrength": "Practising the barbell bench press matters if you want to improve that specific lift. The chest press follows a guided path. Loads and logs are tracked separately.",
   "compareMuscle": "Both options can train the chest. The chest press guides the path. With a barbell, you control the path and stabilise the load. Loads and logs are tracked separately.",
-  "noPressMatch": "Your answers rule out both options. A plan would need other suitable variants."
+  "noPressMatch": "Your answers rule out both options. A plan would need other suitable variants.",
+  "strengthFocus": "Which movement would you like to get stronger at?",
+  "muscleFocus": "Which muscle group would you like to prioritise?",
+  "benchFocus": "Barbell bench press",
+  "gobletFocus": "Goblet squat",
+  "rowFocus": "Dumbbell row",
+  "chestFocus": "Chest",
+  "legsFocus": "Legs",
+  "backFocus": "Back",
+  "noSpecificFocus": "No specific priority",
+  "otherFocus": "I have another priority"
 }

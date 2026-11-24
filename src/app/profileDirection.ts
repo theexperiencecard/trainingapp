@@ -19,11 +19,17 @@ function startingPointFor(goal: PlanGoal, experience: string | undefined, famili
   return 'clarify';
 }
 
+export function profileFocus(answers: Readonly<Record<string, readonly string[]>>): string | undefined {
+  if (answers.goal?.[0] === 'strength') return answers.strengthFocus?.[0];
+  if (answers.goal?.[0] === 'muscle') return answers.muscleFocus?.[0];
+}
+
 export function planProfileFromAnswers(answers: Readonly<Record<string, readonly string[]>>): PlanProfile {
   const direction = profileDirection(answers);
   const spacing = answers.spacing?.[0];
   return {
     goal: direction?.goal ?? null,
+    focus: profileFocus(answers),
     startingPoint: direction?.startingPoint ?? null,
     availableDays: Number(answers.days?.[0]),
     maxSessionSeconds: Number(answers.minutes?.[0]) * 60,

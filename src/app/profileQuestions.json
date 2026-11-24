@@ -1,5 +1,7 @@
 [
   {"id":"goal","kind":"choice","options":["general","strength","muscle","aerobic","undecided"]},
+  {"id":"strengthFocus","kind":"choice","options":["benchFocus","gobletFocus","rowFocus","noSpecificFocus","otherFocus"],"branch":"strengthGoal"},
+  {"id":"muscleFocus","kind":"choice","options":["chestFocus","legsFocus","backFocus","noSpecificFocus","otherFocus"],"branch":"muscleGoal"},
   {"id":"experience","kind":"choice","options":["starting","returning","regular","experienceUnknown"]},
   {"id":"familiar","kind":"multiple","options":["squat","press","row","walk","noneFamiliar"],"exclusive":"noneFamiliar"},
   {"id":"aerobicActivity","kind":"choice","options":["aerobicNone","aerobicSometimes","aerobicRegular","aerobicUnsure"],"branch":"aerobicGoal"},

@@ -200,6 +200,7 @@ async function verify() {
 
     const profileForm = page.locator('.profile-questionnaire');
     await field(profileForm, profileLabels.goal).selectOption('muscle');
+    await field(profileForm, profileLabels.muscleFocus).selectOption('chestFocus');
     await field(profileForm, profileLabels.experience).selectOption('starting');
     await field(profileForm, profileLabels.noneFamiliar).check();
     await field(profileForm, profileLabels.days).fill('1');

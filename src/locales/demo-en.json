@@ -34,7 +34,7 @@
   "machinePlan": "Two sample sets on the M1 chest press. You can use the timer between sets.",
   "verifySetup": "Check that you have access to the specific setup before starting. Changes to your answers apply to the next demo.",
   "otherGoal": "Your chosen goal needs a different example. Your answers remain available in the summary.",
-  "noCompatibleExercise": "Your equipment and preferences need a different exercise. You can review your questionnaire answers.",
+  "noCompatibleExercise": "There is no example exercise matching your priority, equipment and preferences.",
   "duration": "This example takes about {minutes} minutes including setup, sets and rest.",
   "durationWithChange": "This example takes up to about {minutes} minutes including an equipment change.",
   "timeConflict": "You entered {available} minutes. This example needs more time. You can review your available time in the questionnaire."

@@ -60,5 +60,15 @@
   "excludedByPreference": "Hai indicato che preferisci evitare questo movimento.",
   "compareStrength": "Per migliorare proprio nella panca con bilanciere, la pratica di quel gesto conta. La chest press usa una traiettoria guidata. I carichi e lo storico restano separati.",
   "compareMuscle": "Entrambe possono allenare il petto. La chest press guida la traiettoria. Il bilanciere richiede di controllare la traiettoria e stabilizzare il carico. I carichi e lo storico restano separati.",
-  "noPressMatch": "Con le tue risposte nessuna delle due è una candidata. Per una proposta servono altre varianti compatibili."
+  "noPressMatch": "Con le tue risposte nessuna delle due è una candidata. Per una proposta servono altre varianti compatibili.",
+  "strengthFocus": "In quale movimento vuoi diventare più forte?",
+  "muscleFocus": "Quale gruppo muscolare vuoi privilegiare?",
+  "benchFocus": "Panca con bilanciere",
+  "gobletFocus": "Squat con manubrio al petto",
+  "rowFocus": "Rematore con manubri",
+  "chestFocus": "Petto",
+  "legsFocus": "Gambe",
+  "backFocus": "Schiena",
+  "noSpecificFocus": "Nessuna priorità specifica",
+  "otherFocus": "Ho un’altra priorità"
 }
