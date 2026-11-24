@@ -22,8 +22,8 @@
   "bands": "Widerstandsbänder",
   "bodyweight": "Keines dieser Geräte",
   "choose": "Antwort auswählen",
-  "review": "Übersicht anzeigen",
-  "result": "Deine Antworten",
+  "review": "Ergebnis ansehen",
+  "result": "Dein Ziel und deine Woche",
   "edit": "Antworten bearbeiten",
   "experience": "Wo stehst du gerade mit deinem Training?",
   "starting": "Ich fange gerade an",
@@ -70,5 +70,6 @@
   "legsFocus": "Beine",
   "backFocus": "Rücken",
   "noSpecificFocus": "Kein besonderer Schwerpunkt",
-  "otherFocus": "Ich habe einen anderen Schwerpunkt"
+  "otherFocus": "Ich habe einen anderen Schwerpunkt",
+  "answers": "Alle Antworten ansehen"
 }

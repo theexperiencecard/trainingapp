@@ -22,8 +22,8 @@
   "bands": "Resistance bands",
   "bodyweight": "None of this equipment",
   "choose": "Select an answer",
-  "review": "Review answers",
-  "result": "Your answers",
+  "review": "View result",
+  "result": "Your goal and week",
   "edit": "Edit answers",
   "experience": "What is your current training situation?",
   "starting": "I am just starting",
@@ -70,5 +70,6 @@
   "legsFocus": "Legs",
   "backFocus": "Back",
   "noSpecificFocus": "No specific priority",
-  "otherFocus": "I have another priority"
+  "otherFocus": "I have another priority",
+  "answers": "Review all answers"
 }

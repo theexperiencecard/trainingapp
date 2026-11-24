@@ -22,8 +22,8 @@
   "bands": "Elastici",
   "bodyweight": "Nessuno di questi attrezzi",
   "choose": "Seleziona una risposta",
-  "review": "Mostra riepilogo",
-  "result": "Le tue risposte",
+  "review": "Vedi il risultato",
+  "result": "Il tuo obiettivo e la settimana",
   "edit": "Modifica le risposte",
   "experience": "Qual è la tua situazione attuale?",
   "starting": "Sto iniziando",
@@ -70,5 +70,6 @@
   "legsFocus": "Gambe",
   "backFocus": "Schiena",
   "noSpecificFocus": "Nessuna priorità specifica",
-  "otherFocus": "Ho un’altra priorità"
+  "otherFocus": "Ho un’altra priorità",
+  "answers": "Rivedi tutte le risposte"
 }

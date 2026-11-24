@@ -9,6 +9,7 @@ const chart = require('../src/locales/chart-it.json');
 const shell = require('../src/locales/it.json');
 const demo = require('../src/locales/demo-it.json');
 const timer = require('../src/locales/timer-it.json');
+const weekLabels = require('../src/locales/week-it.json');
 const profileLabels = require('../src/locales/profile-it.json');
 
 const journal = page => page.getByRole('region', { name: it.heading, exact: true });
@@ -234,6 +235,31 @@ async function verify() {
     const newSets = (await snapshot(page)).sets.filter(set => !previousIds.has(set.id));
     assert.deepEqual(newSets.map(set => set.exercise), ['machine', 'machine']);
     console.log('OK the confirmed profile limits exercise choices and checks time without changing a workout already underway');
+
+    await button(profileForm, profileLabels.edit).click();
+    await field(profileForm, profileLabels.goal).selectOption('strength');
+    await field(profileForm, profileLabels.strengthFocus).selectOption('benchFocus');
+    await field(profileForm, profileLabels.experience).selectOption('regular');
+    const familiar = profileForm.getByRole('group', { name: profileLabels.familiar, exact: true });
+    for (const move of ['squat', 'row', 'press']) await field(familiar, profileLabels[move]).check();
+    await field(profileForm, profileLabels.days).fill('2');
+    await field(profileForm, profileLabels.spacing).selectOption('canSpace');
+    await field(profileForm, profileLabels.minutes).fill('30');
+    await field(profileForm, profileLabels.barbell).check();
+    await field(profileForm, profileLabels.dumbbells).check();
+    await field(movementsToAvoid, profileLabels.noAvoidPreference).check();
+    await button(profileForm, profileLabels.review).click();
+    const week = profileForm.getByRole('region', { name: weekLabels.heading });
+    await week.getByText(weekLabels.open, { exact: true }).click();
+    await expect(week.getByRole('heading', { name: weekLabels.dayB + ' · 26,5 min' })).toBeVisible();
+    await expect(week.getByText(weekLabels.trapBar, { exact: true })).toBeVisible();
+    await button(profileForm, profileLabels.edit).click();
+    await field(profileForm, profileLabels.strengthFocus).selectOption('gobletFocus');
+    await button(profileForm, profileLabels.review).click();
+    await expect(week.getByText(weekLabels.focus, { exact: true })).toBeVisible();
+    await expect(week.getByText(weekLabels.trapBar, { exact: true })).toHaveCount(0);
+    await expect(history(page)).toHaveCount(7);
+    console.log('OK weekly plan preview follows movement priority and leaves the journal intact');
 
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');

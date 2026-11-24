@@ -6,6 +6,7 @@ import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
 import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
 import { planProfileFromAnswers, profileDirection } from './profileDirection';
+import { WeekPreview } from './WeekPreview';
 import { pressComparison } from './pressComparison';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
@@ -60,16 +61,20 @@ export function ProfileQuestionnaire({ locale, onReview }: ProfileQuestionnaireP
           ) : (
             <p>{text.goalNeeded}</p>
           )}
-          <dl>
-            {questions.map((question) => (
-              <div key={question.id}>
-                <dt>{text[question.id]}</dt>
-                <dd>{answers[question.id]?.map((value) =>
-                  question.kind === 'integer' ? Number(value).toLocaleString(locale) : text[value],
-                ).join(', ')}</dd>
-              </div>
-            ))}
-          </dl>
+          {direction && <WeekPreview answers={answers} locale={locale} />}
+          <details>
+            <summary>{text.answers}</summary>
+            <dl>
+              {questions.map((question) => (
+                <div key={question.id}>
+                  <dt>{text[question.id]}</dt>
+                  <dd>{answers[question.id]?.map((value) =>
+                    question.kind === 'integer' ? Number(value).toLocaleString(locale) : text[value],
+                  ).join(', ')}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
           {comparison && (
             <details>
               <summary>{text.comparePress}</summary>
