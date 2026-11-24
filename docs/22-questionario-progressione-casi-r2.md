@@ -27,6 +27,14 @@ Le risposte possono cambiare il piano futuro; non alterano serie o grafici già 
 - Per chi inizia, partire dall'obiettivo dichiarato e dai movimenti già familiari. Scegliere una scheda essenziale, con esercizi revisionati compatibili con tempo, attrezzatura e capacità. Indicare in anteprima perché è presente ogni parte e quali elementi si possono sostituire.
 - Postura, cardio e isolamento degli adduttori richiedono un motivo pertinente al profilo e all'obiettivo. Come casi a confronto, un neofita che sceglie forza con poco tempo non riceve automaticamente questi moduli. A parità di vincoli, chi sceglie la capacità aerobica vede invece una componente aerobica motivata, secondo le regole revisionate.
 
+## Ramificazione e copertura del primo questionario
+
+La schermata attuale contiene otto domande di base e ne aggiunge fino a due in base alle risposte. Per forma generale o capacità aerobica chiede l'attività aerobica recente. Con almeno due giorni disponibili chiede se le sedute si possono distanziare. Se una risposta cambia ramo, il questionario rimuove dal riepilogo i dati che hanno perso pertinenza. Il percorso di sicurezza sarà aggiunto dopo revisione, con domande condizionali quando necessarie.
+
+L'80% è un obiettivo di copertura da verificare sulle esigenze ordinarie del pubblico definito nel documento 20. Nel pilot, per ogni profilo del perimetro, registrare separatamente se il motore produce una scheda utilizzabile, se richiede una modifica sostanziale o se manca una proposta compatibile. Conta come coperto un caso con obiettivo rispettato, durata e attrezzatura compatibili e verifica di una prima seduta fattibile. Segnalare separatamente i casi che richiedono valutazione professionale. Conservare il numero dei profili osservati insieme al risultato. Le cinque famiglie restano candidate.
+
+Per ogni sostituzione spiegare in poche parole cosa si conserva per quell'obiettivo, cosa cambia nel movimento o sulla prestazione e come viene registrata. L'esempio panca → chest press distingue la traiettoria guidata dalla specificità del gesto con bilanciere. Il solo cambio di attrezzo non indica una riduzione universale del lavoro degli stabilizzatori. Una segnalazione di dolore segue il percorso Q7. [Evidenze sulla specificità](25-riesame-scientifico-e-casi.md) · [Esempio ipertrofia e sostituzione](27-settimana-ipertrofia-r2.md)
+
 ## Progressione candidata: doppia progressione con precedenze
 
 Definizioni: «serie richieste» = serie di lavoro effettivamente assegnate per quel

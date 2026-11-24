@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import de from '../locales/profile-de.json';
 import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
-import questions from './profileQuestions.json';
+import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
 import { profileDirection } from './profileDirection';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
@@ -13,6 +13,8 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [reviewing, setReviewing] = useState(false);
   const direction = reviewing ? profileDirection(answers) : null;
+  const questions = visibleProfileQuestions(answers);
+  const fieldPrefix = useId();
   const form = useRef<HTMLFormElement>(null);
   const summary = useRef<HTMLHeadingElement>(null);
   const moved = useRef(false);
@@ -24,7 +26,7 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
   }, [reviewing]);
 
   function setAnswer(id: string, values: string[]) {
-    setAnswers((current) => ({ ...current, [id]: values }));
+    setAnswers((current) => updateProfileAnswer(current, id, values));
   }
 
   function toggle(id: string, option: string, checked: boolean, exclusive?: string) {
@@ -85,19 +87,20 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
                 </fieldset>
               );
             }
+            const fieldId = fieldPrefix + question.id;
             return (
-              <label key={question.id} className="profile-field">
-                {text[question.id]}
+              <div key={question.id} className="profile-field">
+                <label htmlFor={fieldId}>{text[question.id]}</label>
                 {question.kind === 'choice' ? (
-                  <select required value={values[0] ?? ''} onChange={(event) => setAnswer(question.id, [event.target.value])}>
+                  <select id={fieldId} required value={values[0] ?? ''} onChange={(event) => setAnswer(question.id, [event.target.value])}>
                     <option value="" disabled>{text.choose}</option>
                     {question.options?.map((option) => <option key={option} value={option}>{text[option]}</option>)}
                   </select>
                 ) : (
-                  <input type="number" required min={question.min} max={question.max} step="1" inputMode="numeric"
+                  <input id={fieldId} type="number" required min={question.min} max={question.max} step="1" inputMode="numeric"
                     value={values[0] ?? ''} onChange={(event) => setAnswer(question.id, [event.target.value])} />
                 )}
-              </label>
+              </div>
             );
           })}
           <button type="submit">{text.review}</button>

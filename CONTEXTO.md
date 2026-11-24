@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario viene prima della demo e mostra un riepilogo con obiettivo e punto di partenza. Criteri di assegnazione nel 22. Le schede reali dipendono dalla revisione R2.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. Le schede reali dipendono dalla revisione R2.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata
@@ -8,8 +8,8 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Ricerca estesa oltre forza/ipertrofia: generale, aerobico, mobilità, equilibrio e resistenza.
 - Forza e ipertrofia richiedono scelte motivate. Valutare disponibilità 2–7 giorni,
   esperienza, capacità, recupero e vincoli; perimetro del documento 20 confermato.
-- Il questionario è un punto di partenza da tarare; nessuna promessa «90% perfetto».
-- Sostituzione manuale nella prima versione; preservare storico e serie svolte.
+- Target Pareto di circa 80% dei casi ordinari, da misurare nel pilot.
+- Sostituzione manuale motivata. La demo spiega panca/chest press, con storico per attrezzo.
 - Grafici per esercizio/variante; nessuna equivalenza automatica tra kg di attrezzi diversi.
 - Sicurezza e integrità dei dati sono requisiti trasversali. Coach a pagamento dopo validazione.
 
@@ -26,7 +26,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato e implementato per esempi. Account, database remoto e sync richiedono decisioni distinte. Proposta per accelerare: primo perimetro di schede da revisionare in parallelo con la preparazione tecnica (piano 05). Stima pilot e pesi nel 05.
+- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato e implementato per esempi. Account, database remoto e sync richiedono decisioni distinte. Si mantengono le cinque famiglie, con priorità ai casi frequenti nel lavoro di revisione (piano 05). Stima pilot e pesi nel 05.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).

@@ -27,5 +27,7 @@
   "openTimer": "Apri il timer di recupero",
   "openJournal": "Vai al diario delle serie",
   "retry": "Riprova a salvare",
-  "saveError": "Non è stato possibile confermare il salvataggio. Riprova per continuare."
+  "saveError": "Non è stato possibile confermare il salvataggio. Riprova per continuare.",
+  "machineMovement": "La chest press mantiene una spinta per il petto. La macchina guida la traiettoria del movimento. Con il bilanciere controlli tu la traiettoria e stabilizzi il carico.",
+  "machineTradeoff": "Se vuoi diventare più forte proprio in panca, questa serie allena un gesto diverso. Il peso della macchina e la serie vengono registrati nel suo storico."
 }

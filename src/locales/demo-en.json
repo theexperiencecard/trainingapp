@@ -27,5 +27,7 @@
   "openTimer": "Open the rest timer",
   "openJournal": "Go to the journal",
   "retry": "Retry saving",
-  "saveError": "The save could not be confirmed. Retry to continue."
+  "saveError": "The save could not be confirmed. Retry to continue.",
+  "machineMovement": "The chest press keeps a pushing exercise for the chest. The machine guides the path. With a barbell, you control the path and stabilise the load yourself.",
+  "machineTradeoff": "If your goal is to get stronger at the bench press itself, this set practises a different movement. The machine load and set go in the chest press history."
 }

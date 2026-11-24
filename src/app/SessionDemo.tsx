@@ -89,6 +89,14 @@ export function SessionDemo({ locale }: { locale: Locale }) {
                     {choices.map((option) => <option key={option} value={option}>{text[option]}</option>)}
                   </select>
                 </label>
+                <div aria-live="polite">
+                  {current === 'machine' && (
+                    <>
+                      <p>{text.machineMovement}</p>
+                      <p>{text.machineTradeoff}</p>
+                    </>
+                  )}
+                </div>
               </>
             )}
             {!complete && (

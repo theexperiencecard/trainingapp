@@ -2,7 +2,11 @@
   {"id":"goal","kind":"choice","options":["general","strength","muscle","aerobic","undecided"]},
   {"id":"experience","kind":"choice","options":["starting","returning","regular","experienceUnknown"]},
   {"id":"familiar","kind":"multiple","options":["squat","press","row","walk","noneFamiliar"],"exclusive":"noneFamiliar"},
+  {"id":"aerobicActivity","kind":"choice","options":["aerobicNone","aerobicSometimes","aerobicRegular","aerobicUnsure"],"branch":"aerobicGoal"},
   {"id":"days","kind":"integer","min":1,"max":7},
+  {"id":"spacing","kind":"choice","options":["canSpace","consecutiveOnly","spacingUnknown"],"branch":"multipleDays"},
   {"id":"minutes","kind":"integer","min":1,"max":1440},
-  {"id":"equipment","kind":"multiple","options":["dumbbells","barbell","machine","bands","bodyweight"],"exclusive":"bodyweight"}
+  {"id":"setting","kind":"choice","options":["home","gym","bothLocations"]},
+  {"id":"equipment","kind":"multiple","options":["dumbbells","barbell","machine","bands","bodyweight"],"exclusive":"bodyweight"},
+  {"id":"avoid","kind":"multiple","options":["avoidBench","avoidSquat","avoidMachinePress","noAvoidPreference"],"exclusive":"noAvoidPreference"}
 ]

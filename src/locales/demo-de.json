@@ -27,5 +27,7 @@
   "openTimer": "Pausentimer öffnen",
   "openJournal": "Zum Trainingstagebuch",
   "retry": "Speichern erneut versuchen",
-  "saveError": "Das Speichern konnte nicht bestätigt werden. Versuche es erneut."
+  "saveError": "Das Speichern konnte nicht bestätigt werden. Versuche es erneut.",
+  "machineMovement": "An der Brustpresse bleibt eine Druckübung für die Brust erhalten. Das Gerät führt die Bewegung. Mit der Langhantel führst und stabilisierst du das Gewicht selbst.",
+  "machineTradeoff": "Wenn du speziell im Bankdrücken stärker werden willst, trainierst du mit diesem Satz einen anderen Bewegungsablauf. Gewicht und Satz werden im Verlauf der Brustpresse erfasst."
 }
