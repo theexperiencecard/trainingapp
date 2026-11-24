@@ -307,6 +307,7 @@ async function verify() {
 
     await button(profileForm, profileLabels.edit).click();
     await field(profileForm, profileLabels.strengthFocus).selectOption('benchFocus');
+    await field(profileForm, profileLabels.machine).check();
     await button(profileForm, profileLabels.review).click();
     await week.getByText(weekLabels.open, { exact: true }).click();
     const startSession = button(week, weekLabels.startSession);
@@ -324,10 +325,17 @@ async function verify() {
 
     const beforeSession = await snapshot(page);
     for (const [index, [exercise, reps]] of [
-      ['bench', 8], ['bench', 8], ['goblet', 10], ['goblet', 9], ['row', 12], ['row', 11],
+      ['bench', 8], ['machine', 10], ['goblet', 10], ['goblet', 9], ['row', 12], ['row', 11],
     ].entries()) {
       await expect(activeSession).toContainText(weekLabels.setProgress
         .replace('{current}', String(index + 1)).replace('{total}', '6'));
+      if (index === 1) {
+        await choice(activeSession, demo.choice).selectOption('machine');
+        await expect(activeSession).toContainText(demo.machineTradeoff);
+        await choice(activeSession, demo.choice).selectOption('bench');
+        await expect(field(activeSession, it.reps)).toHaveValue('8');
+        await choice(activeSession, demo.choice).selectOption('machine');
+      }
       await expect(activeSession.getByText(it[exercise], { exact: true })).toBeVisible();
       await expect(field(activeSession, it.reps)).toHaveValue(String(reps));
       await button(activeSession, it.add).click();
@@ -340,7 +348,7 @@ async function verify() {
     const existingIds = new Set(beforeSession.sets.map(set => set.id));
     const newSession = (await snapshot(page)).sets.filter(set => !existingIds.has(set.id));
     assert.deepEqual(newSession.sort((a, b) => a.position - b.position).map(set => [set.exercise, set.kg, set.reps]), [
-      ['bench', 40, 8], ['bench', 40, 8], ['goblet', 16, 10], ['goblet', 16, 9], ['row', 20, 12], ['row', 20, 11],
+      ['bench', 40, 8], ['machine', 25, 10], ['goblet', 16, 10], ['goblet', 16, 9], ['row', 20, 12], ['row', 20, 11],
     ]);
     console.log('OK the questionnaire opens either strength session and all six ordered sets survive an offline reload');
 

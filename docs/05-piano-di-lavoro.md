@@ -361,3 +361,5 @@ Durante l’inserimento viene mostrata l’ultima serie svolta sulla stessa conf
 Il diario di esempio accetta anche goblet squat, rematore bilaterale su panca inclinata e trap bar del caso F03. Il rematore registra i kg totali dei due manubri. Le tre configurazioni hanno ciascuna il proprio storico e grafico.
 
 Dal risultato F03 per la panca si può aprire una delle due sedute sintetiche del [caso di forza](26-seduta-forza-r2.md). Ciascuna guida sei serie in tre blocchi. La sequenza della seduta aperta resta quella scelta all’avvio. I valori vengono confermati serie per serie nel diario offline. La sessione aperta è temporanea. Le altre famiglie si consultano in anteprima. Restano da integrare la scelta della seduta del giorno per il programma revisionato e i riscontri per la prova sui telefoni.
+
+Nel caso F03 guidato, la seconda serie di panca permette di scegliere la M1 solo per oggi quando il profilo iniziale include le macchine e consente la chest press. La scelta è reversibile prima del salvataggio; la serie viene attribuita alla configurazione utilizzata.

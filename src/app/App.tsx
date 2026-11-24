@@ -43,7 +43,9 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
       </header>
       <ProfileQuestionnaire locale={language} onReview={setProfile} sessionOpen={strengthDay !== null}
         onStart={day => setStrengthDay(current => current ?? day)} />
-      {strengthDay !== null && <StrengthExampleSession day={strengthDay} locale={language} journal={journal}
+      {strengthDay !== null && <StrengthExampleSession day={strengthDay}
+        allowMachine={Boolean(profile?.equipment.includes('machine') && !profile.avoidedExercises.includes('avoidMachinePress'))}
+        locale={language} journal={journal}
         onClose={() => {
           setStrengthDay(null);
           document.getElementById('profile-start')?.focus();
