@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { localDate, newOperationId, type SetMeasurements } from '../core/journalInput';
 import type { PlanProfile } from '../core/planSelection';
-import { sampleExerciseIds } from '../core/sampleExercises';
-import { addedSetId, addSet, type Exercise, type JournalSet } from '../storage/localJournal';
+import { pressExerciseIds, type PressExercise } from '../core/sampleExercises';
+import { addedSetId, addSet, type JournalSet } from '../storage/localJournal';
 import { sampleDuration, samplePlanOptions } from './samplePlanOptions';
 import { dailyVolumes } from '../core/journalVolume';
 import { GuidedSetForm } from './GuidedSetForm';
@@ -19,9 +19,9 @@ type Choice = 'keepBench' | 'today' | 'alsoThursday';
 
 const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
 
-type DemoRun = { day: string; first: Exercise; canSwitch: boolean };
+type DemoRun = { day: string; first: PressExercise; canSwitch: boolean };
 
-type LoggedSet = Pick<JournalSet, 'id' | 'exercise' | 'day' | 'status' | 'kg' | 'reps' | 'rir'>;
+type LoggedSet = Pick<JournalSet, 'id' | 'day' | 'status' | 'kg' | 'reps' | 'rir'> & { exercise: PressExercise };
 
 export function SessionDemo({ locale, profile, journal }: { locale: Locale; profile: PlanProfile | undefined; journal: LocalJournalState }) {
   const text = translations[locale];
@@ -31,7 +31,7 @@ export function SessionDemo({ locale, profile, journal }: { locale: Locale; prof
   const pending = useRef<string | null>(null);
   const writing = useRef(false);
   const [logged, setLogged] = useState<LoggedSet[]>([]);
-  const journalRows = logged.map(saved => journal.sets?.find(row => row.id === saved.id) ?? saved);
+  const journalRows = logged.map(saved => ({ ...saved, ...journal.sets?.find(row => row.id === saved.id), exercise: saved.exercise }));
   const [choice, setChoice] = useState<Choice>('keepBench');
   const options = samplePlanOptions(profile);
   const [firstAvailable] = options;
@@ -43,8 +43,8 @@ export function SessionDemo({ locale, profile, journal }: { locale: Locale; prof
     .replace('{minutes}', (duration / 60).toLocaleString(locale));
   const timeConflict = text.timeConflict.replace('{available}', availableMinutes?.toLocaleString(locale) ?? '');
   const first = run?.first ?? firstAvailable ?? 'bench';
-  const current: Exercise = choice === 'keepBench' ? first : 'machine';
-  const thursday: Exercise = choice === 'alsoThursday' ? 'machine' : first;
+  const current: PressExercise = choice === 'keepBench' ? first : 'machine';
+  const thursday: PressExercise = choice === 'alsoThursday' ? 'machine' : first;
   const noExample = profile?.goal === 'strength' || profile?.goal === 'muscle'
     ? text.noCompatibleExercise : text.otherGoal;
   const plan = canSwitch ? text.plan : firstAvailable === 'machine' ? text.machinePlan : text.benchPlan;
@@ -162,7 +162,7 @@ export function SessionDemo({ locale, profile, journal }: { locale: Locale; prof
               </ol>
               <h3>{text.volume}</h3>
               <dl>
-                {sampleExerciseIds.map(exercise => {
+                {pressExerciseIds.map(exercise => {
                   const [volume] = dailyVolumes(journalRows, exercise);
                   if (!volume) return null;
                   return (

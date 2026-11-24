@@ -294,6 +294,17 @@ async function verify() {
     await expect(history(page)).toHaveCount(7);
     console.log('OK weekly plan preview follows movement priority and leaves the journal intact');
 
+    await choice(journal(page), it.exercise).selectOption('row');
+    await field(journal(page), it.reps).fill('11');
+    await button(journal(page), it.add).click();
+    await expect(history(page)).toHaveCount(8);
+    await choice(page, chart.exercise).selectOption('row');
+    await expect(page.locator('.journal-chart')).toContainText('220 kg');
+    const row = (await snapshot(page)).sets.find(set => set.exercise === 'row');
+    assert.equal(row.convention, 'total-both-dumbbells');
+    assert.equal(row.kg, 20);
+    console.log('OK the two dumbbells are recorded once at their combined load, in their own history');
+
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');
       await page.locator('.language-picker select').selectOption(locale);

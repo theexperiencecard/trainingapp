@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { exampleDraft, readSetDraft, type SetMeasurements as Values } from '../core/journalInput';
-import type { Exercise } from '../core/sampleExercises';
+import { exampleDrafts, type Exercise } from '../core/sampleExercises';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
 import type { JournalSet } from '../storage/localJournal';
@@ -19,7 +19,7 @@ type Props = {
 
 export function GuidedSetForm({ locale, exercise, reference, referenceStatus, saving, failed, submitLabel, onRecord }: Props) {
   const text = journalText[locale];
-  const [drafts, setDrafts] = useState(() => ({ bench: exampleDraft('bench'), machine: exampleDraft('machine') }));
+  const [drafts, setDrafts] = useState(() => exampleDrafts(exampleDraft));
   const [invalidExercise, setInvalidExercise] = useState<Exercise | null>(null);
   const invalid = invalidExercise === exercise;
   return (

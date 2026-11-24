@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import { exampleDraft, localDate, newOperationId, parseDecimal, readSetDraft, validMeasurement } from '../core/journalInput';
 import type { LocalJournalState } from './journalUpdates';
-import { sampleExerciseIds } from '../core/sampleExercises';
+import { exampleDrafts, sampleExerciseIds } from '../core/sampleExercises';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
 import { SetMeasurements } from './SetMeasurements';
@@ -16,7 +16,7 @@ const fields = ['reps', 'kg', 'rir', 'status'] as const;
 type Field = typeof fields[number];
 type Editor = { base: JournalSet; field: Field; value: string; conflict?: JournalSet };
 
-const initialDrafts = { bench: exampleDraft('bench'), machine: exampleDraft('machine') };
+const initialDrafts = exampleDrafts(exampleDraft);
 
 function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
   const value = base[field];
@@ -145,9 +145,10 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
       }}>
         <label>{text.exercise}
           <select value={exercise} disabled={busy} onChange={event => {
-            if (event.target.value === 'bench' || event.target.value === 'machine') {
+            const next = sampleExerciseIds.find(item => item === event.target.value);
+            if (next) {
               pendingAdd.current = null;
-              setExercise(event.target.value);
+              setExercise(next);
               setMessage(null);
             }
           }}>

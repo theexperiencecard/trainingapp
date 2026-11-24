@@ -42,5 +42,8 @@
   "newerFormat": "This log was saved with a newer version of the app. Update the app and reopen this page.",
   "lastSet": "Last completed set on this equipment",
   "copyLoad": "Use this load",
-  "firstOnEquipment": "No completed sets on this equipment yet."
+  "firstOnEquipment": "No completed sets on this equipment yet.",
+  "goblet": "Goblet squat · dumbbell weight in kg",
+  "row": "Bilateral dumbbell row · combined weight in kg",
+  "trapBar": "Trap bar deadlift · total weight in kg"
 }

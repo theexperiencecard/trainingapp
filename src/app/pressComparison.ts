@@ -1,4 +1,4 @@
-import { sampleExercises, type Exercise } from '../core/sampleExercises';
+import { sampleExercises, type PressExercise } from '../core/sampleExercises';
 
 import { profileFocus } from './profileDirection';
 
@@ -14,7 +14,7 @@ export function pressComparison(answers: Readonly<Record<string, readonly string
   const { equipment = [], avoid = [] } = answers;
   if (!equipment.length || !avoid.length) return null;
 
-  function status(exercise: Exercise): CandidateStatus {
+  function status(exercise: PressExercise): CandidateStatus {
     const candidate = sampleExercises[exercise];
     if (avoid.includes(candidate.avoid)) return 'excludedByPreference';
     return equipment.includes(candidate.equipment) ? 'checkEquipment' : 'equipmentMissing';

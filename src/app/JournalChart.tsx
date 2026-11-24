@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { sampleExerciseIds } from '../core/sampleExercises';
 import { dailyVolumes } from '../core/journalVolume';
 import type { JournalSet, Exercise } from '../storage/localJournal';
+import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
 import it from '../locales/chart-it.json';
 import de from '../locales/chart-de.json';
@@ -28,7 +29,7 @@ export function JournalChart({ rows, locale }: { rows: JournalSet[]; locale: Loc
           const match = available.find((item) => item === event.target.value);
           if (match) select(match);
         }}>
-          {available.map((item) => <option key={item} value={item}>{text[item]}</option>)}
+          {available.map((item) => <option key={item} value={item}>{item === 'bench' || item === 'machine' ? text[item] : journalText[locale][item]}</option>)}
         </select>
       </label>
       <p>{text.description}</p>

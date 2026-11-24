@@ -1,5 +1,5 @@
 import { selectPlan, type PlanCandidate, type PlanProfile } from '../core/planSelection';
-import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
+import { pressExerciseIds, sampleExercises } from '../core/sampleExercises';
 import { estimateSessionSeconds } from '../core/sessionTiming';
 
 // These times and plans are fixtures for the guided example.
@@ -12,7 +12,7 @@ export function sampleDuration(canSwitch: boolean): number {
 }
 
 const samplePlans = (['strength', 'muscle'] as const).flatMap(goal =>
-  sampleExerciseIds.map((id): PlanCandidate => ({
+  pressExerciseIds.map((id): PlanCandidate => ({
     id, kind: 'example', goal, startingPoints: ['learn', 'resume', 'known', 'clarify'],
     supportedFocuses: goal === 'muscle' ? ['noSpecificFocus', 'chestFocus']
       : id === 'bench' ? ['noSpecificFocus', 'benchFocus'] : ['noSpecificFocus'],
@@ -24,14 +24,14 @@ const samplePlans = (['strength', 'muscle'] as const).flatMap(goal =>
 );
 
 export function samplePlanOptions(profile: PlanProfile | undefined) {
-  if (!profile) return sampleExerciseIds;
+  if (!profile) return pressExerciseIds;
   const selection = selectPlan(profile, samplePlans, 'example');
   if (selection.compatible.length) {
-    return sampleExerciseIds.filter(id => selection.compatible.some(plan => plan.id === id));
+    return pressExerciseIds.filter(id => selection.compatible.some(plan => plan.id === id));
   }
 
   // Keep only examples blocked by time visible so the UI can explain the conflict.
-  return sampleExerciseIds.filter(id =>
+  return pressExerciseIds.filter(id =>
     selection.rejected.some(plan => plan.id === id && plan.reasons.length === 1 && plan.reasons[0] === 'duration'),
   );
 }

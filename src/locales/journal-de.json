@@ -42,5 +42,8 @@
   "newerFormat": "Das Tagebuch wurde mit einer neueren App-Version gespeichert. Aktualisiere die App und öffne die Seite erneut.",
   "lastSet": "Letzter absolvierter Satz an diesem Gerät",
   "copyLoad": "Dieses Gewicht übernehmen",
-  "firstOnEquipment": "An diesem Gerät ist noch kein absolvierter Satz erfasst."
+  "firstOnEquipment": "An diesem Gerät ist noch kein absolvierter Satz erfasst.",
+  "goblet": "Goblet Squat · Gewicht der Hantel in kg",
+  "row": "Beidarmiges Kurzhantelrudern · Gesamtgewicht in kg",
+  "trapBar": "Kreuzheben mit Trap Bar · Gesamtgewicht in kg"
 }

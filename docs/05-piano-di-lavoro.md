@@ -357,3 +357,5 @@ L’anteprima settimanale dopo il questionario riusa i casi 26–28. Mostra per 
 Nel percorso 2.3 ogni serie della prova guidata consente di confermare o modificare carico, ripetizioni e RIR. Il volume per attrezzo usa le misure registrate; un carico sconosciuto resta tale. Un errore di scrittura conserva i valori per il nuovo tentativo.
 
 Durante l’inserimento viene mostrata l’ultima serie svolta sulla stessa configurazione del catalogo, con data, carico, ripetizioni e RIR. «Usa questo carico» è facoltativo e copia solo i kg. Le correzioni al diario aggiornano il riferimento e il tonnellaggio della prova aperta, lasciando intatta la serie che la persona sta compilando. Una serie più recente con carico sconosciuto resta il riferimento, senza recuperare un peso più vecchio.
+
+Il diario di esempio accetta anche goblet squat, rematore bilaterale su panca inclinata e trap bar del caso F03. Il rematore registra i kg totali dei due manubri. Le tre configurazioni hanno ciascuna il proprio storico e grafico.
