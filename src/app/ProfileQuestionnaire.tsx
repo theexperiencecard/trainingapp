@@ -11,7 +11,7 @@ const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
 type ProfileQuestionnaireProps = {
   locale: Locale;
-  onReview: (comparison: PressComparison) => void;
+  onReview: (comparison: PressComparison, availableMinutes: number) => void;
 };
 
 export function ProfileQuestionnaire({ locale, onReview }: ProfileQuestionnaireProps) {
@@ -92,7 +92,7 @@ export function ProfileQuestionnaire({ locale, onReview }: ProfileQuestionnaireP
           event.preventDefault();
           moved.current = true;
           setReviewing(true);
-          onReview(pressComparison(answers));
+          onReview(pressComparison(answers), Number(answers.minutes?.[0]));
         }}>
           {questions.map((question) => {
             const values = answers[question.id] ?? [];

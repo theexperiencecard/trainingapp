@@ -203,7 +203,7 @@ async function verify() {
     await field(profileForm, profileLabels.experience).selectOption('starting');
     await field(profileForm, profileLabels.noneFamiliar).check();
     await field(profileForm, profileLabels.days).fill('1');
-    await field(profileForm, profileLabels.minutes).fill('25');
+    await field(profileForm, profileLabels.minutes).fill('5');
     await field(profileForm, profileLabels.setting).selectOption('gym');
     await field(profileForm, profileLabels.machine).check();
     const movementsToAvoid = profileForm.getByRole('group', { name: profileLabels.avoid, exact: true });
@@ -211,6 +211,12 @@ async function verify() {
     await button(profileForm, profileLabels.review).click();
     await page.getByText(shell.example, { exact: true }).click();
     await expect(guided).toContainText(demo.machinePlan);
+    await expect(guided).toContainText(demo.duration.replace('{minutes}', '5,5'));
+    await expect(guided.getByRole('status')).toHaveText(demo.timeConflict.replace('{available}', '5'));
+    await expect(button(guided, demo.start)).toHaveCount(0);
+    await button(profileForm, profileLabels.edit).click();
+    await field(profileForm, profileLabels.minutes).fill('6');
+    await button(profileForm, profileLabels.review).click();
     await button(guided, demo.start).click();
     await button(guided, demo.recordFirst).click();
     await expect(history(page)).toHaveCount(6);
@@ -226,7 +232,7 @@ async function verify() {
     const previousIds = new Set(afterWorkout.sets.map(set => set.id));
     const newSets = (await snapshot(page)).sets.filter(set => !previousIds.has(set.id));
     assert.deepEqual(newSets.map(set => set.exercise), ['machine', 'machine']);
-    console.log('OK the confirmed profile limits exercise choices without changing a workout already underway');
+    console.log('OK the confirmed profile limits exercise choices and checks time without changing a workout already underway');
 
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');

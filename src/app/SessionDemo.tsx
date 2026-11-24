@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { localDate, newOperationId } from '../core/journalInput';
+import { estimateSessionSeconds } from '../core/sessionTiming';
 import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
 import { addSet, type Exercise } from '../storage/localJournal';
 import { demoExerciseOptions, type PressComparison } from './pressComparison';
@@ -16,7 +17,22 @@ const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
 
 type DemoRun = { day: string; first: Exercise; canSwitch: boolean };
 
-export function SessionDemo({ locale, comparison }: { locale: Locale; comparison: PressComparison | undefined }) {
+type SessionDemoProps = {
+  locale: Locale;
+  comparison: PressComparison | undefined;
+  availableMinutes: number | undefined;
+};
+
+// Sample times for the preview only.
+function demoDuration(canSwitch: boolean) {
+  return estimateSessionSeconds({
+    preparationSeconds: 120,
+    setSeconds: [45, 45],
+    gaps: [{ recoverySeconds: 120, changeSeconds: canSwitch ? 150 : 0, overlap: true }],
+  });
+}
+
+export function SessionDemo({ locale, comparison, availableMinutes }: SessionDemoProps) {
   const text = translations[locale];
   const [run, setRun] = useState<DemoRun | null>(null);
   const [saving, setSaving] = useState(false);
@@ -27,11 +43,17 @@ export function SessionDemo({ locale, comparison }: { locale: Locale; comparison
   const [choice, setChoice] = useState<Choice>('keepBench');
   const options = demoExerciseOptions(comparison);
   const [firstAvailable] = options;
+  const canSwitch = options.length > 1;
+  const duration = demoDuration(canSwitch);
+  const fitsBudget = availableMinutes === undefined || duration <= availableMinutes * 60;
+  const timeSummary = (canSwitch ? text.durationWithChange : text.duration)
+    .replace('{minutes}', (duration / 60).toLocaleString(locale));
+  const timeConflict = text.timeConflict.replace('{available}', availableMinutes?.toLocaleString(locale) ?? '');
   const first = run?.first ?? firstAvailable ?? 'bench';
   const current: Exercise = choice === 'keepBench' ? first : 'machine';
   const thursday: Exercise = choice === 'alsoThursday' ? 'machine' : first;
   const noExample = comparison === null ? text.otherGoal : text.noCompatibleExercise;
-  const plan = options.length > 1 ? text.plan : firstAvailable === 'machine' ? text.machinePlan : text.benchPlan;
+  const plan = canSwitch ? text.plan : firstAvailable === 'machine' ? text.machinePlan : text.benchPlan;
   const complete = logged.length === 2;
   const currentTitle = [text.first, text.second, text.complete][logged.length];
   function setLabel(exercise: Exercise) {
@@ -69,10 +91,10 @@ export function SessionDemo({ locale, comparison }: { locale: Locale; comparison
   }
 
   function restart() {
-    if (!firstAvailable) return;
+    if (!firstAvailable || !fitsBudget) return;
     setLogged([]);
     setChoice('keepBench');
-    setRun({ day: localDate(new Date()), first: firstAvailable, canSwitch: options.length > 1 });
+    setRun({ day: localDate(new Date()), first: firstAvailable, canSwitch });
   }
 
   return (
@@ -84,8 +106,13 @@ export function SessionDemo({ locale, comparison }: { locale: Locale; comparison
         firstAvailable ? (
           <>
             <p>{plan}</p>
-            {comparison && <p>{text.verifySetup}</p>}
-            <button type="button" onClick={restart}>{text.start}</button>
+            <p>{timeSummary}</p>
+            {fitsBudget ? (
+              <>
+                {comparison && <p>{text.verifySetup}</p>}
+                <button type="button" onClick={restart}>{text.start}</button>
+              </>
+            ) : <p role="status">{timeConflict}</p>}
           </>
         ) : <p>{noExample}</p>
       ) : (
@@ -162,9 +189,9 @@ export function SessionDemo({ locale, comparison }: { locale: Locale; comparison
           {complete && (
             <div className="demo-actions">
               <a href="#local-journal-heading">{text.openJournal}</a>
-              {firstAvailable ? (
+              {!firstAvailable ? <p>{noExample}</p> : fitsBudget ? (
                 <button className="demo-secondary" type="button" onClick={restart}>{text.restart}</button>
-              ) : <p>{noExample}</p>}
+              ) : <p role="status">{timeConflict}</p>}
             </div>
           )}
         </>

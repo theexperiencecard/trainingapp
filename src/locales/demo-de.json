@@ -34,5 +34,8 @@
   "machinePlan": "Zwei Beispielsätze an der Brustpresse M1. Zwischen den Sätzen kannst du den Timer nutzen.",
   "verifySetup": "Prüfe vor dem Start, ob du die angegebene Ausstattung nutzen kannst. Geänderte Antworten gelten ab der nächsten Vorschau.",
   "otherGoal": "Für dein gewähltes Ziel braucht es ein anderes Beispiel. Deine Antworten bleiben in der Zusammenfassung verfügbar.",
-  "noCompatibleExercise": "Deine Ausstattung und Vorlieben erfordern eine andere Übung. Du kannst deine Antworten im Fragebogen überprüfen."
+  "noCompatibleExercise": "Deine Ausstattung und Vorlieben erfordern eine andere Übung. Du kannst deine Antworten im Fragebogen überprüfen.",
+  "duration": "Dieses Beispiel dauert mit Vorbereitung, Sätzen und Pause etwa {minutes} Minuten.",
+  "durationWithChange": "Dieses Beispiel dauert mit Gerätewechsel bis zu etwa {minutes} Minuten.",
+  "timeConflict": "Du hast {available} Minuten angegeben. Dieses Beispiel braucht mehr Zeit. Du kannst deine verfügbare Zeit im Fragebogen ändern."
 }

@@ -342,3 +342,7 @@ Il riepilogo del questionario propone un confronto facoltativo tra panca e chest
 ### Dal riepilogo alla seduta dimostrativa
 
 Panca e chest press M1 hanno definizioni condivise fra questionario, seduta e diario. Mantengono configurazioni, convenzioni e firme delle operazioni locali già registrate. Dopo il riepilogo, la demo consente solo gli esercizi il cui attrezzo è stato indicato e che l'utente non ha scelto di evitare. Si chiede di verificare la postazione precisa. Se il profilo esclude entrambe le opzioni o richiede un altro obiettivo, la demo spiega il limite. Il profilo viene applicato alla prova successiva, così una modifica delle risposte non cambia una serie in corso. Questi sono controlli di compatibilità della simulazione, in vista dell'assegnazione di schede revisionate. [Criteri e casi](22-questionario-progressione-casi-r2.md)
+
+### Stima della durata e tempo a disposizione
+
+Il calcolo condiviso somma preparazione, esecuzione e intervalli. Se un cambio di postazione si sovrappone al recupero, conta il più lungo. Per attività in sequenza somma entrambe. I test riproducono i casi da 30,5 e 33,5 minuti del documento 21 e rifiutano intervalli mancanti. Nella demo il profilo confermato confronta i minuti disponibili con 5,5 minuti di esempio, o circa 6 con possibilità di cambio. Se non c'è tempo sufficiente, mostra il motivo prima di iniziare. Una prova in corso prosegue con il proprio esercizio. Tempi illustrativi della demo, da ricalcolare sui programmi reali revisionati. [Casi di durata](21-schede-candidate-r2.md)

@@ -12,7 +12,7 @@ type AppProps = { locale?: Locale; offlineStatus?: OfflineStatus | undefined };
 
 export function App({ locale = 'it', offlineStatus }: AppProps) {
   const [language, setLanguage] = useState(locale);
-  const [comparison, setComparison] = useState<PressComparison>();
+  const [profile, setProfile] = useState<{ comparison: PressComparison; availableMinutes: number }>();
   const text = messages[language];
 
   useEffect(() => {
@@ -36,10 +36,12 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
-      <ProfileQuestionnaire locale={language} onReview={setComparison} />
+      <ProfileQuestionnaire locale={language} onReview={(comparison, availableMinutes) => {
+        setProfile({ comparison, availableMinutes });
+      }} />
       <details className="example-panel">
         <summary>{text.example}</summary>
-        <SessionDemo locale={language} comparison={comparison} />
+        <SessionDemo locale={language} comparison={profile?.comparison} availableMinutes={profile?.availableMinutes} />
       </details>
       <WorkoutTimer locale={language} />
       <LocalJournal locale={language} />
