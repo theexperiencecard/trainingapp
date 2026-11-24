@@ -320,3 +320,15 @@ Prossimo incremento verificabile: percorrere dall'inizio alla fine una scheda di
 ## Seduta guidata di esempio · 24 novembre 2026
 
 Il percorso di due serie parte da un riepilogo. Dopo la prima serie l'utente può aprire il timer e scegliere la chest press per la seconda. Ogni conferma scrive nel diario locale, usando lo stesso ID di operazione se deve riprovare. Il riepilogo finale porta allo storico. Alla riapertura le serie e il timer restano disponibili. Il passo corrente e le scelte della simulazione si ricostruiscono dal riepilogo iniziale. Il percorso riguarda la scheda di esempio. L'assegnazione dal questionario e il catalogo della prima prova reale dipendono ancora dalla revisione R2.
+
+## Percorso più breve verso il primo pilot
+
+Il questionario mostra ora la direzione ricavata dall'obiettivo, dalla pratica recente e dai movimenti familiari. A parità di vincoli distingue forza e capacità aerobica. Se l'obiettivo è indeciso chiede di sceglierlo. Questo passaggio prepara l'assegnazione delle schede. I contenuti da svolgere dipendono ancora dalle decisioni R2.
+
+1. **Dossier già pronto, revisione da svolgere.** Valutare la proposta di limitare il primo pilot a pochi profili e a un catalogo breve. Usare i casi esistenti per convalidare esercizi, dose iniziale, progressione, sostituzioni e percorsi per segnali o dolore. Definire quando dichiarare che il profilo è fuori copertura. [Scheda di revisione](29-consegna-revisione-r2.md)
+2. **Preparazione tecnica in parallelo.** Chiudere i casi di onboarding, adattamento e passaggio dal piano alla seduta. Preparare in parallelo la progettazione di account, privacy e sincronizzazione. Il diario locale già collaudato è la base per la seduta. Usare un solo ramo di integrazione per ridurre il lavoro ripetuto.
+3. **Integrare le regole revisionate.** Completare domande condizionali, motore, anteprima modificabile, esercizi alternativi, seduta guidata e storico. Automatizzare prima i casi che distinguono obiettivi, livelli, vincoli di tempo e attrezzatura. Prevedere criteri di valutazione dopo le prime sedute.
+4. **Verificare il prodotto sui telefoni.** Completare e provare accesso, isolamento dei dati e sincronizzazione. Provare l'installazione sulla Home e il ciclo di registrazione offline, riapertura e sincronizzazione su iPhone e Android reali. Reclutamento e preparazione dei criteri della prova possono procedere prima del collaudo.
+5. **Avviare la prova.** Osservare completamento della prima seduta, aderenza e comprensione della scheda per le 4–6 settimane previste. Migliorare accessibilità e comprensione prima del pilot. Gli effetti grafici, il coach e gli store sono successivi alle verifiche essenziali.
+
+La riduzione del perimetro del pilot è una proposta per accorciare revisione e collaudo. La prima versione completa richiede ancora revisione professionale, implementazione e prove sui telefoni. La stima resta circa un terzo del percorso.

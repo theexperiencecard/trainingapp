@@ -24,5 +24,16 @@
   "choose": "Antwort auswählen",
   "review": "Übersicht anzeigen",
   "result": "Deine Antworten",
-  "edit": "Antworten bearbeiten"
+  "edit": "Antworten bearbeiten",
+  "experience": "Wo stehst du gerade mit deinem Training?",
+  "starting": "Ich fange gerade an",
+  "returning": "Ich steige nach einer Pause wieder ein",
+  "regular": "Ich trainiere regelmäßig",
+  "experienceUnknown": "Ich bin mir unsicher",
+  "direction": "Möglicher Einstieg",
+  "learn": "Als Erstes kommt infrage, Bewegungen kennenzulernen, die zu deinem Ziel passen.",
+  "resume": "Prüfe zuerst, welche Bewegungen dir noch vertraut sind und bei welchen ein schrittweiser Wiedereinstieg passt.",
+  "known": "Deine vertrauten Bewegungen helfen dabei, einen Einstieg zu wählen.",
+  "clarify": "Vor der Übungsauswahl braucht es mehr Informationen dazu, welche Bewegungen du bereits trainierst.",
+  "goalNeeded": "Wähle ein Hauptziel, um einen möglichen Einstieg zu sehen."
 }

@@ -4,6 +4,7 @@ import de from '../locales/profile-de.json';
 import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
 import questions from './profileQuestions.json';
+import { profileDirection } from './profileDirection';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
@@ -11,6 +12,7 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
   const text: Record<string, string> = translations[locale];
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [reviewing, setReviewing] = useState(false);
+  const direction = reviewing ? profileDirection(answers) : null;
   const form = useRef<HTMLFormElement>(null);
   const summary = useRef<HTMLHeadingElement>(null);
   const moved = useRef(false);
@@ -39,6 +41,15 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
       {reviewing ? (
         <>
           <h3 tabIndex={-1} ref={summary}>{text.result}</h3>
+          {direction ? (
+            <section aria-label={text.direction}>
+              <h4>{text.direction}</h4>
+              <p><strong>{text[direction.goal]}</strong></p>
+              <p>{text[direction.startingPoint]}</p>
+            </section>
+          ) : (
+            <p>{text.goalNeeded}</p>
+          )}
           <dl>
             {questions.map((question) => (
               <div key={question.id}>

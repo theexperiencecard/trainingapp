@@ -24,5 +24,16 @@
   "choose": "Select an answer",
   "review": "Review answers",
   "result": "Your answers",
-  "edit": "Edit answers"
+  "edit": "Edit answers",
+  "experience": "What is your current training situation?",
+  "starting": "I am just starting",
+  "returning": "I am returning after a break",
+  "regular": "I train regularly",
+  "experienceUnknown": "I am unsure",
+  "direction": "Starting direction",
+  "learn": "A first step to consider is getting familiar with movements that suit your goal.",
+  "resume": "Before choosing exercises, check which movements still feel familiar and which need a gradual return.",
+  "known": "The movements you already know help identify a starting point.",
+  "clarify": "Exercise selection needs more information about the movements you practise.",
+  "goalNeeded": "Choose a main goal to see an initial direction."
 }

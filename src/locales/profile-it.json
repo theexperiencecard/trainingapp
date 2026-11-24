@@ -24,5 +24,16 @@
   "choose": "Seleziona una risposta",
   "review": "Mostra riepilogo",
   "result": "Le tue risposte",
-  "edit": "Modifica le risposte"
+  "edit": "Modifica le risposte",
+  "experience": "Qual è la tua situazione attuale?",
+  "starting": "Sto iniziando",
+  "returning": "Sto riprendendo dopo una pausa",
+  "regular": "Mi alleno con regolarità",
+  "experienceUnknown": "Non saprei",
+  "direction": "Direzione iniziale",
+  "learn": "Il primo passo da valutare è prendere confidenza con movimenti adatti al tuo obiettivo.",
+  "resume": "Prima di scegliere gli esercizi, verifica quali movimenti conosci ancora e quali vanno ripresi gradualmente.",
+  "known": "I movimenti familiari che hai indicato aiutano a scegliere da dove partire.",
+  "clarify": "Prima di scegliere gli esercizi, serve capire meglio quali movimenti pratichi.",
+  "goalNeeded": "Scegli un obiettivo principale per vedere una direzione iniziale."
 }
