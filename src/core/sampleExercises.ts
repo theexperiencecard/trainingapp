@@ -16,6 +16,9 @@ export const sampleExercises = {
   row: {
     set: { configuration: 'incline-bilateral-dumbbell-row', convention: 'total-both-dumbbells', kg: 20, reps: 12 },
   },
+  cable: {
+    set: { configuration: 'bilateral-triceps-cable-C1', convention: 'machine-indicated', kg: 10, reps: 12 },
+  },
   trapBar: {
     set: { configuration: 'trap-bar-deadlift', convention: 'total-including-bar', kg: 50, reps: 8 },
   },
@@ -24,11 +27,11 @@ export const sampleExercises = {
 export type Exercise = keyof typeof sampleExercises;
 export const pressExerciseIds = ['bench', 'machine'] as const satisfies readonly Exercise[];
 export type PressExercise = (typeof pressExerciseIds)[number];
-export const sampleExerciseIds = [...pressExerciseIds, 'goblet', 'row', 'trapBar'] as const satisfies readonly Exercise[];
+export const sampleExerciseIds = [...pressExerciseIds, 'goblet', 'row', 'trapBar', 'cable'] as const satisfies readonly Exercise[];
 
 export function exampleDrafts<T>(create: (exercise: Exercise) => T): Record<Exercise, T> {
   return {
     bench: create('bench'), machine: create('machine'), goblet: create('goblet'),
-    row: create('row'), trapBar: create('trapBar'),
+    row: create('row'), trapBar: create('trapBar'), cable: create('cable'),
   };
 }

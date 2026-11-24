@@ -7,8 +7,8 @@ import { LocalJournal } from './LocalJournal';
 import type { PlanProfile } from '../core/planSelection';
 import { ProfileQuestionnaire } from './ProfileQuestionnaire';
 import { SessionDemo } from './SessionDemo';
-import { StrengthExampleSession } from './StrengthExampleSession';
-import type { StrengthDayIndex } from './strengthExample';
+import { WeekExampleSession } from './WeekExampleSession';
+import type { SessionChoice } from './guidedWeeks';
 import { WorkoutTimer } from './WorkoutTimer';
 
 type AppProps = { locale?: Locale; offlineStatus?: OfflineStatus | undefined };
@@ -17,7 +17,7 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
   const journal = useLocalJournal();
   const [language, setLanguage] = useState(locale);
   const [profile, setProfile] = useState<PlanProfile>();
-  const [strengthDay, setStrengthDay] = useState<StrengthDayIndex | null>(null);
+  const [sessionChoice, setSessionChoice] = useState<SessionChoice | null>(null);
   const text = messages[language];
 
   useEffect(() => {
@@ -41,13 +41,13 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
-      <ProfileQuestionnaire locale={language} onReview={setProfile} sessionOpen={strengthDay !== null}
-        onStart={day => setStrengthDay(current => current ?? day)} />
-      {strengthDay !== null && <StrengthExampleSession day={strengthDay}
+      <ProfileQuestionnaire locale={language} onReview={setProfile} sessionOpen={sessionChoice !== null}
+        onStart={day => setSessionChoice(current => current ?? day)} />
+      {sessionChoice !== null && <WeekExampleSession choice={sessionChoice} budgetMinutes={(profile?.maxSessionSeconds ?? 0) / 60}
         allowMachine={Boolean(profile?.equipment.includes('machine') && !profile.avoidedExercises.includes('avoidMachinePress'))}
         locale={language} journal={journal}
         onClose={() => {
-          setStrengthDay(null);
+          setSessionChoice(null);
           document.getElementById('profile-start')?.focus();
         }} />}
       <details className="example-panel">

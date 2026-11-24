@@ -311,7 +311,7 @@ async function verify() {
     await button(profileForm, profileLabels.review).click();
     await week.getByText(weekLabels.open, { exact: true }).click();
     const startSession = button(week, weekLabels.startSession);
-    const activeSession = page.locator('section[aria-labelledby="strength-example-heading"]');
+    const activeSession = page.locator('section[aria-labelledby="week-example-heading"]');
 
     await ctx.setOffline(true);
     await startSession.nth(1).click();
@@ -343,10 +343,32 @@ async function verify() {
     await expect(activeSession.getByRole('heading')).toHaveText(weekLabels.sessionComplete);
     await activeSession.getByRole('link', { name: demo.openJournal }).click();
     await expect(page.locator('#local-journal-heading')).toBeFocused();
+    await button(activeSession, weekLabels.closeSession).click();
+    await button(profileForm, profileLabels.edit).click();
+    await field(profileForm, profileLabels.goal).selectOption('muscle');
+    await field(profileForm, profileLabels.muscleFocus).selectOption('chestFocus');
+    await button(profileForm, profileLabels.review).click();
+    await week.getByText(weekLabels.open, { exact: true }).click();
+    await startSession.first().click();
+    const beforeMuscle = await snapshot(page);
+    for (let index = 0; index < 7; index++) {
+      if (index === 1) {
+        await choice(activeSession, demo.choice).selectOption('machine');
+        await expect(activeSession).toContainText('30,5 min');
+        await expect(activeSession).toContainText(weekLabels.overBudget.replace('{minutes}', '30'));
+        await field(activeSession, weekLabels.omitCable).check();
+        await expect(activeSession).toContainText('28,25 min');
+      }
+      await button(activeSession, it.add).click();
+    }
+    await expect(activeSession).toContainText(weekLabels.shortSummary);
+    const muscleRows = (await snapshot(page)).sets.filter(set => !beforeMuscle.sets.some(old => old.id === set.id));
+    assert.deepEqual(muscleRows.sort((a,b) => a.position - b.position).map(set => set.exercise),
+      ['bench', 'machine', 'goblet', 'goblet', 'row', 'row', 'cable']);
     await page.reload();
-    await expect(history(page)).toHaveCount(14);
+    await expect(history(page)).toHaveCount(21);
     const existingIds = new Set(beforeSession.sets.map(set => set.id));
-    const newSession = (await snapshot(page)).sets.filter(set => !existingIds.has(set.id));
+    const newSession = (await snapshot(page)).sets.filter(set => !existingIds.has(set.id) && !muscleRows.some(row => row.id === set.id));
     assert.deepEqual(newSession.sort((a, b) => a.position - b.position).map(set => [set.exercise, set.kg, set.reps]), [
       ['bench', 40, 8], ['machine', 25, 10], ['goblet', 16, 10], ['goblet', 16, 9], ['row', 20, 12], ['row', 20, 11],
     ]);

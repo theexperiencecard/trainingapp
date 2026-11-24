@@ -45,5 +45,6 @@
   "firstOnEquipment": "An diesem Gerät ist noch kein absolvierter Satz erfasst.",
   "goblet": "Goblet Squat · Gewicht der Hantel in kg",
   "row": "Beidarmiges Kurzhantelrudern · Gesamtgewicht in kg",
-  "trapBar": "Kreuzheben mit Trap Bar · Gesamtgewicht in kg"
+  "trapBar": "Kreuzheben mit Trap Bar · Gesamtgewicht in kg",
+  "cable": "Trizepsstrecken am Kabelzug C1 · angezeigte kg"
 }

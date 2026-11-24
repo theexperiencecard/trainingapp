@@ -6,7 +6,7 @@ import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
 import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
 import { planProfileFromAnswers, profileDirection } from './profileDirection';
-import type { StrengthDayIndex } from './strengthExample';
+import type { SessionChoice } from './guidedWeeks';
 import { WeekPreview } from './WeekPreview';
 import { pressComparison } from './pressComparison';
 
@@ -15,7 +15,7 @@ const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 type ProfileQuestionnaireProps = {
   locale: Locale;
   sessionOpen: boolean;
-  onStart: (day: StrengthDayIndex) => void;
+  onStart: (day: SessionChoice) => void;
   onReview: (profile: PlanProfile) => void;
 };
 

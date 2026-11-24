@@ -363,3 +363,5 @@ Il diario di esempio accetta anche goblet squat, rematore bilaterale su panca in
 Dal risultato F03 per la panca si può aprire una delle due sedute sintetiche del [caso di forza](26-seduta-forza-r2.md). Ciascuna guida sei serie in tre blocchi. La sequenza della seduta aperta resta quella scelta all’avvio. I valori vengono confermati serie per serie nel diario offline. La sessione aperta è temporanea. Le altre famiglie si consultano in anteprima. Restano da integrare la scelta della seduta del giorno per il programma revisionato e i riscontri per la prova sui telefoni.
 
 Nel caso F03 guidato, la seconda serie di panca permette di scegliere la M1 solo per oggi quando il profilo iniziale include le macchine e consente la chest press. La scelta è reversibile prima del salvataggio; la serie viene attribuita alla configurazione utilizzata.
+
+F04 apre le due sedute del caso 27 con quattro esercizi e otto serie. Dopo il cambio sulla M1 la stima passa da 28,5 a 30,5 minuti. Omettere l’ultima serie al cavo per la simulazione porta la stima a 28,25 minuti. Il diario conserva le serie svolte; la scelta di accorciare questa seduta resta nel riepilogo temporaneo.

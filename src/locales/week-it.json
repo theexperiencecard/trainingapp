@@ -38,5 +38,8 @@
   "guidedNotice": "Simulazione con dati fittizi",
   "setProgress": "Serie {current} di {total}",
   "sessionComplete": "Seduta di esempio conclusa",
-  "closeSession": "Torna al questionario"
+  "closeSession": "Torna al questionario",
+  "overBudget": "La stima supera i {minutes} minuti disponibili.",
+  "omitCable": "Ometti l’ultima serie al cavo per questa prova",
+  "shortSummary": "Hai registrato sette serie su otto. Hai omesso l’ultima serie al cavo."
 }

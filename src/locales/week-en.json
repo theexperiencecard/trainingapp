@@ -38,5 +38,8 @@
   "guidedNotice": "Simulation with fictional data",
   "setProgress": "Set {current} of {total}",
   "sessionComplete": "Example session complete",
-  "closeSession": "Back to the questionnaire"
+  "closeSession": "Back to the questionnaire",
+  "overBudget": "The estimate exceeds your available {minutes} minutes.",
+  "omitCable": "Leave out the last cable set for this session",
+  "shortSummary": "You recorded seven of eight sets and left out the final cable set."
 }

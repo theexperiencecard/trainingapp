@@ -45,5 +45,6 @@
   "firstOnEquipment": "No completed sets on this equipment yet.",
   "goblet": "Goblet squat · dumbbell weight in kg",
   "row": "Bilateral dumbbell row · combined weight in kg",
-  "trapBar": "Trap bar deadlift · total weight in kg"
+  "trapBar": "Trap bar deadlift · total weight in kg",
+  "cable": "Cable triceps extension C1 · indicated kg"
 }

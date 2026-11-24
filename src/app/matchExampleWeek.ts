@@ -1,7 +1,7 @@
 // Read-only illustrations from the documented cases in docs/26, 27 and 28.
 import { selectPlan, type PlanCandidate, type PlanGoal, type StartingPoint } from '../core/planSelection';
 import { planProfileFromAnswers } from './profileDirection';
-import { strengthExample } from './strengthExample';
+import { guidedWeeks, type GuidedWeek } from './guidedWeeks';
 
 type Day = { minutes: number; movements: readonly string[] };
 type ExampleWeek = {
@@ -16,20 +16,19 @@ type ExampleWeek = {
   focuses?: string[];
 };
 
-function strengthDay(index: 0 | 1): Day {
-  const day = strengthExample[index];
+function exampleDay(family: GuidedWeek, index: 0 | 1): Day {
+  const day = guidedWeeks[family][index];
   return { minutes: day.minutes, movements: day.blocks.map(block => block.exercise) };
 }
 
 const strength: ExampleWeek = {
   description: 'strengthWeek', setup: 'strengthSetup', walk: false,
-  days: [strengthDay(0), strengthDay(1)],
+  days: [exampleDay('strengthWeek', 0), exampleDay('strengthWeek', 1)],
   equipment: ['barbell', 'dumbbells'], exclusions: ['avoidBench', 'avoidSquat'],
   familiar: ['press', 'squat', 'row'], startingPoints: ['known'], focuses: ['benchFocus'],
 };
-const muscleDay = { minutes: 28.5, movements: ['bench', 'goblet', 'row', 'cable'] };
 const muscle: ExampleWeek = {
-  ...strength, description: 'muscleWeek', setup: 'muscleSetup', days: [muscleDay, muscleDay],
+  ...strength, description: 'muscleWeek', setup: 'muscleSetup', days: [exampleDay('muscleWeek', 0), exampleDay('muscleWeek', 1)],
   equipment: ['barbell', 'dumbbells', 'machine'], focuses: ['chestFocus'],
 };
 
