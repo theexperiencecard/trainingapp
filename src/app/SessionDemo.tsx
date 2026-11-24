@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { localDate, newOperationId, type SetMeasurements } from '../core/journalInput';
 import type { PlanProfile } from '../core/planSelection';
 import { sampleExerciseIds } from '../core/sampleExercises';
-import { addSet, type Exercise } from '../storage/localJournal';
+import { addedSetId, addSet, type Exercise, type JournalSet } from '../storage/localJournal';
 import { sampleDuration, samplePlanOptions } from './samplePlanOptions';
 import { dailyVolumes } from '../core/journalVolume';
 import { GuidedSetForm } from './GuidedSetForm';
 import { journalText } from '../locales/journal';
-import { notifyJournal } from './journalUpdates';
+import { lastRecordedSet } from '../core/lastRecordedSet';
+import type { LocalJournalState } from './journalUpdates';
 import type { Locale } from '../locales/messages';
 import it from '../locales/demo-it.json';
 import de from '../locales/demo-de.json';
@@ -20,9 +21,9 @@ const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
 
 type DemoRun = { day: string; first: Exercise; canSwitch: boolean };
 
-type LoggedSet = SetMeasurements & { exercise: Exercise; day: string; status: 'completed' };
+type LoggedSet = Pick<JournalSet, 'id' | 'exercise' | 'day' | 'status' | 'kg' | 'reps' | 'rir'>;
 
-export function SessionDemo({ locale, profile }: { locale: Locale; profile: PlanProfile | undefined }) {
+export function SessionDemo({ locale, profile, journal }: { locale: Locale; profile: PlanProfile | undefined; journal: LocalJournalState }) {
   const text = translations[locale];
   const [run, setRun] = useState<DemoRun | null>(null);
   const [saving, setSaving] = useState(false);
@@ -30,6 +31,7 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
   const pending = useRef<string | null>(null);
   const writing = useRef(false);
   const [logged, setLogged] = useState<LoggedSet[]>([]);
+  const journalRows = logged.map(saved => journal.sets?.find(row => row.id === saved.id) ?? saved);
   const [choice, setChoice] = useState<Choice>('keepBench');
   const options = samplePlanOptions(profile);
   const [firstAvailable] = options;
@@ -49,6 +51,7 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
   const complete = logged.length === 2;
   const currentTitle = [text.first, text.second, text.complete][logged.length];
   function setLabel(row: LoggedSet) {
+    if (row.status !== 'completed') return journalText[locale][row.status];
     const load = row.exercise === 'bench' ? text.benchLoad : text.machineLoad;
     const kg = row.kg === null ? journalText[locale].unknownLoad : row.kg.toLocaleString(locale) + ' ' + load;
     const rir = row.rir === null ? journalText[locale].rirUnknown : journalText[locale].rirUnit + ' ' + row.rir;
@@ -71,6 +74,9 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
     try {
       pending.current ??= newOperationId();
       await addSet(pending.current, run.day, current, values);
+      const id = addedSetId(pending.current);
+      await journal.announceWrite();
+      setLogged([...logged, { id, ...values, exercise: current, day: run.day, status: 'completed' }]);
     } catch {
       setFailed(true);
       return;
@@ -79,8 +85,6 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
       setSaving(false);
     }
     pending.current = null;
-    setLogged([...logged, { ...values, exercise: current, day: run.day, status: 'completed' }]);
-    notifyJournal();
   }
 
   function restart() {
@@ -139,6 +143,8 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
             {!complete && (
               <>
                 <GuidedSetForm key={logged.length} locale={locale} exercise={current}
+                  reference={journal.sets && !journal.readFailure ? lastRecordedSet(journal.sets, current, run.day) : null}
+                  referenceStatus={journal.readFailure ?? (journal.sets === null ? 'loading' : 'ready')}
                   saving={saving} failed={failed} onRecord={record}
                   submitLabel={failed ? text.retry : logged.length === 0 ? text.recordFirst : text.recordSecond} />
                 {failed && <p role="alert">{text.saveError}</p>}
@@ -150,14 +156,14 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
             <div className="demo-history">
               <h3>{text.history}</h3>
               <ol>
-                {logged.map((row, index) => (
-                  <li key={index}>{text[row.exercise]} · {setLabel(row)}</li>
+                {journalRows.map((row) => (
+                  <li key={row.id}>{text[row.exercise]} · {setLabel(row)}</li>
                 ))}
               </ol>
               <h3>{text.volume}</h3>
               <dl>
                 {sampleExerciseIds.map(exercise => {
-                  const [volume] = dailyVolumes(logged, exercise);
+                  const [volume] = dailyVolumes(journalRows, exercise);
                   if (!volume) return null;
                   return (
                     <div key={exercise}>

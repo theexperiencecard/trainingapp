@@ -3,18 +3,21 @@ import { exampleDraft, readSetDraft, type SetMeasurements as Values } from '../c
 import type { Exercise } from '../core/sampleExercises';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
+import type { JournalSet } from '../storage/localJournal';
 import { SetMeasurements } from './SetMeasurements';
 
 type Props = {
   locale: Locale;
   exercise: Exercise;
+  reference: JournalSet | null;
+  referenceStatus: 'loading' | 'ready' | 'readError' | 'newerFormat';
   saving: boolean;
   failed: boolean;
   submitLabel: string;
   onRecord: (values: Values) => Promise<void>;
 };
 
-export function GuidedSetForm({ locale, exercise, saving, failed, submitLabel, onRecord }: Props) {
+export function GuidedSetForm({ locale, exercise, reference, referenceStatus, saving, failed, submitLabel, onRecord }: Props) {
   const text = journalText[locale];
   const [drafts, setDrafts] = useState(() => ({ bench: exampleDraft('bench'), machine: exampleDraft('machine') }));
   const [invalidExercise, setInvalidExercise] = useState<Exercise | null>(null);
@@ -27,6 +30,22 @@ export function GuidedSetForm({ locale, exercise, saving, failed, submitLabel, o
       else setInvalidExercise(exercise);
     }}>
       <p><strong>{text[exercise]}</strong></p>
+      {reference ? (
+        <div>
+          <p>
+            {text.lastSet} · <time dateTime={reference.day}>{new Intl.DateTimeFormat(locale, {
+              dateStyle: 'medium', timeZone: 'UTC',
+            }).format(new Date(reference.day + 'T00:00:00Z'))}</time><br />
+            {reference.kg === null ? text.unknownLoad : reference.kg.toLocaleString(locale) + ' ' + text.kgUnit}
+            {' × '}{reference.reps} · {reference.rir === null ? text.rirUnknown : text.rirUnit + ' ' + reference.rir}
+          </p>
+          {reference.kg !== null && <button type="button" className="demo-secondary" disabled={saving || failed}
+            onClick={() => {
+              const kg = reference.kg?.toLocaleString(locale, { useGrouping: false, maximumSignificantDigits: 21 });
+              if (kg !== undefined) setDrafts(previous => ({ ...previous, [exercise]: { ...previous[exercise], kg } }));
+            }}>{text.copyLoad}</button>}
+        </div>
+      ) : <p>{referenceStatus === 'ready' ? text.firstOnEquipment : text[referenceStatus]}</p>}
       <SetMeasurements locale={locale} draft={drafts[exercise]} disabled={saving || failed}
         errorId={invalid ? 'guided-set-invalid' : undefined} onChange={next => {
           setDrafts(previous => ({ ...previous, [exercise]: next }));

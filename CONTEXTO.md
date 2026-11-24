@@ -16,7 +16,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Stato verificato
 - 0.1/0.2 completati: React/Vite, TypeScript rigoroso, Vitest, ESLint, un progetto npm.
 - Node 24.22.1 (`.nvmrc`), npm 11; `npm ci`, `npm run check`, `npm run build`.
-- Diario IndexedDB integrato con PR #1 Claude, volumi per giorno/attrezzo, preferenze temporanee, seduta sintetica con valori modificabili per serie, sostituzione, timer e PWA IT/DE/EN. Avvio in README.
+- Diario IndexedDB integrato con PR #1 Claude, volumi per giorno/attrezzo, preferenze temporanee, seduta sintetica con valori modificabili e richiamo dell’ultimo carico dello stesso attrezzo, sostituzione, timer e PWA IT/DE/EN. Avvio in README.
 - 0.3 chiuso: GitHub Actions verificato verde/rosso/verde su ramo isolato; riferimenti nel 06.
 - Repository condiviso: github.com/theexperiencecard/trainingapp, ramo `main`.
 - Push autorizzato dall’utente; per riprendere verificare HEAD remoto e stato locale.

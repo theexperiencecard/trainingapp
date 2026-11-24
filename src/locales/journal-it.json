@@ -39,5 +39,8 @@
   "newSet": "Nuova serie di esempio",
   "optional": "Carico e RIR sono facoltativi. Lascia vuoto un valore sconosciuto.",
   "unknownLoad": "Carico non indicato",
-  "newerFormat": "Una versione più recente dell’app ha salvato questo diario. Aggiorna l’app e riapri la pagina."
+  "newerFormat": "Una versione più recente dell’app ha salvato questo diario. Aggiorna l’app e riapri la pagina.",
+  "lastSet": "Ultima serie svolta su questo attrezzo",
+  "copyLoad": "Usa questo carico",
+  "firstOnEquipment": "Ancora nessuna serie svolta su questo attrezzo."
 }

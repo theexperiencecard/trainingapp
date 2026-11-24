@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { messages, type Locale } from '../locales/messages';
 import type { OfflineStatus } from '../registerOffline';
+import { useLocalJournal } from './journalUpdates';
 import { LegacyJournal } from './LegacyJournal';
 import { LocalJournal } from './LocalJournal';
 import type { PlanProfile } from '../core/planSelection';
@@ -11,6 +12,7 @@ import { WorkoutTimer } from './WorkoutTimer';
 type AppProps = { locale?: Locale; offlineStatus?: OfflineStatus | undefined };
 
 export function App({ locale = 'it', offlineStatus }: AppProps) {
+  const journal = useLocalJournal();
   const [language, setLanguage] = useState(locale);
   const [profile, setProfile] = useState<PlanProfile>();
   const text = messages[language];
@@ -39,10 +41,10 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
       <ProfileQuestionnaire locale={language} onReview={setProfile} />
       <details className="example-panel">
         <summary>{text.example}</summary>
-        <SessionDemo locale={language} profile={profile} />
+        <SessionDemo locale={language} profile={profile} journal={journal} />
       </details>
       <WorkoutTimer locale={language} />
-      <LocalJournal locale={language} />
+      <LocalJournal locale={language} journal={journal} />
       <LegacyJournal locale={language} />
       {offlineStatus && (
         <p role="status">{offlineStatus === 'ready' ? text.offlineReady : text.offlineUnavailable}</p>

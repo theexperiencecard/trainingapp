@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import { exampleDraft, localDate, newOperationId, parseDecimal, readSetDraft, validMeasurement } from '../core/journalInput';
-import { journalChannel, notifyJournal } from './journalUpdates';
+import type { LocalJournalState } from './journalUpdates';
 import { sampleExerciseIds } from '../core/sampleExercises';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
@@ -26,13 +26,12 @@ function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
   return { base, field, value: draft };
 }
 
-export function LocalJournal({ locale }: { locale: Locale }) {
+export function LocalJournal({ locale, journal }: { locale: Locale; journal: LocalJournalState }) {
+  const { sets, readFailure, refresh, announceWrite } = journal;
   const text = journalText[locale];
-  const [sets, setSets] = useState<JournalSet[] | null>(null);
   const [exercise, setExercise] = useState<Exercise>('bench');
   const [drafts, setDrafts] = useState(initialDrafts);
   const draft = drafts[exercise];
-  const [readFailure, setReadFailure] = useState<'readError' | 'newerFormat' | null>(null);
   const [message, setMessage] = useState<'saved' | 'writeError' | 'invalid' | null>(null);
   const [busy, setBusy] = useState(false);
   const [editor, setEditor] = useState<Editor | null>(null);
@@ -40,8 +39,6 @@ export function LocalJournal({ locale }: { locale: Locale }) {
   const operation = useRef<{ key: string; id: string } | null>(null);
   const pendingAdd = useRef<{ day: string; intent: string } | null>(null);
   const returnFocus = useRef<HTMLButtonElement | null>(null);
-  const channel = useRef<BroadcastChannel | null>(null);
-  const readVersion = useRef(0);
 
   useEffect(() => {
     if (!editor && !busy && returnFocus.current) {
@@ -49,45 +46,6 @@ export function LocalJournal({ locale }: { locale: Locale }) {
       returnFocus.current = null;
     }
   }, [editor, busy]);
-
-  const refresh = useCallback(async () => {
-    const version = ++readVersion.current;
-    try {
-      const rows = await listSets();
-      if (readVersion.current === version) {
-        setSets(rows);
-        setReadFailure(null);
-      }
-    } catch (error) {
-      if (readVersion.current === version) {
-        setReadFailure(error instanceof DOMException && error.name === 'VersionError' ? 'newerFormat' : 'readError');
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    let active = true;
-    const reload = () => { if (active) void refresh(); };
-    queueMicrotask(reload);
-    window.addEventListener('focus', reload);
-    window.addEventListener(journalChannel, reload);
-    window.addEventListener('pageshow', reload);
-    try {
-      const connection = new BroadcastChannel(journalChannel);
-      connection.onmessage = reload;
-      channel.current = connection;
-    } catch {
-      // Browsers without a channel still reload the journal on focus.
-    }
-    return () => {
-      active = false;
-      window.removeEventListener('focus', reload);
-      window.removeEventListener(journalChannel, reload);
-      window.removeEventListener('pageshow', reload);
-      channel.current?.close();
-      channel.current = null;
-    };
-  }, [refresh]);
 
   async function write(key: string, persist: (id: string) => Promise<void>, keepEditor = false) {
     if (writing.current) return;
@@ -113,8 +71,7 @@ export function LocalJournal({ locale }: { locale: Locale }) {
     pendingAdd.current = null;
     if (!keepEditor) setEditor(null);
     setMessage('saved');
-    notifyJournal(channel.current);
-    await refresh();
+    await announceWrite();
     writing.current = false;
     setBusy(false);
   }

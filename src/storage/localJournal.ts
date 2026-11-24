@@ -167,6 +167,10 @@ async function applyOnce(
   });
 }
 
+export function addedSetId(opId: string): string {
+  return owner + ':set:' + opId;
+}
+
 export async function addSet(
   opId: string, day: string, exercise: Exercise, input?: Measurements,
 ): Promise<void> {
@@ -175,7 +179,7 @@ export async function addSet(
   const measurement = input ? { ...input } : { kg: fixture.kg, reps: fixture.reps, rir: null };
   for (const field of fields) validateField(field, measurement[field]);
   const sessionId = owner + ':' + day;
-  const id = owner + ':set:' + opId;
+  const id = addedSetId(opId);
   // Keep the v1 default operation signature stable when the same input is retried.
   const intent = {
     type: 'add', day, exercise, catalogVersion: 1, ...fixture,

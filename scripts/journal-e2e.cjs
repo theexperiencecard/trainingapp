@@ -166,6 +166,9 @@ async function verify() {
     const guided = page.getByRole('region', { name: demo.heading, exact: true });
     await page.getByText(shell.example, { exact: true }).click();
     await button(guided, demo.start).click();
+    await expect(guided).toContainText(it.lastSet);
+    await expect(guided).toContainText(it.unknownLoad);
+    await expect(button(guided, it.copyLoad)).toHaveCount(0);
     await field(guided, it.reps).fill('0');
     await button(guided, demo.recordFirst).click();
     await expect(guided.getByRole('alert')).toHaveText(it.invalid);
@@ -175,6 +178,10 @@ async function verify() {
     await button(guided, demo.recordFirst).click();
     await expect(guided).toContainText('300 kg');
     await expect(history(second)).toHaveCount(4);
+    await button(guided, it.copyLoad).click();
+    await expect(field(guided, it.kg)).toHaveValue('37,5');
+    await expect(field(guided, it.reps)).toHaveValue('12');
+    await expect(field(guided, it.rir)).toHaveValue('');
     await guided.getByRole('link', { name: demo.openTimer }).click();
     await expect(page.locator('#workout-timer-heading')).toBeFocused();
     await field(page, timer.duration).fill('30');
@@ -183,6 +190,15 @@ async function verify() {
 
     await choice(guided, demo.choice).selectOption('today');
     await expect(field(guided, it.kg)).toHaveValue('25');
+    await button(guided, it.copyLoad).click();
+    await expect(field(guided, it.kg)).toHaveValue('32,5');
+    await button(history(second).filter({ hasText: '32,5 kg × 9' }), it.edit).click();
+    const correction = journal(second).getByRole('group', { name: it.correct });
+    await choice(correction, it.field).selectOption('kg');
+    await field(correction, it.kg).fill('31,5');
+    await saveEdit(second);
+    await expect(guided).toContainText('31,5 kg × 9');
+    await expect(field(guided, it.kg)).toHaveValue('32,5');
     await field(guided, it.kg).fill('');
     await field(guided, it.reps).fill('9');
     const beforeRetry = await snapshot(page);
@@ -200,14 +216,19 @@ async function verify() {
     await expect(field(guided, it.reps)).toBeDisabled();
     await button(guided, demo.retry).click();
     await expect(guided.getByRole('heading', { name: demo.complete })).toBeVisible();
+    await button(history(second).filter({ hasText: '37,5 kg × 8' }), it.edit).click();
+    await choice(correction, it.field).selectOption('reps');
+    await field(correction, it.reps).fill('7');
+    await saveEdit(second);
+    await expect(guided).toContainText('262,5 kg');
     await guided.getByRole('link', { name: demo.openJournal }).click();
     await expect(page.locator('#local-journal-heading')).toBeFocused();
     await expect(history(page)).toHaveCount(5);
     await page.reload();
     await expect(history(page)).toHaveCount(5);
     const afterWorkout = await snapshot(page);
-    assert.equal(afterWorkout.operationCount, beforeRetry.operationCount + 1);
-    assert.ok(afterWorkout.sets.some(set => set.exercise === 'bench' && set.kg === 37.5 && set.reps === 8 && set.rir === 2));
+    assert.equal(afterWorkout.operationCount, beforeRetry.operationCount + 2);
+    assert.ok(afterWorkout.sets.some(set => set.exercise === 'bench' && set.kg === 37.5 && set.reps === 7 && set.rir === 2));
     assert.ok(afterWorkout.sets.some(set => set.exercise === 'machine' && set.kg === null && set.reps === 9 && set.rir === null));
     console.log('OK guided workout, timer, equipment change, write retry and persisted history');
 

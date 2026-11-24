@@ -39,5 +39,8 @@
   "newSet": "New sample set",
   "optional": "Load and RIR are optional. Leave an unknown value blank.",
   "unknownLoad": "Load not recorded",
-  "newerFormat": "This log was saved with a newer version of the app. Update the app and reopen this page."
+  "newerFormat": "This log was saved with a newer version of the app. Update the app and reopen this page.",
+  "lastSet": "Last completed set on this equipment",
+  "copyLoad": "Use this load",
+  "firstOnEquipment": "No completed sets on this equipment yet."
 }

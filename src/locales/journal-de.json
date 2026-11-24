@@ -39,5 +39,8 @@
   "newSet": "Neuer Beispielsatz",
   "optional": "Gewicht und RIR sind freiwillig. Lass unbekannte Werte leer.",
   "unknownLoad": "Gewicht nicht angegeben",
-  "newerFormat": "Das Tagebuch wurde mit einer neueren App-Version gespeichert. Aktualisiere die App und öffne die Seite erneut."
+  "newerFormat": "Das Tagebuch wurde mit einer neueren App-Version gespeichert. Aktualisiere die App und öffne die Seite erneut.",
+  "lastSet": "Letzter absolvierter Satz an diesem Gerät",
+  "copyLoad": "Dieses Gewicht übernehmen",
+  "firstOnEquipment": "An diesem Gerät ist noch kein absolvierter Satz erfasst."
 }
