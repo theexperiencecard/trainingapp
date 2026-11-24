@@ -21,6 +21,12 @@ Composizione corporea è una preferenza opzionale: niente calorie prescritte o r
 di misure senza funzione. Il questionario non calcola la sicurezza da sesso/BMI.
 Le risposte possono cambiare il piano futuro; non alterano serie o grafici già registrati.
 
+## Criteri di assegnazione da verificare in R2
+
+- Al primo avvio mostrare il questionario senza assegnare una scheda. Se una risposta decisiva manca o l'obiettivo è ancora da scegliere, chiedere un chiarimento prima di proporla.
+- Per chi inizia, partire dall'obiettivo dichiarato e dai movimenti già familiari. Scegliere una scheda essenziale, con esercizi revisionati compatibili con tempo, attrezzatura e capacità. Indicare in anteprima perché è presente ogni parte e quali elementi si possono sostituire.
+- Postura, cardio e isolamento degli adduttori richiedono un motivo pertinente al profilo e all'obiettivo. Come casi a confronto, un neofita che sceglie forza con poco tempo non riceve automaticamente questi moduli. A parità di vincoli, chi sceglie la capacità aerobica vede invece una componente aerobica motivata, secondo le regole revisionate.
+
 ## Progressione candidata: doppia progressione con precedenze
 
 Definizioni: «serie richieste» = serie di lavoro effettivamente assegnate per quel

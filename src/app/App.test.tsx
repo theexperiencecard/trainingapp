@@ -30,6 +30,9 @@ describe('session preview', () => {
     expect(html).toContain(text.heading);
     expect(html).toContain(text.plan);
     expect(html).toContain(text.start);
+    expect(html.indexOf('profile-questionnaire')).toBeLessThan(html.indexOf('example-panel'));
+    expect(html).toContain('<details class="session-demo profile-questionnaire" open="">');
+    expect(html).toContain('<details class="example-panel">');
   });
 
   it.each(Object.keys(catalogs).filter((path) => path.endsWith('-it.json')))(

@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. La seduta sintetica guidata è disponibile. Il prossimo risultato dipende dalla revisione delle prime schede reali.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario viene prima della demo e mostra un riepilogo. Criteri di assegnazione nel 22. Le schede reali dipendono dalla revisione R2.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata

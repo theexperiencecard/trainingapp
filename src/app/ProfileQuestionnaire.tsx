@@ -33,7 +33,7 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
   }
 
   return (
-    <details className="session-demo profile-questionnaire">
+    <details className="session-demo profile-questionnaire" open>
       <summary>{text.heading}</summary>
       <p>{text.intro}</p>
       {reviewing ? (

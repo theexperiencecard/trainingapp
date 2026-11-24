@@ -34,6 +34,7 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
+      <ProfileQuestionnaire locale={language} />
       <details className="example-panel">
         <summary>{text.example}</summary>
         <SessionDemo locale={language} />
@@ -41,7 +42,6 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
       <WorkoutTimer locale={language} />
       <LocalJournal locale={language} />
       <LegacyJournal locale={language} />
-      <ProfileQuestionnaire locale={language} />
       {offlineStatus && (
         <p role="status">{offlineStatus === 'ready' ? text.offlineReady : text.offlineUnavailable}</p>
       )}
