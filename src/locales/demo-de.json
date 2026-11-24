@@ -37,5 +37,6 @@
   "noCompatibleExercise": "Für deinen Schwerpunkt, deine Ausrüstung und deine Vorlieben gibt es keine passende Beispielübung.",
   "duration": "Dieses Beispiel dauert mit Vorbereitung, Sätzen und Pause etwa {minutes} Minuten.",
   "durationWithChange": "Dieses Beispiel dauert mit Gerätewechsel bis zu etwa {minutes} Minuten.",
-  "timeConflict": "Du hast {available} Minuten angegeben. Dieses Beispiel braucht mehr Zeit. Du kannst deine verfügbare Zeit im Fragebogen ändern."
+  "timeConflict": "Du hast {available} Minuten angegeben. Dieses Beispiel braucht mehr Zeit. Du kannst deine verfügbare Zeit im Fragebogen ändern.",
+  "unknownVolume": "Volumen nicht verfügbar"
 }

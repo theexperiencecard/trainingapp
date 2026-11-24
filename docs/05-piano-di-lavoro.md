@@ -353,3 +353,5 @@ Per forza e ipertrofia il questionario chiede anche il gesto o gruppo prioritari
 
 
 L’anteprima settimanale dopo il questionario riusa i casi 26–28. Mostra per ogni seduta ordine degli esercizi, durata e ipotesi sugli attrezzi o sull’attività abituale. Se il caso di riferimento supera il tempo disponibile anche in un solo giorno, contiene un esercizio escluso o presuppone una diversa familiarità, mostra il motivo. I casi sintetici restano consultabili in sola lettura. Il diario accetta serie soltanto tramite i percorsi di registrazione. Il prossimo passaggio per una settimana da svolgere è recepire un primo esito professionale su Q7 e sulla famiglia interessata nel [documento 29](29-consegna-revisione-r2.md).
+
+Nel percorso 2.3 ogni serie della prova guidata consente di confermare o modificare carico, ripetizioni e RIR. Il volume per attrezzo usa le misure registrate; un carico sconosciuto resta tale. Un errore di scrittura conserva i valori per il nuovo tentativo.

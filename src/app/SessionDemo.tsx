@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { localDate, newOperationId } from '../core/journalInput';
+import { localDate, newOperationId, type SetMeasurements } from '../core/journalInput';
 import type { PlanProfile } from '../core/planSelection';
-import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
+import { sampleExerciseIds } from '../core/sampleExercises';
 import { addSet, type Exercise } from '../storage/localJournal';
 import { sampleDuration, samplePlanOptions } from './samplePlanOptions';
+import { dailyVolumes } from '../core/journalVolume';
+import { GuidedSetForm } from './GuidedSetForm';
+import { journalText } from '../locales/journal';
 import { notifyJournal } from './journalUpdates';
 import type { Locale } from '../locales/messages';
 import it from '../locales/demo-it.json';
@@ -17,6 +20,8 @@ const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
 
 type DemoRun = { day: string; first: Exercise; canSwitch: boolean };
 
+type LoggedSet = SetMeasurements & { exercise: Exercise; day: string; status: 'completed' };
+
 export function SessionDemo({ locale, profile }: { locale: Locale; profile: PlanProfile | undefined }) {
   const text = translations[locale];
   const [run, setRun] = useState<DemoRun | null>(null);
@@ -24,7 +29,7 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
   const [failed, setFailed] = useState(false);
   const pending = useRef<string | null>(null);
   const writing = useRef(false);
-  const [logged, setLogged] = useState<Exercise[]>([]);
+  const [logged, setLogged] = useState<LoggedSet[]>([]);
   const [choice, setChoice] = useState<Choice>('keepBench');
   const options = samplePlanOptions(profile);
   const [firstAvailable] = options;
@@ -43,10 +48,11 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
   const plan = canSwitch ? text.plan : firstAvailable === 'machine' ? text.machinePlan : text.benchPlan;
   const complete = logged.length === 2;
   const currentTitle = [text.first, text.second, text.complete][logged.length];
-  function setLabel(exercise: Exercise) {
-    const { kg, reps } = sampleExercises[exercise].set;
-    const load = exercise === 'bench' ? text.benchLoad : text.machineLoad;
-    return `${kg.toLocaleString(locale)} ${load} × ${reps.toLocaleString(locale)}`;
+  function setLabel(row: LoggedSet) {
+    const load = row.exercise === 'bench' ? text.benchLoad : text.machineLoad;
+    const kg = row.kg === null ? journalText[locale].unknownLoad : row.kg.toLocaleString(locale) + ' ' + load;
+    const rir = row.rir === null ? journalText[locale].rirUnknown : journalText[locale].rirUnit + ' ' + row.rir;
+    return `${kg} × ${row.reps.toLocaleString(locale)} · ${rir}`;
   }
 
   const step = run ? logged.length : -1;
@@ -57,14 +63,14 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
     if (step >= 0) currentHeading.current?.focus();
   }, [step]);
 
-  async function record() {
+  async function record(values: SetMeasurements) {
     if (!run || complete || writing.current) return;
     writing.current = true;
     setSaving(true);
     setFailed(false);
     try {
       pending.current ??= newOperationId();
-      await addSet(pending.current, run.day, current);
+      await addSet(pending.current, run.day, current, values);
     } catch {
       setFailed(true);
       return;
@@ -73,7 +79,7 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
       setSaving(false);
     }
     pending.current = null;
-    setLogged([...logged, current]);
+    setLogged([...logged, { ...values, exercise: current, day: run.day, status: 'completed' }]);
     notifyJournal();
   }
 
@@ -132,10 +138,9 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
             )}
             {!complete && (
               <>
-                <p>{text[current]} · {setLabel(current)}</p>
-                <button type="button" disabled={saving} onClick={() => void record()}>
-                  {failed ? text.retry : logged.length === 0 ? text.recordFirst : text.recordSecond}
-                </button>
+                <GuidedSetForm key={logged.length} locale={locale} exercise={current}
+                  saving={saving} failed={failed} onRecord={record}
+                  submitLabel={failed ? text.retry : logged.length === 0 ? text.recordFirst : text.recordSecond} />
                 {failed && <p role="alert">{text.saveError}</p>}
               </>
             )}
@@ -145,18 +150,22 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
             <div className="demo-history">
               <h3>{text.history}</h3>
               <ol>
-                {logged.map((exercise, index) => (
-                  <li key={index}>{text[exercise]} · {setLabel(exercise)}</li>
+                {logged.map((row, index) => (
+                  <li key={index}>{text[row.exercise]} · {setLabel(row)}</li>
                 ))}
               </ol>
               <h3>{text.volume}</h3>
               <dl>
-                {sampleExerciseIds.filter((exercise) => logged.includes(exercise)).map((exercise) => (
-                  <div key={exercise}>
-                    <dt>{exercise === 'bench' ? text.benchVolume : text.machineVolume}</dt>
-                    <dd>{sampleExercises[exercise].set.kg * sampleExercises[exercise].set.reps * logged.filter((item) => item === exercise).length} {text.unit}</dd>
-                  </div>
-                ))}
+                {sampleExerciseIds.map(exercise => {
+                  const [volume] = dailyVolumes(logged, exercise);
+                  if (!volume) return null;
+                  return (
+                    <div key={exercise}>
+                      <dt>{exercise === 'bench' ? text.benchVolume : text.machineVolume}</dt>
+                      <dd>{volume.kg === null ? text.unknownVolume : volume.kg.toLocaleString(locale) + ' ' + text.unit}</dd>
+                    </div>
+                  );
+                })}
               </dl>
             </div>
           )}
@@ -164,7 +173,7 @@ export function SessionDemo({ locale, profile }: { locale: Locale; profile: Plan
           <div className="demo-next">
             <h3>{text.next}</h3>
             <p aria-live="polite" ref={nextExercise} tabIndex={-1}>{text[thursday]}</p>
-            {complete && thursday === 'machine' && (
+            {complete && choice === 'alsoThursday' && (
               <button className="demo-secondary" type="button" onClick={() => {
                 setChoice('today');
                 nextExercise.current?.focus();

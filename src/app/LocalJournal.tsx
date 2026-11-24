@@ -1,32 +1,22 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
-import { localDate, newOperationId, parseDecimal, validMeasurement } from '../core/journalInput';
+import { exampleDraft, localDate, newOperationId, parseDecimal, readSetDraft, validMeasurement } from '../core/journalInput';
 import { journalChannel, notifyJournal } from './journalUpdates';
-import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
+import { sampleExerciseIds } from '../core/sampleExercises';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
-import de from '../locales/journal-de.json';
-import en from '../locales/journal-en.json';
-import it from '../locales/journal-it.json';
+import { SetMeasurements } from './SetMeasurements';
+import { journalText } from '../locales/journal';
 import {
   addSet, editSet, JournalConflict, listSets, setStatus, type Exercise, type JournalSet, type SetStatus,
 } from '../storage/localJournal';
 
-const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 const statuses: readonly SetStatus[] = ['completed', 'skipped', 'voided'];
 const fields = ['reps', 'kg', 'rir', 'status'] as const;
 type Field = typeof fields[number];
 type Editor = { base: JournalSet; field: Field; value: string; conflict?: JournalSet };
 
-type Measurement = Exclude<Field, 'status'>;
-type Draft = Record<Measurement, string>;
-const measures: readonly Measurement[] = ['kg', 'reps', 'rir'];
-function initialDraft(exercise: Exercise): Draft {
-  const { kg, reps } = sampleExercises[exercise].set;
-  return { kg: String(kg), reps: String(reps), rir: '' };
-}
-
-const initialDrafts = { bench: initialDraft('bench'), machine: initialDraft('machine') };
+const initialDrafts = { bench: exampleDraft('bench'), machine: exampleDraft('machine') };
 
 function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
   const value = base[field];
@@ -37,7 +27,7 @@ function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
 }
 
 export function LocalJournal({ locale }: { locale: Locale }) {
-  const text = translations[locale];
+  const text = journalText[locale];
   const [sets, setSets] = useState<JournalSet[] | null>(null);
   const [exercise, setExercise] = useState<Exercise>('bench');
   const [drafts, setDrafts] = useState(initialDrafts);
@@ -130,18 +120,15 @@ export function LocalJournal({ locale }: { locale: Locale }) {
   }
 
   function add() {
-    const kg = parseDecimal(draft.kg);
-    const reps = parseDecimal(draft.reps);
-    const rir = parseDecimal(draft.rir);
-    if (reps === null || !validMeasurement('kg', kg) || !validMeasurement('reps', reps) ||
-        !validMeasurement('rir', rir)) {
+    const values = readSetDraft(draft);
+    if (!values) {
       setMessage('invalid');
       return;
     }
-    const intent = JSON.stringify([exercise, kg, reps, rir]);
+    const intent = JSON.stringify([exercise, values]);
     const day = pendingAdd.current?.intent === intent ? pendingAdd.current.day : localDate(new Date());
     pendingAdd.current = { day, intent };
-    void write(JSON.stringify(['add', day, intent]), id => addSet(id, day, exercise, { kg, reps, rir }));
+    void write(JSON.stringify(['add', day, intent]), id => addSet(id, day, exercise, values));
   }
 
   function save(base: JournalSet) {
@@ -210,19 +197,11 @@ export function LocalJournal({ locale }: { locale: Locale }) {
             {sampleExerciseIds.map(item => <option key={item} value={item}>{text[item]}</option>)}
           </select>
         </label>
-        <div className="journal-inputs">
-          {measures.map(field => <label key={field}>{text[field]}
-            <input type="text" inputMode={field === 'kg' ? 'decimal' : 'numeric'} disabled={busy}
-              value={draft[field]} required={field === 'reps'}
-              aria-invalid={message === 'invalid' && !validMeasurement(field, parseDecimal(draft[field]))}
-              aria-describedby={message === 'invalid' ? 'journal-message' : undefined} onChange={event => {
-                const value = event.target.value;
-                setDrafts(previous => ({ ...previous, [exercise]: { ...previous[exercise], [field]: value } }));
-                setMessage(null);
-              }} />
-          </label>)}
-        </div>
-        <p>{text.optional}</p>
+        <SetMeasurements locale={locale} draft={draft} disabled={busy}
+          errorId={message === 'invalid' ? 'journal-message' : undefined} onChange={next => {
+            setDrafts(previous => ({ ...previous, [exercise]: next }));
+            setMessage(null);
+          }} />
         <button type="submit" disabled={busy || sets === null || readFailure !== null}>{text.add}</button>
       </form>}
       {readFailure && <div role="alert"><p>{text[readFailure]}</p>

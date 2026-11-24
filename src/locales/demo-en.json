@@ -37,5 +37,6 @@
   "noCompatibleExercise": "There is no example exercise matching your priority, equipment and preferences.",
   "duration": "This example takes about {minutes} minutes including setup, sets and rest.",
   "durationWithChange": "This example takes up to about {minutes} minutes including an equipment change.",
-  "timeConflict": "You entered {available} minutes. This example needs more time. You can review your available time in the questionnaire."
+  "timeConflict": "You entered {available} minutes. This example needs more time. You can review your available time in the questionnaire.",
+  "unknownVolume": "Volume unavailable"
 }

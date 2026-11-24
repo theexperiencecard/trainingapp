@@ -166,7 +166,14 @@ async function verify() {
     const guided = page.getByRole('region', { name: demo.heading, exact: true });
     await page.getByText(shell.example, { exact: true }).click();
     await button(guided, demo.start).click();
+    await field(guided, it.reps).fill('0');
     await button(guided, demo.recordFirst).click();
+    await expect(guided.getByRole('alert')).toHaveText(it.invalid);
+    await field(guided, it.kg).fill('37,5');
+    await field(guided, it.reps).fill('8');
+    await field(guided, it.rir).fill('2');
+    await button(guided, demo.recordFirst).click();
+    await expect(guided).toContainText('300 kg');
     await expect(history(second)).toHaveCount(4);
     await guided.getByRole('link', { name: demo.openTimer }).click();
     await expect(page.locator('#workout-timer-heading')).toBeFocused();
@@ -175,6 +182,9 @@ async function verify() {
     await expect(page.getByRole('timer')).toBeVisible();
 
     await choice(guided, demo.choice).selectOption('today');
+    await expect(field(guided, it.kg)).toHaveValue('25');
+    await field(guided, it.kg).fill('');
+    await field(guided, it.reps).fill('9');
     const beforeRetry = await snapshot(page);
     await page.evaluate(() => {
       const original = IDBObjectStore.prototype.add;
@@ -187,6 +197,7 @@ async function verify() {
     await button(guided, demo.recordSecond).click();
     await expect(guided.getByRole('alert')).toHaveText(demo.saveError);
     assert.deepEqual(await snapshot(page), beforeRetry);
+    await expect(field(guided, it.reps)).toBeDisabled();
     await button(guided, demo.retry).click();
     await expect(guided.getByRole('heading', { name: demo.complete })).toBeVisible();
     await guided.getByRole('link', { name: demo.openJournal }).click();
@@ -196,7 +207,8 @@ async function verify() {
     await expect(history(page)).toHaveCount(5);
     const afterWorkout = await snapshot(page);
     assert.equal(afterWorkout.operationCount, beforeRetry.operationCount + 1);
-    assert.ok(afterWorkout.sets.some(set => set.exercise === 'machine' && set.kg === 25 && set.reps === 10));
+    assert.ok(afterWorkout.sets.some(set => set.exercise === 'bench' && set.kg === 37.5 && set.reps === 8 && set.rir === 2));
+    assert.ok(afterWorkout.sets.some(set => set.exercise === 'machine' && set.kg === null && set.reps === 9 && set.rir === null));
     console.log('OK guided workout, timer, equipment change, write retry and persisted history');
 
     const profileForm = page.locator('.profile-questionnaire');

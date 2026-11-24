@@ -37,5 +37,6 @@
   "noCompatibleExercise": "Per la priorità, gli attrezzi e le preferenze che hai indicato manca un esercizio di esempio compatibile.",
   "duration": "La prova dura circa {minutes} minuti, tra preparazione, serie e recupero.",
   "durationWithChange": "La prova dura fino a circa {minutes} minuti, contando anche un cambio di postazione.",
-  "timeConflict": "Hai indicato {available} minuti. Questa prova richiede più tempo. Puoi rivedere i minuti disponibili nel questionario."
+  "timeConflict": "Hai indicato {available} minuti. Questa prova richiede più tempo. Puoi rivedere i minuti disponibili nel questionario.",
+  "unknownVolume": "Volume non disponibile"
 }
