@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. Riprendere dai casi di assegnazione del 22 e dalla revisione 29. Le schede reali dipendono dalla revisione R2.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. Stima durata pura in src/core/sessionTiming.ts. Proseguire con il confronto demo/minuti del profilo. Casi di assegnazione nel 22 e revisione nel 29. Le schede reali dipendono dalla revisione R2.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata
