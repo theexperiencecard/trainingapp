@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. La demo confronta i minuti del profilo con una stima che include preparazione, recuperi e cambi. Casi di assegnazione nel 22 e revisione nel 29. Le schede reali dipendono dalla revisione R2.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. Selezione per obiettivo e compatibilità in src/core/planSelection.ts. Proseguire collegando il questionario e il catalogo dimostrativo al selettore. Casi di assegnazione nel 22 e revisione nel 29. Le schede reali dipendono dalla revisione R2.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata
@@ -30,7 +30,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).
-- Bozze R2: dosi/questionario e casi candidati; nessun numero approvato o motore implementato.
+- Bozze R2: dosi e casi candidati. Selettore tecnico implementato; contenuti reali e motore di prescrizione in attesa della revisione.
 - Q1–Q15 rimappate alle definizioni ufficiali 08/10; l'addendum esterno aveva associazioni ipotetiche.
 - Q6/Q8: dossier 19 con precedenze, sostituzioni e casi candidati; nessun algoritmo approvato.
 - Perimetro F01–F05 adulti autonomi e gestione L01–L10 confermati; specialismi rinviati, non età/BMI.
