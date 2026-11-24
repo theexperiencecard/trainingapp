@@ -29,5 +29,10 @@
   "machineMovement": "An der Brustpresse bleibt eine Druckübung für die Brust erhalten. Das Gerät führt die Bewegung. Mit der Langhantel führst und stabilisierst du das Gewicht selbst.",
   "machineTradeoff": "Wenn du speziell im Bankdrücken stärker werden willst, trainierst du mit diesem Satz einen anderen Bewegungsablauf. Gewicht und Satz werden im Verlauf der Brustpresse erfasst.",
   "benchLoad": "kg insgesamt",
-  "machineLoad": "kg laut Geräteanzeige"
+  "machineLoad": "kg laut Geräteanzeige",
+  "benchPlan": "Zwei Beispielsätze Bankdrücken. Zwischen den Sätzen kannst du den Timer nutzen.",
+  "machinePlan": "Zwei Beispielsätze an der Brustpresse M1. Zwischen den Sätzen kannst du den Timer nutzen.",
+  "verifySetup": "Prüfe vor dem Start, ob du die angegebene Ausstattung nutzen kannst. Geänderte Antworten gelten ab der nächsten Vorschau.",
+  "otherGoal": "Für dein gewähltes Ziel braucht es ein anderes Beispiel. Deine Antworten bleiben in der Zusammenfassung verfügbar.",
+  "noCompatibleExercise": "Deine Ausstattung und Vorlieben erfordern eine andere Übung. Du kannst deine Antworten im Fragebogen überprüfen."
 }

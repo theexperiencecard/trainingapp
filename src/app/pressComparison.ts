@@ -1,4 +1,4 @@
-import { sampleExercises, type Exercise } from '../core/sampleExercises';
+import { sampleExerciseIds, sampleExercises, type Exercise } from '../core/sampleExercises';
 
 type CandidateStatus = 'checkEquipment' | 'equipmentMissing' | 'excludedByPreference';
 
@@ -16,4 +16,12 @@ export function pressComparison(answers: Readonly<Record<string, readonly string
   }
 
   return { goal, bench: status('bench'), machine: status('machine') };
+}
+
+export type PressComparison = ReturnType<typeof pressComparison>;
+
+export function demoExerciseOptions(comparison: PressComparison | undefined): readonly Exercise[] {
+  if (comparison === undefined) return sampleExerciseIds;
+  if (comparison === null) return [];
+  return sampleExerciseIds.filter((exercise) => comparison[exercise] === 'checkEquipment');
 }

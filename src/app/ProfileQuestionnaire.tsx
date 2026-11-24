@@ -5,11 +5,16 @@ import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
 import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
 import { profileDirection } from './profileDirection';
-import { pressComparison } from './pressComparison';
+import { pressComparison, type PressComparison } from './pressComparison';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
-export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
+type ProfileQuestionnaireProps = {
+  locale: Locale;
+  onReview: (comparison: PressComparison) => void;
+};
+
+export function ProfileQuestionnaire({ locale, onReview }: ProfileQuestionnaireProps) {
   const text: Record<string, string> = translations[locale];
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [reviewing, setReviewing] = useState(false);
@@ -87,6 +92,7 @@ export function ProfileQuestionnaire({ locale }: { locale: Locale }) {
           event.preventDefault();
           moved.current = true;
           setReviewing(true);
+          onReview(pressComparison(answers));
         }}>
           {questions.map((question) => {
             const values = answers[question.id] ?? [];

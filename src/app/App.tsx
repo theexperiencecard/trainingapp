@@ -3,6 +3,7 @@ import { messages, type Locale } from '../locales/messages';
 import type { OfflineStatus } from '../registerOffline';
 import { LegacyJournal } from './LegacyJournal';
 import { LocalJournal } from './LocalJournal';
+import type { PressComparison } from './pressComparison';
 import { ProfileQuestionnaire } from './ProfileQuestionnaire';
 import { SessionDemo } from './SessionDemo';
 import { WorkoutTimer } from './WorkoutTimer';
@@ -11,6 +12,7 @@ type AppProps = { locale?: Locale; offlineStatus?: OfflineStatus | undefined };
 
 export function App({ locale = 'it', offlineStatus }: AppProps) {
   const [language, setLanguage] = useState(locale);
+  const [comparison, setComparison] = useState<PressComparison>();
   const text = messages[language];
 
   useEffect(() => {
@@ -34,10 +36,10 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
-      <ProfileQuestionnaire locale={language} />
+      <ProfileQuestionnaire locale={language} onReview={setComparison} />
       <details className="example-panel">
         <summary>{text.example}</summary>
-        <SessionDemo locale={language} />
+        <SessionDemo locale={language} comparison={comparison} />
       </details>
       <WorkoutTimer locale={language} />
       <LocalJournal locale={language} />

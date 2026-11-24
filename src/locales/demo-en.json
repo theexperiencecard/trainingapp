@@ -29,5 +29,10 @@
   "machineMovement": "The chest press keeps a pushing exercise for the chest. The machine guides the path. With a barbell, you control the path and stabilise the load yourself.",
   "machineTradeoff": "If your goal is to get stronger at the bench press itself, this set practises a different movement. The machine load and set go in the chest press history.",
   "benchLoad": "kg total",
-  "machineLoad": "kg indicated"
+  "machineLoad": "kg indicated",
+  "benchPlan": "Two sample bench press sets. You can use the timer between sets.",
+  "machinePlan": "Two sample sets on the M1 chest press. You can use the timer between sets.",
+  "verifySetup": "Check that you have access to the specific setup before starting. Changes to your answers apply to the next demo.",
+  "otherGoal": "Your chosen goal needs a different example. Your answers remain available in the summary.",
+  "noCompatibleExercise": "Your equipment and preferences need a different exercise. You can review your questionnaire answers."
 }

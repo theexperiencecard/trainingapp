@@ -9,6 +9,7 @@ const chart = require('../src/locales/chart-it.json');
 const shell = require('../src/locales/it.json');
 const demo = require('../src/locales/demo-it.json');
 const timer = require('../src/locales/timer-it.json');
+const profileLabels = require('../src/locales/profile-it.json');
 
 const journal = page => page.getByRole('region', { name: it.heading, exact: true });
 const button = (scope, text) => scope.getByRole('button', { name: text, exact: true });
@@ -196,6 +197,36 @@ async function verify() {
     assert.equal(afterWorkout.operationCount, beforeRetry.operationCount + 1);
     assert.ok(afterWorkout.sets.some(set => set.exercise === 'machine' && set.kg === 25 && set.reps === 10));
     console.log('OK guided workout, timer, equipment change, write retry and persisted history');
+
+    const profileForm = page.locator('.profile-questionnaire');
+    await field(profileForm, profileLabels.goal).selectOption('muscle');
+    await field(profileForm, profileLabels.experience).selectOption('starting');
+    await field(profileForm, profileLabels.noneFamiliar).check();
+    await field(profileForm, profileLabels.days).fill('1');
+    await field(profileForm, profileLabels.minutes).fill('25');
+    await field(profileForm, profileLabels.setting).selectOption('gym');
+    await field(profileForm, profileLabels.machine).check();
+    const movementsToAvoid = profileForm.getByRole('group', { name: profileLabels.avoid, exact: true });
+    await field(movementsToAvoid, profileLabels.avoidBench).check();
+    await button(profileForm, profileLabels.review).click();
+    await page.getByText(shell.example, { exact: true }).click();
+    await expect(guided).toContainText(demo.machinePlan);
+    await button(guided, demo.start).click();
+    await button(guided, demo.recordFirst).click();
+    await expect(history(page)).toHaveCount(6);
+    await expect(choice(guided, demo.choice)).toHaveCount(0);
+
+    await button(profileForm, profileLabels.edit).click();
+    await field(profileForm, profileLabels.bodyweight).check();
+    await button(profileForm, profileLabels.review).click();
+    await button(guided, demo.recordSecond).click();
+    await expect(history(page)).toHaveCount(7);
+    await expect(guided).toContainText(demo.noCompatibleExercise);
+    await expect(button(guided, demo.restart)).toHaveCount(0);
+    const previousIds = new Set(afterWorkout.sets.map(set => set.id));
+    const newSets = (await snapshot(page)).sets.filter(set => !previousIds.has(set.id));
+    assert.deepEqual(newSets.map(set => set.exercise), ['machine', 'machine']);
+    console.log('OK the confirmed profile limits exercise choices without changing a workout already underway');
 
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');

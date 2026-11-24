@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { localDate, newOperationId } from '../core/journalInput';
 import { sampleExerciseIds, sampleExercises } from '../core/sampleExercises';
 import { addSet, type Exercise } from '../storage/localJournal';
+import { demoExerciseOptions, type PressComparison } from './pressComparison';
 import { notifyJournal } from './journalUpdates';
 import type { Locale } from '../locales/messages';
 import it from '../locales/demo-it.json';
@@ -13,17 +14,24 @@ type Choice = 'keepBench' | 'today' | 'alsoThursday';
 
 const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
 
-export function SessionDemo({ locale }: { locale: Locale }) {
+type DemoRun = { day: string; first: Exercise; canSwitch: boolean };
+
+export function SessionDemo({ locale, comparison }: { locale: Locale; comparison: PressComparison | undefined }) {
   const text = translations[locale];
-  const [day, setDay] = useState<string | null>(null);
+  const [run, setRun] = useState<DemoRun | null>(null);
   const [saving, setSaving] = useState(false);
   const [failed, setFailed] = useState(false);
   const pending = useRef<string | null>(null);
   const writing = useRef(false);
   const [logged, setLogged] = useState<Exercise[]>([]);
   const [choice, setChoice] = useState<Choice>('keepBench');
-  const current: Exercise = choice === 'keepBench' ? 'bench' : 'machine';
-  const thursday: Exercise = choice === 'alsoThursday' ? 'machine' : 'bench';
+  const options = demoExerciseOptions(comparison);
+  const [firstAvailable] = options;
+  const first = run?.first ?? firstAvailable ?? 'bench';
+  const current: Exercise = choice === 'keepBench' ? first : 'machine';
+  const thursday: Exercise = choice === 'alsoThursday' ? 'machine' : first;
+  const noExample = comparison === null ? text.otherGoal : text.noCompatibleExercise;
+  const plan = options.length > 1 ? text.plan : firstAvailable === 'machine' ? text.machinePlan : text.benchPlan;
   const complete = logged.length === 2;
   const currentTitle = [text.first, text.second, text.complete][logged.length];
   function setLabel(exercise: Exercise) {
@@ -32,7 +40,7 @@ export function SessionDemo({ locale }: { locale: Locale }) {
     return `${kg.toLocaleString(locale)} ${load} × ${reps.toLocaleString(locale)}`;
   }
 
-  const step = day ? logged.length : -1;
+  const step = run ? logged.length : -1;
   const currentHeading = useRef<HTMLHeadingElement>(null);
   const nextExercise = useRef<HTMLParagraphElement>(null);
 
@@ -41,13 +49,13 @@ export function SessionDemo({ locale }: { locale: Locale }) {
   }, [step]);
 
   async function record() {
-    if (!day || complete || writing.current) return;
+    if (!run || complete || writing.current) return;
     writing.current = true;
     setSaving(true);
     setFailed(false);
     try {
       pending.current ??= newOperationId();
-      await addSet(pending.current, day, current);
+      await addSet(pending.current, run.day, current);
     } catch {
       setFailed(true);
       return;
@@ -61,9 +69,10 @@ export function SessionDemo({ locale }: { locale: Locale }) {
   }
 
   function restart() {
+    if (!firstAvailable) return;
     setLogged([]);
     setChoice('keepBench');
-    setDay(localDate(new Date()));
+    setRun({ day: localDate(new Date()), first: firstAvailable, canSwitch: options.length > 1 });
   }
 
   return (
@@ -71,11 +80,14 @@ export function SessionDemo({ locale }: { locale: Locale }) {
       <h2 id="demo-heading">{text.heading}</h2>
       <p>{text.intro}</p>
 
-      {!day ? (
-        <>
-          <p>{text.plan}</p>
-          <button type="button" onClick={restart}>{text.start}</button>
-        </>
+      {!run ? (
+        firstAvailable ? (
+          <>
+            <p>{plan}</p>
+            {comparison && <p>{text.verifySetup}</p>}
+            <button type="button" onClick={restart}>{text.start}</button>
+          </>
+        ) : <p>{noExample}</p>
       ) : (
         <>
           <div className="demo-current">
@@ -83,17 +95,19 @@ export function SessionDemo({ locale }: { locale: Locale }) {
             {logged.length === 1 && (
               <>
                 <p><a href="#workout-timer-heading">{text.openTimer}</a></p>
-                <label className="demo-choice">
-                  {text.choice}
-                  <select value={choice} disabled={saving || failed} onChange={(event) => {
-                    const selected = choices.find((option) => option === event.target.value);
-                    if (selected) setChoice(selected);
-                  }}>
-                    {choices.map((option) => <option key={option} value={option}>{text[option]}</option>)}
-                  </select>
-                </label>
+                {run.canSwitch && (
+                  <label className="demo-choice">
+                    {text.choice}
+                    <select value={choice} disabled={saving || failed} onChange={(event) => {
+                      const selected = choices.find((option) => option === event.target.value);
+                      if (selected) setChoice(selected);
+                    }}>
+                      {choices.map((option) => <option key={option} value={option}>{text[option]}</option>)}
+                    </select>
+                  </label>
+                )}
                 <div aria-live="polite">
-                  {current === 'machine' && (
+                  {run.canSwitch && current === 'machine' && (
                     <>
                       <p>{text.machineMovement}</p>
                       <p>{text.machineTradeoff}</p>
@@ -148,7 +162,9 @@ export function SessionDemo({ locale }: { locale: Locale }) {
           {complete && (
             <div className="demo-actions">
               <a href="#local-journal-heading">{text.openJournal}</a>
-              <button className="demo-secondary" type="button" onClick={restart}>{text.restart}</button>
+              {firstAvailable ? (
+                <button className="demo-secondary" type="button" onClick={restart}>{text.restart}</button>
+              ) : <p>{noExample}</p>}
             </div>
           )}
         </>
