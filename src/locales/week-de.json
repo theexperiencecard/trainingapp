@@ -32,5 +32,11 @@
   "spacing": "Das Beispiel sieht einen freien Tag zwischen den Einheiten vor.",
   "familiarity": "Der Fall setzt Erfahrung mit Bewegungen voraus, die du nicht ausgewählt hast.",
   "walking": "Der Fall umfasst gewohnte Spaziergänge. Aus deinen Antworten geht keine kürzliche Ausdaueraktivität hervor.",
-  "incomplete": "Für den Vergleich fehlen Angaben."
+  "incomplete": "Für den Vergleich fehlen Angaben.",
+  "startSession": "Beispieleinheit öffnen",
+  "resumeSession": "Zur offenen Einheit zurück",
+  "guidedNotice": "Simulation mit fiktiven Daten",
+  "setProgress": "Satz {current} von {total}",
+  "sessionComplete": "Beispieleinheit abgeschlossen",
+  "closeSession": "Zurück zum Fragebogen"
 }

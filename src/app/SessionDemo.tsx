@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { localDate, newOperationId, type SetMeasurements } from '../core/journalInput';
+import { localDate, type SetMeasurements } from '../core/journalInput';
 import type { PlanProfile } from '../core/planSelection';
 import { pressExerciseIds, type PressExercise } from '../core/sampleExercises';
-import { addedSetId, addSet, type JournalSet } from '../storage/localJournal';
+import type { JournalSet } from '../storage/localJournal';
 import { sampleDuration, samplePlanOptions } from './samplePlanOptions';
 import { dailyVolumes } from '../core/journalVolume';
 import { GuidedSetForm } from './GuidedSetForm';
@@ -10,11 +10,9 @@ import { journalText } from '../locales/journal';
 import { lastRecordedSet } from '../core/lastRecordedSet';
 import type { LocalJournalState } from './journalUpdates';
 import type { Locale } from '../locales/messages';
-import it from '../locales/demo-it.json';
-import de from '../locales/demo-de.json';
-import en from '../locales/demo-en.json';
+import { demoText } from '../locales/sessions';
+import { useGuidedSetRecorder } from './useGuidedSetRecorder';
 
-const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 type Choice = 'keepBench' | 'today' | 'alsoThursday';
 
 const choices: readonly Choice[] = ['keepBench', 'today', 'alsoThursday'];
@@ -24,12 +22,9 @@ type DemoRun = { day: string; first: PressExercise; canSwitch: boolean };
 type LoggedSet = Pick<JournalSet, 'id' | 'day' | 'status' | 'kg' | 'reps' | 'rir'> & { exercise: PressExercise };
 
 export function SessionDemo({ locale, profile, journal }: { locale: Locale; profile: PlanProfile | undefined; journal: LocalJournalState }) {
-  const text = translations[locale];
+  const text = demoText[locale];
   const [run, setRun] = useState<DemoRun | null>(null);
-  const [saving, setSaving] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const pending = useRef<string | null>(null);
-  const writing = useRef(false);
+  const { save, saving, failed } = useGuidedSetRecorder(journal);
   const [logged, setLogged] = useState<LoggedSet[]>([]);
   const journalRows = logged.map(saved => ({ ...saved, ...journal.sets?.find(row => row.id === saved.id), exercise: saved.exercise }));
   const [choice, setChoice] = useState<Choice>('keepBench');
@@ -67,24 +62,10 @@ export function SessionDemo({ locale, profile, journal }: { locale: Locale; prof
   }, [step]);
 
   async function record(values: SetMeasurements) {
-    if (!run || complete || writing.current) return;
-    writing.current = true;
-    setSaving(true);
-    setFailed(false);
-    try {
-      pending.current ??= newOperationId();
-      await addSet(pending.current, run.day, current, values);
-      const id = addedSetId(pending.current);
-      await journal.announceWrite();
+    if (!run || complete) return;
+    await save(run.day, current, values, id => {
       setLogged([...logged, { id, ...values, exercise: current, day: run.day, status: 'completed' }]);
-    } catch {
-      setFailed(true);
-      return;
-    } finally {
-      writing.current = false;
-      setSaving(false);
-    }
-    pending.current = null;
+    });
   }
 
   function restart() {

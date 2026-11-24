@@ -305,6 +305,45 @@ async function verify() {
     assert.equal(row.kg, 20);
     console.log('OK the two dumbbells are recorded once at their combined load, in their own history');
 
+    await button(profileForm, profileLabels.edit).click();
+    await field(profileForm, profileLabels.strengthFocus).selectOption('benchFocus');
+    await button(profileForm, profileLabels.review).click();
+    await week.getByText(weekLabels.open, { exact: true }).click();
+    const startSession = button(week, weekLabels.startSession);
+    const activeSession = page.locator('section[aria-labelledby="strength-example-heading"]');
+
+    await ctx.setOffline(true);
+    await startSession.nth(1).click();
+    await expect(activeSession.getByRole('heading')).toBeFocused();
+    await expect(activeSession.getByRole('heading')).toHaveText(weekLabels.dayB);
+    await expect(activeSession).toContainText('26,5 min');
+    await button(activeSession, weekLabels.closeSession).click();
+    await expect(activeSession).toHaveCount(0);
+    await startSession.nth(0).click();
+    await expect(startSession).toHaveCount(0);
+
+    const beforeSession = await snapshot(page);
+    for (const [index, [exercise, reps]] of [
+      ['bench', 8], ['bench', 8], ['goblet', 10], ['goblet', 9], ['row', 12], ['row', 11],
+    ].entries()) {
+      await expect(activeSession).toContainText(weekLabels.setProgress
+        .replace('{current}', String(index + 1)).replace('{total}', '6'));
+      await expect(activeSession.getByText(it[exercise], { exact: true })).toBeVisible();
+      await expect(field(activeSession, it.reps)).toHaveValue(String(reps));
+      await button(activeSession, it.add).click();
+    }
+    await expect(activeSession.getByRole('heading')).toHaveText(weekLabels.sessionComplete);
+    await activeSession.getByRole('link', { name: demo.openJournal }).click();
+    await expect(page.locator('#local-journal-heading')).toBeFocused();
+    await page.reload();
+    await expect(history(page)).toHaveCount(14);
+    const existingIds = new Set(beforeSession.sets.map(set => set.id));
+    const newSession = (await snapshot(page)).sets.filter(set => !existingIds.has(set.id));
+    assert.deepEqual(newSession.sort((a, b) => a.position - b.position).map(set => [set.exercise, set.kg, set.reps]), [
+      ['bench', 40, 8], ['bench', 40, 8], ['goblet', 16, 10], ['goblet', 16, 9], ['row', 20, 12], ['row', 20, 11],
+    ]);
+    console.log('OK the questionnaire opens either strength session and all six ordered sets survive an offline reload');
+
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');
       await page.locator('.language-picker select').selectOption(locale);

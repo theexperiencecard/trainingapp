@@ -1,6 +1,6 @@
 # Ripresa rapida — aggiornato 2026-11-24
 
-Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. Alla conferma appare una settimana consultabile dai casi 26–28 se compatibile, altrimenti i motivi. Il gesto o muscolo prioritario filtra settimane e demo. Questionario e catalogo dimostrativo usano il selettore src/core/planSelection.ts. Per le schede reali manca il catalogo revisionato. Casi di assegnazione nel 22 e revisione nel 29.
+Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. Alla conferma appare una settimana di esempio se compatibile, altrimenti i motivi. F03 apre una delle due sedute guidate, tre movimenti e sei serie salvate nel diario offline. Gli altri casi restano consultabili. Il gesto o muscolo prioritario filtra settimane e demo. Questionario e catalogo dimostrativo usano il selettore src/core/planSelection.ts. Per le schede reali manca il catalogo revisionato. Casi di assegnazione nel 22 e revisione nel 29.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 
 ## Direzione approvata

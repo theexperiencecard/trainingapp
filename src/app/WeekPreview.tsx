@@ -1,13 +1,17 @@
 import type { Locale } from '../locales/messages';
-import it from '../locales/week-it.json';
-import de from '../locales/week-de.json';
-import en from '../locales/week-en.json';
+import { weekText } from '../locales/sessions';
 import { weekPreview } from './matchExampleWeek';
+import type { StrengthDayIndex } from './strengthExample';
 
-const translations = { it, de, en } satisfies Record<Locale, typeof it>;
+type Props = {
+  answers: Record<string, string[]>;
+  locale: Locale;
+  sessionOpen: boolean;
+  onStart: (day: StrengthDayIndex) => void;
+};
 
-export function WeekPreview({ answers, locale }: { answers: Record<string, string[]>; locale: Locale }) {
-  const text: Record<string, string> = translations[locale];
+export function WeekPreview({ answers, locale, sessionOpen, onStart }: Props) {
+  const text: Record<string, string> = weekText[locale];
   const { week, reasons } = weekPreview(answers);
   return (
     <section aria-label={text.heading}>
@@ -23,6 +27,10 @@ export function WeekPreview({ answers, locale }: { answers: Record<string, strin
                 <h5>{text[index === 0 ? 'dayA' : 'dayB']} · {day.minutes.toLocaleString(locale)} min</h5>
                 <ol>{day.movements.map(move => <li key={move}>{text[move]}</li>)}</ol>
                 {week.walk && <p>{text.walk}</p>}
+                {week.description === 'strengthWeek' && (
+                  sessionOpen ? <p><a href="#strength-example-heading">{text.resumeSession}</a></p> :
+                    <button type="button" onClick={() => onStart(index === 0 ? 0 : 1)}>{text.startSession}</button>
+                )}
               </section>
             ))}
           </details>

@@ -55,7 +55,7 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
 | 2.1 | Salvataggio sul dispositivo e funzionamento senza rete | D | App installata sulla Home: una serie registrata in modalità aereo è ancora lì dopo il riavvio, verificato su un iPhone e un Android reali; registrare dispositivi, versioni ed esiti | in corso |
-| 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | da fare |
+| 2.2 | Schermata Oggi con la seduta del giorno | N | Mostra blocchi, serie e durata stimata | in corso |
 | 2.3 | Seduta guidata: una serie alla volta, valori precompilati, un tocco per registrare | N | Una seduta intera si completa con una mano | in corso |
 | 2.4 | Timer di riposo che sopravvive alla chiusura, cronometro per le tenute | N | Conto alla rovescia calcolato dall’orario di fine persistito, non dal conteggio dei secondi; provato sospendendo, chiudendo e riaprendo l’app | in corso |
 | 2.5 | Modifica e annullamento di una serie, note | N | Provato a mano e con test | in corso |
@@ -359,3 +359,5 @@ Nel percorso 2.3 ogni serie della prova guidata consente di confermare o modific
 Durante l’inserimento viene mostrata l’ultima serie svolta sulla stessa configurazione del catalogo, con data, carico, ripetizioni e RIR. «Usa questo carico» è facoltativo e copia solo i kg. Le correzioni al diario aggiornano il riferimento e il tonnellaggio della prova aperta, lasciando intatta la serie che la persona sta compilando. Una serie più recente con carico sconosciuto resta il riferimento, senza recuperare un peso più vecchio.
 
 Il diario di esempio accetta anche goblet squat, rematore bilaterale su panca inclinata e trap bar del caso F03. Il rematore registra i kg totali dei due manubri. Le tre configurazioni hanno ciascuna il proprio storico e grafico.
+
+Dal risultato F03 per la panca si può aprire una delle due sedute sintetiche del [caso di forza](26-seduta-forza-r2.md). Ciascuna guida sei serie in tre blocchi. La sequenza della seduta aperta resta quella scelta all’avvio. I valori vengono confermati serie per serie nel diario offline. La sessione aperta è temporanea. Le altre famiglie si consultano in anteprima. Restano da integrare la scelta della seduta del giorno per il programma revisionato e i riscontri per la prova sui telefoni.

@@ -1,6 +1,7 @@
 // Read-only illustrations from the documented cases in docs/26, 27 and 28.
 import { selectPlan, type PlanCandidate, type PlanGoal, type StartingPoint } from '../core/planSelection';
 import { planProfileFromAnswers } from './profileDirection';
+import { strengthExample } from './strengthExample';
 
 type Day = { minutes: number; movements: readonly string[] };
 type ExampleWeek = {
@@ -15,12 +16,14 @@ type ExampleWeek = {
   focuses?: string[];
 };
 
+function strengthDay(index: 0 | 1): Day {
+  const day = strengthExample[index];
+  return { minutes: day.minutes, movements: day.blocks.map(block => block.exercise) };
+}
+
 const strength: ExampleWeek = {
   description: 'strengthWeek', setup: 'strengthSetup', walk: false,
-  days: [
-    { minutes: 23.5, movements: ['bench', 'goblet', 'row'] },
-    { minutes: 26.5, movements: ['bench', 'trapBar', 'row'] },
-  ],
+  days: [strengthDay(0), strengthDay(1)],
   equipment: ['barbell', 'dumbbells'], exclusions: ['avoidBench', 'avoidSquat'],
   familiar: ['press', 'squat', 'row'], startingPoints: ['known'], focuses: ['benchFocus'],
 };

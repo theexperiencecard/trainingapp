@@ -32,5 +32,11 @@
   "spacing": "L’esempio prevede due sedute con un giorno libero in mezzo.",
   "familiarity": "Il caso assume familiarità con movimenti che non hai indicato.",
   "walking": "Il caso comprende camminate già abituali. Manca un riferimento recente tra le risposte.",
-  "incomplete": "Servono risposte complete per confrontare la settimana."
+  "incomplete": "Servono risposte complete per confrontare la settimana.",
+  "startSession": "Apri la seduta di esempio",
+  "resumeSession": "Torna alla seduta aperta",
+  "guidedNotice": "Simulazione con dati fittizi",
+  "setProgress": "Serie {current} di {total}",
+  "sessionComplete": "Seduta di esempio conclusa",
+  "closeSession": "Torna al questionario"
 }

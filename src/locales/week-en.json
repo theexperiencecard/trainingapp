@@ -32,5 +32,11 @@
   "spacing": "The example assumes a free day between sessions.",
   "familiarity": "The case assumes familiarity with movements you have not selected.",
   "walking": "The case includes habitual walks. Your answers do not establish recent aerobic activity.",
-  "incomplete": "Complete answers are needed to compare the week."
+  "incomplete": "Complete answers are needed to compare the week.",
+  "startSession": "Open the example session",
+  "resumeSession": "Return to the open session",
+  "guidedNotice": "Simulation with fictional data",
+  "setProgress": "Set {current} of {total}",
+  "sessionComplete": "Example session complete",
+  "closeSession": "Back to the questionnaire"
 }
