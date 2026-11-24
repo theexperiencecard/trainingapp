@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { demoExerciseOptions, pressComparison } from './pressComparison';
+import { pressComparison } from './pressComparison';
 
 describe('press comparison for completed profiles', () => {
   it('skips the comparison when neither strength nor muscle gain was chosen', () => {
@@ -29,27 +29,5 @@ describe('press comparison for completed profiles', () => {
   it('withholds the comparison when equipment or preferences have not been answered', () => {
     expect(pressComparison({ goal: ['strength'] })).toBeNull();
     expect(pressComparison({ goal: ['strength'], equipment: ['barbell'] })).toBeNull();
-  });
-});
-
-describe('exercise options for the guided example', () => {
-  it('keeps the full example available before the profile is submitted', () => {
-    expect(demoExerciseOptions(undefined)).toEqual(['bench', 'machine']);
-  });
-
-  it('shows no press example when the goal falls outside the press comparison', () => {
-    expect(demoExerciseOptions(null)).toEqual([]);
-  });
-
-  it('keeps only candidates that fit the submitted profile', () => {
-    const machineOnly = pressComparison({
-      goal: ['muscle'], equipment: ['barbell', 'machine'], avoid: ['avoidBench'],
-    });
-    expect(demoExerciseOptions(machineOnly)).toEqual(['machine']);
-
-    const noEquipment = pressComparison({
-      goal: ['strength'], equipment: ['bodyweight'], avoid: ['noAvoidPreference'],
-    });
-    expect(demoExerciseOptions(noEquipment)).toEqual([]);
   });
 });

@@ -1,17 +1,18 @@
+import type { PlanProfile } from '../core/planSelection';
 import { useEffect, useId, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import de from '../locales/profile-de.json';
 import en from '../locales/profile-en.json';
 import it from '../locales/profile-it.json';
 import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
-import { profileDirection } from './profileDirection';
-import { pressComparison, type PressComparison } from './pressComparison';
+import { planProfileFromAnswers, profileDirection } from './profileDirection';
+import { pressComparison } from './pressComparison';
 
 const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
 type ProfileQuestionnaireProps = {
   locale: Locale;
-  onReview: (comparison: PressComparison, availableMinutes: number) => void;
+  onReview: (profile: PlanProfile) => void;
 };
 
 export function ProfileQuestionnaire({ locale, onReview }: ProfileQuestionnaireProps) {
@@ -92,7 +93,7 @@ export function ProfileQuestionnaire({ locale, onReview }: ProfileQuestionnaireP
           event.preventDefault();
           moved.current = true;
           setReviewing(true);
-          onReview(pressComparison(answers), Number(answers.minutes?.[0]));
+          onReview(planProfileFromAnswers(answers));
         }}>
           {questions.map((question) => {
             const values = answers[question.id] ?? [];

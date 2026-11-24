@@ -67,7 +67,7 @@ I requisiti in `docs/09-personalizzazione-e-metriche.md` sono proposte da finali
 | N. | Compito | Tipo | Fatto quando | Stato |
 | --- | --- | --- | --- | --- |
 | 3.1 | Questionario letto da un file di dati, con le domande di sicurezza | N | Cambiare una domanda non richiede codice | in corso |
-| 3.2 | Regole che assegnano un modello | D | Ogni combinazione di risposte porta a un modello o a un messaggio chiaro | da fare |
+| 3.2 | Regole che assegnano un modello | D | Ogni combinazione di risposte porta a un modello o a un messaggio chiaro | in corso |
 | 3.3 | I modelli di partenza come file di dati | N | Roberto li ha riletti | da fare |
 
 ## Tappa 4: account e sincronizzazione
@@ -346,3 +346,7 @@ Panca e chest press M1 hanno definizioni condivise fra questionario, seduta e di
 ### Stima della durata e tempo a disposizione
 
 Il calcolo condiviso somma preparazione, esecuzione e intervalli. Se un cambio di postazione si sovrappone al recupero, conta il più lungo. Per attività in sequenza somma entrambe. I test riproducono i casi da 30,5 e 33,5 minuti del documento 21 e rifiutano intervalli mancanti. Nella demo il profilo confermato confronta i minuti disponibili con 5,5 minuti di esempio, o circa 6 con possibilità di cambio. Se non c'è tempo sufficiente, mostra il motivo prima di iniziare. Una prova in corso prosegue con il proprio esercizio. Tempi illustrativi della demo, da ricalcolare sui programmi reali revisionati. [Casi di durata](21-schede-candidate-r2.md)
+
+### Selezione delle schede per obiettivo e vincoli
+
+Il selettore comune legge obiettivo e punto di partenza, giorni, durata per seduta, possibilità di distanziare i giorni, attrezzi ed esercizi da evitare. Scarta i candidati incompatibili con motivi espliciti e usa l'ordine del catalogo fra quelli compatibili. I casi automatici distinguono forza e aerobico a parità di profilo e coprono l'assenza di una scheda fattibile. L'app usa il selettore per le prove già disponibili. Il catalogo di esempio ha solo le due configurazioni di spinta. Per scegliere una scheda reale occorrono i candidati revisionati e i percorsi R2, compreso Q7. Il selettore distingue le due modalità e il diario conserva il formato attuale. [Verifica professionale delle schede](29-consegna-revisione-r2.md)

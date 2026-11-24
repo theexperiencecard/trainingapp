@@ -7,7 +7,7 @@ const profile: PlanProfile = {
 };
 const strength: PlanCandidate = {
   id: 'strength-example', kind: 'example', goal: 'strength', startingPoints: ['learn'],
-  sessionSeconds: [1200, 1400], equipment: [], exercises: ['exercise-a'],
+  sessionSeconds: [1200, 1400], equipment: [], preferenceKeys: ['exercise-a'],
   requiresSpacedDays: true,
 };
 const aerobic: PlanCandidate = { ...strength, id: 'aerobic-example', goal: 'aerobic' };

@@ -3,7 +3,7 @@ import { messages, type Locale } from '../locales/messages';
 import type { OfflineStatus } from '../registerOffline';
 import { LegacyJournal } from './LegacyJournal';
 import { LocalJournal } from './LocalJournal';
-import type { PressComparison } from './pressComparison';
+import type { PlanProfile } from '../core/planSelection';
 import { ProfileQuestionnaire } from './ProfileQuestionnaire';
 import { SessionDemo } from './SessionDemo';
 import { WorkoutTimer } from './WorkoutTimer';
@@ -12,7 +12,7 @@ type AppProps = { locale?: Locale; offlineStatus?: OfflineStatus | undefined };
 
 export function App({ locale = 'it', offlineStatus }: AppProps) {
   const [language, setLanguage] = useState(locale);
-  const [profile, setProfile] = useState<{ comparison: PressComparison; availableMinutes: number }>();
+  const [profile, setProfile] = useState<PlanProfile>();
   const text = messages[language];
 
   useEffect(() => {
@@ -36,12 +36,10 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
-      <ProfileQuestionnaire locale={language} onReview={(comparison, availableMinutes) => {
-        setProfile({ comparison, availableMinutes });
-      }} />
+      <ProfileQuestionnaire locale={language} onReview={setProfile} />
       <details className="example-panel">
         <summary>{text.example}</summary>
-        <SessionDemo locale={language} comparison={profile?.comparison} availableMinutes={profile?.availableMinutes} />
+        <SessionDemo locale={language} profile={profile} />
       </details>
       <WorkoutTimer locale={language} />
       <LocalJournal locale={language} />

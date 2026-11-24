@@ -19,7 +19,7 @@ export type PlanCandidate = {
   startingPoints: readonly StartingPoint[];
   sessionSeconds: readonly number[];
   equipment: readonly string[];
-  exercises: readonly string[];
+  preferenceKeys: readonly string[];
   requiresSpacedDays: boolean;
 };
 
@@ -71,7 +71,7 @@ function checkFit(profile: PlanProfile, startingPoint: StartingPoint, candidate:
   if (!candidate.sessionSeconds.length || !candidate.sessionSeconds.every(isPositiveInteger)) reasons.push('invalidTiming');
   else if (candidate.sessionSeconds.some(seconds => seconds > profile.maxSessionSeconds)) reasons.push('duration');
   if (candidate.equipment.some(equipment => !profile.equipment.includes(equipment))) reasons.push('equipment');
-  if (candidate.exercises.some(exercise => profile.avoidedExercises.includes(exercise))) reasons.push('preference');
+  if (candidate.preferenceKeys.some(exercise => profile.avoidedExercises.includes(exercise))) reasons.push('preference');
   if (candidate.requiresSpacedDays && candidate.sessionSeconds.length > 1 && profile.spacing !== 'canSpace') {
     reasons.push('spacing');
   }
