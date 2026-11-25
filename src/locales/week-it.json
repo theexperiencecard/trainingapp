@@ -41,5 +41,8 @@
   "closeSession": "Torna al questionario",
   "overBudget": "La stima supera i {minutes} minuti disponibili.",
   "omitCable": "Ometti l’ultima serie al cavo per questa prova",
-  "shortSummary": "Hai registrato sette serie su otto. Hai omesso l’ultima serie al cavo."
+  "shortSummary": "Hai registrato sette serie su otto. Hai omesso l’ultima serie al cavo.",
+  "endEarly": "Concludi con le serie salvate",
+  "savedProgress": "Serie registrate in questa prova: {count} su {total}",
+  "setCount": "Serie svolte: {count}"
 }

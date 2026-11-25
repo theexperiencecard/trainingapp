@@ -41,5 +41,8 @@
   "closeSession": "Back to the questionnaire",
   "overBudget": "The estimate exceeds your available {minutes} minutes.",
   "omitCable": "Leave out the last cable set for this session",
-  "shortSummary": "You recorded seven of eight sets and left out the final cable set."
+  "shortSummary": "You recorded seven of eight sets and left out the final cable set.",
+  "endEarly": "Finish with the saved sets",
+  "savedProgress": "Sets recorded in this session: {count} of {total}",
+  "setCount": "Completed sets: {count}"
 }

@@ -353,6 +353,10 @@ async function verify() {
     const beforeMuscle = await snapshot(page);
     for (let index = 0; index < 7; index++) {
       if (index === 1) {
+        await button(activeSession, weekLabels.endEarly).click();
+        await expect(activeSession).toContainText(weekLabels.savedProgress.replace('{count}', '1').replace('{total}', '8'));
+        await expect(activeSession).toContainText('480 kg');
+        await button(activeSession, weekLabels.resumeSession).click();
         await choice(activeSession, demo.choice).selectOption('machine');
         await expect(activeSession).toContainText('30,5 min');
         await expect(activeSession).toContainText(weekLabels.overBudget.replace('{minutes}', '30'));
@@ -362,6 +366,8 @@ async function verify() {
       await button(activeSession, it.add).click();
     }
     await expect(activeSession).toContainText(weekLabels.shortSummary);
+    await expect(activeSession.getByText('250 kg', { exact: false })).toBeVisible();
+    await expect(activeSession.getByText('120 kg', { exact: false })).toBeVisible();
     const muscleRows = (await snapshot(page)).sets.filter(set => !beforeMuscle.sets.some(old => old.id === set.id));
     assert.deepEqual(muscleRows.sort((a,b) => a.position - b.position).map(set => set.exercise),
       ['bench', 'machine', 'goblet', 'goblet', 'row', 'row', 'cable']);

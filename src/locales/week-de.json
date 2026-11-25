@@ -41,5 +41,8 @@
   "closeSession": "Zurück zum Fragebogen",
   "overBudget": "Die Schätzung überschreitet deine verfügbaren {minutes} Minuten.",
   "omitCable": "Den letzten Satz am Kabelzug für diese Einheit auslassen",
-  "shortSummary": "Du hast sieben von acht Sätzen erfasst und den letzten Satz am Kabelzug ausgelassen."
+  "shortSummary": "Du hast sieben von acht Sätzen erfasst und den letzten Satz am Kabelzug ausgelassen.",
+  "endEarly": "Mit den gespeicherten Sätzen abschließen",
+  "savedProgress": "In dieser Einheit erfasste Sätze: {count} von {total}",
+  "setCount": "Absolvierte Sätze: {count}"
 }

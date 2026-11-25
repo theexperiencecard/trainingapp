@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { localDate } from '../core/journalInput';
+import { dailyVolumes } from '../core/journalVolume';
+import { sampleExerciseIds } from '../core/sampleExercises';
 import { lastRecordedSet } from '../core/lastRecordedSet';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
@@ -28,7 +30,10 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
     repetitions.map(reps => ({ exercise, reps })),
   );
   const [date] = useState(() => localDate(new Date()));
-  const [count, setCount] = useState(0);
+  const [recordedIds, setRecordedIds] = useState<string[]>([]);
+  const count = recordedIds.length;
+  const [endedEarly, setEndedEarly] = useState(false);
+  const rows = (journal.sets ?? []).filter(row => recordedIds.includes(row.id));
   const { save, saving, failed } = useGuidedSetRecorder(journal);
   const [machineAvailable] = useState(allowMachine);
   const [useMachine, setUseMachine] = useState(false);
@@ -37,14 +42,14 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
   const shortSession = muscleChange && omitLast;
   const total = steps.length - Number(shortSession);
   const minutes = session.minutes + (muscleChange ? 2 : 0) - (shortSession ? 2.25 : 0);
-  const current = count < total ? steps[count] : undefined;
+  const current = !endedEarly && count < total ? steps[count] : undefined;
   const canSwitch = machineAvailable && count === 1 && current?.exercise === 'bench';
   const exercise = canSwitch && useMachine ? 'machine' : current?.exercise;
   const heading = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     heading.current?.focus();
-  }, [count]);
+  }, [count, endedEarly]);
 
   return (
     <section className="session-demo" aria-labelledby="week-example-heading">
@@ -79,14 +84,27 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
             reference={journal.sets && !journal.readFailure ? lastRecordedSet(journal.sets, exercise, date) : null}
             referenceStatus={journal.readFailure ?? (journal.sets === null ? 'loading' : 'ready')}
             saving={saving} failed={failed} submitLabel={failed ? demo.retry : journalText[locale].add}
-            onRecord={values => save(date, exercise, values, () => setCount(count + 1))} />
+            onRecord={values => save(date, exercise, values, id => setRecordedIds(ids => [...ids, id]))} />
           {failed && <p role="alert">{demo.saveError}</p>}
         </>
       ) : <>
-        {shortSession && <p>{text.shortSummary}</p>}
+        {shortSession && !endedEarly && <p>{text.shortSummary}</p>}
+        <p>{text.savedProgress.replace('{count}', String(count)).replace('{total}', String(steps.length))}</p>
+        {journal.readFailure || rows.length !== count ? <p role="status">{journalText[locale][journal.readFailure ?? 'loading']}</p> :
+          <dl aria-label={demo.volume}>{sampleExerciseIds.map(id => {
+            const [volume] = dailyVolumes(rows, id);
+            if (!volume) return null;
+            return <div key={id}>
+              <dt>{journalText[locale][id]}</dt>
+              <dd>{text.setCount.replace('{count}', String(volume.sets))} · {volume.kg === null
+                ? demo.unknownVolume : volume.kg.toLocaleString(locale) + ' ' + demo.unit}</dd>
+            </div>;
+          })}</dl>}
+        {endedEarly && <button type="button" onClick={() => setEndedEarly(false)}>{text.resumeSession}</button>}
         <p><a href="#local-journal-heading">{demo.openJournal}</a></p>
       </>}
-      <button className="demo-secondary" type="button" disabled={saving} onClick={onClose}>{text.closeSession}</button>
+      <button className="demo-secondary" type="button" disabled={saving || failed} onClick={current && count ? () => setEndedEarly(true) : onClose}>
+        {current && count ? text.endEarly : text.closeSession}</button>
     </section>
   );
 }
