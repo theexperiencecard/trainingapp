@@ -367,3 +367,5 @@ Nel caso F03 guidato, la seconda serie di panca permette di scegliere la M1 solo
 F04 apre le due sedute del caso 27 con quattro esercizi e otto serie. Dopo il cambio sulla M1 la stima passa da 28,5 a 30,5 minuti. Omettere l’ultima serie al cavo per la simulazione porta la stima a 28,25 minuti. Il diario conserva le serie svolte; la scelta di accorciare questa seduta resta nel riepilogo temporaneo.
 
 Il riepilogo delle sedute F03/F04 raggruppa per configurazione solo gli ID registrati durante la prova. È possibile concludere prima, vedere il lavoro svolto e riprendere finché il riepilogo resta aperto.
+
+Nel diario locale del punto 5.1 si possono selezionare tutte le settimane o una settimana a partire da lunedì. Serie e grafico usano lo stesso periodo e la data di allenamento salvata.

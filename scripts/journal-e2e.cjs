@@ -380,6 +380,17 @@ async function verify() {
     ]);
     console.log('OK the questionnaire opens either strength session and all six ordered sets survive an offline reload');
 
+    await page.clock.setFixedTime(new Date('2031-01-08T12:00:00Z'));
+    await choice(journal(page), it.exercise).selectOption('trapBar');
+    await button(journal(page), it.add).click();
+    await expect(history(page)).toHaveCount(22);
+    await choice(journal(page), it.week).selectOption('2031-01-06');
+    await expect(history(page)).toHaveCount(1);
+    await expect(page.locator('.journal-chart')).toContainText('400 kg');
+    await choice(journal(page), it.week).selectOption('');
+    await expect(history(page)).toHaveCount(22);
+    console.log('OK selecting a journal week filters both recorded sets and the equipment chart');
+
     for (const locale of ['de', 'en', 'it']) {
       const translated = require('../src/locales/journal-' + locale + '.json');
       await page.locator('.language-picker select').selectOption(locale);

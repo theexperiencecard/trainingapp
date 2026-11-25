@@ -46,5 +46,8 @@
   "goblet": "Goblet squat · kg del manubrio",
   "row": "Rematore bilaterale · kg totali dei due manubri",
   "trapBar": "Stacco con trap bar · kg totali",
-  "cable": "Estensioni tricipiti al cavo C1 · kg indicati"
+  "cable": "Estensioni tricipiti al cavo C1 · kg indicati",
+  "week": "Settimana del diario",
+  "allWeeks": "Tutte le settimane",
+  "fromMonday": "Settimana del {date}"
 }

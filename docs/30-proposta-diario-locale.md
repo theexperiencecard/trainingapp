@@ -28,3 +28,11 @@ Ogni modifica di una serie e la corrispondente operazione si confermano nella st
 2. Salvare una serie di panca e una di chest press, annullare la sostituzione del piano e riaprire. Entrambe restano attribuite all'attrezzo effettivo. Una nuova revisione del catalogo conserva l'interpretazione delle vecchie misure.
 3. Verificare due modifiche simultanee in schede del browser, comprese unità incompatibili e marcatore di cancellazione. Un campo indipendente viene preservato; un conflitto visibile conserva i valori originali.
 4. Quando l'account sarà disponibile, provare cambio utente con operazioni pendenti, dispositivo vuoto e reinvio dopo conferma persa. Nessun dato passa al proprietario sbagliato. La chiusura di 2.1 richiede app sulla Home e riscontri su iPhone e Android fisici. [Piano e criteri di prova](05-piano-di-lavoro.md)
+
+## Estensione proposta per il cammino · 25 novembre 2026
+
+**In attesa della decisione del fondatore.** Per il caso sintetico F01/F02/F05 si propone di registrare l’attività, la durata effettiva e l’intensità riferita di ciascun tratto. Il giorno locale e l’identità della seduta collegano i tratti al diario già approvato. Un’intensità sconosciuta deve permettere di salvare il tempo svolto. L’anteprima della settimana contiene il tempo previsto. Il conteggio del diario parte dalla conferma dell’attività svolta.
+
+L’estensione IndexedDB proposta aggiunge uno spazio per i tratti di cammino. L’aggiornamento da un diario già popolato deve preservare serie, revisioni e ID operazione. Il salvataggio di un tratto e della sua operazione avviene in una transazione. Un secondo tentativo con lo stesso ID deve restituire un solo tratto. I totali settimanali devono distinguere il tempo per intensità, compresa quella sconosciuta.
+
+Il caso di accettazione prevede 10 minuti moderati lunedì e, giovedì, 6 minuti leggeri seguiti da 2 moderati. Dopo riapertura offline devono risultare 18 minuti registrati sui 20 previsti, con 12 moderati e 6 leggeri. Una settimana del questionario e una camminata abituale che descrivono la stessa uscita devono ricondurre a una sola registrazione effettiva. [Caso documentato](28-confronto-ingresso-generale-aerobico.md)

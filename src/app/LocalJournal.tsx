@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import { exampleDraft, localDate, newOperationId, parseDecimal, readSetDraft, validMeasurement } from '../core/journalInput';
 import type { LocalJournalState } from './journalUpdates';
@@ -6,6 +6,7 @@ import { exampleDrafts, sampleExerciseIds } from '../core/sampleExercises';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
 import { SetMeasurements } from './SetMeasurements';
+import { mondayOfWeek } from '../core/journalWeek';
 import { journalText } from '../locales/journal';
 import {
   addSet, editSet, JournalConflict, listSets, setStatus, type Exercise, type JournalSet, type SetStatus,
@@ -29,6 +30,7 @@ function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
 export function LocalJournal({ locale, journal }: { locale: Locale; journal: LocalJournalState }) {
   const { sets, readFailure, refresh, announceWrite } = journal;
   const text = journalText[locale];
+  const [selectedWeek, setSelectedWeek] = useState('');
   const [exercise, setExercise] = useState<Exercise>('bench');
   const [drafts, setDrafts] = useState(initialDrafts);
   const draft = drafts[exercise];
@@ -85,7 +87,10 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
     const intent = JSON.stringify([exercise, values]);
     const day = pendingAdd.current?.intent === intent ? pendingAdd.current.day : localDate(new Date());
     pendingAdd.current = { day, intent };
-    void write(JSON.stringify(['add', day, intent]), id => addSet(id, day, exercise, values));
+    void write(JSON.stringify(['add', day, intent]), async id => {
+      await addSet(id, day, exercise, values);
+      setSelectedWeek(week => week ? mondayOfWeek(day) : '');
+    });
   }
 
   function save(base: JournalSet) {
@@ -125,7 +130,18 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
   }
 
   const grouped = new Map<string, Map<Exercise, JournalSet[]>>();
-  for (const row of sets ?? []) {
+  const weeks = useMemo(() => {
+    const result = new Map<string, JournalSet[]>();
+    for (const row of sets ?? []) {
+      const monday = mondayOfWeek(row.day);
+      const week = result.get(monday);
+      if (week) week.push(row);
+      else result.set(monday, [row]);
+    }
+    return result;
+  }, [sets]);
+  const visibleRows = weeks.get(selectedWeek) ?? sets ?? [];
+  for (const row of visibleRows) {
     const day = grouped.get(row.day) ?? new Map<Exercise, JournalSet[]>();
     const group = day.get(row.exercise) ?? [];
     group.push(row);
@@ -165,7 +181,15 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
       {readFailure && <div role="alert"><p>{text[readFailure]}</p>
         <button type="button" onClick={() => void refresh()}>{text.retryRead}</button></div>}
       {message && <p id="journal-message" role={message === 'saved' ? 'status' : 'alert'}>{text[message]}</p>}
-      {sets && sets.length > 0 && <JournalChart rows={sets} locale={locale} />}
+      {weeks.size > 1 && <label>{text.week}
+        <select disabled={busy || editor !== null} value={selectedWeek} onChange={event => setSelectedWeek(event.target.value)}>
+          <option value="">{text.allWeeks}</option>
+          {[...weeks.keys()].sort().reverse().map(monday => <option key={monday} value={monday}>
+            {text.fromMonday.replace('{date}', dayFormat.format(new Date(monday + 'T12:00:00')))}
+          </option>)}
+        </select>
+      </label>}
+      {visibleRows.length > 0 && <JournalChart rows={visibleRows} locale={locale} />}
       <h3 className="demo-history">{text.history}</h3>
       {sets === null && !readFailure && <p role="status">{text.loading}</p>}
       {sets?.length === 0 && <p>{text.empty}</p>}

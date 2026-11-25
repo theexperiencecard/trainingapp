@@ -46,5 +46,8 @@
   "goblet": "Goblet Squat · Gewicht der Hantel in kg",
   "row": "Beidarmiges Kurzhantelrudern · Gesamtgewicht in kg",
   "trapBar": "Kreuzheben mit Trap Bar · Gesamtgewicht in kg",
-  "cable": "Trizepsstrecken am Kabelzug C1 · angezeigte kg"
+  "cable": "Trizepsstrecken am Kabelzug C1 · angezeigte kg",
+  "week": "Woche im Tagebuch",
+  "allWeeks": "Alle Wochen",
+  "fromMonday": "Woche ab {date}"
 }
