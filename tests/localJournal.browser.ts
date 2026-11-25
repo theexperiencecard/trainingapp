@@ -1,4 +1,4 @@
-import { addSet, editSet, JournalConflict, listSets, setStatus } from '../src/storage/localJournal';
+import { addWalk, listJournal, addSet, editSet, JournalConflict, listSets, setStatus } from '../src/storage/localJournal';
 
 function check(value: unknown, message: string): asserts value {
   if (!value) throw new Error(message);
@@ -70,6 +70,13 @@ export async function verifyLocalJournal(): Promise<void> {
   await setStatus('restore', voided, 'completed');
   const [restored] = await listSets();
   check(restored?.status === 'completed' && restored.revisions.status === 3, 'Restore failed.');
+  await Promise.all([addWalk('walk-1', day, 600, 'moderate'), addWalk('walk-1', day, 600, 'moderate')]);
+  await failure(addWalk('walk-1', day, 600, 'light'));
+  await failure(addWalk('bench-set', day, 5, 'unknown'));
+  await failure(addWalk('empty-walk', day, 0, 'moderate'));
+  const diary = await listJournal();
+  check(diary.sets.length === 2 && diary.walks.length === 1, 'Retry changed the number of entries.');
+  check(diary.walks[0]?.position === 3 && diary.walks[0].seconds === 600, 'Walk has incorrect duration or position.');
   check(restored.id === bench.id && restored.kg === 42.5 && restored.rir === 0,
     'Restoring must keep the original identity and measurements.');
 }

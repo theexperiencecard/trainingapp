@@ -369,3 +369,5 @@ F04 apre le due sedute del caso 27 con quattro esercizi e otto serie. Dopo il ca
 Il riepilogo delle sedute F03/F04 raggruppa per configurazione solo gli ID registrati durante la prova. È possibile concludere prima, vedere il lavoro svolto e riprendere finché il riepilogo resta aperto.
 
 Nel diario locale del punto 5.1 si possono selezionare tutte le settimane o una settimana a partire da lunedì. Serie e grafico usano lo stesso periodo e la data di allenamento salvata.
+
+Per il cammino del caso 28, il diario v2 accetta durata in secondi e intensità dichiarata. Serie e tratti condividono il giorno locale e la sequenza della seduta.

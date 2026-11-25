@@ -16,6 +16,19 @@ export type JournalSet = {
   position: number;
 };
 
+export const walkIntensities = ['light', 'moderate', 'vigorous', 'unknown'] as const;
+export type WalkIntensity = typeof walkIntensities[number];
+export type JournalWalk = {
+  id: string;
+  sessionId: string;
+  owner: string;
+  day: string;
+  position: number;
+  activity: 'walking';
+  seconds: number;
+  intensity: WalkIntensity;
+};
+
 type Measurements = Pick<JournalSet, 'kg' | 'reps' | 'rir'>;
 type Patch = Partial<Measurements>;
 type Field = keyof Patch;
@@ -56,13 +69,16 @@ export class JournalConflict extends Error {
 
 function openDatabase(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open(databaseName, 1);
+    const request = indexedDB.open(databaseName, 2);
     let blocked = false;
-    request.onupgradeneeded = () => {
+    request.onupgradeneeded = event => {
       const db = request.result;
-      db.createObjectStore('sessions', { keyPath: 'id' });
-      db.createObjectStore('sets', { keyPath: 'id' });
-      db.createObjectStore('operations', { keyPath: 'id' });
+      if (event.oldVersion === 0) {
+        db.createObjectStore('sessions', { keyPath: 'id' });
+        db.createObjectStore('sets', { keyPath: 'id' });
+        db.createObjectStore('operations', { keyPath: 'id' });
+      }
+      db.createObjectStore('walks', { keyPath: 'id' });
     };
     request.onblocked = () => {
       blocked = true;
@@ -89,7 +105,7 @@ function result<T>(request: IDBRequest<T>): Promise<T> {
 async function transact<T>(mode: IDBTransactionMode, work: (tx: IDBTransaction) => Promise<T>): Promise<T> {
   const db = await openDatabase();
   try {
-    const stores = mode === 'readonly' ? ['sets'] : ['sets', 'sessions', 'operations'];
+    const stores = mode === 'readonly' ? ['sets', 'walks'] : ['sets', 'walks', 'sessions', 'operations'];
     const tx = db.transaction(stores, mode, mode === 'readwrite' ? { durability: 'strict' } : {});
     const finished = new Promise<void>((resolve, reject) => {
       tx.oncomplete = () => resolve();
@@ -142,18 +158,38 @@ function checkSet(row: SavedSet): SavedSet {
   return row;
 }
 
-export async function listSets(): Promise<JournalSet[]> {
-  return transact('readonly', async (tx) => {
-    const rows: SavedSet[] = await result(tx.objectStore('sets').getAll() as IDBRequest<SavedSet[]>);
-    return rows.map(checkSet).sort((a, b) => b.day.localeCompare(a.day) || a.position - b.position);
+async function readSets(tx: IDBTransaction): Promise<JournalSet[]> {
+  const rows = await result(tx.objectStore('sets').getAll() as IDBRequest<SavedSet[]>);
+  return rows.map(checkSet).sort(byDayAndPosition);
+}
+
+function byDayAndPosition(a: { day: string; position: number }, b: { day: string; position: number }) {
+  return b.day.localeCompare(a.day) || a.position - b.position;
+}
+
+export function listSets(): Promise<JournalSet[]> {
+  return transact('readonly', readSets);
+}
+
+export function listJournal() {
+  return transact('readonly', async tx => {
+    const [sets, walks] = await Promise.all([
+      readSets(tx), result(tx.objectStore('walks').getAll() as IDBRequest<JournalWalk[]>),
+    ]);
+    for (const walk of walks) {
+      if (walk.owner !== owner || walk.activity !== 'walking' || walk.sessionId !== owner + ':' + walk.day ||
+          !Number.isSafeInteger(walk.position) || walk.position < 1) throw new Error('Unsupported walk.');
+      validateWalk(walk.day, walk.seconds, walk.intensity);
+    }
+    return { sets, walks: walks.sort(byDayAndPosition) };
   });
 }
 
 async function applyOnce(
-  opId: string, setId: string, intent: object, apply: (tx: IDBTransaction, now: number) => Promise<void>,
+  opId: string, entityId: string, intent: object, apply: (tx: IDBTransaction, now: number) => Promise<void>,
 ): Promise<void> {
   if (typeof opId !== 'string' || !opId.trim()) throw new Error('A stable operation ID is required.');
-  const signature = JSON.stringify([setId, intent]);
+  const signature = JSON.stringify([entityId, intent]);
   await transact('readwrite', async (tx) => {
     const operations = tx.objectStore('operations');
     const prior = await result(operations.get(opId) as IDBRequest<{ signature: string } | undefined>);
@@ -163,7 +199,8 @@ async function applyOnce(
     }
     const now = Date.now();
     await apply(tx, now);
-    await result(operations.add({ id: opId, owner, setId, intent, signature, modifiedAt: now }));
+    const target = entityId.startsWith(owner + ':walk:') ? { walkId: entityId } : { setId: entityId };
+    await result(operations.add({ id: opId, owner, ...target, intent, signature, modifiedAt: now }));
   });
 }
 
@@ -186,19 +223,41 @@ export async function addSet(
     kg: measurement.kg, reps: measurement.reps, unit: 'kg', rir: measurement.rir,
   };
   await applyOnce(opId, id, intent, async (tx, now) => {
-    const sessions = tx.objectStore('sessions');
-    const stored: Session | undefined = await result(sessions.get(sessionId) as IDBRequest<Session | undefined>);
-    const session = stored ?? {
-      id: sessionId, owner, plannedDay: day, actualDay: day, nextPosition: 1, createdAt: now, modifiedAt: now,
-    };
+    const position = await nextPosition(tx, day, now);
     const set: SavedSet = {
       id, sessionId, owner, day, exercise, ...fixture,
       kg: measurement.kg, reps: measurement.reps, rir: measurement.rir, unit: 'kg',
-      status: 'completed', catalogVersion: 1, position: session.nextPosition,
+      status: 'completed', catalogVersion: 1, position,
       revisions: { kg: 1, reps: 1, rir: 1, status: 1 }, createdAt: now, modifiedAt: now,
     };
     await result(tx.objectStore('sets').add(checkSet(set)));
-    await result(sessions.put({ ...session, nextPosition: session.nextPosition + 1, modifiedAt: now }));
+  });
+}
+
+async function nextPosition(tx: IDBTransaction, day: string, now: number): Promise<number> {
+  const sessions = tx.objectStore('sessions');
+  const id = owner + ':' + day;
+  const stored = await result(sessions.get(id) as IDBRequest<Session | undefined>);
+  const session = stored ?? {
+    id, owner, plannedDay: day, actualDay: day, nextPosition: 1, createdAt: now, modifiedAt: now,
+  };
+  await result(sessions.put({ ...session, nextPosition: session.nextPosition + 1, modifiedAt: now }));
+  return session.nextPosition;
+}
+
+function validateWalk(day: string, seconds: number, intensity: WalkIntensity) {
+  if (!validDay(day) || !Number.isSafeInteger(seconds) || seconds < 1 || seconds > 86400 ||
+      !walkIntensities.includes(intensity)) throw new RangeError('Invalid walking segment.');
+}
+
+export async function addWalk(opId: string, day: string, seconds: number, intensity: WalkIntensity): Promise<void> {
+  validateWalk(day, seconds, intensity);
+  const id = owner + ':walk:' + opId;
+  const intent = { type: 'addWalk', day, seconds, intensity };
+  await applyOnce(opId, id, intent, async (tx, now) => {
+    const position = await nextPosition(tx, day, now);
+    const walk: JournalWalk = { id, owner, sessionId: owner + ':' + day, day, position, activity: 'walking', seconds, intensity };
+    await result(tx.objectStore('walks').add(walk));
   });
 }
 

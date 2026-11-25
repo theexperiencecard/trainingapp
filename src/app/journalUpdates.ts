@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { listSets, type JournalSet } from '../storage/localJournal';
+import { listJournal, type JournalWalk, type JournalSet } from '../storage/localJournal';
 
 const journalChannel = 'trainingapp.local-sample-log';
 
 export function useLocalJournal() {
-  const [sets, setSets] = useState<JournalSet[] | null>(null);
+  const [snapshot, setSnapshot] = useState<{ sets: JournalSet[]; walks: JournalWalk[] } | null>(null);
   const [readFailure, setReadFailure] = useState<'readError' | 'newerFormat' | null>(null);
   const channel = useRef<BroadcastChannel | null>(null);
   const readVersion = useRef(0);
@@ -12,9 +12,9 @@ export function useLocalJournal() {
   const refresh = useCallback(async () => {
     const version = ++readVersion.current;
     try {
-      const rows = await listSets();
+      const rows = await listJournal();
       if (readVersion.current === version) {
-        setSets(rows);
+        setSnapshot(rows);
         setReadFailure(null);
       }
     } catch (error) {
@@ -55,7 +55,7 @@ export function useLocalJournal() {
     await refresh();
   }
 
-  return { sets, readFailure, refresh, announceWrite };
+  return { sets: snapshot?.sets ?? null, walks: snapshot?.walks ?? null, readFailure, refresh, announceWrite };
 }
 
 export type LocalJournalState = ReturnType<typeof useLocalJournal>;

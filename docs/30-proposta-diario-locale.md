@@ -31,7 +31,7 @@ Ogni modifica di una serie e la corrispondente operazione si confermano nella st
 
 ## Estensione proposta per il cammino · 25 novembre 2026
 
-**In attesa della decisione del fondatore.** Per il caso sintetico F01/F02/F05 si propone di registrare l’attività, la durata effettiva e l’intensità riferita di ciascun tratto. Il giorno locale e l’identità della seduta collegano i tratti al diario già approvato. Un’intensità sconosciuta deve permettere di salvare il tempo svolto. L’anteprima della settimana contiene il tempo previsto. Il conteggio del diario parte dalla conferma dell’attività svolta.
+**Avviata su indicazione del fondatore del 25 novembre.** Per il caso sintetico F01/F02/F05 si propone di registrare l’attività, la durata effettiva e l’intensità riferita di ciascun tratto. Il giorno locale e l’identità della seduta collegano i tratti al diario già approvato. Un’intensità sconosciuta deve permettere di salvare il tempo svolto. L’anteprima della settimana contiene il tempo previsto. Il conteggio del diario parte dalla conferma dell’attività svolta.
 
 L’estensione IndexedDB proposta aggiunge uno spazio per i tratti di cammino. L’aggiornamento da un diario già popolato deve preservare serie, revisioni e ID operazione. Il salvataggio di un tratto e della sua operazione avviene in una transazione. Un secondo tentativo con lo stesso ID deve restituire un solo tratto. I totali settimanali devono distinguere il tempo per intensità, compresa quella sconosciuta.
 
