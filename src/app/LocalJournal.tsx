@@ -3,6 +3,7 @@ import type { Locale } from '../locales/messages';
 import { exampleDraft, localDate, newOperationId, parseDecimal, readSetDraft, validMeasurement } from '../core/journalInput';
 import type { LocalJournalState } from './journalUpdates';
 import { exampleDrafts, sampleExerciseIds } from '../core/sampleExercises';
+import { WalkingEntry, WalkingHistory } from './WalkingJournal';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
 import { SetMeasurements } from './SetMeasurements';
@@ -28,7 +29,7 @@ function startEdit(base: JournalSet, field: Field, locale: Locale): Editor {
 }
 
 export function LocalJournal({ locale, journal }: { locale: Locale; journal: LocalJournalState }) {
-  const { sets, readFailure, refresh, announceWrite } = journal;
+  const { sets, walks, readFailure, refresh, announceWrite } = journal;
   const text = journalText[locale];
   const [selectedWeek, setSelectedWeek] = useState('');
   const [exercise, setExercise] = useState<Exercise>('bench');
@@ -131,16 +132,13 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
 
   const grouped = new Map<string, Map<Exercise, JournalSet[]>>();
   const weeks = useMemo(() => {
-    const result = new Map<string, JournalSet[]>();
-    for (const row of sets ?? []) {
-      const monday = mondayOfWeek(row.day);
-      const week = result.get(monday);
-      if (week) week.push(row);
-      else result.set(monday, [row]);
-    }
-    return result;
-  }, [sets]);
-  const visibleRows = weeks.get(selectedWeek) ?? sets ?? [];
+    const mondays = new Set<string>();
+    for (const row of sets ?? []) mondays.add(mondayOfWeek(row.day));
+    for (const walk of walks ?? []) mondays.add(mondayOfWeek(walk.day));
+    return [...mondays].sort().reverse();
+  }, [sets, walks]);
+  const visibleRows = (sets ?? []).filter(row => !selectedWeek || mondayOfWeek(row.day) === selectedWeek);
+  const visibleWalks = (walks ?? []).filter(row => !selectedWeek || mondayOfWeek(row.day) === selectedWeek);
   for (const row of visibleRows) {
     const day = grouped.get(row.day) ?? new Map<Exercise, JournalSet[]>();
     const group = day.get(row.exercise) ?? [];
@@ -178,21 +176,27 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
           }} />
         <button type="submit" disabled={busy || sets === null || readFailure !== null}>{text.add}</button>
       </form>}
+      <WalkingEntry locale={locale} disabled={busy || editor !== null || walks === null || readFailure !== null}
+        onSaved={async day => {
+          setSelectedWeek(week => week ? mondayOfWeek(day) : '');
+          await announceWrite();
+        }} />
       {readFailure && <div role="alert"><p>{text[readFailure]}</p>
         <button type="button" onClick={() => void refresh()}>{text.retryRead}</button></div>}
       {message && <p id="journal-message" role={message === 'saved' ? 'status' : 'alert'}>{text[message]}</p>}
-      {weeks.size > 1 && <label>{text.week}
+      {weeks.length > 1 && <label>{text.week}
         <select disabled={busy || editor !== null} value={selectedWeek} onChange={event => setSelectedWeek(event.target.value)}>
           <option value="">{text.allWeeks}</option>
-          {[...weeks.keys()].sort().reverse().map(monday => <option key={monday} value={monday}>
+          {weeks.map(monday => <option key={monday} value={monday}>
             {text.fromMonday.replace('{date}', dayFormat.format(new Date(monday + 'T12:00:00')))}
           </option>)}
         </select>
       </label>}
+      <WalkingHistory walks={visibleWalks} locale={locale} />
       {visibleRows.length > 0 && <JournalChart rows={visibleRows} locale={locale} />}
       <h3 className="demo-history">{text.history}</h3>
       {sets === null && !readFailure && <p role="status">{text.loading}</p>}
-      {sets?.length === 0 && <p>{text.empty}</p>}
+      {sets?.length === 0 && walks?.length === 0 && <p>{text.empty}</p>}
       {[...grouped.keys()].sort().reverse().map(day => (
         <section key={day}>
           <h4><time dateTime={day}>{dayFormat.format(new Date(day + 'T12:00:00'))}</time></h4>

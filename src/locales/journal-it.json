@@ -1,6 +1,6 @@
 {
   "heading": "Diario locale di prova",
-  "intro": "Registra serie di esempio su questo dispositivo. Puoi ritrovarle dopo aver chiuso la pagina.",
+  "intro": "Registra serie e camminate di esempio su questo dispositivo. Puoi ritrovarle dopo aver chiuso la pagina.",
   "exercise": "Attrezzo per la prossima serie",
   "bench": "Panca piana · kg totali",
   "machine": "Chest press M1 · kg indicati",
@@ -49,5 +49,21 @@
   "cable": "Estensioni tricipiti al cavo C1 · kg indicati",
   "week": "Settimana del diario",
   "allWeeks": "Tutte le settimane",
-  "fromMonday": "Settimana del {date}"
+  "fromMonday": "Settimana del {date}",
+  "walkEntry": "Registra un tratto di cammino",
+  "walkDay": "Giorno del cammino",
+  "walkMinutes": "Minuti effettivi",
+  "walkIntensity": "Intensità percepita",
+  "walkChoose": "Scegli l’intensità",
+  "walkLight": "Leggera",
+  "walkModerate": "Moderata",
+  "walkVigorous": "Vigorosa",
+  "walkUnknown": "Non so",
+  "walkSave": "Salva il tratto",
+  "walkRetry": "Riprova a salvare il tratto",
+  "walkSaved": "Tratto salvato sul dispositivo.",
+  "walkInvalid": "Controlla il giorno, inserisci una durata da un secondo a 24 ore e scegli l’intensità.",
+  "walkHistory": "Cammino registrato",
+  "walkTotal": "Tempo totale di cammino",
+  "walkLink": "Vai al diario del cammino"
 }

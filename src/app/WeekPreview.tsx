@@ -1,4 +1,5 @@
 import type { Locale } from '../locales/messages';
+import { journalText } from '../locales/journal';
 import { weekText } from '../locales/sessions';
 import { weekPreview } from './matchExampleWeek';
 import type { SessionChoice } from './guidedWeeks';
@@ -27,7 +28,7 @@ export function WeekPreview({ answers, locale, sessionOpen, onStart }: Props) {
               <section key={index}>
                 <h5>{text[index === 0 ? 'dayA' : 'dayB']} · {day.minutes.toLocaleString(locale)} min</h5>
                 <ol>{day.movements.map(move => <li key={move}>{text[move]}</li>)}</ol>
-                {week.walk && <p>{text.walk}</p>}
+                {week.walk && <p>{text.walk} <a href="#walk-entry-heading">{journalText[locale].walkLink}</a></p>}
                 {(family === 'strengthWeek' || family === 'muscleWeek') && (
                   sessionOpen ? <p><a href="#week-example-heading">{text.resumeSession}</a></p> :
                     <button type="button" onClick={() => onStart({ week: family, day: index === 0 ? 0 : 1 })}>{text.startSession}</button>

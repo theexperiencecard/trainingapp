@@ -1,6 +1,6 @@
 {
   "heading": "Lokales Testtagebuch",
-  "intro": "Erfasse Beispielsätze auf diesem Gerät. Nach dem Schließen der Seite bleiben sie hier verfügbar.",
+  "intro": "Erfasse Beispielsätze und Gehabschnitte auf diesem Gerät. Sie bleiben auch nach dem Schließen der Seite verfügbar.",
   "exercise": "Gerät für den nächsten Satz",
   "bench": "Bankdrücken · Gesamtgewicht in kg",
   "machine": "Brustpresse M1 · angezeigte kg",
@@ -49,5 +49,21 @@
   "cable": "Trizepsstrecken am Kabelzug C1 · angezeigte kg",
   "week": "Woche im Tagebuch",
   "allWeeks": "Alle Wochen",
-  "fromMonday": "Woche ab {date}"
+  "fromMonday": "Woche ab {date}",
+  "walkEntry": "Gehabschnitt erfassen",
+  "walkDay": "Datum des Gehabschnitts",
+  "walkMinutes": "Tatsächliche Minuten",
+  "walkIntensity": "Empfundene Intensität",
+  "walkChoose": "Intensität wählen",
+  "walkLight": "Leicht",
+  "walkModerate": "Moderat",
+  "walkVigorous": "Intensiv",
+  "walkUnknown": "Weiß ich nicht",
+  "walkSave": "Abschnitt speichern",
+  "walkRetry": "Abschnitt erneut speichern",
+  "walkSaved": "Gehabschnitt auf diesem Gerät gespeichert.",
+  "walkInvalid": "Datum prüfen, eine Dauer zwischen einer Sekunde und 24 Stunden eingeben und die Intensität auswählen.",
+  "walkHistory": "Erfasste Gehabschnitte",
+  "walkTotal": "Gehzeit insgesamt",
+  "walkLink": "Zum Gehtagebuch"
 }

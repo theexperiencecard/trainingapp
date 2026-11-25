@@ -26,7 +26,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato per le serie di esempio. Cammino sintetico del 30 in IndexedDB v2. La migrazione aggiunge walks e conserva le serie v1. Account, database remoto e sync richiedono decisioni distinte. Si mantengono le cinque famiglie, con priorità ai casi frequenti nel lavoro di revisione (piano 05). Stima pilot e pesi nel 05.
+- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato per le serie di esempio. Cammino sintetico del 30 in IndexedDB v2. Tratti con data, durata e intensità nel diario settimanale; il questionario apre lo stesso modulo. Account, database remoto e sync richiedono decisioni distinte. Si mantengono le cinque famiglie, con priorità ai casi frequenti nel lavoro di revisione (piano 05). Stima pilot e pesi nel 05.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).

@@ -1,6 +1,6 @@
 {
   "heading": "Local sample log",
-  "intro": "Record sample sets on this device. They will be here when you reopen the page.",
+  "intro": "Record example sets and walks on this device. You can find them again after closing the page.",
   "exercise": "Equipment for the next set",
   "bench": "Bench press · total kg",
   "machine": "Chest press M1 · indicated kg",
@@ -49,5 +49,21 @@
   "cable": "Cable triceps extension C1 · indicated kg",
   "week": "Journal week",
   "allWeeks": "All weeks",
-  "fromMonday": "Week starting {date}"
+  "fromMonday": "Week starting {date}",
+  "walkEntry": "Record a walking segment",
+  "walkDay": "Walking date",
+  "walkMinutes": "Actual minutes",
+  "walkIntensity": "Perceived intensity",
+  "walkChoose": "Choose an intensity",
+  "walkLight": "Light",
+  "walkModerate": "Moderate",
+  "walkVigorous": "Vigorous",
+  "walkUnknown": "Not sure",
+  "walkSave": "Save segment",
+  "walkRetry": "Retry saving segment",
+  "walkSaved": "Walking segment saved on this device.",
+  "walkInvalid": "Check the date, enter a duration between one second and 24 hours, and choose an intensity.",
+  "walkHistory": "Recorded walking",
+  "walkTotal": "Total walking time",
+  "walkLink": "Go to the walking journal"
 }
