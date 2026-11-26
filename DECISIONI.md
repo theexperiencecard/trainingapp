@@ -49,3 +49,7 @@ Una riga per decisione, la più recente in fondo. Chi cambia una decisione aggiu
 | 2026-11-24 | Conservare le cinque famiglie e mirare a circa 80% di copertura delle esigenze ordinarie con un questionario breve a rami e sostituzioni motivate | Preferenza esplicita per un percorso essenziale con spiegazioni legate al caso individuale | Target da misurare nel pilot. Implementati rami del questionario e spiegazione del cambio panca/chest press nella demo |
 
 Il 25 novembre 2026 il fondatore ha chiesto «continua siamo in astra avresti dovuto continuare» in risposta alla proposta del diario aerobico. Il lavoro prosegue con l’estensione locale sintetica del documento 30. Ogni tratto di cammino confermato conserva il giorno locale, i secondi svolti e l’intensità dichiarata.
+
+### 26 novembre 2026 · Grafici di esempio a corpo libero
+
+Per ponte glutei e dead bug il grafico del diario mostra il totale delle ripetizioni svolte al giorno e il numero di serie. Per il dead bug si conserva la convenzione per lato del caso 28. Il filtro settimanale usa le date locali già salvate.

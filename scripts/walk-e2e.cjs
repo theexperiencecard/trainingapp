@@ -2,6 +2,7 @@
 const assert = require('node:assert/strict');
 const { chromium, expect } = require('playwright/test');
 const labels = require('../src/locales/journal-it.json');
+const chartLabels = require('../src/locales/chart-it.json');
 const profile = require('../src/locales/profile-it.json');
 const week = require('../src/locales/week-it.json');
 const shell = require('../src/locales/it.json');
@@ -191,8 +192,11 @@ async function uiRegression(page, url) {
 }
 
 async function mixedRegression(page) {
+  const nextMonday = '2026-11-30';
   const walks = (await snapshot(page)).walks;
   for (const [goal, experience, day, sets] of [['general', 'returning', 0, 1], ['aerobic', 'regular', 1, 2]]) {
+    const trainingDay = sets === 1 ? thursday : nextMonday;
+    await page.clock.setFixedTime(new Date(trainingDay + 'T12:00:00Z'));
     await page.reload();
     await openPlannedWalk(page, goal, experience);
     await page.getByRole('button', { name: week.startSession }).nth(day).click();
@@ -208,7 +212,7 @@ async function mixedRegression(page) {
           await expect(form.getByLabel(labels.kg)).toHaveValue(sets === 1 ? '' : '8');
         } else {
           await expect(reps).toHaveValue('');
-          await reps.fill('8');
+          await reps.fill(exercise === 'bridge' ? '12' : '8');
         }
         if (exercise === 'bridge' || exercise === 'deadBug') await expect(form.getByLabel(labels.kg)).toHaveCount(0);
         await form.getByRole('button', { name: labels.add }).click();
@@ -225,7 +229,23 @@ async function mixedRegression(page) {
       row.reps === 8 && row.convention === 'bodyweight-reps-per-side').length, sets);
     assert.deepEqual(after.walks, walks);
   }
-  console.log('OK mixed sessions offline, 5 and 10 sets, goblet volume and bodyweight reps per side');
+  const chart = page.locator('.journal-chart');
+  const pickExercise = chart.getByLabel(chartLabels.exercise);
+  const pickWeek = page.getByRole('combobox', { name: labels.week });
+  await pickWeek.selectOption(nextMonday);
+  await pickExercise.selectOption('deadBug');
+  await expect(chart.getByRole('heading')).toHaveText(chartLabels.repsTitle);
+  await expect(chart.locator('li')).toHaveText([/16 ripetizioni per lato · 2 serie/]);
+  await pickWeek.selectOption(monday);
+  await expect(chart.locator('li')).toHaveText([/8 ripetizioni per lato · 1 serie/]);
+  await pickExercise.selectOption('bridge');
+  await expect(chart.locator('li')).toHaveText([/12 ripetizioni · 1 serie/]);
+  await pickWeek.selectOption(nextMonday);
+  await expect(chart.locator('li')).toHaveText([/24 ripetizioni · 2 serie/]);
+  await pickExercise.selectOption('goblet');
+  await expect(chart.getByRole('heading')).toHaveText(chartLabels.title);
+  await expect(chart.locator('li')).toHaveText([/152 kg · 2 serie/]);
+  console.log('OK mixed sessions offline and weekly charts for goblet, bridge and dead bug');
 }
 
 async function verify() {

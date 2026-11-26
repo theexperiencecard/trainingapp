@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { localDate } from '../core/journalInput';
-import { dailyVolumes } from '../core/journalVolume';
+import { dailyExerciseTotals } from '../core/journalVolume';
 import { sampleExerciseIds, usesExternalLoad } from '../core/sampleExercises';
 import { lastRecordedSet } from '../core/lastRecordedSet';
 import { journalText } from '../locales/journal';
@@ -94,7 +94,7 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
         <p>{text.savedProgress.replace('{count}', String(count)).replace('{total}', String(steps.length))}</p>
         {journal.readFailure || rows.length !== count ? <p role="status">{journalText[locale][journal.readFailure ?? 'loading']}</p> :
           <dl aria-label={demo.volume}>{sampleExerciseIds.map(id => {
-            const [volume] = dailyVolumes(rows, id);
+            const [volume] = dailyExerciseTotals(rows, id);
             if (!volume) return null;
             return <div key={id}>
               <dt>{journalText[locale][id]}</dt>

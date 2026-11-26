@@ -377,3 +377,5 @@ La settimana mista permette di aprire il diario del cammino. La persona conferma
 Nell’anteprima mista si può scegliere la settimana corrente o una presente nel diario. Il confronto usa i due cammini da 10 minuti del caso 28 e somma solo i secondi registrati in quella settimana, con dettaglio per intensità. La sola apertura della scheda lascia il diario intatto.
 
 Le due sedute miste del caso 28 si aprono dal questionario per F01, F02 e F05, anche con ingresso muscolare nel caso aerobico. Ogni conferma salva una serie dei cinque movimenti. Il goblet familiare riprende l’esempio da 8 kg per 10 e 9 ripetizioni. Ponte e dead bug a corpo libero si registrano senza carico esterno, il dead bug in ripetizioni per lato. Il cammino si conferma dal modulo condiviso anche quando si conclude prima il blocco muscolare.
+
+Nel punto 5.5 il grafico del diario mostra anche ponte glutei e dead bug. Con il filtro settimanale somma le ripetizioni delle sole serie svolte per esercizio e per data locale. Per il dead bug il totale è per lato. Per gli esercizi con carico esterno si mostra il volume in kg.

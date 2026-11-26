@@ -1,11 +1,16 @@
 {
   "title": "Volume by training day",
-  "exercise": "Equipment in chart",
+  "exercise": "Exercise in chart",
   "bench": "Bench press · total weight",
   "machine": "Chest press M1 · indicated load",
   "description": "Last seven logged days for this equipment. Volume adds up load × repetitions across completed sets.",
   "unit": "kg",
   "single": "set",
   "plural": "sets",
-  "unknown": "Volume unavailable"
+  "unknown": "Volume unavailable",
+  "repsTitle": "Repetitions by training day",
+  "repsDescription": "Last seven logged days for this exercise. The chart adds up repetitions across completed sets.",
+  "reps": "reps",
+  "repsPerSide": "reps per side",
+  "repsUnknown": "Total repetitions unavailable"
 }

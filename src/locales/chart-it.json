@@ -1,11 +1,16 @@
 {
   "title": "Volume per giorno",
-  "exercise": "Attrezzo del grafico",
+  "exercise": "Esercizio del grafico",
   "bench": "Panca piana · carico totale",
   "machine": "Chest press M1 · carico indicato",
   "description": "Ultimi sette giorni registrati per questo attrezzo. Il volume somma carico × ripetizioni delle serie svolte.",
   "unit": "kg",
   "single": "serie",
   "plural": "serie",
-  "unknown": "Volume non disponibile"
+  "unknown": "Volume non disponibile",
+  "repsTitle": "Ripetizioni per giorno",
+  "repsDescription": "Ultimi sette giorni registrati per questo esercizio. Il grafico somma le ripetizioni delle serie svolte.",
+  "reps": "ripetizioni",
+  "repsPerSide": "ripetizioni per lato",
+  "repsUnknown": "Totale ripetizioni non disponibile"
 }

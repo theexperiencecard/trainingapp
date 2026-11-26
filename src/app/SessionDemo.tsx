@@ -4,7 +4,7 @@ import type { PlanProfile } from '../core/planSelection';
 import { pressExerciseIds, type PressExercise } from '../core/sampleExercises';
 import type { JournalSet } from '../storage/localJournal';
 import { sampleDuration, samplePlanOptions } from './samplePlanOptions';
-import { dailyVolumes } from '../core/journalVolume';
+import { dailyExerciseTotals } from '../core/journalVolume';
 import { GuidedSetForm } from './GuidedSetForm';
 import { journalText } from '../locales/journal';
 import { lastRecordedSet } from '../core/lastRecordedSet';
@@ -144,7 +144,7 @@ export function SessionDemo({ locale, profile, journal }: { locale: Locale; prof
               <h3>{text.volume}</h3>
               <dl>
                 {pressExerciseIds.map(exercise => {
-                  const [volume] = dailyVolumes(journalRows, exercise);
+                  const [volume] = dailyExerciseTotals(journalRows, exercise);
                   if (!volume) return null;
                   return (
                     <div key={exercise}>
