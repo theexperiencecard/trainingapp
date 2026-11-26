@@ -47,5 +47,8 @@
   "walkComparison": "Vergleichswoche für das Gehen",
   "walkCompared": "Gehzeit im Tagebuch: {recorded}. Geplante Gehzeit in der Beispielwoche: {planned} min.",
   "machine": "Brustpresse M1",
-  "musclePartComplete": "Kraftteil der Beispieleinheit beendet"
+  "musclePartComplete": "Kraftteil der Beispieleinheit beendet",
+  "plannedSet": "{count} geplanter Satz",
+  "plannedSets": "{count} geplante Sätze",
+  "finishOpenSession": "Schließe die offene Einheit, um eine andere zu wählen."
 }

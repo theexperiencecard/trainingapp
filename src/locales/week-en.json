@@ -47,5 +47,8 @@
   "walkComparison": "Comparison week for walking",
   "walkCompared": "Walking in your journal: {recorded}. Walking in the example week: {planned} min.",
   "machine": "Machine chest press M1",
-  "musclePartComplete": "Example strength work finished"
+  "musclePartComplete": "Example strength work finished",
+  "plannedSet": "{count} planned set",
+  "plannedSets": "{count} planned sets",
+  "finishOpenSession": "Close the open session to choose another one."
 }

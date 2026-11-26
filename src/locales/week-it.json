@@ -47,5 +47,8 @@
   "walkComparison": "Settimana di confronto per il cammino",
   "walkCompared": "Cammino nel diario: {recorded}. Tempo previsto nella settimana di esempio: {planned} min.",
   "machine": "Chest press M1",
-  "musclePartComplete": "Serie della seduta di esempio concluse"
+  "musclePartComplete": "Serie della seduta di esempio concluse",
+  "plannedSet": "{count} serie prevista",
+  "plannedSets": "{count} serie previste",
+  "finishOpenSession": "Chiudi la seduta aperta per sceglierne un’altra."
 }

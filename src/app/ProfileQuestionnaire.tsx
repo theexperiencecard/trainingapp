@@ -16,12 +16,12 @@ const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 type ProfileQuestionnaireProps = {
   locale: Locale;
   journal: LocalJournalState;
-  sessionOpen: boolean;
+  activeSession: SessionChoice | null;
   onStart: (day: SessionChoice) => void;
   onReview: (profile: PlanProfile) => void;
 };
 
-export function ProfileQuestionnaire({ locale, onReview, sessionOpen, onStart, journal }: ProfileQuestionnaireProps) {
+export function ProfileQuestionnaire({ locale, onReview, activeSession, onStart, journal }: ProfileQuestionnaireProps) {
   const text: Record<string, string> = translations[locale];
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [reviewing, setReviewing] = useState(false);
@@ -66,7 +66,7 @@ export function ProfileQuestionnaire({ locale, onReview, sessionOpen, onStart, j
           ) : (
             <p>{text.goalNeeded}</p>
           )}
-          {direction && <WeekPreview journal={journal} answers={answers} locale={locale} sessionOpen={sessionOpen} onStart={onStart} />}
+          {direction && <WeekPreview journal={journal} answers={answers} locale={locale} activeSession={activeSession} onStart={onStart} />}
           <details>
             <summary>{text.answers}</summary>
             <dl>

@@ -1,6 +1,5 @@
 import { expect, it } from 'vitest';
 import { weekPreview } from './matchExampleWeek';
-import { guidedWeeks } from './guidedWeeks';
 
 const base = {
   goal: ['strength'], strengthFocus: ['benchFocus'], experience: ['regular'],
@@ -10,9 +9,9 @@ const base = {
 
 it('shows two different weeks for specific strength and muscle priorities', () => {
   const strength = weekPreview(base).week;
-  expect(strength?.days[1]?.movements).toContain('trapBar');
+  expect(strength?.days[1]?.blocks.map(block => block.exercise)).toContain('trapBar');
   const muscle = weekPreview({ ...base, goal: ['muscle'], muscleFocus: ['chestFocus'] }).week;
-  expect(muscle?.days[1]?.movements).toContain('cable');
+  expect(muscle?.days[1]?.blocks.map(block => block.exercise)).toContain('cable');
   expect(weekPreview({ ...base, strengthFocus: ['gobletFocus'] }).week).toBeNull();
 });
 
@@ -41,7 +40,7 @@ it.each([
   const { week } = weekPreview({ ...base, goal: [goal], experience: [experience],
     minutes: ['45'], aerobicActivity: ['aerobicRegular'] });
   expect(week).toBeTruthy();
-  for (const day of guidedWeeks[week!.description]) {
+  for (const day of week!.days) {
     expect(day.blocks.map(block => block.exercise)).toEqual(['goblet', 'machine', 'row', 'bridge', 'deadBug']);
     expect(day.blocks.map(block => block.repetitions.length)).toEqual(Array(5).fill(setCount));
     expect(day.minutes).toBe(setCount === 1 ? 30.75 : 44.5);

@@ -1,13 +1,12 @@
-// Read-only illustrations from the documented cases in docs/26, 27 and 28.
+// Illustrations from the documented cases in docs/26, 27 and 28.
 import { selectPlan, type PlanCandidate, type PlanGoal, type StartingPoint } from '../core/planSelection';
 import { planProfileFromAnswers } from './profileDirection';
-import { guidedWeeks, mixedWalkMinutes, type GuidedWeek } from './guidedWeeks';
+import { guidedWeeks, mixedWalkMinutes, type ExampleDay, type GuidedWeek } from './guidedWeeks';
 
-type Day = { minutes: number; movements: readonly string[] };
 type ExampleWeek = {
   description: GuidedWeek;
-  setup: string;
-  days: readonly [Day, Day];
+  setup: 'strengthSetup' | 'muscleSetup' | 'mixedSetup';
+  days: readonly [ExampleDay, ExampleDay];
   walkMinutesPerDay: number;
   equipment: string[];
   exclusions: string[];
@@ -16,19 +15,14 @@ type ExampleWeek = {
   focuses?: string[];
 };
 
-function exampleDay(family: GuidedWeek, index: 0 | 1): Day {
-  const day = guidedWeeks[family][index];
-  return { minutes: day.minutes, movements: day.blocks.map(block => block.exercise) };
-}
-
 const strength: ExampleWeek = {
   description: 'strengthWeek', setup: 'strengthSetup', walkMinutesPerDay: 0,
-  days: [exampleDay('strengthWeek', 0), exampleDay('strengthWeek', 1)],
+  days: guidedWeeks.strengthWeek,
   equipment: ['barbell', 'dumbbells'], exclusions: ['avoidBench', 'avoidSquat'],
   familiar: ['press', 'squat', 'row'], startingPoints: ['known'], focuses: ['benchFocus'],
 };
 const muscle: ExampleWeek = {
-  ...strength, description: 'muscleWeek', setup: 'muscleSetup', days: [exampleDay('muscleWeek', 0), exampleDay('muscleWeek', 1)],
+  ...strength, description: 'muscleWeek', setup: 'muscleSetup', days: guidedWeeks.muscleWeek,
   equipment: ['barbell', 'dumbbells', 'machine'], focuses: ['chestFocus'],
 };
 
@@ -36,7 +30,7 @@ function mixedWeek(goal: PlanGoal, entry: boolean): ExampleWeek {
   const description = goal === 'general' ? (entry ? 'entryWeek' : 'generalWeek')
       : (entry ? 'aerobicEntryWeek' : 'aerobicWeek');
   return {
-    description, setup: 'mixedSetup', days: [exampleDay(description, 0), exampleDay(description, 1)],
+    description, setup: 'mixedSetup', days: guidedWeeks[description],
     walkMinutesPerDay: mixedWalkMinutes,
     equipment: ['dumbbells', 'machine'], exclusions: ['avoidSquat', 'avoidMachinePress'],
     familiar: entry ? ['walk'] : ['walk', 'squat', 'row'],

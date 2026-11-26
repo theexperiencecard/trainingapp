@@ -199,9 +199,23 @@ async function mixedRegression(page) {
     await page.clock.setFixedTime(new Date(trainingDay + 'T12:00:00Z'));
     await page.reload();
     await openPlannedWalk(page, goal, experience);
-    await page.getByRole('button', { name: week.startSession }).nth(day).click();
-    const session = page.locator('section[aria-labelledby="week-example-heading"]');
     const before = await snapshot(page);
+    const overview = page.getByRole('region', { name: week.heading });
+    const days = [week.dayA, week.dayB].map(title => overview.getByRole('region', { name: new RegExp(title) }));
+    const perMovement = (sets === 1 ? week.plannedSet : week.plannedSets).replace('{count}', String(sets));
+    for (const dayOverview of days) {
+      await expect(dayOverview.getByRole('listitem')).toHaveText(
+        ['goblet', 'machine', 'row', 'bridge', 'deadBug'].map(move => week[move] + ' · ' + perMovement),
+      );
+      await expect(dayOverview.getByText(week.plannedSets.replace('{count}', String(sets * 5)), { exact: true })).toBeVisible();
+    }
+    await days[day].getByRole('button', { name: week.startSession }).click();
+    const session = page.locator('section[aria-labelledby="week-example-heading"]');
+    await expect(overview.getByRole('link', { name: week.resumeSession })).toHaveCount(1);
+    await expect(days[1 - day].getByRole('link', { name: week.resumeSession })).toHaveCount(0);
+    await days[day].getByRole('link', { name: week.resumeSession }).click();
+    await expect(session.getByRole('heading')).toBeFocused();
+    assert.deepEqual(await snapshot(page), before);
     for (const exercise of ['goblet', 'machine', 'row', 'bridge', 'deadBug']) {
       for (let i = 0; i < sets; i++) {
         const form = session.locator('form');
