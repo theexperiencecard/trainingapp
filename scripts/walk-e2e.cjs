@@ -7,6 +7,8 @@ const timer = require('../src/locales/timer-it.json');
 const profile = require('../src/locales/profile-it.json');
 const week = require('../src/locales/week-it.json');
 const shell = require('../src/locales/it.json');
+const labelsDe = require('../src/locales/journal-de.json');
+const shellDe = require('../src/locales/de.json');
 
 const dbName = 'trainingapp-synthetic-journal';
 const monday = '2026-11-23';
@@ -134,6 +136,22 @@ async function uiRegression(page, url) {
   await expect(page.getByText('42,5 kg', { exact: false }).first()).toBeVisible();
   await page.context().setOffline(true);
   await openPlannedWalk(page);
+  await page.setViewportSize({ width: 320, height: 760 });
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.getByRole('combobox', { name: shell.language, exact: true }).selectOption('de');
+  const walkLink = page.getByRole('link', { name: labelsDe.walkLink, exact: true }).first();
+  await expect(walkLink).toBeVisible();
+  const target = await walkLink.boundingBox();
+  assert.ok(target.height >= 44 && target.width >= 44);
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+  await walkLink.focus();
+  await page.keyboard.press('Shift+Tab');
+  await page.keyboard.press('Tab');
+  await expect(walkLink).toBeFocused();
+  await expect(walkLink).toHaveCSS('outline-style', 'solid');
+  await page.getByRole('combobox', { name: shellDe.language, exact: true }).selectOption('it');
+  await page.setViewportSize({ width: 360, height: 760 });
+  await page.emulateMedia({ colorScheme: 'light' });
   const compareWeek = page.getByRole('combobox', { name: week.walkComparison });
   const comparison = page.getByRole('region', { name: week.walkComparison });
   const compared = recorded => week.walkCompared.replace('{recorded}', recorded).replace('{planned}', '20');
@@ -283,7 +301,21 @@ async function verify() {
   const options = { host: '127.0.0.1', port: 0 };
   const server = storageOnly
     ? await createServer({ logLevel: 'silent', server: options })
-    : await preview({ logLevel: 'silent', preview: options });
+    : await preview({
+      logLevel: 'silent', preview: options,
+      plugins: [{
+        name: 'private-preview-fixture',
+        configurePreviewServer(server) {
+          server.middlewares.use((request, response, next) => {
+            if (request.headers.cookie?.split('; ').includes('preview-test=allowed')) next();
+            else {
+              response.statusCode = 403;
+              response.end();
+            }
+          });
+        },
+      }],
+    });
   let browser;
   try {
     if (storageOnly) await server.listen();
@@ -291,6 +323,7 @@ async function verify() {
     browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH });
     const page = await browser.newPage({ viewport: { width: 360, height: 760 } });
     page.setDefaultTimeout(8000);
+    if (!storageOnly) await page.context().addCookies([{ name: 'preview-test', value: 'allowed', url }]);
     await seedV1(page, url);
     if (storageOnly) await storageRegression(page);
     else {

@@ -27,7 +27,7 @@ button, select { font: inherit; min-block-size: 2.875rem; max-inline-size: 100%;
 button { padding: 0.6rem 1rem; background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); font-weight: 650; cursor: pointer; }
 select, button.demo-secondary { background: var(--panel); color: var(--accent); border: 1px solid var(--accent); padding: 0.5rem; }
 select { display: block; inline-size: 100%; margin-block: 0.5rem 1rem; }
-button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+:is(a, button, select, input, summary):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -51,14 +51,13 @@ button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); o
 .demo-history dd { margin: 0; font-size: 1.2rem; font-weight: 700; }
 .demo-next { margin-block-end: 1rem; }
 input[type="number"] { font: inherit; display: block; width: 100%; min-height: 2.875rem; padding: 0.6rem; margin-block-start: 0.4rem; border: 1px solid var(--muted); background: var(--panel); color: inherit; border-radius: 0.5rem; }
-input:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 [role="timer"] { display: block; font-size: 2.5rem; font-variant-numeric: tabular-nums; }
 
 details summary { cursor: pointer; min-block-size: 2.875rem; align-content: center; font-weight: 650; }
-details summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .example-panel { margin-block: 1rem; padding-inline: 1rem; border-inline-start: 0.25rem solid var(--line); }
 button:disabled { opacity: 0.65; cursor: wait; }
-.profile-option { min-block-size: 2.875rem; display: flex; align-items: center; gap: 0.5rem; }
+.checkbox-option { min-block-size: 2.875rem; display: flex; align-items: center; gap: 0.5rem; }
+.checkbox-option input { flex: none; margin: 0; }
 .profile-field, fieldset { display: block; margin-block: 0 1rem; }
 fieldset { border: 1px solid var(--line); border-radius: 0.5rem; }
 .journal-chart { margin-block: 1.5rem; }
@@ -67,7 +66,13 @@ fieldset { border: 1px solid var(--line); border-radius: 0.5rem; }
 .chart-track { inline-size: 100%; background: var(--line); border-radius: 0.4rem; overflow: hidden; }
 .chart-track i { display: block; block-size: 0.4rem; background: var(--accent); }
 a { color: var(--accent); }
-.demo-actions a { display: inline-flex; align-items: center; min-block-size: 2.875rem; }
+.session-demo a[href^="#"] {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.875rem;
+  min-inline-size: 2.875rem;
+  max-inline-size: 100%;
+}
 
 .workout-timer-inline { margin-block: 0.75rem 1rem; }
 .workout-timer-inline > summary {

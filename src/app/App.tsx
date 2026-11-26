@@ -29,9 +29,9 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
     <WorkoutTimerProvider>
       <main>
         <header>
-          <label className="language-picker">
-            {text.language}
-            <select value={language} onChange={(event) => {
+          <div className="language-picker">
+            <label htmlFor="app-language">{text.language}</label>
+            <select id="app-language" value={language} onChange={(event) => {
               const value = event.target.value;
               if (value === 'it' || value === 'de' || value === 'en') setLanguage(value);
             }}>
@@ -39,7 +39,7 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
               <option lang="de" value="de">{messages.de.languageName}</option>
               <option lang="en" value="en">{messages.en.languageName}</option>
             </select>
-          </label>
+          </div>
           <h1>{text.heading}</h1>
         </header>
         <ProfileQuestionnaire journal={journal} locale={language} onReview={setProfile} activeSession={sessionChoice}

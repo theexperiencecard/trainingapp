@@ -77,7 +77,7 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
               {muscleChange && (
                 <>
                   {minutes > budget && <p>{text.overBudget.replace('{minutes}', String(budget))}</p>}
-                  <label><input type="checkbox" checked={omitLast} disabled={saving || failed}
+                  <label className="checkbox-option"><input type="checkbox" checked={omitLast} disabled={saving || failed}
                     onChange={event => setOmitLast(event.target.checked)} /> {text.omitCable}</label>
                 </>
               )}

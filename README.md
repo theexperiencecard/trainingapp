@@ -15,6 +15,22 @@ Anteprima interna in italiano, tedesco e inglese. Contiene un diario persistente
 
 La shell offline di produzione richiede una prima apertura online su HTTPS o localhost. Per lo sviluppo usa `npm run dev`. Gli eventuali dati della prima anteprima della PR #1 sono consultabili nello stesso browser e sulla stessa origine, in uno storico separato in sola lettura.
 
+## Anteprima sul telefono da GitHub
+
+1. Apri il repository con Safari o Chrome sul telefono e accedi con l’account che ha accesso. In GitHub scegli **Code → Codespaces → Create codespace on main**. Se riapri un Codespace già sul ramo `main`, esegui `git pull --ff-only` prima della build.
+2. Nell’editor del Codespace apri il terminale e avvia l’anteprima. `nvm install` legge la versione da `.nvmrc`.
+
+   ```bash
+   nvm install
+   npm ci
+   npm run build
+   __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS="${CODESPACE_NAME}-4173.app.github.dev" npm run preview
+   ```
+
+3. Nella scheda **Ports** apri l’indirizzo HTTPS della porta **4173** con **Open in Browser**. Mantieni la visibilità **Private** e usa lo stesso account GitHub. Dalla pagina dell’app puoi usare il menu del browser per aggiungerla alla schermata Home. Tieni il Codespace attivo durante la prova e arrestalo quando hai finito.
+
+[Guida GitHub alle porte di Codespaces](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace)
+
 ## Controlli
 
 - `npm run check`: esegue test, controllo dei tipi e lint, fermandosi al primo errore.

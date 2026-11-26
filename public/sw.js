@@ -8,10 +8,10 @@ const shell = new URL('index.html', self.registration.scope).href;
 const urls = new Set(files.map(({ path }) => new URL(path, self.registration.scope).href));
 
 self.addEventListener('install', event => {
-  // The build supplies integrity hashes for the shell and its exact dependencies.
+  // Same-origin credentials support private previews. Integrity still pins every cached asset.
   const requests = files.map(({ path, integrity }) =>
     new Request(new URL(path, self.registration.scope), {
-      cache: 'reload', credentials: 'omit', redirect: 'error', integrity,
+      cache: 'reload', credentials: 'same-origin', redirect: 'error', integrity,
     }),
   );
   event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(requests)));

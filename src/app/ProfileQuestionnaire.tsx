@@ -112,7 +112,7 @@ export function ProfileQuestionnaire({ locale, onReview, activeSession, onStart,
                 <fieldset key={question.id}>
                   <legend>{text[question.id]}</legend>
                   {question.options?.map((option, index) => (
-                    <label key={option} className="profile-option">
+                    <label key={option} className="checkbox-option">
                       <input type="checkbox" checked={values.includes(option)}
                         required={index === 0 && values.length === 0}
                         onChange={(event) => toggle(question.id, option, event.target.checked, question.exclusive)} />
