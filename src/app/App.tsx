@@ -9,7 +9,7 @@ import { ProfileQuestionnaire } from './ProfileQuestionnaire';
 import { SessionDemo } from './SessionDemo';
 import { WeekExampleSession } from './WeekExampleSession';
 import type { SessionChoice } from './guidedWeeks';
-import { WorkoutTimer } from './WorkoutTimer';
+import { WorkoutTimer, WorkoutTimerProvider } from './WorkoutTimer';
 
 type AppProps = { locale?: Locale; offlineStatus?: OfflineStatus | undefined };
 
@@ -26,40 +26,42 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
   }, [language, text.title]);
 
   return (
-    <main>
-      <header>
-        <label className="language-picker">
-          {text.language}
-          <select value={language} onChange={(event) => {
-            const value = event.target.value;
-            if (value === 'it' || value === 'de' || value === 'en') setLanguage(value);
-          }}>
-            <option lang="it" value="it">{messages.it.languageName}</option>
-            <option lang="de" value="de">{messages.de.languageName}</option>
-            <option lang="en" value="en">{messages.en.languageName}</option>
-          </select>
-        </label>
-        <h1>{text.heading}</h1>
-      </header>
-      <ProfileQuestionnaire journal={journal} locale={language} onReview={setProfile} activeSession={sessionChoice}
-        onStart={day => setSessionChoice(current => current ?? day)} />
-      {sessionChoice !== null && <WeekExampleSession choice={sessionChoice} budgetMinutes={(profile?.maxSessionSeconds ?? 0) / 60}
-        allowMachine={Boolean(profile?.equipment.includes('machine') && !profile.avoidedExercises.includes('avoidMachinePress'))}
-        locale={language} journal={journal}
-        onClose={() => {
-          setSessionChoice(null);
-          document.getElementById('profile-start')?.focus();
-        }} />}
-      <details className="example-panel">
-        <summary>{text.example}</summary>
-        <SessionDemo locale={language} profile={profile} journal={journal} />
-      </details>
-      <WorkoutTimer locale={language} />
-      <LocalJournal locale={language} journal={journal} />
-      <LegacyJournal locale={language} />
-      {offlineStatus && (
-        <p role="status">{offlineStatus === 'ready' ? text.offlineReady : text.offlineUnavailable}</p>
-      )}
-    </main>
+    <WorkoutTimerProvider>
+      <main>
+        <header>
+          <label className="language-picker">
+            {text.language}
+            <select value={language} onChange={(event) => {
+              const value = event.target.value;
+              if (value === 'it' || value === 'de' || value === 'en') setLanguage(value);
+            }}>
+              <option lang="it" value="it">{messages.it.languageName}</option>
+              <option lang="de" value="de">{messages.de.languageName}</option>
+              <option lang="en" value="en">{messages.en.languageName}</option>
+            </select>
+          </label>
+          <h1>{text.heading}</h1>
+        </header>
+        <ProfileQuestionnaire journal={journal} locale={language} onReview={setProfile} activeSession={sessionChoice}
+          onStart={day => setSessionChoice(current => current ?? day)} />
+        {sessionChoice !== null && <WeekExampleSession choice={sessionChoice} budgetMinutes={(profile?.maxSessionSeconds ?? 0) / 60}
+          allowMachine={Boolean(profile?.equipment.includes('machine') && !profile.avoidedExercises.includes('avoidMachinePress'))}
+          locale={language} journal={journal}
+          onClose={() => {
+            setSessionChoice(null);
+            document.getElementById('profile-start')?.focus();
+          }} />}
+        <details className="example-panel">
+          <summary>{text.example}</summary>
+          <SessionDemo locale={language} profile={profile} journal={journal} />
+        </details>
+        <WorkoutTimer locale={language} />
+        <LocalJournal locale={language} journal={journal} />
+        <LegacyJournal locale={language} />
+        {offlineStatus && (
+          <p role="status">{offlineStatus === 'ready' ? text.offlineReady : text.offlineUnavailable}</p>
+        )}
+      </main>
+    </WorkoutTimerProvider>
   );
 }

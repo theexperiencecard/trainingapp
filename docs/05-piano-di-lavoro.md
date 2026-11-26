@@ -381,3 +381,5 @@ Le due sedute miste del caso 28 si aprono dal questionario per F01, F02 e F05, a
 Nel punto 5.5 il grafico del diario mostra anche ponte glutei e dead bug. Con il filtro settimanale somma le ripetizioni delle sole serie svolte per esercizio e per data locale. Per il dead bug il totale è per lato. Per gli esercizi con carico esterno si mostra il volume in kg.
 
 Nel punto 2.2 ciascuna giornata di esempio mostra durata stimata, ordine dei movimenti e numero di serie, sia per movimento sia per seduta. Il numero deriva dagli stessi blocchi usati dalla guida. Il collegamento di rientro identifica la giornata aperta e apre il suo riepilogo o la serie corrente. L’assegnazione automatica della seduta del giorno richiede un programma revisionato.
+
+Nel punto 2.4 il timer è accessibile dalla seconda serie in poi senza uscire dalla seduta guidata. Timer di seduta e pannello generale controllano lo stesso recupero o cronometro. Il recupero avviato nella seduta prosegue dopo la chiusura o la riapertura offline e usa l’orario di fine salvato.

@@ -41,7 +41,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Vincoli da conservare
 - Prima della prova: installazione sulla Home per ogni partecipante; account e sync pronti.
 - 2.1 si chiude solo con prove positive su iPhone E Android reali, app installata.
-- Timer a conto alla rovescia dall'orario di fine persistito, mai dal conteggio dei tick.
+- Timer disponibile tra le serie delle sedute guidate e nel pannello generale. Il conto alla rovescia usa l’orario di fine persistito.
 - Regole numeriche del prototipo non modificate. Cambi futuri: fonti, approvazione e test aggiornati.
 - Nessuna nuova libreria, migrazione, account, segreto, pagamento o deploy implicito.
 - Fine di ogni risposta: modello esatto per il prossimo compito; nessun cambio automatico.

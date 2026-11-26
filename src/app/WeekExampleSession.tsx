@@ -6,6 +6,7 @@ import { lastRecordedSet } from '../core/lastRecordedSet';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
 import { weekText, demoText } from '../locales/sessions';
+import { WorkoutTimer } from './WorkoutTimer';
 import { GuidedSetForm } from './GuidedSetForm';
 import type { LocalJournalState } from './journalUpdates';
 import { guidedWeeks, mixedWalkMinutes, type ExampleDay, type SessionChoice } from './guidedWeeks';
@@ -62,7 +63,7 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
         <>
           <p>{text.guidedNotice} · {minutes.toLocaleString(locale)} min</p>
           <p>{text.setProgress.replace('{current}', String(count + 1)).replace('{total}', String(total))}</p>
-          {count > 0 && <p><a href="#workout-timer-heading">{demo.openTimer}</a></p>}
+          {count > 0 && <WorkoutTimer locale={locale} inline />}
           {canSwitch && (
             <div>
               <label>{demo.choice}

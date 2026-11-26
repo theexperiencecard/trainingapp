@@ -68,3 +68,11 @@ fieldset { border: 1px solid var(--line); border-radius: 0.5rem; }
 .chart-track i { display: block; block-size: 0.4rem; background: var(--accent); }
 a { color: var(--accent); }
 .demo-actions a { display: inline-flex; align-items: center; min-block-size: 2.875rem; }
+
+.workout-timer-inline { margin-block: 0.75rem 1rem; }
+.workout-timer-inline > summary {
+  min-block-size: 2.875rem;
+  align-content: center;
+  width: fit-content;
+  color: var(--accent);
+}

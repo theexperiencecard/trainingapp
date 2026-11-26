@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const { chromium, expect } = require('playwright/test');
 const labels = require('../src/locales/journal-it.json');
 const chartLabels = require('../src/locales/chart-it.json');
+const timer = require('../src/locales/timer-it.json');
 const profile = require('../src/locales/profile-it.json');
 const week = require('../src/locales/week-it.json');
 const shell = require('../src/locales/it.json');
@@ -196,7 +197,8 @@ async function mixedRegression(page) {
   const walks = (await snapshot(page)).walks;
   for (const [goal, experience, day, sets] of [['general', 'returning', 0, 1], ['aerobic', 'regular', 1, 2]]) {
     const trainingDay = sets === 1 ? thursday : nextMonday;
-    await page.clock.setFixedTime(new Date(trainingDay + 'T12:00:00Z'));
+    const startTime = Date.parse(trainingDay + 'T12:00:00Z');
+    await page.clock.setFixedTime(startTime);
     await page.reload();
     await openPlannedWalk(page, goal, experience);
     const before = await snapshot(page);
@@ -230,11 +232,24 @@ async function mixedRegression(page) {
         }
         if (exercise === 'bridge' || exercise === 'deadBug') await expect(form.getByLabel(labels.kg)).toHaveCount(0);
         await form.getByRole('button', { name: labels.add }).click();
+        if (exercise === 'goblet' && sets === 1) {
+          await session.getByText(timer.heading, { exact: true }).click();
+          await session.getByLabel(timer.duration).fill('75');
+          await session.getByRole('button', { name: timer.startCountdown }).click();
+          await expect(session.getByRole('timer')).toHaveText('1:15');
+          await page.clock.setFixedTime(startTime + 20_000);
+          await expect(session.getByRole('timer')).toHaveText('0:55');
+        }
       }
     }
     await expect(session.getByRole('heading')).toHaveText(week.musclePartComplete);
     if (sets === 2) await expect(session).toContainText('152 kg');
     await page.reload();
+    if (sets === 1) {
+      const standaloneTimer = page.getByRole('region', { name: timer.heading, exact: true });
+      await expect(standaloneTimer.getByRole('timer')).toHaveText('0:55');
+      await standaloneTimer.getByRole('button', { name: timer.stop, exact: true }).click();
+    }
     const after = await snapshot(page);
     const added = after.sets.filter(row => !before.sets.some(previous => previous.id === row.id));
     assert.equal(added.length, sets * 5);
