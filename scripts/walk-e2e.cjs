@@ -1,4 +1,4 @@
-// Run with --storage to exercise the storage API, or after npm run build to exercise the production UI.
+// After npm run build, use --pages-path for the production UI under a project URL. Use --storage for the storage API.
 const assert = require('node:assert/strict');
 const { chromium, expect } = require('playwright/test');
 const labels = require('../src/locales/journal-it.json');
@@ -31,7 +31,7 @@ const oldOperation = { id: 'old-edit', owner: 'synthetic', setId: oldSet.id, int
 
 async function seedV1(page, url) {
   await page.route('**/walk-seed', route => route.fulfill({ contentType: 'text/html', body: '<title>Fixture</title>' }));
-  await page.goto(url + '/walk-seed');
+  await page.goto(new URL('walk-seed', url).href);
   await page.evaluate(({ dbName, oldSet, oldSession, oldOperation }) => new Promise((resolve, reject) => {
     const open = indexedDB.open(dbName, 1);
     open.onupgradeneeded = () => {
@@ -297,6 +297,7 @@ async function mixedRegression(page) {
 
 async function verify() {
   const storageOnly = process.argv.includes('--storage');
+  const prefix = !storageOnly && process.argv.includes('--pages-path') ? '/trainingapp/' : '/';
   const { preview, createServer } = await import('vite');
   const options = { host: '127.0.0.1', port: 0 };
   const server = storageOnly
@@ -307,11 +308,13 @@ async function verify() {
         name: 'private-preview-fixture',
         configurePreviewServer(server) {
           server.middlewares.use((request, response, next) => {
-            if (request.headers.cookie?.split('; ').includes('preview-test=allowed')) next();
-            else {
-              response.statusCode = 403;
+            if (!request.url?.startsWith(prefix) || !request.headers.cookie?.split('; ').includes('preview-test=allowed')) {
+              response.statusCode = request.url?.startsWith(prefix) ? 403 : 404;
               response.end();
+              return;
             }
+            request.url = request.url.slice(prefix.length - 1);
+            next();
           });
         },
       }],
@@ -319,7 +322,7 @@ async function verify() {
   let browser;
   try {
     if (storageOnly) await server.listen();
-    const url = 'http://127.0.0.1:' + server.httpServer.address().port;
+    const url = 'http://127.0.0.1:' + server.httpServer.address().port + prefix;
     browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH });
     const page = await browser.newPage({ viewport: { width: 360, height: 760 } });
     page.setDefaultTimeout(8000);

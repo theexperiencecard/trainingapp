@@ -15,6 +15,11 @@ Anteprima interna in italiano, tedesco e inglese. Contiene un diario persistente
 
 La shell offline di produzione richiede una prima apertura online su HTTPS o localhost. Per lo sviluppo usa `npm run dev`. Gli eventuali dati della prima anteprima della PR #1 sono consultabili nello stesso browser e sulla stessa origine, in uno storico separato in sola lettura.
 
+## Anteprima pubblicata su GitHub Pages
+
+L’app compilata è disponibile su [GitHub Pages](https://theexperiencecard.github.io/trainingapp/).
+Per aggiornarla, con **Settings → Pages → Source** impostato su **GitHub Actions**, avvia **Actions → Publish app to GitHub Pages → Run workflow** sul ramo `main`. Il workflow verifica il codice e pubblica la cartella `dist`. Salva il collegamento dalla pagina dell’app in Safari per usare la schermata Home.
+
 ## Anteprima sul telefono da GitHub
 
 1. Apri il repository con Safari o Chrome sul telefono e accedi con l’account che ha accesso. In GitHub scegli **Code → Codespaces → Create codespace on main**. Se riapri un Codespace già sul ramo `main`, esegui `git pull --ff-only` prima della build.

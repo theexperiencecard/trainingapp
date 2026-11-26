@@ -20,7 +20,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 - 0.3 chiuso: GitHub Actions verificato verde/rosso/verde su ramo isolato; riferimenti nel 06.
 - Repository condiviso: github.com/theexperiencecard/trainingapp, ramo `main`.
 - Push autorizzato dall’utente; per riprendere verificare HEAD remoto e stato locale.
-- Prova Chromium mobile eseguita. Collegamenti del flusso e selezioni con aree toccabili da 46 px e focus visibile. Il README spiega l’anteprima privata da GitHub Codespaces. Prove Home su iPhone e Android ancora aperte.
+- Prova Chromium mobile eseguita. Collegamenti del flusso e selezioni con aree toccabili da 46 px e focus visibile. Il README spiega la build su GitHub Pages e l’anteprima privata da Codespaces. Prove Home su iPhone e Android ancora aperte.
 - R0 completato: audit documentale, protocollo e requisiti. NON revisione scientifica conclusa.
 
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico

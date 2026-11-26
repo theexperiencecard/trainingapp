@@ -385,3 +385,5 @@ Nel punto 2.2 ciascuna giornata di esempio mostra durata stimata, ordine dei mov
 Nel punto 2.4 il timer è accessibile dalla seconda serie in poi senza uscire dalla seduta guidata. Timer di seduta e pannello generale controllano lo stesso recupero o cronometro. Il recupero avviato nella seduta prosegue dopo la chiusura o la riapertura offline e usa l’orario di fine salvato.
 
 Nel punto 5.4 i collegamenti del flusso e le selezioni a casella hanno aree toccabili di almeno 46 px in altezza. Il focus da tastiera è visibile anche sui collegamenti. La verifica Chromium include una schermata di 320 px in tedesco e tema scuro. Il README descrive l’accesso da telefono tramite una porta privata di GitHub Codespaces. La prova locale con accesso via cookie verifica che l’app salvi i propri file per la riapertura offline anche dietro un’anteprima privata.
+
+Su GitHub Pages la pagina bianca proveniva dalla pubblicazione del ramo sorgente. La build Vite usa percorsi relativi e la pubblicazione manuale da GitHub Actions carica la sola cartella compilata. La prova Chromium sotto /trainingapp/ verifica l’apertura e la riapertura offline.

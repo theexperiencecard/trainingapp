@@ -43,6 +43,7 @@ function offlineShell(): Plugin {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [react(), offlineShell()],
   test: {
     environment: 'node',
