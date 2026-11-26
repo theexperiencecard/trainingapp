@@ -373,3 +373,5 @@ Nel diario locale del punto 5.1 si possono selezionare tutte le settimane o una 
 Per il cammino del caso 28, il diario v2 accetta durata in secondi e intensità dichiarata. Serie e tratti condividono il giorno locale e la sequenza della seduta.
 
 La settimana mista permette di aprire il diario del cammino. La persona conferma i tratti effettivi nel modulo condiviso. Il filtro settimanale include le settimane con sole camminate e mostra il tempo totale e quello per intensità, compresa quella sconosciuta.
+
+Nell’anteprima mista si può scegliere la settimana corrente o una presente nel diario. Il confronto usa i due cammini da 10 minuti del caso 28 e somma solo i secondi registrati in quella settimana, con dettaglio per intensità. La sola apertura della scheda lascia il diario intatto.

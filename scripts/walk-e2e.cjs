@@ -128,6 +128,10 @@ async function uiRegression(page, url) {
   await expect(page.getByText('42,5 kg', { exact: false }).first()).toBeVisible();
   await page.context().setOffline(true);
   await openPlannedWalk(page);
+  const compareWeek = page.getByRole('combobox', { name: week.walkComparison });
+  const comparison = page.getByRole('region', { name: week.walkComparison });
+  const compared = recorded => week.walkCompared.replace('{recorded}', recorded).replace('{planned}', '20');
+  await expect(comparison).toContainText(compared('0 min'));
   const migrated = await snapshot(page);
   checkLegacy(migrated);
   assert.deepEqual(migrated.walks, []);
@@ -153,6 +157,8 @@ async function uiRegression(page, url) {
   await expect(minutesFor(labels.walkTotal)).toHaveText('16 min');
   await enter(thursday, '2', 'moderate');
   await expect(minutesFor(labels.walkTotal)).toHaveText('18 min');
+  await compareWeek.selectOption(monday);
+  await expect(comparison).toContainText(compared('18 min'));
   await enter('2026-11-30', '1,5', 'unknown');
   await expect.poll(async () => (await snapshot(page)).walks.length).toBe(4);
   await page.reload();
@@ -163,6 +169,15 @@ async function uiRegression(page, url) {
   await expect(minutesFor(labels.walkModerate)).toHaveText('12 min');
   await selectWeek.selectOption('2026-11-30');
   await expect(minutesFor(labels.walkUnknown)).toHaveText('1 min 30 s');
+  await openPlannedWalk(page);
+  await compareWeek.selectOption(monday);
+  await expect(comparison).toContainText(compared('18 min'));
+  await expect(comparison.getByText(labels.walkModerate).locator('..')).toContainText('12 min');
+  await expect(comparison.getByText(labels.walkLight).locator('..')).toContainText('6 min');
+  await compareWeek.selectOption('2026-11-30');
+  await expect(comparison).toContainText(compared('1 min 30 s'));
+  await compareWeek.selectOption(legacyDay);
+  await expect(comparison).toContainText(compared('0 min'));
   const final = await snapshot(page);
   checkLegacy(final);
   assert.equal(final.operations.length, 5);

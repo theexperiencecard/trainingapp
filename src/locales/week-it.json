@@ -22,7 +22,7 @@
   "pressMachine": "Chest press",
   "bridge": "Ponte glutei a terra",
   "deadBug": "Dead bug alternato",
-  "walk": "Nella stessa finestra sono inclusi 10 minuti di cammino abituale.",
+  "walk": "Nella stessa finestra sono inclusi {minutes} minuti di cammino abituale.",
   "focus": "La settimana documentata riguarda una priorità diversa da quella che hai scelto.",
   "startingPoint": "Il caso disponibile presuppone un punto di partenza diverso da quello indicato.",
   "days": "Il calendario dell’esempio richiede due giorni disponibili.",
@@ -44,5 +44,7 @@
   "shortSummary": "Hai registrato sette serie su otto. Hai omesso l’ultima serie al cavo.",
   "endEarly": "Concludi con le serie salvate",
   "savedProgress": "Serie registrate in questa prova: {count} su {total}",
-  "setCount": "Serie svolte: {count}"
+  "setCount": "Serie svolte: {count}",
+  "walkComparison": "Settimana di confronto per il cammino",
+  "walkCompared": "Cammino nel diario: {recorded}. Tempo previsto nella settimana di esempio: {planned} min."
 }

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { localDate, newOperationId, parseDecimal } from '../core/journalInput';
+import { weekText } from '../locales/sessions';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
 import { addWalk, type JournalWalk, type WalkIntensity } from '../storage/localJournal';
@@ -82,30 +83,42 @@ export function WalkingEntry({ locale, disabled, onSaved }: EntryProps) {
   );
 }
 
-export function WalkingHistory({ walks, locale }: { walks: JournalWalk[]; locale: Locale }) {
+function duration(seconds: number) {
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  return remainder ? `${minutes} min ${remainder} s` : `${minutes} min`;
+}
+
+export function WalkingTotals({ walks, locale, plannedMinutes }: {
+  walks: JournalWalk[]; locale: Locale; plannedMinutes?: number;
+}) {
   const text = journalText[locale];
-  if (!walks.length) return null;
   const totals: Record<WalkIntensity, number> = { light: 0, moderate: 0, vigorous: 0, unknown: 0 };
   let total = 0;
   for (const walk of walks) {
     totals[walk.intensity] += walk.seconds;
     total += walk.seconds;
   }
+  return <>
+    {plannedMinutes !== undefined && <p>{weekText[locale].walkCompared
+      .replace('{recorded}', duration(total)).replace('{planned}', plannedMinutes.toLocaleString(locale))}</p>}
+    <dl>
+      {plannedMinutes === undefined && <div><dt>{text.walkTotal}</dt><dd>{duration(total)}</dd></div>}
+      {intensities.filter(item => totals[item] > 0).map(item => <div key={item}>
+        <dt>{text[intensityLabels[item]]}</dt><dd>{duration(totals[item])}</dd>
+      </div>)}
+    </dl>
+  </>;
+}
+
+export function WalkingHistory({ walks, locale }: { walks: JournalWalk[]; locale: Locale }) {
+  const text = journalText[locale];
+  if (!walks.length) return null;
   const date = new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeZone: 'UTC' });
-  function duration(seconds: number) {
-    const minutes = Math.floor(seconds / 60);
-    const remainder = seconds % 60;
-    return remainder ? `${minutes} min ${remainder} s` : `${minutes} min`;
-  }
   return (
     <section aria-label={text.walkHistory}>
       <h3>{text.walkHistory}</h3>
-      <dl>
-        <div><dt>{text.walkTotal}</dt><dd>{duration(total)}</dd></div>
-        {intensities.filter(item => totals[item] > 0).map(item => <div key={item}>
-          <dt>{text[intensityLabels[item]]}</dt><dd>{duration(totals[item])}</dd>
-        </div>)}
-      </dl>
+      <WalkingTotals walks={walks} locale={locale} />
       <ul>{walks.map(walk => <li key={walk.id}>
         <time dateTime={walk.day}>{date.format(new Date(walk.day + 'T00:00:00Z'))}</time>
         {' · '}{duration(walk.seconds)} · {text[intensityLabels[walk.intensity]]}

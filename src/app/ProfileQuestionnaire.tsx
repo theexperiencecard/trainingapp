@@ -7,6 +7,7 @@ import it from '../locales/profile-it.json';
 import { updateProfileAnswer, visibleProfileQuestions } from './profileBranches';
 import { planProfileFromAnswers, profileDirection } from './profileDirection';
 import type { SessionChoice } from './guidedWeeks';
+import type { LocalJournalState } from './journalUpdates';
 import { WeekPreview } from './WeekPreview';
 import { pressComparison } from './pressComparison';
 
@@ -14,12 +15,13 @@ const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
 type ProfileQuestionnaireProps = {
   locale: Locale;
+  journal: LocalJournalState;
   sessionOpen: boolean;
   onStart: (day: SessionChoice) => void;
   onReview: (profile: PlanProfile) => void;
 };
 
-export function ProfileQuestionnaire({ locale, onReview, sessionOpen, onStart }: ProfileQuestionnaireProps) {
+export function ProfileQuestionnaire({ locale, onReview, sessionOpen, onStart, journal }: ProfileQuestionnaireProps) {
   const text: Record<string, string> = translations[locale];
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [reviewing, setReviewing] = useState(false);
@@ -64,7 +66,7 @@ export function ProfileQuestionnaire({ locale, onReview, sessionOpen, onStart }:
           ) : (
             <p>{text.goalNeeded}</p>
           )}
-          {direction && <WeekPreview answers={answers} locale={locale} sessionOpen={sessionOpen} onStart={onStart} />}
+          {direction && <WeekPreview journal={journal} answers={answers} locale={locale} sessionOpen={sessionOpen} onStart={onStart} />}
           <details>
             <summary>{text.answers}</summary>
             <dl>

@@ -1,4 +1,4 @@
-# Ripresa rapida — aggiornato 2026-11-25
+# Ripresa rapida — aggiornato 2026-11-26
 
 Riparti da `main`. Leggi AGENTS.md e il blocco «Diario integrato e distanza dal pilot» nel piano 05. Il questionario ha 8–10 domande condizionali e mostra obiettivo e punto di partenza. Criteri e copertura nel 22. La demo usa il profilo confermato e il catalogo sintetico condiviso. Alla conferma appare una settimana di esempio se compatibile, altrimenti i motivi. F03 apre una delle due sedute guidate, tre movimenti e sei serie salvate nel diario offline e cambio facoltativo panca → M1 sulla seconda serie. F04 guida otto serie su quattro movimenti, con cambio M1 e scelta temporanea di omettere l’ultima serie per tempo. Il riepilogo F03/F04 usa le serie salvate nella prova e distingue i kg per attrezzo. F01/F02/F05 restano consultabili. Il gesto o muscolo prioritario filtra settimane e demo. Questionario e catalogo dimostrativo usano il selettore src/core/planSelection.ts. Per le schede reali manca il catalogo revisionato. Casi di assegnazione nel 22 e revisione nel 29.
 Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
@@ -26,7 +26,7 @@ Mantieni questo riepilogo entro circa 60 righe; sostituisci lo stato superato.
 ## Prossimo: completare R2 — consigliato Codex con GPT-6.2 Astra, senza cambio automatico
 - Rapporto esterno ricevuto e archiviato in `docs/ricerca/rapporto-esterno-2026-11-17.txt`.
 - R1 chiusa come dossier mirato dopo assenso contestuale «Comunque continua»; non validazione clinica.
-- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato per le serie di esempio. Cammino sintetico del 30 in IndexedDB v2. Tratti con data, durata e intensità nel diario settimanale; il questionario apre lo stesso modulo. Account, database remoto e sync richiedono decisioni distinte. Si mantengono le cinque famiglie, con priorità ai casi frequenti nel lavoro di revisione (piano 05). Stima pilot e pesi nel 05.
+- Casi F01–F05 pronti nei documenti 26–28. Consegna al revisore nel 29; esiti e approvazioni ancora aperti. Schema locale 30 approvato per le serie di esempio. Cammino sintetico del 30 in IndexedDB v2. L’anteprima mista confronta i 20 minuti illustrativi con i tratti confermati della settimana scelta e i tempi per intensità. La registrazione avviene nel modulo condiviso. Account, database remoto e sync richiedono decisioni distinte. Si mantengono le cinque famiglie, con priorità ai casi frequenti nel lavoro di revisione (piano 05). Stima pilot e pesi nel 05.
 - Q7: dossier `docs/18-screening-dolore-revisione.md`, pronto per revisione, non validato clinicamente.
 - Registro: 29 articoli (12 testi/sezioni, 16 abstract, 1 metadati) + 7 documenti istituzionali valutati.
 - S12 ACSM 2026 valutata; S13 Held solo abstract; S14 Russo solo metadati (editore 403).

@@ -22,7 +22,7 @@
   "pressMachine": "Machine chest press",
   "bridge": "Floor glute bridge",
   "deadBug": "Alternating dead bug",
-  "walk": "The same time slot includes 10 minutes of habitual walking.",
+  "walk": "The same time slot includes {minutes} minutes of habitual walking.",
   "focus": "The documented week covers a different priority from the one you chose.",
   "startingPoint": "The available case assumes a different starting point.",
   "days": "The example schedule needs two available days.",
@@ -44,5 +44,7 @@
   "shortSummary": "You recorded seven of eight sets and left out the final cable set.",
   "endEarly": "Finish with the saved sets",
   "savedProgress": "Sets recorded in this session: {count} of {total}",
-  "setCount": "Completed sets: {count}"
+  "setCount": "Completed sets: {count}",
+  "walkComparison": "Comparison week for walking",
+  "walkCompared": "Walking in your journal: {recorded}. Walking in the example week: {planned} min."
 }

@@ -41,7 +41,7 @@ export function App({ locale = 'it', offlineStatus }: AppProps) {
         </label>
         <h1>{text.heading}</h1>
       </header>
-      <ProfileQuestionnaire locale={language} onReview={setProfile} sessionOpen={sessionChoice !== null}
+      <ProfileQuestionnaire journal={journal} locale={language} onReview={setProfile} sessionOpen={sessionChoice !== null}
         onStart={day => setSessionChoice(current => current ?? day)} />
       {sessionChoice !== null && <WeekExampleSession choice={sessionChoice} budgetMinutes={(profile?.maxSessionSeconds ?? 0) / 60}
         allowMachine={Boolean(profile?.equipment.includes('machine') && !profile.avoidedExercises.includes('avoidMachinePress'))}

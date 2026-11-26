@@ -22,7 +22,7 @@
   "pressMachine": "Brustpresse",
   "bridge": "Beckenheben am Boden",
   "deadBug": "Dead Bug im Wechsel",
-  "walk": "Im selben Zeitfenster sind 10 Minuten des gewohnten Spaziergangs eingeplant.",
+  "walk": "Im selben Zeitfenster sind {minutes} Minuten des gewohnten Spaziergangs eingeplant.",
   "focus": "Die dokumentierte Woche behandelt einen anderen Schwerpunkt.",
   "startingPoint": "Der verfügbare Fall geht von einer anderen Ausgangslage aus.",
   "days": "Die Beispielwoche erfordert zwei verfügbare Tage.",
@@ -44,5 +44,7 @@
   "shortSummary": "Du hast sieben von acht Sätzen erfasst und den letzten Satz am Kabelzug ausgelassen.",
   "endEarly": "Mit den gespeicherten Sätzen abschließen",
   "savedProgress": "In dieser Einheit erfasste Sätze: {count} von {total}",
-  "setCount": "Absolvierte Sätze: {count}"
+  "setCount": "Absolvierte Sätze: {count}",
+  "walkComparison": "Vergleichswoche für das Gehen",
+  "walkCompared": "Gehzeit im Tagebuch: {recorded}. Geplante Gehzeit in der Beispielwoche: {planned} min."
 }

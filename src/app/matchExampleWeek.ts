@@ -8,7 +8,7 @@ type ExampleWeek = {
   description: string;
   setup: string;
   days: readonly [Day, Day];
-  walk: boolean;
+  walkMinutesPerDay: number;
   equipment: string[];
   exclusions: string[];
   familiar: string[];
@@ -22,7 +22,7 @@ function exampleDay(family: GuidedWeek, index: 0 | 1): Day {
 }
 
 const strength: ExampleWeek = {
-  description: 'strengthWeek', setup: 'strengthSetup', walk: false,
+  description: 'strengthWeek', setup: 'strengthSetup', walkMinutesPerDay: 0,
   days: [exampleDay('strengthWeek', 0), exampleDay('strengthWeek', 1)],
   equipment: ['barbell', 'dumbbells'], exclusions: ['avoidBench', 'avoidSquat'],
   familiar: ['press', 'squat', 'row'], startingPoints: ['known'], focuses: ['benchFocus'],
@@ -37,7 +37,7 @@ function mixedWeek(goal: PlanGoal, entry: boolean): ExampleWeek {
   return {
     description: goal === 'general' ? (entry ? 'entryWeek' : 'generalWeek')
       : (entry ? 'aerobicEntryWeek' : 'aerobicWeek'),
-    setup: 'mixedSetup', days: [day, day], walk: true,
+    setup: 'mixedSetup', days: [day, day], walkMinutesPerDay: 10,
     equipment: ['dumbbells', 'machine'], exclusions: ['avoidSquat', 'avoidMachinePress'],
     familiar: entry ? ['walk'] : ['walk', 'squat', 'row'],
     startingPoints: entry ? ['learn', 'resume'] : ['known'],
@@ -63,7 +63,7 @@ export function weekPreview(answers: Readonly<Record<string, readonly string[]>>
   if (!reasons.includes('startingPoint') && week.familiar.some(move => !answers.familiar?.includes(move))) {
     reasons.push('familiarity');
   }
-  if (week.walk && !['aerobicRegular', 'aerobicSometimes'].includes(answers.aerobicActivity?.[0] ?? '')) {
+  if (week.walkMinutesPerDay > 0 && !['aerobicRegular', 'aerobicSometimes'].includes(answers.aerobicActivity?.[0] ?? '')) {
     reasons.push('walking');
   }
   return { week: selection.selected && !reasons.length ? week : null, reasons };
