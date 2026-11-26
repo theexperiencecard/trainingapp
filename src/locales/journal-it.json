@@ -65,5 +65,8 @@
   "walkInvalid": "Controlla il giorno, inserisci una durata da un secondo a 24 ore e scegli l’intensità.",
   "walkHistory": "Cammino registrato",
   "walkTotal": "Tempo totale di cammino",
-  "walkLink": "Vai al diario del cammino"
+  "walkLink": "Vai al diario del cammino",
+  "bridge": "Ponte glutei a terra · corpo libero",
+  "deadBug": "Dead bug alternato · ripetizioni per lato",
+  "repsPerSide": "Ripetizioni per lato"
 }

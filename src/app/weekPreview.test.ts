@@ -1,5 +1,6 @@
 import { expect, it } from 'vitest';
 import { weekPreview } from './matchExampleWeek';
+import { guidedWeeks } from './guidedWeeks';
 
 const base = {
   goal: ['strength'], strengthFocus: ['benchFocus'], experience: ['regular'],
@@ -31,4 +32,18 @@ it('distinguishes entry, general fitness and aerobic priority on the same calend
   expect(weekPreview({ ...mixed, goal: ['aerobic'], experience: ['starting'] }).week?.description).toBe('aerobicEntryWeek');
   expect(weekPreview({ ...mixed, goal: ['aerobic'], aerobicActivity: ['aerobicNone'] }).week).toBeNull();
   expect(weekPreview({ ...mixed, goal: ['aerobic'], familiar: ['walk'] }).week).toBeNull();
+});
+
+it.each([
+  ['general', 'returning', 1], ['general', 'regular', 2],
+  ['aerobic', 'starting', 1], ['aerobic', 'regular', 2],
+] as const)('guides both mixed days for %s / %s', (goal, experience, setCount) => {
+  const { week } = weekPreview({ ...base, goal: [goal], experience: [experience],
+    minutes: ['45'], aerobicActivity: ['aerobicRegular'] });
+  expect(week).toBeTruthy();
+  for (const day of guidedWeeks[week!.description]) {
+    expect(day.blocks.map(block => block.exercise)).toEqual(['goblet', 'machine', 'row', 'bridge', 'deadBug']);
+    expect(day.blocks.map(block => block.repetitions.length)).toEqual(Array(5).fill(setCount));
+    expect(day.minutes).toBe(setCount === 1 ? 30.75 : 44.5);
+  }
 });

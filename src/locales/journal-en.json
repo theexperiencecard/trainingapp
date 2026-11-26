@@ -65,5 +65,8 @@
   "walkInvalid": "Check the date, enter a duration between one second and 24 hours, and choose an intensity.",
   "walkHistory": "Recorded walking",
   "walkTotal": "Total walking time",
-  "walkLink": "Go to the walking journal"
+  "walkLink": "Go to the walking journal",
+  "bridge": "Floor glute bridge · bodyweight",
+  "deadBug": "Alternating dead bug · reps per side",
+  "repsPerSide": "Reps per side"
 }

@@ -1,11 +1,11 @@
 // Read-only illustrations from the documented cases in docs/26, 27 and 28.
 import { selectPlan, type PlanCandidate, type PlanGoal, type StartingPoint } from '../core/planSelection';
 import { planProfileFromAnswers } from './profileDirection';
-import { guidedWeeks, type GuidedWeek } from './guidedWeeks';
+import { guidedWeeks, mixedWalkMinutes, type GuidedWeek } from './guidedWeeks';
 
 type Day = { minutes: number; movements: readonly string[] };
 type ExampleWeek = {
-  description: string;
+  description: GuidedWeek;
   setup: string;
   days: readonly [Day, Day];
   walkMinutesPerDay: number;
@@ -33,11 +33,11 @@ const muscle: ExampleWeek = {
 };
 
 function mixedWeek(goal: PlanGoal, entry: boolean): ExampleWeek {
-  const day = { minutes: entry ? 30.75 : 44.5, movements: ['goblet', 'pressMachine', 'row', 'bridge', 'deadBug'] };
+  const description = goal === 'general' ? (entry ? 'entryWeek' : 'generalWeek')
+      : (entry ? 'aerobicEntryWeek' : 'aerobicWeek');
   return {
-    description: goal === 'general' ? (entry ? 'entryWeek' : 'generalWeek')
-      : (entry ? 'aerobicEntryWeek' : 'aerobicWeek'),
-    setup: 'mixedSetup', days: [day, day], walkMinutesPerDay: 10,
+    description, setup: 'mixedSetup', days: [exampleDay(description, 0), exampleDay(description, 1)],
+    walkMinutesPerDay: mixedWalkMinutes,
     equipment: ['dumbbells', 'machine'], exclusions: ['avoidSquat', 'avoidMachinePress'],
     familiar: entry ? ['walk'] : ['walk', 'squat', 'row'],
     startingPoints: entry ? ['learn', 'resume'] : ['known'],

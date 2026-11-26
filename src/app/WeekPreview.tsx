@@ -17,7 +17,6 @@ type Props = {
 export function WeekPreview({ answers, locale, sessionOpen, onStart, journal }: Props) {
   const text: Record<string, string> = weekText[locale];
   const { week, reasons } = weekPreview(answers);
-  const family = week?.description;
   return (
     <section aria-label={text.heading}>
       <h4>{text.heading}</h4>
@@ -34,10 +33,8 @@ export function WeekPreview({ answers, locale, sessionOpen, onStart, journal }: 
                 <h5>{text[index === 0 ? 'dayA' : 'dayB']} · {day.minutes.toLocaleString(locale)} min</h5>
                 <ol>{day.movements.map(move => <li key={move}>{text[move]}</li>)}</ol>
                 {week.walkMinutesPerDay > 0 && <p>{weekText[locale].walk.replace('{minutes}', String(week.walkMinutesPerDay))} <a href="#walk-entry-heading">{journalText[locale].walkLink}</a></p>}
-                {(family === 'strengthWeek' || family === 'muscleWeek') && (
-                  sessionOpen ? <p><a href="#week-example-heading">{text.resumeSession}</a></p> :
-                    <button type="button" onClick={() => onStart({ week: family, day: index === 0 ? 0 : 1 })}>{text.startSession}</button>
-                )}
+                {sessionOpen ? <p><a href="#week-example-heading">{text.resumeSession}</a></p> :
+                    <button type="button" onClick={() => onStart({ week: week.description, day: index === 0 ? 0 : 1 })}>{text.startSession}</button>}
               </section>
             ))}
           </details>

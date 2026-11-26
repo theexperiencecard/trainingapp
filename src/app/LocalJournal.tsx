@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Locale } from '../locales/messages';
 import { exampleDraft, localDate, newOperationId, parseDecimal, readSetDraft, validMeasurement } from '../core/journalInput';
 import type { LocalJournalState } from './journalUpdates';
-import { exampleDrafts, sampleExerciseIds } from '../core/sampleExercises';
+import { exampleDrafts, sampleExerciseIds, usesExternalLoad } from '../core/sampleExercises';
 import { WalkingEntry, WalkingHistory } from './WalkingJournal';
 import { JournalChart } from './JournalChart';
 import './localJournal.css';
@@ -169,7 +169,7 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
             {sampleExerciseIds.map(item => <option key={item} value={item}>{text[item]}</option>)}
           </select>
         </label>
-        <SetMeasurements locale={locale} draft={draft} disabled={busy}
+        <SetMeasurements exercise={exercise} locale={locale} draft={draft} disabled={busy}
           errorId={message === 'invalid' ? 'journal-message' : undefined} onChange={next => {
             setDrafts(previous => ({ ...previous, [exercise]: next }));
             setMessage(null);
@@ -206,7 +206,7 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
               <ol>{group.map(row => (
                 <li key={row.id}>
                   {row.status === 'completed' ? (
-                    <>{row.kg === null ? text.unknownLoad : numberFormat.format(row.kg) + ' ' + text.kgUnit} × {row.reps} · {row.rir === null ? text.rirUnknown : `${text.rirUnit} ${row.rir}`}</>
+                    <>{usesExternalLoad(item) && <>{row.kg === null ? text.unknownLoad : numberFormat.format(row.kg) + ' ' + text.kgUnit} × </>}{row.reps} {item === 'deadBug' ? text.repsPerSide : !usesExternalLoad(item) && text.reps} · {row.rir === null ? text.rirUnknown : `${text.rirUnit} ${row.rir}`}</>
                   ) : text[row.status]}
                   {' '}<button className="demo-secondary" type="button" disabled={busy || editor !== null}
                     onClick={event => {
@@ -221,10 +221,10 @@ export function LocalJournal({ locale, journal }: { locale: Locale; journal: Loc
                         const field = fields.find(item => item === event.target.value);
                         if (field) { setEditor(startEdit(editor.base, field, locale)); setMessage(null); }
                       }}>
-                        {fields.filter(field => editor.base.status === 'completed' || field === 'status').map(field => <option key={field} value={field}>{text[field]}</option>)}
+                        {fields.filter(field => (editor.base.status === 'completed' || field === 'status') && (field !== 'kg' || usesExternalLoad(item))).map(field => <option key={field} value={field}>{text[field === 'reps' && item === 'deadBug' ? 'repsPerSide' : field]}</option>)}
                       </select>
                     </label>
-                    <label>{text[editor.field]}
+                    <label>{text[editor.field === 'reps' && item === 'deadBug' ? 'repsPerSide' : editor.field]}
                       {editor.field === 'status' ? (
                         <select value={editor.value} disabled={!!editor.conflict} onChange={event => {
                           setEditor({ ...editor, value: event.target.value }); setMessage(null);

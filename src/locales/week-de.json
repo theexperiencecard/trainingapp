@@ -19,7 +19,6 @@
   "row": "Beidarmiges Kurzhantelrudern auf der Schrägbank",
   "trapBar": "Kreuzheben mit der Trap Bar",
   "cable": "Trizepsstrecken am Kabelzug",
-  "pressMachine": "Brustpresse",
   "bridge": "Beckenheben am Boden",
   "deadBug": "Dead Bug im Wechsel",
   "walk": "Im selben Zeitfenster sind {minutes} Minuten des gewohnten Spaziergangs eingeplant.",
@@ -46,5 +45,7 @@
   "savedProgress": "In dieser Einheit erfasste Sätze: {count} von {total}",
   "setCount": "Absolvierte Sätze: {count}",
   "walkComparison": "Vergleichswoche für das Gehen",
-  "walkCompared": "Gehzeit im Tagebuch: {recorded}. Geplante Gehzeit in der Beispielwoche: {planned} min."
+  "walkCompared": "Gehzeit im Tagebuch: {recorded}. Geplante Gehzeit in der Beispielwoche: {planned} min.",
+  "machine": "Brustpresse M1",
+  "musclePartComplete": "Kraftteil der Beispieleinheit beendet"
 }

@@ -101,11 +101,15 @@ async function storageRegression(page) {
   console.log('OK v1 migration, preserved revisions, duplicate and concurrent writes, rollback and retry');
 }
 
-async function openPlannedWalk(page) {
+async function openPlannedWalk(page, goal = 'general', experience = 'returning') {
   const form = page.locator('.profile-questionnaire');
   const field = key => form.getByLabel(profile[key], { exact: true });
-  await field('goal').selectOption('general');
-  await field('experience').selectOption('returning');
+  await field('goal').selectOption(goal);
+  await field('experience').selectOption(experience);
+  if (experience === 'regular') {
+    const familiar = form.getByRole('group', { name: profile.familiar, exact: true });
+    for (const move of ['press', 'squat', 'row']) await familiar.getByLabel(profile[move], { exact: true }).check();
+  }
   await field('walk').check();
   await field('aerobicActivity').selectOption('aerobicRegular');
   await field('days').fill('2');
@@ -186,6 +190,44 @@ async function uiRegression(page, url) {
   console.log('OK planned walk, manual confirmation, rollback and retry, offline history and weekly intensities');
 }
 
+async function mixedRegression(page) {
+  const walks = (await snapshot(page)).walks;
+  for (const [goal, experience, day, sets] of [['general', 'returning', 0, 1], ['aerobic', 'regular', 1, 2]]) {
+    await page.reload();
+    await openPlannedWalk(page, goal, experience);
+    await page.getByRole('button', { name: week.startSession }).nth(day).click();
+    const session = page.locator('section[aria-labelledby="week-example-heading"]');
+    const before = await snapshot(page);
+    for (const exercise of ['goblet', 'machine', 'row', 'bridge', 'deadBug']) {
+      for (let i = 0; i < sets; i++) {
+        const form = session.locator('form');
+        await expect(form.locator('strong')).toHaveText(labels[exercise]);
+        const reps = form.getByLabel(exercise === 'deadBug' ? labels.repsPerSide : labels.reps, { exact: true });
+        if (exercise === 'goblet') {
+          await expect(reps).toHaveValue(sets === 1 ? '8' : String(10 - i));
+          await expect(form.getByLabel(labels.kg)).toHaveValue(sets === 1 ? '' : '8');
+        } else {
+          await expect(reps).toHaveValue('');
+          await reps.fill('8');
+        }
+        if (exercise === 'bridge' || exercise === 'deadBug') await expect(form.getByLabel(labels.kg)).toHaveCount(0);
+        await form.getByRole('button', { name: labels.add }).click();
+      }
+    }
+    await expect(session.getByRole('heading')).toHaveText(week.musclePartComplete);
+    if (sets === 2) await expect(session).toContainText('152 kg');
+    await page.reload();
+    const after = await snapshot(page);
+    const added = after.sets.filter(row => !before.sets.some(previous => previous.id === row.id));
+    assert.equal(added.length, sets * 5);
+    assert.ok(added.every(row => row.rir === null));
+    assert.equal(added.filter(row => row.exercise === 'deadBug' && row.kg === null &&
+      row.reps === 8 && row.convention === 'bodyweight-reps-per-side').length, sets);
+    assert.deepEqual(after.walks, walks);
+  }
+  console.log('OK mixed sessions offline, 5 and 10 sets, goblet volume and bodyweight reps per side');
+}
+
 async function verify() {
   const storageOnly = process.argv.includes('--storage');
   const { preview, createServer } = await import('vite');
@@ -202,7 +244,10 @@ async function verify() {
     page.setDefaultTimeout(8000);
     await seedV1(page, url);
     if (storageOnly) await storageRegression(page);
-    else await uiRegression(page, url);
+    else {
+      await uiRegression(page, url);
+      await mixedRegression(page);
+    }
   } finally {
     await browser?.close();
     if (storageOnly) await server.close();

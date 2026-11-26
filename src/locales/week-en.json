@@ -19,7 +19,6 @@
   "row": "Chest-supported dumbbell row on an incline bench",
   "trapBar": "Trap-bar deadlift",
   "cable": "Cable triceps extension",
-  "pressMachine": "Machine chest press",
   "bridge": "Floor glute bridge",
   "deadBug": "Alternating dead bug",
   "walk": "The same time slot includes {minutes} minutes of habitual walking.",
@@ -46,5 +45,7 @@
   "savedProgress": "Sets recorded in this session: {count} of {total}",
   "setCount": "Completed sets: {count}",
   "walkComparison": "Comparison week for walking",
-  "walkCompared": "Walking in your journal: {recorded}. Walking in the example week: {planned} min."
+  "walkCompared": "Walking in your journal: {recorded}. Walking in the example week: {planned} min.",
+  "machine": "Machine chest press M1",
+  "musclePartComplete": "Example strength work finished"
 }

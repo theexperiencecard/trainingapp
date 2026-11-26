@@ -31,7 +31,7 @@ export type SetMeasurements = { reps: number; kg: number | null; rir: number | n
 
 export function exampleDraft(exercise: Exercise): SetDraft {
   const { kg, reps } = sampleExercises[exercise].set;
-  return { kg: String(kg), reps: String(reps), rir: '' };
+  return { kg: String(kg ?? ''), reps: String(reps ?? ''), rir: '' };
 }
 
 export function readSetDraft(draft: SetDraft): SetMeasurements | null {

@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { localDate } from '../core/journalInput';
 import { dailyVolumes } from '../core/journalVolume';
-import { sampleExerciseIds } from '../core/sampleExercises';
+import { sampleExerciseIds, usesExternalLoad } from '../core/sampleExercises';
 import { lastRecordedSet } from '../core/lastRecordedSet';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
 import { weekText, demoText } from '../locales/sessions';
 import { GuidedSetForm } from './GuidedSetForm';
 import type { LocalJournalState } from './journalUpdates';
-import { guidedWeeks, type SessionChoice } from './guidedWeeks';
+import { guidedWeeks, mixedWalkMinutes, type ExampleDay, type SessionChoice } from './guidedWeeks';
 import { useGuidedSetRecorder } from './useGuidedSetRecorder';
 
 type Props = {
@@ -24,10 +24,11 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
   const text = weekText[locale];
   const demo = demoText[locale];
   const { day, week } = choice;
-  const session = guidedWeeks[week][day];
+  const mixed = week !== 'strengthWeek' && week !== 'muscleWeek';
+  const session: ExampleDay = guidedWeeks[week][day];
   const [budget] = useState(budgetMinutes);
-  const steps = session.blocks.flatMap(({ exercise, repetitions }) =>
-    repetitions.map(reps => ({ exercise, reps })),
+  const steps = session.blocks.flatMap(({ exercise, repetitions, exampleKg }) =>
+    repetitions.map(reps => ({ exercise, reps, exampleKg })),
   );
   const [date] = useState(() => localDate(new Date()));
   const [recordedIds, setRecordedIds] = useState<string[]>([]);
@@ -54,8 +55,9 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
   return (
     <section className="session-demo" aria-labelledby="week-example-heading">
       <h2 id="week-example-heading" tabIndex={-1} ref={heading}>
-        {current ? text[day === 0 ? 'dayA' : 'dayB'] : text.sessionComplete}
+        {current ? text[day === 0 ? 'dayA' : 'dayB'] : (mixed ? text.musclePartComplete : text.sessionComplete)}
       </h2>
+      {mixed && <p>{text.walk.replace('{minutes}', String(mixedWalkMinutes))} <a href="#walk-entry-heading">{journalText[locale].walkLink}</a></p>}
       {current && exercise ? (
         <>
           <p>{text.guidedNotice} · {minutes.toLocaleString(locale)} min</p>
@@ -80,7 +82,7 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
               )}
             </div>
           )}
-          <GuidedSetForm key={count} locale={locale} exercise={exercise} exampleReps={current.reps}
+          <GuidedSetForm key={count} locale={locale} exercise={exercise} exampleReps={current.reps} exampleKg={current.exampleKg}
             reference={journal.sets && !journal.readFailure ? lastRecordedSet(journal.sets, exercise, date) : null}
             referenceStatus={journal.readFailure ?? (journal.sets === null ? 'loading' : 'ready')}
             saving={saving} failed={failed} submitLabel={failed ? demo.retry : journalText[locale].add}
@@ -96,8 +98,8 @@ export function WeekExampleSession({ choice, budgetMinutes, allowMachine, locale
             if (!volume) return null;
             return <div key={id}>
               <dt>{journalText[locale][id]}</dt>
-              <dd>{text.setCount.replace('{count}', String(volume.sets))} · {volume.kg === null
-                ? demo.unknownVolume : volume.kg.toLocaleString(locale) + ' ' + demo.unit}</dd>
+              <dd>{text.setCount.replace('{count}', String(volume.sets))}{usesExternalLoad(id) && ' · ' + (volume.kg === null
+                ? demo.unknownVolume : volume.kg.toLocaleString(locale) + ' ' + demo.unit)}</dd>
             </div>;
           })}</dl>}
         {endedEarly && <button type="button" onClick={() => setEndedEarly(false)}>{text.resumeSession}</button>}

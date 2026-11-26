@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { sampleExerciseIds } from '../core/sampleExercises';
+import { sampleExerciseIds, usesExternalLoad } from '../core/sampleExercises';
 import { dailyVolumes } from '../core/journalVolume';
 import type { JournalSet, Exercise } from '../storage/localJournal';
 import { journalText } from '../locales/journal';
@@ -12,7 +12,7 @@ const translations = { it, de, en } satisfies Record<Locale, typeof it>;
 
 export function JournalChart({ rows, locale }: { rows: JournalSet[]; locale: Locale }) {
   const [selected, select] = useState<Exercise | null>(null);
-  const available = sampleExerciseIds.filter((exercise) => rows.some((row) => row.exercise === exercise && row.status === 'completed'));
+  const available = sampleExerciseIds.filter((exercise) => usesExternalLoad(exercise) && rows.some((row) => row.exercise === exercise && row.status === 'completed'));
   const exercise = selected && available.includes(selected) ? selected : available[0];
   if (!exercise) return null;
 

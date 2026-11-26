@@ -19,7 +19,6 @@
   "row": "Rematore con due manubri su panca inclinata",
   "trapBar": "Stacco con trap bar",
   "cable": "Estensione dei tricipiti al cavo",
-  "pressMachine": "Chest press",
   "bridge": "Ponte glutei a terra",
   "deadBug": "Dead bug alternato",
   "walk": "Nella stessa finestra sono inclusi {minutes} minuti di cammino abituale.",
@@ -46,5 +45,7 @@
   "savedProgress": "Serie registrate in questa prova: {count} su {total}",
   "setCount": "Serie svolte: {count}",
   "walkComparison": "Settimana di confronto per il cammino",
-  "walkCompared": "Cammino nel diario: {recorded}. Tempo previsto nella settimana di esempio: {planned} min."
+  "walkCompared": "Cammino nel diario: {recorded}. Tempo previsto nella settimana di esempio: {planned} min.",
+  "machine": "Chest press M1",
+  "musclePartComplete": "Serie della seduta di esempio concluse"
 }

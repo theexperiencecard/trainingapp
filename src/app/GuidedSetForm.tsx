@@ -1,6 +1,6 @@
 import { useId, useState } from 'react';
 import { exampleDraft, readSetDraft, type SetMeasurements as Values } from '../core/journalInput';
-import { exampleDrafts, type Exercise } from '../core/sampleExercises';
+import { exampleDrafts, usesExternalLoad, type Exercise } from '../core/sampleExercises';
 import { journalText } from '../locales/journal';
 import type { Locale } from '../locales/messages';
 import type { JournalSet } from '../storage/localJournal';
@@ -9,7 +9,8 @@ import { SetMeasurements } from './SetMeasurements';
 type Props = {
   locale: Locale;
   exercise: Exercise;
-  exampleReps?: number;
+  exampleReps?: number | null;
+  exampleKg?: number | null | undefined;
   reference: JournalSet | null;
   referenceStatus: 'loading' | 'ready' | 'readError' | 'newerFormat';
   saving: boolean;
@@ -18,12 +19,13 @@ type Props = {
   onRecord: (values: Values) => Promise<void>;
 };
 
-export function GuidedSetForm({ locale, exercise, exampleReps, reference, referenceStatus, saving, failed, submitLabel, onRecord }: Props) {
+export function GuidedSetForm({ locale, exercise, exampleReps, exampleKg, reference, referenceStatus, saving, failed, submitLabel, onRecord }: Props) {
   const text = journalText[locale];
   const errorId = useId();
   const [drafts, setDrafts] = useState(() => {
     const defaults = exampleDrafts(exampleDraft);
-    if (exampleReps !== undefined) defaults[exercise].reps = String(exampleReps);
+    if (exampleReps !== undefined) defaults[exercise].reps = String(exampleReps ?? '');
+    if (exampleKg !== undefined) defaults[exercise].kg = String(exampleKg ?? '');
     return defaults;
   });
   const [invalidExercise, setInvalidExercise] = useState<Exercise | null>(null);
@@ -42,8 +44,8 @@ export function GuidedSetForm({ locale, exercise, exampleReps, reference, refere
             {text.lastSet} · <time dateTime={reference.day}>{new Intl.DateTimeFormat(locale, {
               dateStyle: 'medium', timeZone: 'UTC',
             }).format(new Date(reference.day + 'T00:00:00Z'))}</time><br />
-            {reference.kg === null ? text.unknownLoad : reference.kg.toLocaleString(locale) + ' ' + text.kgUnit}
-            {' × '}{reference.reps} · {reference.rir === null ? text.rirUnknown : text.rirUnit + ' ' + reference.rir}
+            {usesExternalLoad(exercise) && <>{reference.kg === null ? text.unknownLoad : reference.kg.toLocaleString(locale) + ' ' + text.kgUnit}
+            {' × '}</>}{reference.reps} {text[exercise === 'deadBug' ? 'repsPerSide' : 'reps']} · {reference.rir === null ? text.rirUnknown : text.rirUnit + ' ' + reference.rir}
           </p>
           {reference.kg !== null && <button type="button" className="demo-secondary" disabled={saving || failed}
             onClick={() => {
@@ -52,7 +54,7 @@ export function GuidedSetForm({ locale, exercise, exampleReps, reference, refere
             }}>{text.copyLoad}</button>}
         </div>
       ) : <p>{referenceStatus === 'ready' ? text.firstOnEquipment : text[referenceStatus]}</p>}
-      <SetMeasurements locale={locale} draft={drafts[exercise]} disabled={saving || failed}
+      <SetMeasurements exercise={exercise} locale={locale} draft={drafts[exercise]} disabled={saving || failed}
         errorId={invalid ? errorId : undefined} onChange={next => {
           setDrafts(previous => ({ ...previous, [exercise]: next }));
           setInvalidExercise(null);

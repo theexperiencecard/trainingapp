@@ -65,5 +65,8 @@
   "walkInvalid": "Datum prüfen, eine Dauer zwischen einer Sekunde und 24 Stunden eingeben und die Intensität auswählen.",
   "walkHistory": "Erfasste Gehabschnitte",
   "walkTotal": "Gehzeit insgesamt",
-  "walkLink": "Zum Gehtagebuch"
+  "walkLink": "Zum Gehtagebuch",
+  "bridge": "Beckenheben am Boden · Körpergewicht",
+  "deadBug": "Dead Bug im Wechsel · Wiederholungen je Seite",
+  "repsPerSide": "Wiederholungen je Seite"
 }

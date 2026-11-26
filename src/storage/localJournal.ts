@@ -1,5 +1,5 @@
 import { validMeasurement } from '../core/journalInput';
-import { sampleExercises, type Exercise } from '../core/sampleExercises';
+import { sampleExercises, usesExternalLoad, type Exercise } from '../core/sampleExercises';
 
 export type { Exercise } from '../core/sampleExercises';
 export type SetStatus = 'completed' | 'skipped' | 'voided';
@@ -142,6 +142,7 @@ function checkSet(row: SavedSet): SavedSet {
       row.sessionId !== owner + ':' + row.day || !Number.isSafeInteger(row.position) || row.position < 1) {
     throw new Error('Unsupported journal record.');
   }
+  if (!usesExternalLoad(row.exercise) && row.kg !== null) throw new RangeError('Unexpected external load.');
   for (const field of fields) {
     validateField(field, row[field]);
     if (!Number.isSafeInteger(row.revisions[field]) || row.revisions[field] < 1) {
@@ -214,19 +215,21 @@ export async function addSet(
   if (!validDay(day) || !Object.hasOwn(sampleExercises, exercise)) throw new Error('Invalid sample set.');
   const fixture = sampleExercises[exercise].set;
   const measurement = input ? { ...input } : { kg: fixture.kg, reps: fixture.reps, rir: null };
+  const { reps } = measurement;
+  if (reps === null) throw new RangeError('A confirmed repetition count is required.');
   for (const field of fields) validateField(field, measurement[field]);
   const sessionId = owner + ':' + day;
   const id = addedSetId(opId);
   // Keep the v1 default operation signature stable when the same input is retried.
   const intent = {
     type: 'add', day, exercise, catalogVersion: 1, ...fixture,
-    kg: measurement.kg, reps: measurement.reps, unit: 'kg', rir: measurement.rir,
+    kg: measurement.kg, reps, unit: 'kg', rir: measurement.rir,
   };
   await applyOnce(opId, id, intent, async (tx, now) => {
     const position = await nextPosition(tx, day, now);
     const set: SavedSet = {
       id, sessionId, owner, day, exercise, ...fixture,
-      kg: measurement.kg, reps: measurement.reps, rir: measurement.rir, unit: 'kg',
+      kg: measurement.kg, reps, rir: measurement.rir, unit: 'kg',
       status: 'completed', catalogVersion: 1, position,
       revisions: { kg: 1, reps: 1, rir: 1, status: 1 }, createdAt: now, modifiedAt: now,
     };
@@ -274,7 +277,7 @@ async function loadSet(tx: IDBTransaction, base: JournalSet): Promise<SavedSet> 
 }
 
 async function updateSet(tx: IDBTransaction, next: SavedSet): Promise<void> {
-  await result(tx.objectStore('sets').put(next));
+  await result(tx.objectStore('sets').put(checkSet(next)));
   const sessions = tx.objectStore('sessions');
   const session = await result(sessions.get(next.sessionId) as IDBRequest<Session | undefined>);
   if (!session) throw new Error('The session no longer exists.');
